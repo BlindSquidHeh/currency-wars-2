@@ -739,8 +739,12 @@ const propIconKey = t => { const k = PROP_ICON[t] || PROP_ICON[t.replace(/\d+$/,
   }
   for (const q of ['None', 'Silver', 'Gold', 'Multicolor', 'unique', 'black']) css += `.dq-${q}{background-image:url(${img('ux/d_' + q)})}`;
   for (const q of ['Silver', 'Gold', 'Prismatic']) css += `.hq-${q}{background-image:url(${img('ux/aug_' + q)})}`;
-  for (const c of [1, 2, 3, 4, 5]) css += `.cost-${c}{background-image:url(${img('ux/cost' + c)})}`;
-  css += `.cost-7::before{content:"";position:absolute;inset:0;background:url(${img('ux/cost5')}) 0 0/100% 100%;filter:hue-rotate(290deg) saturate(1.25)}`;
+  // рамки по стоимости: 1–5 из игры, 7 — перекрашенная 5 (если не загружена своя), плюс свои стоимости из «Оформления»
+  const TC = (DB.theme || {}).costs || {};
+  for (const c of [1, 2, 3, 4, 5, 7, ...Object.keys(TC)]) if (img('ux/cost' + c)) css += `.cost-${c}{background-image:url(${img('ux/cost' + c)})}`;
+  if (!img('ux/cost7')) css += `.cost-7::before{content:"";position:absolute;inset:0;background:url(${img('ux/cost5')}) 0 0/100% 100%;filter:hue-rotate(290deg) saturate(1.25)}`;
+  css += '.rframe.own::before{display:none}';
+  for (const [k, o] of Object.entries(TC)) if (o && o.color) css += `:root{--c${k}:${o.color}}`;
   css += `.env-bg{background-image:url(${img('ux/env')})}.coin,.rw-coin{background-image:url(${img('ux/coin')})}`;
   // оформление из редактора (Оформление): цвета стоимости, карточки стратегий/сред, фон сайта
   const TH = DB.theme || {};
@@ -768,6 +772,8 @@ const listRoles = roles.filter(r => !AHA_VARIANTS.has(r.id));
 const AHA_FORMS = [[151102, 3], [151112, 4], [151122, 5], [151132, 7]];
 const AHA_NOTE = 'По данным игры (4.7): получая копии Эона ★ Ахи, вы копите «Силу фантаны», и стоимость растёт 3 → 4 → 5. Когда Аха стоит 5, её можно вознести до стоимости 7 — для этого нужно поднять суммарную звёздность персонажей «Радости» или «Игр фантаны». Форма 7 использует тот же портрет; в ней навык Радости бьёт на 60/75/500% и дополнительно наносит истинный урон 50/60/100% от урона «Мига Ахи», цели в «Эманаторе Радости» получают +50/60/100% Радости и +75/90/150% крит. урона, а базовая Сила на поле — 250/400/4000 (1★/2★/3★). Аха 7 на 3★ — это «истинный хозяин» Валютных войн. Нажмите на форму, чтобы увидеть её навыки и характеристики.';
 const COSTC = {1:'var(--c1)',2:'var(--c2)',3:'var(--c3)',4:'var(--c4)',5:'var(--c5)',7:'var(--c7)'};
+for (const k of Object.keys((DB.theme || {}).costs || {})) COSTC[k] = `var(--c${k})`;
+const COST_EXTRA = Object.keys((DB.theme || {}).costs || {}).filter(k => !COSTC[k] || ![1, 2, 3, 4, 5, 7].includes(+k));
 const POS = {front:'На поле', back:'Вне поля', flex:'Универсал'};
 const POSICON = {front:'ux/pos_front', back:'ux/pos_back', flex:'ux/pos_all'};
 const KIND = {origin:'Фракция', class:'Роль', unique:'Уникальная', special:'Особая'};
@@ -780,8 +786,10 @@ const ROMAN = ['','I','II','III'];
 const BANK = DB.bank || {};
 const roleTraits = r => r.traits.map(id => T[id]).filter(Boolean);
 const membersOf = tid => listRoles.filter(r => r.traits.includes(tid)).sort((a, b) => a.cost - b.cost || a.name.localeCompare(b.name, 'ru'));
-const costOf = r => r.id === 151102 ? '3–7' : r.cost;
-const costKey = r => r.id === 151102 ? 7 : r.cost;
+const costOf = r => r.costLabel || (r.id === 151102 ? '3–7' : r.cost);
+const costKey = r => r.tier || (r.id === 151102 ? 7 : r.cost);
+// своя рамка персонажа: отдельная для стоимости (frames), иначе общая (frame)
+const frameKey = (r, c) => ((r.frames || {})[c] && img(r.frames[c]) ? r.frames[c] : '') || (r.frame && img(r.frame) ? r.frame : '');
 const pct = (t, v) => (v == null ? '—' : (/Ratio|Luck|Reduce|Rate/.test(t) ? `${+(v * 100).toFixed(1)}%` : `${+(+v).toFixed(2)}`));
 const findRole = id => R[id] || R[+(id + '02')] || RA[id] || RA[String(id).slice(0, 4)];
 
@@ -827,14 +835,16 @@ const emblemOf = t => items.find(i => i.cat === 'emblem' && (i.starTrait === t.n
 const srcText = s => s.kind === 'aug' ? `Стратегия «${s.name}» · ${QNAME[s.q]}` : s.kind === 'buff' ? `Среда «${s.name}»` : `Предмет «${s.name}»`;
 
 // ---------- иконки ----------
-const dia = (t, q = 'black', n = '', s = '') => `<span class="dia dq-${q}"${s ? ` style="--s:${s}"` : ''}><img src="${img('trait/' + t.id)}" alt="">${n !== '' ? `<span class="n">${n}</span>` : ''}</span>`;
+// своя подложка из записи (редактор): ромб связи по уровню (t.dias[q]) или подложка иконки стратегии/среды (x.plate)
+const ownBg = k => k && img(k) ? `background-image:url(${img(k)});` : '';
+const dia = (t, q = 'black', n = '', s = '') => `<span class="dia dq-${q}" style="${ownBg((t.dias || {})[q])}${s ? `--s:${s}` : ''}"><img src="${img('trait/' + t.id)}" alt="">${n !== '' ? `<span class="n">${n}</span>` : ''}</span>`;
 const traitDia = (t, s) => dia(t, t.kind === 'unique' || t.kind === 'special' ? 'unique' : 'black', '', s);
 function eqIcon(i, s) {
   if (!i) return '';
   const ov = i.cat === 'privilege' ? `<img class="ov" src="${img('ux/priv')}" alt="">` : '';
   return `<span class="eq e-${i.cat}" data-tip="item:${i.id}"${s ? ` style="--s:${s}"` : ''}><img src="${img(i.icon)}" alt="">${ov}</span>`;
 }
-const hexa = a => `<span class="hexa hq-${a.q}"><img src="${img(a.icon)}" alt=""></span>`;
+const hexa = a => `<span class="hexa hq-${a.q}" style="${ownBg(a.plate)}"><img src="${img(a.icon)}" alt=""></span>`;
 const ava = (r, size = 0) => `<img class="ava" style="--cc:${COSTC[costKey(r)]}${size ? `;width:${size}px;height:${size}px` : ''}" src="${img('avs/' + r.avatar)}" alt="" data-tip="role:${r.id}">`;
 
 // ---------- rich text ----------
@@ -963,7 +973,8 @@ function bindQ(v, f) {
 // ---------- персонажи ----------
 function roleFrame(r, big) {
   const tr = roleTraits(r).map(t => traitDia(t)).join('');
-  return `<div class="rframe cost-${costKey(r)}" data-av="${r.avatar}" style="--cc:${COSTC[costKey(r)]}${r.frame && img(r.frame) ? `;background-image:url(${img(r.frame)})` : ''}">
+  const fk = frameKey(r, costKey(r));
+  return `<div class="rframe cost-${costKey(r)}${fk ? ' own' : ''}" data-av="${r.avatar}" style="--cc:${COSTC[costKey(r)]}${fk ? `;background-image:url(${img(fk)})` : ''}">
     <div class="pw"><img class="por" loading="lazy" src="${img('av/' + r.avatar)}" alt=""></div><div class="shade"></div>
     <div class="cost"><span class="coin"></span>${costOf(r)}</div>
     <img class="pos" src="${img(POSICON[r.pos])}" alt="" title="${POS[r.pos]}">
@@ -975,12 +986,12 @@ const roleCard = r => `<div class="rcard" data-role="${r.id}" style="--cc:${COST
 function viewRoles(v) {
   const f = S.roles, q = norm(f.q);
   const usedTraits = traits.filter(t => listRoles.some(r => r.traits.includes(t.id)));
-  const list = listRoles.filter(r => (!f.cost || r.cost === f.cost) && (!f.pos || r.pos === f.pos) && (!f.trait || r.traits.includes(f.trait))
+  const list = listRoles.filter(r => (!f.cost || r.cost === f.cost || +r.tier === f.cost) && (!f.pos || r.pos === f.pos) && (!f.trait || r.traits.includes(f.trait))
     && (!q || norm(r.name + ' ' + r.en + ' ' + roleTraits(r).map(t => t.name).join(' ')).includes(q)))
     .sort((a, b) => b.cost - a.cost || a.name.localeCompare(b.name, 'ru'));
   v.innerHTML = head('Персонажи', 'Нажмите на персонажа: навыки по звёздам, характеристики, эйдолоны и экипировка. Наведите на связь или предмет — появится подсказка, где их взять.', `${list.length} из ${listRoles.length}`) + `
     <div class="filters">
-      <div class="fgroup">${chip('Все', !f.cost, 'data-cost="0"')}${[1, 2, 3, 4, 5].map(c => chip(`<span class="dot" style="background:${COSTC[c]}"></span>${c}`, f.cost === c, `data-cost="${c}"`)).join('')}</div>
+      <div class="fgroup">${chip('Все', !f.cost, 'data-cost="0"')}${[1, 2, 3, 4, 5, ...COST_EXTRA.filter(k => listRoles.some(r => r.tier == k)).map(Number)].map(c => chip(`<span class="dot" style="background:${COSTC[c]}"></span>${c}`, f.cost === c, `data-cost="${c}"`)).join('')}</div>
       <div class="fgroup">${chip('Любая позиция', !f.pos, 'data-pos=""')}${Object.entries(POS).map(([k, t]) => chip(`<img src="${img(POSICON[k])}" style="width:11px;height:15px" alt="">${t}`, f.pos === k, `data-pos="${k}"`)).join('')}</div>
       <div class="fgroup"><input class="chip" style="width:190px" placeholder="Имя или связь…" data-q value="${esc(f.q)}"></div>
     </div>
@@ -1002,7 +1013,7 @@ function srcList(list) {
   if (!list || !list.length) return '';
   return `<div class="small-list">${list.map(s => s.kind === 'item' ? `<div class="mini" data-item="${s.id}">${eqIcon(I[s.id])}${esc(s.name)}</div>`
     : s.kind === 'aug' ? `<div class="mini" data-aug="${s.id}">${hexa(augs.find(a => a.id === s.id))}${esc(s.name)}</div>`
-    : `<div class="mini" data-buff="${s.id}"><span class="hexa env-bg" style="background-size:contain"><img src="${img(buffs.find(b => b.id === s.id).icon)}" alt=""></span>${esc(s.name)}</div>`).join('')}</div>`;
+    : `<div class="mini" data-buff="${s.id}"><span class="hexa env-bg" style="background-size:contain;${ownBg(buffs.find(b => b.id === s.id).plate)}"><img src="${img(buffs.find(b => b.id === s.id).icon)}" alt=""></span>${esc(s.name)}</div>`).join('')}</div>`;
 }
 function roleDetail(r) {
   const tl = roleTraits(r).map(t => `<div class="tl" data-trait="${t.id}" data-tip="trait:${t.id}">${traitDia(t)}<div><b>${esc(t.name)}</b><small>${KIND[t.kind]} · ${t.layers.map(l => l.n).join(' / ')}</small></div></div>`).join('');
@@ -1196,7 +1207,7 @@ function viewAugs(v) {
   };
   bindQ(v, f);
 }
-const envCard = b => `<div class="ecard${b.old ? ' is-old' : ''}" id="buff-${b.id}" data-buff="${b.id}">${b.new ? '<span class="tag">2 сезон</span>' : b.old ? '<span class="tag">1 сезон</span>' : ''}<div class="ei env-bg"><img src="${img(b.icon)}" alt=""></div><h3>${esc(b.name)}</h3><div class="desc rt">${rt(b.html || '')}</div></div>`;
+const envCard = b => `<div class="ecard${b.old ? ' is-old' : ''}" id="buff-${b.id}" data-buff="${b.id}">${b.new ? '<span class="tag">2 сезон</span>' : b.old ? '<span class="tag">1 сезон</span>' : ''}<div class="ei env-bg" style="${ownBg(b.plate)}"><img src="${img(b.icon)}" alt=""></div><h3>${esc(b.name)}</h3><div class="desc rt">${rt(b.html || '')}</div></div>`;
 function oldBlock(old, card, grid, what) {
   if (!old.length) return '';
   return `<div class="old-head" data-oldtoggle><span>Устаревшие · 1 сезон</span><small>${old.length} ${what}: связи, персонажи и версии, которых нет во 2 сезоне</small><b>${S.showOld ? 'Скрыть' : 'Показать'}</b></div>
@@ -1439,7 +1450,7 @@ function freeEl(kind, x, e, i) {
     case 'box': return `<div class="fe" data-el="${i}" style="${st}background:${e.bg || 'rgba(8,4,30,.25)'};border-radius:${e.rad != null ? e.rad : 2}cqw;${e.bc ? `border:${e.bw || .3}cqw solid ${e.bc};` : ''}"></div>`;
     case 'rw': return `<div class="fe fe-rw" data-el="${i}" style="${st}">${rwRender(e.d || {t:'coin'})}</div>`;
     case 'stage': return `<div class="fe fe-stage" data-el="${i}" style="${st}--fs1:${(e.fs || 3.2) * .62}cqw;--fs2:${e.fs || 3.2}cqw"><div class="stg"><small>${esc(e.a || '')}</small><b>${esc(e.b || '')}</b></div></div>`;
-    case 'icon': return `<div class="fe fe-icon" data-el="${i}" style="${st}">${isAug ? `<div class="xc-ic hexa hq-${x.q}" style="background-size:contain;background-repeat:no-repeat;background-position:center"><img src="${img(x.icon)}" alt="" style="width:52%;height:52%"></div>` : `<div class="xc-ic env-bg"><img src="${img(x.icon)}" alt=""></div>`}</div>`;
+    case 'icon': return `<div class="fe fe-icon" data-el="${i}" style="${st}">${isAug ? `<div class="xc-ic hexa hq-${x.q}" style="background-size:contain;background-repeat:no-repeat;background-position:center;${ownBg(x.plate)}"><img src="${img(x.icon)}" alt="" style="width:52%;height:52%"></div>` : `<div class="xc-ic env-bg" style="${ownBg(x.plate)}"><img src="${img(x.icon)}" alt=""></div>`}</div>`;
     case 'tags': return `<div class="fe fe-tags" data-el="${i}" style="${st}"><div class="xc-tags">${(isAug ? `<span class="tag q${x.q[0]}">${QNAME[x.q]}</span><span class="tag">Инвестиционная стратегия</span>` : '<span class="tag">Инвестиционная среда</span>') + (x.new ? '<span class="tag new">2 сезон</span>' : x.old ? '<span class="tag">1 сезон</span>' : '')}</div></div>`;
   }
   return '';
@@ -1486,8 +1497,8 @@ function xDetail(kind, x) {
   if (x.layout && x.layout.items) return xFree(kind, x);
   const isAug = kind === 'aug';
   const tags = (isAug ? `<span class="tag q${x.q[0]}">${QNAME[x.q]}</span><span class="tag">Инвестиционная стратегия</span>` : '<span class="tag">Инвестиционная среда</span>') + (x.new ? '<span class="tag new">2 сезон</span>' : x.old ? '<span class="tag">1 сезон</span>' : '');
-  const icon = isAug ? `<div class="xc-ic hexa hq-${x.q}" style="background-size:contain;background-repeat:no-repeat;background-position:center"><img src="${img(x.icon)}" alt="" style="width:52%;height:52%"></div>`
-    : `<div class="xc-ic env-bg"><img src="${img(x.icon)}" alt=""></div>`;
+  const icon = isAug ? `<div class="xc-ic hexa hq-${x.q}" style="background-size:contain;background-repeat:no-repeat;background-position:center;${ownBg(x.plate)}"><img src="${img(x.icon)}" alt="" style="width:52%;height:52%"></div>`
+    : `<div class="xc-ic env-bg" style="${ownBg(x.plate)}"><img src="${img(x.icon)}" alt=""></div>`;
   const card = x.card && (x.card.stages || x.card.rewards) ? x.card : autoCard(kind, x);
   const st = (card.stages || []).map(([a, b]) => `<div class="stg"><small>${esc(a)}</small><b>${esc(b)}</b></div>`).join('');
   const rw = (card.rewards || []).map(rwRender).join('');
@@ -1533,7 +1544,12 @@ function openModal(type, id, push = true) {
       $$('[data-form]', c).forEach(x => x.classList.toggle('on', x === b));
       // рамка и подсветка — цвет выбранной стоимости (3 синий, 4 фиолетовый, 5 золото, 7 розовый)
       const cost = AHA_FORMS.find(f => f[0] === r.id)[1], col = COSTC[cost];
-      const fr = $('.rd-side .rframe', c); if (fr) { fr.className = fr.className.replace(/\bcost-\d\b/, 'cost-' + cost); fr.style.setProperty('--cc', col); }
+      const fr = $('.rd-side .rframe', c);
+      if (fr) {
+        const fk = frameKey(R[151102], cost) || frameKey(r, cost);
+        fr.className = fr.className.replace(/\bcost-\w+\b/, 'cost-' + cost); fr.classList.toggle('own', !!fk);
+        fr.style.backgroundImage = fk ? `url(${img(fk)})` : ''; fr.style.setProperty('--cc', col);
+      }
       const side = $('.rd-side', c); if (side) side.style.setProperty('--cc', col);
       const cb = $('.rd-side .cost', c); if (cb) cb.innerHTML = `<span class="coin"></span>${cost}`;
       const cc = $('.badge.costb', c); if (cc) cc.innerHTML = `<span class="coin"></span>Стоимость ${cost}`;
