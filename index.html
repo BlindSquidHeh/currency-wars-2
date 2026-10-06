@@ -742,6 +742,16 @@ const propIconKey = t => { const k = PROP_ICON[t] || PROP_ICON[t.replace(/\d+$/,
   for (const c of [1, 2, 3, 4, 5]) css += `.cost-${c}{background-image:url(${img('ux/cost' + c)})}`;
   css += `.cost-7::before{content:"";position:absolute;inset:0;background:url(${img('ux/cost5')}) 0 0/100% 100%;filter:hue-rotate(290deg) saturate(1.25)}`;
   css += `.env-bg{background-image:url(${img('ux/env')})}.coin,.rw-coin{background-image:url(${img('ux/coin')})}`;
+  // оформление из редактора (Оформление): цвета стоимости, карточки стратегий/сред, фон сайта
+  const TH = DB.theme || {};
+  for (const [k, v] of Object.entries(TH.colors || {})) if (v) css += `:root{--${k}:${v}}`;
+  for (const [q, o] of Object.entries(TH.xc || {})) {
+    const sel = q === 'buff' ? '.xc:not([class*="q-"])' : `.xc.q-${q}`;
+    css += `${sel}{${['x1', 'x2', 'x3', 'xb'].filter(k => o[k]).map(k => `--${k}:${o[k]}`).join(';')}}`;
+    if (o.bg && img(o.bg)) css += `${sel}{background:url(${img(o.bg)}) center/cover no-repeat}`;
+  }
+  if (TH.pageBg && img(TH.pageBg)) css += `body{background-image:url(${img(TH.pageBg)});background-size:cover;background-attachment:fixed}`;
+  if (TH.css) css += TH.css;
   const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 })();
 
@@ -916,16 +926,19 @@ const TABS = [
   {k:'roles', t:'Персонажи'}, {k:'traits', t:'Связи'}, {k:'items', t:'Экипировка'},
   {k:'augments', t:'Стратегии'}, {k:'buffs', t:'Среды'}, {k:'pets', t:'Компаньоны'}, {k:'misc', t:'Предметы'},
   {k:'nodes', t:'Узлы'}, {k:'armor', t:'Броня'}, {k:'affix', t:'Аффиксы'}, {k:'opp', t:'Противники'}, {k:'npc', t:'НПС'},
+  ...(DB.custom || []).map((c, i) => ({k:'c' + i, t:c.title || 'Вкладка', icon:c.icon})),
 ];
 $('#heroStats').innerHTML = [[listRoles.length, 'персонажей'], [traits.length, 'связей'], [nEq, 'экипировки'], [augs.filter(a => !a.old).length, 'стратегий'], [buffs.filter(b => !b.old).length, 'сред'], [(DB.pets || []).length, 'компаньонов']]
   .map(([n, t]) => `<div><b>${n}</b><span>${t}</span></div>`).join('');
-$('#tabs').innerHTML = TABS.map(t => `<button class="tab" data-k="${t.k}"><img src="${img('ui/tab_' + t.k)}" alt="">${t.t}</button>`).join('');
+$('#tabs').innerHTML = TABS.map(t => `<button class="tab" data-k="${t.k}"><img src="${img(t.icon || 'ui/tab_' + t.k)}" alt="">${esc(t.t)}</button>`).join('');
 $('#partners').innerHTML = Array.from({length:12}, (_, i) => img('ui/partner' + (i + 1)) ? `<img src="${img('ui/partner' + (i + 1))}" alt="">` : '').join('');
 
 // ---------- состояние ----------
 const S = {showOld:false, tab:'roles', roles:{cost:0, pos:'', trait:0, q:''}, traits:{kind:'', q:''}, items:{cat:'', q:''}, augments:{q:'', ql:'', news:false, ch:0}, buffs:{q:'', news:true}, misc:{q:''}, nodes:{}, armor:{q:''}, affix:{q:''}, opp:{q:''}, npc:{}};
 try { const saved = JSON.parse(localStorage.getItem('cw-state-v2') || 'null'); if (saved) for (const k in S) if (saved[k] !== undefined) S[k] = typeof S[k] === 'object' ? Object.assign(S[k], saved[k]) : saved[k]; } catch (e) {}
 const save = () => { try { localStorage.setItem('cw-state-v2', JSON.stringify(S)); } catch (e) {} };
+(DB.custom || []).forEach((c, i) => { S['c' + i] = S['c' + i] || {q:''}; });
+if (!TABS.some(t => t.k === S.tab)) S.tab = 'roles';
 
 function setTab(k) {
   S.tab = k; save();
@@ -938,7 +951,8 @@ const chip = (label, on, attrs = '') => `<button class="chip${on ? ' on' : ''}" 
 const head = (title, text, count) => `<div class="section-head"><div class="row"><div><h2>${title}</h2><p>${text}</p></div><span class="count">${count}</span></div><div class="divider"><i></i></div></div>`;
 function render() {
   const v = $('#view');
-  ({roles:viewRoles, traits:viewTraits, items:viewItems, augments:viewAugs, buffs:viewBuffs, pets:viewPets, misc:viewMisc, nodes:viewNodes, armor:viewArmor, affix:viewAffix, opp:viewOpp, npc:viewNpc})[S.tab](v);
+  if (/^c\d+$/.test(S.tab)) viewCustom(v, +S.tab.slice(1));
+  else ({roles:viewRoles, traits:viewTraits, items:viewItems, augments:viewAugs, buffs:viewBuffs, pets:viewPets, misc:viewMisc, nodes:viewNodes, armor:viewArmor, affix:viewAffix, opp:viewOpp, npc:viewNpc})[S.tab](v);
   paint(v); mountSpine(v, false);
 }
 function bindQ(v, f) {
@@ -949,7 +963,7 @@ function bindQ(v, f) {
 // ---------- персонажи ----------
 function roleFrame(r, big) {
   const tr = roleTraits(r).map(t => traitDia(t)).join('');
-  return `<div class="rframe cost-${costKey(r)}" data-av="${r.avatar}" style="--cc:${COSTC[costKey(r)]}">
+  return `<div class="rframe cost-${costKey(r)}" data-av="${r.avatar}" style="--cc:${COSTC[costKey(r)]}${r.frame && img(r.frame) ? `;background-image:url(${img(r.frame)})` : ''}">
     <div class="pw"><img class="por" loading="lazy" src="${img('av/' + r.avatar)}" alt=""></div><div class="shade"></div>
     <div class="cost"><span class="coin"></span>${costOf(r)}</div>
     <img class="pos" src="${img(POSICON[r.pos])}" alt="" title="${POS[r.pos]}">
@@ -1254,6 +1268,14 @@ function viewOpp(v) {
       <div class="oc-m">${o.mons.map(m => `<div class="mon"><img src="${img(m.icon)}" alt="" loading="lazy"><div><b>${esc(m.name)}</b><small>${esc(m.rank)}${m.weak.length ? ' · слаб.: ' + m.weak.join(', ') : ''}</small></div></div>`).join('')}</div></div>`).join('')}</div>`;
   bindQ(v, f);
 }
+// свои вкладки из редактора: {title, desc, icon, color, items:[{name, en, icon, html, bg}]}
+function viewCustom(v, i) {
+  const C = DB.custom[i], f = S['c' + i], q = norm(f.q || '');
+  const L = (C.items || []).filter(a => !q || norm((a.name || '') + ' ' + (a.en || '') + ' ' + (a.html || '')).includes(q));
+  v.innerHTML = head(esc(C.title || ''), C.desc || '', L.length) + bankSearch(f, 'Поиск…')
+    + `<div class="grid-aug">${L.map(a => `<div class="acard bank-card" style="--qa:${a.color || C.color || '#e3c27c'}${a.bg && img(a.bg) ? `;background:url(${img(a.bg)}) center/cover` : ''}">${a.icon && img(a.icon) ? `<img class="bk-ic" src="${img(a.icon)}" alt="" loading="lazy">` : ''}<div style="min-width:0"><h3>${esc(a.name || '')}</h3>${a.en ? `<div class="rd-en" style="text-align:left">${esc(a.en)}</div>` : ''}<div class="desc rt">${rt(a.html || '')}</div></div></div>`).join('')}</div>`;
+  bindQ(v, f);
+}
 function viewNpc(v) {
   const N = BANK.npc || [];
   const groups = [['Пеппи', 'Пёс Арлана. Появляется от сред и стратегий («Прогулка с Пеппи», «Камео Пеппи», «Пеппи 3★», «Пёс Асты!» и др.) как союзник-неперсонаж: стоит в отряде, носит эмблемы или экипировку и приносит монеты.', n => n.type === 1],
@@ -1469,7 +1491,7 @@ function xDetail(kind, x) {
   const card = x.card && (x.card.stages || x.card.rewards) ? x.card : autoCard(kind, x);
   const st = (card.stages || []).map(([a, b]) => `<div class="stg"><small>${esc(a)}</small><b>${esc(b)}</b></div>`).join('');
   const rw = (card.rewards || []).map(rwRender).join('');
-  return `<div class="xc${isAug ? ' q-' + x.q : ''}">
+  return `<div class="xc${isAug ? ' q-' + x.q : ''}"${x.bg && img(x.bg) ? ` style="background:url(${img(x.bg)}) center/cover no-repeat"` : ''}>
     ${icon}
     <h2>${esc(x.name)}</h2><div class="xc-en">${esc(x.en)}</div>
     <div class="xc-tags">${tags}</div>
