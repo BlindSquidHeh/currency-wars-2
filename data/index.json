@@ -1,0 +1,40 @@
+{
+ "version": "version.json",
+ "traits": "traits.json",
+ "roles": "roles.json",
+ "items": "items.json",
+ "augments": "augments.json",
+ "buffs": "buffs.json",
+ "s1roles": "s1roles.json",
+ "s1traits": "s1traits.json",
+ "oldTraits": "oldTraits.json",
+ "pets": "pets.json",
+ "ranks": {
+  "tiers": "ranks/tiers.json",
+  "perm": "ranks/perm.json",
+  "season": "ranks/season.json"
+ },
+ "shops": {
+  "aha1": "shops/aha1.json",
+  "aha2": "shops/aha2.json"
+ },
+ "bank": {
+  "armor": "bank/armor.json",
+  "affix": "bank/affix.json",
+  "opp": "bank/opp.json",
+  "chim": "bank/chim.json",
+  "npc": "bank/npc.json",
+  "partner": "bank/partner.json",
+  "astro": "bank/astro.json",
+  "svarog": "bank/svarog.json",
+  "jade": "bank/jade.json",
+  "trail": "bank/trail.json",
+  "wish": "bank/wish.json",
+  "nodes": "bank/nodes.json",
+  "res": "bank/res.json"
+ },
+ "custom": "custom.json",
+ "theme": "theme.json",
+ "blocks": "blocks.json",
+ "clips": "clips.json"
+}

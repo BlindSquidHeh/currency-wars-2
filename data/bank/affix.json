@@ -1,0 +1,426 @@
+[
+ {
+  "id": 1001,
+  "name": "Усиление босса",
+  "en": "Boss Enhancement",
+  "html": "Боссы усилены: скорость +<b class=\"v\">60%</b>, макс. НР +<b class=\"v\">30%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_10",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_10.png"
+ },
+ {
+  "id": 1002,
+  "name": "Усиление свиты",
+  "en": "Follower Enhancement",
+  "html": "Обычные и элитные противники усилены: скорость +<b class=\"v\">30%</b>, макс. НР +<b class=\"v\">20%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_09",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_09.png"
+ },
+ {
+  "id": 1003,
+  "name": "Усиление первого измерения",
+  "en": "First Plane Enhancement",
+  "html": "Противники в первом измерении усилены: скорость +<b class=\"v\">20%</b>, макс. НР +<b class=\"v\">20%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_09",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_09.png"
+ },
+ {
+  "id": 1004,
+  "name": "Усиление второго измерения",
+  "en": "Second Plane Enhancement",
+  "html": "Противники во втором измерении усилены: скорость +<b class=\"v\">40%</b>, макс. НР +<b class=\"v\">25%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_09",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_09.png"
+ },
+ {
+  "id": 1005,
+  "name": "Усиление третьего измерения",
+  "en": "Third Plane Enhancement",
+  "html": "Противники в третьем измерении усилены: скорость +<b class=\"v\">60%</b>, макс. НР +<b class=\"v\">30%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_10",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_10.png"
+ },
+ {
+  "id": 1006,
+  "name": "Разъедание: усиление свиты",
+  "en": "Corrosion: Follower Enhancement",
+  "html": "Обычные и элитные противники могут быть поражены Ненасытностью. Они усилены: скорость +<b class=\"v\">60%</b>, макс. НР +<b class=\"v\">30%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_10",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_10.png"
+ },
+ {
+  "id": 1007,
+  "name": "Разъедание: первое измерение",
+  "en": "Corrosion: First Plane Enhancement",
+  "html": "Противники первого измерения могут быть поражены Ненасытностью. Они усилены: скорость +<b class=\"v\">20%</b>, макс. НР +<b class=\"v\">20%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_09",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_09.png"
+ },
+ {
+  "id": 1008,
+  "name": "Разъедание: второе измерение",
+  "en": "Corrosion: Second Plane Enhancement",
+  "html": "Противники второго измерения могут быть поражены Ненасытностью. Они усилены: скорость +<b class=\"v\">40%</b>, макс. НР +<b class=\"v\">25%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_09",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_09.png"
+ },
+ {
+  "id": 1009,
+  "name": "Разъедание: третье измерение",
+  "en": "Corrosion: Third Plane Enhancement",
+  "html": "Противники третьего измерения могут быть поражены Ненасытностью. Они усилены: скорость +<b class=\"v\">60%</b>, макс. НР +<b class=\"v\">30%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_10",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_10.png"
+ },
+ {
+  "id": 2002,
+  "name": "Тяжёлая поступь",
+  "en": "Heavy Footfall",
+  "html": "После атаки противника действие атакованного союзника задерживается на <b class=\"v\">8%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_07",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_07.png"
+ },
+ {
+  "id": 2003,
+  "name": "Лишний удар",
+  "en": "Extra Strike",
+  "html": "За каждый пустой слот экипировки у союзника при попадании вражеской атаки он получает ещё удар чистого урона в <b class=\"v\">8%</b> от урона атаки.",
+  "icon": "affix/Icon_GridFight_Affix_05",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_05.png"
+ },
+ {
+  "id": 2004,
+  "name": "Пылающая месть",
+  "en": "Blazing Vengeance",
+  "html": "Когда погибает противник (не босс), урон остальных противников растёт на <b class=\"v\">8%</b> на <b class=\"v\">1</b> ход. Суммируется.",
+  "icon": "affix/Icon_GridFight_Affix_08",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_08.png"
+ },
+ {
+  "id": 2005,
+  "name": "По инерции",
+  "en": "Carried By Inertia",
+  "html": "После первого действия противника его действие продвигается вперёд на <b class=\"v\">100%</b>.",
+  "icon": "affix/IconBuffSpeedUp",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffSpeedUp.png"
+ },
+ {
+  "id": 2006,
+  "name": "Бей слабых",
+  "en": "Prey on the Weak",
+  "html": "Урон противников по союзникам <b class=\"v\">1</b>★ повышается на <b class=\"v\">20%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_06",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_06.png"
+ },
+ {
+  "id": 3001,
+  "name": "Отключение фронта",
+  "en": "Frontend Shutdown",
+  "html": "В начале боя весь урон союзников на поле понижается до <b class=\"v\">1</b>. Снимается после <b class=\"v\">1</b> атак.",
+  "icon": "affix/Icon_GridFight_Affix_03",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_03.png"
+ },
+ {
+  "id": 3002,
+  "name": "Отключение тыла",
+  "en": "Backend Shutdown",
+  "html": "В начале боя весь урон союзников вне поля понижается до <b class=\"v\">1</b>. Снимается после <b class=\"v\">1</b> атак.",
+  "icon": "affix/Icon_GridFight_Affix_04",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_04.png"
+ },
+ {
+  "id": 3003,
+  "name": "Обессиливание",
+  "en": "Enervation",
+  "html": "Персонажи и их духи памяти без <b class=\"v\">3</b> предметов экипировки наносят <b class=\"v\">80%</b> исходного урона.",
+  "icon": "affix/Icon_GridFight_Affix_3003",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_3003.png"
+ },
+ {
+  "id": 3007,
+  "name": "Личный пример",
+  "en": "Lead by Example",
+  "html": "Союзник, лидирующий по урону, наносит <b class=\"v\">75%</b> исходного урона, остальные — <b class=\"v\">110%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_3007",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_3007.png"
+ },
+ {
+  "id": 3004,
+  "name": "Близится развязка",
+  "en": "Showdown Impending",
+  "html": "Обратный отсчёт в узле босса уменьшается на <b class=\"v\">30</b>, а в узле встречи увеличивается на <b class=\"v\">20</b>.",
+  "icon": "affix/Icon_GridFight_Affix_01",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_01.png"
+ },
+ {
+  "id": 3005,
+  "name": "Славная драка",
+  "en": "Satisfying Brawl",
+  "html": "Обратный отсчёт в узле боя уменьшается на <b class=\"v\">30</b>, а в узле босса увеличивается на <b class=\"v\">20</b>.",
+  "icon": "affix/Icon_GridFight_Affix_02",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_02.png"
+ },
+ {
+  "id": 3006,
+  "name": "Криосон",
+  "en": "Cryogenic Hibernation",
+  "html": "Когда команда получает добивающий удар, но не падает, он замерзает на <b class=\"v\">2</b> хода.",
+  "icon": "affix/Icon_GridFight_Affix_3008",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_3008.png"
+ },
+ {
+  "id": 3008,
+  "name": "Карточка «Выход из тюрьмы»",
+  "en": "Get Out of Jail Free Card",
+  "html": "Если от атаки НР противника падает ниже <b class=\"v\">1%</b>, его НР становится <b class=\"v\">10%</b> от макс. и не опускается ниже до конца этой атаки. Один раз на противника.",
+  "icon": "affix/IconBuffDamageCut",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffDamageCut.png"
+ },
+ {
+  "id": 4011,
+  "name": "Потерянная удача",
+  "en": "Lost Luck",
+  "html": "Шанс счастливого удара команды понижается на <b class=\"v\">25%</b>.",
+  "icon": "affix/Icon_GridFight_LuckyProbability",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_LuckyProbability.png"
+ },
+ {
+  "id": 4010,
+  "name": "Бей или беги",
+  "en": "Fight or Flight Response",
+  "html": "Когда НР противника падает ниже <b class=\"v\">50%</b>, его действие продвигается вперёд на <b class=\"v\">100%</b>.",
+  "icon": "affix/IconBuffSpeedUp",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffSpeedUp.png"
+ },
+ {
+  "id": 4001,
+  "name": "Предел терпения",
+  "en": "Beyond Endurance",
+  "html": "После <b class=\"v\">7</b> полученных атак действие противника продвигается вперёд на <b class=\"v\">100%</b>.",
+  "icon": "affix/IconBuffSpeedUp",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffSpeedUp.png"
+ },
+ {
+  "id": 4002,
+  "name": "Самооборона",
+  "en": "Self-Defense",
+  "html": "Когда противника бьёт персонаж на поле, противник наносит атакующему урон в <b class=\"v\">100%</b> от своей силы атаки. Этот урон не может убить.",
+  "icon": "affix/IconBuffReflect",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffReflect.png"
+ },
+ {
+  "id": 4003,
+  "name": "Утечка энергии",
+  "en": "Energy Disappearance",
+  "html": "После атаки по противнику энергия атакующего понижается на <b class=\"v\">4</b>. Полная энергия не понижается.",
+  "icon": "affix/IconDeBuffSPRatioDown",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconDeBuffSPRatioDown.png"
+ },
+ {
+  "id": 4005,
+  "name": "Критическая загадка",
+  "en": "Critical Conundrum",
+  "html": "Когда атакуют союзника на поле, сила его лечения и щитов понижается на <b class=\"v\">50%</b> на <b class=\"v\">1</b> ход.",
+  "icon": "affix/Icon_GridFight_Affix_4005",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4005.png"
+ },
+ {
+  "id": 4006,
+  "name": "Чистота тела и духа",
+  "en": "Purity of Flesh and Mind",
+  "html": "Когда НР противника впервые падает ниже <b class=\"v\">50%</b>, он снимает все ослабления и восстанавливает <b class=\"v\">10%</b> макс. НР, плюс ещё <b class=\"v\">2%</b> за каждый снятый ослабление.",
+  "icon": "affix/Icon_GridFight_Affix_4006",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4006.png"
+ },
+ {
+  "id": 4008,
+  "name": "Синхронные действия",
+  "en": "Synchronized Action",
+  "html": "Когда команда получает продвижение очереди, очередь случайного элитного противника или босса продвигается на <b class=\"v\">20%</b>.",
+  "icon": "affix/IconBuffSpeedUp",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconBuffSpeedUp.png"
+ },
+ {
+  "id": 4009,
+  "name": "Неизгладимая травма",
+  "en": "Permanent Trauma",
+  "html": "Когда НР команды понижается, его макс. НР уменьшается на <b class=\"v\">20%</b> от потери (не более <b class=\"v\">60%</b> макс. НР).",
+  "icon": "affix/IconDeBuffBlackBlood",
+  "path": "SpriteOutput/BuffIcon/Inlevel/IconDeBuffBlackBlood.png"
+ },
+ {
+  "id": 4012,
+  "name": "Магматическая бомбардировка",
+  "en": "Magma Bombardment",
+  "html": "В начале боя первого союзника на поле атакуют гораздо чаще. После атаки цель горит: в начале каждого хода получает урон Огнём в <b class=\"v\">12%</b> от макс. НР в течение <b class=\"v\">3</b> ходов. Горение суммируется.",
+  "icon": "affix/Icon_GridFight_Affix_4012",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4012.png"
+ },
+ {
+  "id": 4013,
+  "name": "Убийца времени",
+  "en": "Time Assassin",
+  "html": "В узлах боя могут появляться Убийцы времени, чьи атаки сокращают обратный отсчёт на <b class=\"v\">7</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4013",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4013.png"
+ },
+ {
+  "id": 4015,
+  "name": "Смена скоростей",
+  "en": "Speed Alternation",
+  "html": "В начале боя два союзника с наибольшим усилением скорости теряют <b class=\"v\">40%</b> усиления скорости, а два с наименьшим — получают <b class=\"v\">25%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4015",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4015.png"
+ },
+ {
+  "id": 4016,
+  "name": "Это ловушка!",
+  "en": "It's A Trap",
+  "html": "В начале боя союзники на поле с базовым шансом <b class=\"v\">40%</b> попадают в Заточение и Опутывание: действие задерживается на <b class=\"v\">20%</b> на <b class=\"v\">1</b> ход.",
+  "icon": "affix/Icon_GridFight_Affix_4016",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4016.png"
+ },
+ {
+  "id": 4017,
+  "name": "Экстренный гемостаз",
+  "en": "Emergency Hemostasis",
+  "html": "Противники при входе в бой получают урон в <b class=\"v\">20%</b> от макс. НР и после своих действий восстанавливают <b class=\"v\">15%</b> макс. НР, до <b class=\"v\">3</b> раз.",
+  "icon": "affix/Icon_GridFight_Affix_4017",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4017.png"
+ },
+ {
+  "id": 4018,
+  "name": "Болезнь роста",
+  "en": "Growing Pains",
+  "html": "После <b class=\"v\">8</b> уровня каждая покупка опыта отнимает <b class=\"v\">1</b> золотую монету.",
+  "icon": "affix/Icon_GridFight_Affix_4018",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4018.png"
+ },
+ {
+  "id": 4019,
+  "name": "Сокровище в мусор",
+  "en": "Treasure to Trash",
+  "html": "В начале каждого измерения первая собранная продвинутая экипировка с шансом <b class=\"v\">50%</b> превращается в мусорный мешок.",
+  "icon": "affix/Icon_GridFight_Affix_4019",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4019.png"
+ },
+ {
+  "id": 4020,
+  "name": "Плохой старт",
+  "en": "Bad Start",
+  "html": "В начале боя НР команды понижается на <b class=\"v\">20</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4020",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4020.png"
+ },
+ {
+  "id": 4024,
+  "name": "Неравное отношение",
+  "en": "Differential Treatment",
+  "html": "Персонажи <b class=\"v\">1</b>★/<b class=\"v\">2</b>★/<b class=\"v\">3</b>★ наносят <b class=\"v\">80%</b>/<b class=\"v\">90%</b>/<b class=\"v\">105%</b> исходного урона.",
+  "icon": "affix/Icon_GridFight_Affix_4024",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4024.png"
+ },
+ {
+  "id": 4026,
+  "name": "Ржавеющая казна",
+  "en": "Rusting Treasury",
+  "html": "За каждый неэкипированный предмет в инвентаре зоны подготовки урон противников растёт на <b class=\"v\">3%</b>, а получаемый ими урон понижается на <b class=\"v\">4%</b> (учитывается до <b class=\"v\">10</b> предметов).",
+  "icon": "affix/Icon_GridFight_Affix_4026",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4026.png"
+ },
+ {
+  "id": 4029,
+  "name": "Защита от перегрева",
+  "en": "Overheat Protection",
+  "html": "После нескольких действий подряд союзник на поле с шансом <b class=\"v\">24%</b> замерзает.",
+  "icon": "affix/Icon_GridFight_Affix_4029",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4029.png"
+ },
+ {
+  "id": 4030,
+  "name": "Сломать и отстроить",
+  "en": "Break and Rebuild",
+  "html": "Когда у противника пробита уязвимость, его действие продвигается вперёд на <b class=\"v\">20%</b>, а урон растёт на <b class=\"v\">40%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4030",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4030.png"
+ },
+ {
+  "id": 4031,
+  "name": "В плену воспоминаний",
+  "en": "Caught in Recollection",
+  "html": "Когда союзник призывает духа памяти, обратный отсчёт сокращается на <b class=\"v\">5</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4031",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4031.png"
+ },
+ {
+  "id": 4032,
+  "name": "Злорадная ухмылка",
+  "en": "Malevolent Smirk",
+  "html": "После атаки противника Юмор понижается на <b class=\"v\">10</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4032",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4032.png"
+ },
+ {
+  "id": 4033,
+  "name": "Глохнет снова и снова",
+  "en": "Stalled on Repeat",
+  "html": "Каждые <b class=\"v\">7</b> действий всех противников суммарно все союзники «глохнут»: их следующая атака наносит только <b class=\"v\">1</b> урона. Снимается после <b class=\"v\">1</b> атаки.",
+  "icon": "affix/Icon_GridFight_Affix_4033",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4033.png"
+ },
+ {
+  "id": 4034,
+  "name": "Противник на подходе",
+  "en": "Enemy Incoming",
+  "html": "В начале хода противника урон всех противников растёт на <b class=\"v\">10%</b>, до <b class=\"v\">10</b> ур..",
+  "icon": "affix/Icon_GridFight_Affix_4034",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4034.png"
+ },
+ {
+  "id": 4035,
+  "name": "Убийца НР команды",
+  "en": "Squad Life Assassin",
+  "html": "В узлах боя появляется Убийца НР команды, каждая его атака понижает НР команды на <b class=\"v\">1</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4035",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4035.png"
+ },
+ {
+  "id": 4036,
+  "name": "Злобное безумие",
+  "en": "Malicious Frenzy",
+  "html": "В каждом измерении ещё <b class=\"v\">1</b> узел становится безумным. НР/скорость/урон безумных противников дополнительно растут на <b class=\"v\">20%</b>/<b class=\"v\">20%</b>/<b class=\"v\">20%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4036",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4036.png"
+ },
+ {
+  "id": 4037,
+  "name": "Тянуть одеяло на себя",
+  "en": "Hog the Stage",
+  "html": "Владелец сюжетной брони наносит <b class=\"v\">105%</b> исходного урона, остальные — <b class=\"v\">80%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_4037",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4037.png"
+ },
+ {
+  "id": 4039,
+  "name": "Кризис финансирования",
+  "en": "Funding Crisis",
+  "html": "Базовая цена обновления магазина — <b class=\"v\">3</b> монеты; после <b class=\"v\">30</b> обновлений или <b class=\"v\">9</b> уровня снова <b class=\"v\">2</b> монеты.",
+  "icon": "affix/Icon_GridFight_Affix_4039",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4039.png"
+ },
+ {
+  "id": 4040,
+  "name": "Дефицит",
+  "en": "Short Supply",
+  "html": "С шансом <b class=\"v\">10%</b> в магазине появляется «Распродано» и занимает одну ячейку.",
+  "icon": "affix/Icon_GridFight_Affix_4018",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4018.png"
+ },
+ {
+  "id": 4041,
+  "name": "Дьявол, высасывающий звёзды",
+  "en": "Star-Siphoning Devil",
+  "html": "Отключает все аффиксы левее этого. За каждый отключённый аффикс у противников в узле босса макс. НР, скорость и урон растут на <b class=\"v\">30%</b>.",
+  "icon": "affix/Icon_GridFight_Affix_11",
+  "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_11.png"
+ }
+]

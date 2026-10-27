@@ -1,0 +1,14 @@
+{
+ "colors": {},
+ "xc": {
+  "Silver": {},
+  "Gold": {},
+  "Prismatic": {},
+  "buff": {}
+ },
+ "costs": {
+  "44": {
+   "color": "#ff9a5c"
+  }
+ }
+}

@@ -1,0 +1,583 @@
+[
+ {
+  "id": 2011,
+  "name": "Подавление перед боем",
+  "en": "Pre-Battle Suppression",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 20,
+  "pre": [],
+  "icon": "tal/2011",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "В начале боя восстанавливает 1 оч. навыков.<br>В боях в узлах наград противники в начале боя получают урон, равный 99% от их макс. НР. (Не действует в особых инвестиционных средах.)"
+ },
+ {
+  "id": 2021,
+  "name": "Усиление атаки",
+  "en": "ATK Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2011
+  ],
+  "icon": "tal/2021",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+  "html": "Повышает силу атаки на 12%."
+ },
+ {
+  "id": 2022,
+  "name": "Понижение получаемого урона",
+  "en": "DMG Mitigation",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2011
+  ],
+  "icon": "tal/2022",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffDamageReduction.png",
+  "html": "Понижает получаемый урон на 5%."
+ },
+ {
+  "id": 2031,
+  "name": "Усиление защиты",
+  "en": "DEF Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2021
+  ],
+  "icon": "tal/2031",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+  "html": "Повышает защиту на 12%."
+ },
+ {
+  "id": 2032,
+  "name": "Усиление НР",
+  "en": "HP Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2011
+  ],
+  "icon": "tal/2032",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+  "html": "Повышает макс. НР на 4%."
+ },
+ {
+  "id": 2033,
+  "name": "Усиление крит. шанса",
+  "en": "CRIT Rate Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2022
+  ],
+  "icon": "tal/2033",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+  "html": "Повышает крит. шанс на 6%."
+ },
+ {
+  "id": 2041,
+  "name": "Усиление пробития",
+  "en": "Break Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2031,
+   2042
+  ],
+  "icon": "tal/2041",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+  "html": "Повышает эффект пробития на 15%."
+ },
+ {
+  "id": 2042,
+  "name": "Усиление крит. урона",
+  "en": "Wings Heed No Borders",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2041,
+   2032,
+   2051
+  ],
+  "icon": "tal/2042",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalDamage.png",
+  "html": "Повышает крит. урон на 12%."
+ },
+ {
+  "id": 2043,
+  "name": "Понижение получаемого урона",
+  "en": "DMG Mitigation",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2044,
+   2032,
+   2051
+  ],
+  "icon": "tal/2043",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffDamageReduction.png",
+  "html": "Понижает получаемый урон на 5%."
+ },
+ {
+  "id": 2044,
+  "name": "Усиление сопротивления эффектам",
+  "en": "Effect RES Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2033,
+   2043
+  ],
+  "icon": "tal/2044",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconStatusResistance.png",
+  "html": "Повышает сопротивление эффектам на 8%."
+ },
+ {
+  "id": 2051,
+  "name": "Повторный выбор протагониста",
+  "en": "Reselect Protagonist",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   2042,
+   2043
+  ],
+  "icon": "tal/2051",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "На этапе 2-1 даёт 1 возможн. заново выбрать сюжетную броню."
+ },
+ {
+  "id": 2061,
+  "name": "Хеджирование рисков",
+  "en": "Risk Hedging",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   2041
+  ],
+  "icon": "tal/2061",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "Противники в узлах встречи появляются с уровнем сложности 4."
+ },
+ {
+  "id": 2062,
+  "name": "Повышение урона",
+  "en": "Truth Deciphered",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   2051
+  ],
+  "icon": "tal/2062",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffAttackUpElement.png",
+  "html": "Повышает наносимый урон на 6%."
+ },
+ {
+  "id": 2063,
+  "name": "Полное обновление",
+  "en": "Total Refresh",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   2044
+  ],
+  "icon": "tal/2063",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "При выборе инвестиционной среды, ответвления в узле встречи или припасов на этапе снабжения можно 1 раз обновить варианты."
+ },
+ {
+  "id": 3011,
+  "name": "Награда за победу",
+  "en": "Victory Commendation",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 100,
+  "pre": [
+   2061,
+   2062,
+   2063
+  ],
+  "icon": "tal/3011",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "При обновлении сюжетной брони одинаковые варианты не появляются в течение 8 обновлений.<br>Если финальный босс побеждён, когда осталось 1 цикл(ов) или больше, восстанавливает 40 ед. НР команды.<br>Урон счастливого удара повышается на 10%."
+ },
+ {
+  "id": 3021,
+  "name": "Усиление сопротивления эффектам",
+  "en": "Effect RES Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3011
+  ],
+  "icon": "tal/3021",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconStatusResistance.png",
+  "html": "Повышает сопротивление эффектам на 8%."
+ },
+ {
+  "id": 3022,
+  "name": "Усиление крит. урона",
+  "en": "Wings Heed No Borders",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3011
+  ],
+  "icon": "tal/3022",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalDamage.png",
+  "html": "Повышает крит. урон на 12%."
+ },
+ {
+  "id": 3031,
+  "name": "Повышение урона",
+  "en": "Truth Deciphered",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3021
+  ],
+  "icon": "tal/3031",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffAttackUpElement.png",
+  "html": "Повышает наносимый урон на 6%."
+ },
+ {
+  "id": 3032,
+  "name": "Понижение получаемого урона",
+  "en": "DMG Mitigation",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3011
+  ],
+  "icon": "tal/3032",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffDamageReduction.png",
+  "html": "Понижает получаемый урон на 5%."
+ },
+ {
+  "id": 3033,
+  "name": "Усиление защиты",
+  "en": "DEF Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3022
+  ],
+  "icon": "tal/3033",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+  "html": "Повышает защиту на 12%."
+ },
+ {
+  "id": 3041,
+  "name": "Усиление атаки",
+  "en": "ATK Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3031,
+   3042
+  ],
+  "icon": "tal/3041",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+  "html": "Повышает силу атаки на 12%."
+ },
+ {
+  "id": 3042,
+  "name": "Усиление крит. шанса",
+  "en": "CRIT Rate Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3041,
+   3032,
+   3051
+  ],
+  "icon": "tal/3042",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+  "html": "Повышает крит. шанс на 6%."
+ },
+ {
+  "id": 3043,
+  "name": "Усиление пробития",
+  "en": "Break Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3044,
+   3032,
+   3051
+  ],
+  "icon": "tal/3043",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+  "html": "Повышает эффект пробития на 15%."
+ },
+ {
+  "id": 3044,
+  "name": "Усиление НР",
+  "en": "HP Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3033,
+   3043
+  ],
+  "icon": "tal/3044",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+  "html": "Повышает макс. НР на 4%."
+ },
+ {
+  "id": 3051,
+  "name": "Алмазные припасы",
+  "en": "Diamond Supply",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   3042,
+   3043
+  ],
+  "icon": "tal/3051",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "На этапе снабжения среди вариантов с некоторым шансом появляется алмазная экипировка."
+ },
+ {
+  "id": 3061,
+  "name": "Страховая выплата",
+  "en": "Claims Settlement",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   3041
+  ],
+  "icon": "tal/3061",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "Когда НР команды впервые опускается ниже 50, даёт 5 золотых монет. Даже при серии побед 0 даёт 1 золотую монету как награду за серию побед."
+ },
+ {
+  "id": 3062,
+  "name": "Понижение получаемого урона",
+  "en": "DMG Mitigation",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   3051
+  ],
+  "icon": "tal/3062",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffDamageReduction.png",
+  "html": "Понижает получаемый урон на 5%."
+ },
+ {
+  "id": 3063,
+  "name": "Выбор ореола",
+  "en": "Halo Selection",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   3044
+  ],
+  "icon": "tal/3063",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "При выборе сюжетной брони число обновлений за 1 золотую монету увеличивается на 2."
+ },
+ {
+  "id": 4011,
+  "name": "Механизм страхования",
+  "en": "Safety Mechanism",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 100,
+  "pre": [
+   3061,
+   3062,
+   3063
+  ],
+  "icon": "tal/4011",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "Когда НР команды впервые должно опуститься до 0, остаётся 1 НР, и забег не заканчивается.<br>Получаемый урон понижается на 10%.<br>Сила исцеления и щитов повышается на 10%."
+ },
+ {
+  "id": 4021,
+  "name": "Усиление крит. урона",
+  "en": "Wings Heed No Borders",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4011
+  ],
+  "icon": "tal/4021",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalDamage.png",
+  "html": "Повышает крит. урон на 12%."
+ },
+ {
+  "id": 4022,
+  "name": "Понижение получаемого урона",
+  "en": "DMG Mitigation",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4011
+  ],
+  "icon": "tal/4022",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffDamageReduction.png",
+  "html": "Понижает получаемый урон на 5%."
+ },
+ {
+  "id": 4031,
+  "name": "Восстановление действия",
+  "en": "Action Recovery",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   4021,
+   4042
+  ],
+  "icon": "tal/4031",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "Когда персонаж получает добивающий удар, штраф к индексу действия понижается на 10."
+ },
+ {
+  "id": 4032,
+  "name": "Удачные приключения",
+  "en": "Luck Escapade",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   4022,
+   4042
+  ],
+  "icon": "tal/4032",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "С некоторым шансом появляются более удачные события Приключений!"
+ },
+ {
+  "id": 4041,
+  "name": "Повышение урона",
+  "en": "Truth Deciphered",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4031
+  ],
+  "icon": "tal/4041",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBuffAttackUpElement.png",
+  "html": "Повышает наносимый урон на 6%."
+ },
+ {
+  "id": 4042,
+  "name": "Усиление атаки",
+  "en": "ATK Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4031,
+   4032
+  ],
+  "icon": "tal/4042",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+  "html": "Повышает силу атаки на 12%."
+ },
+ {
+  "id": 4043,
+  "name": "Усиление НР",
+  "en": "HP Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4032
+  ],
+  "icon": "tal/4043",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+  "html": "Повышает макс. НР на 4%."
+ },
+ {
+  "id": 4051,
+  "name": "Усиление защиты",
+  "en": "DEF Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4041
+  ],
+  "icon": "tal/4051",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+  "html": "Повышает защиту на 12%."
+ },
+ {
+  "id": 4052,
+  "name": "Мастер сплавов",
+  "en": "Master Smith",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   4042
+  ],
+  "icon": "tal/4052",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "На этапе 2-1 дополнительно даёт 1 Плавильную печь и 1 Ключ для разборки."
+ },
+ {
+  "id": 4053,
+  "name": "Усиление крит. шанса",
+  "en": "CRIT Rate Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   4043
+  ],
+  "icon": "tal/4053",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+  "html": "Повышает крит. шанс на 6%."
+ },
+ {
+  "id": 4061,
+  "name": "Фантастические животные",
+  "en": "Fantastic Fauna",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 100,
+  "pre": [
+   4051,
+   4052,
+   4053
+  ],
+  "icon": "tal/4061",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "В боях может появиться свинка-копилка. За победу над ней вы получите случайную награду.<br>Усиление урона повышается на 10%.<br>При серии побед 6 и выше награда за серию побед увеличивается до 4 золотых монет."
+ }
+]

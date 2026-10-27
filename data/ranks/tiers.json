@@ -1,0 +1,213 @@
+[
+ {
+  "lv": 1,
+  "name": "Чёрное железо",
+  "en": "Black Iron",
+  "abbr": "A0",
+  "icon": "rank/1",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall1.png",
+  "n": 3,
+  "rules": [
+   "Партия начинается с Точного ключа для разборки."
+  ],
+  "promo": [],
+  "aff": 0,
+  "hp": [
+   1,
+   1
+  ],
+  "atk": [
+   1.05,
+   1.15
+  ]
+ },
+ {
+  "lv": 2,
+  "name": "Изумрудная бронза",
+  "en": "Viridian Bronze",
+  "abbr": "A1",
+  "icon": "rank/2",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall2.png",
+  "n": 3,
+  "rules": [
+   "По мере прохождения узлов звёздность противников постепенно растёт.",
+   "Высококачественные инвестиционные стратегии повышают сложность противников."
+  ],
+  "promo": [],
+  "aff": 0,
+  "hp": [
+   1.05,
+   1.05
+  ],
+  "atk": [
+   1.24,
+   1.36
+  ]
+ },
+ {
+  "lv": 3,
+  "name": "Нефритовая сталь",
+  "en": "Jade Steel",
+  "abbr": "A2",
+  "icon": "rank/3",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall3.png",
+  "n": 3,
+  "rules": [
+   "У противников появляется 1 случайный аффикс.",
+   "Появляется узел встречи."
+  ],
+  "promo": [],
+  "aff": 1,
+  "hp": [
+   1.05,
+   1.05
+  ],
+  "atk": [
+   1.5,
+   1.64
+  ]
+ },
+ {
+  "lv": 4,
+  "name": "Кобальтовое серебро",
+  "en": "Cobalt Silver",
+  "abbr": "A3",
+  "icon": "rank/4",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall4.png",
+  "n": 5,
+  "rules": [
+   "Если прогресс боя ниже минимального, НР команды снимается сильнее.",
+   "Когда персонаж получает добивающий удар, штраф к индексу действия растёт."
+  ],
+  "promo": [],
+  "aff": 1,
+  "hp": [
+   1.1,
+   1.1
+  ],
+  "atk": [
+   1.84,
+   2.16
+  ]
+ },
+ {
+  "lv": 5,
+  "name": "Ледяной титан",
+  "en": "Ice Titanium",
+  "abbr": "A4",
+  "icon": "rank/5",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall5.png",
+  "n": 7,
+  "rules": [
+   "У противников дополнительно появляется второй случайный аффикс.",
+   "Противники в узлах встречи сильнее. Чтобы получить награду узла, в бою нужно достичь минимального прогресса."
+  ],
+  "promo": [],
+  "aff": 2,
+  "hp": [
+   1.1,
+   1.1
+  ],
+  "atk": [
+   2.45,
+   2.85
+  ]
+ },
+ {
+  "lv": 6,
+  "name": "Фиолетовое золото",
+  "en": "Amethyst Gold",
+  "abbr": "A5",
+  "icon": "rank/6",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall6.png",
+  "n": 10,
+  "rules": [
+   "Партия начинается с 80 НР команды (вместо 100).",
+   "Для повышения уровня нужно больше опыта."
+  ],
+  "promo": [
+   10
+  ],
+  "aff": 2,
+  "hp": [
+   1.15,
+   1.15
+  ],
+  "atk": [
+   3.2,
+   4.4
+  ]
+ },
+ {
+  "lv": 7,
+  "name": "Мастер инвестиций",
+  "en": "Investment Master",
+  "abbr": "A6",
+  "icon": "rank/7",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall7.png",
+  "n": 10,
+  "rules": [
+   "У противников дополнительно появляется третий случайный аффикс.",
+   "Партия начинается уже не с Точного ключа для разборки, а с обычного Ключа для разборки. (В официальном ролике 4.7 забег на ранге Творец благ начинался ещё и с Плавильной печью.)"
+  ],
+  "promo": [
+   10
+  ],
+  "aff": 3,
+  "hp": [
+   1.2,
+   1.2
+  ],
+  "atk": [
+   4.6,
+   6.5
+  ]
+ },
+ {
+  "lv": 8,
+  "name": "Владыка капитала",
+  "en": "Monarch of Capital",
+  "abbr": "A7",
+  "icon": "rank/8",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall8.png",
+  "n": 10,
+  "rules": [
+   "Высококачественные инвестиционные стратегии ещё сильнее повышают сложность противников.",
+   "При входе в измерение противники в случайных узлах становятся безумными и усиливаются."
+  ],
+  "promo": [
+   10
+  ],
+  "aff": 3,
+  "hp": [
+   1.3,
+   1.3
+  ],
+  "atk": [
+   6.8,
+   10
+  ]
+ },
+ {
+  "lv": 9,
+  "name": "Творец благ",
+  "en": "Wealth Creator",
+  "abbr": "A8",
+  "icon": "rank/9",
+  "iconPath": "SpriteOutput/GridFight/RankIcon/Small/GridFightRankIconsSmall9.png",
+  "n": 20,
+  "rules": [
+   "У противников дополнительно появляется четвёртый случайный аффикс."
+  ],
+  "promo": [],
+  "aff": 4,
+  "hp": [
+   1.4,
+   1.4
+  ],
+  "atk": [
+   10.6,
+   24
+  ]
+ }
+]

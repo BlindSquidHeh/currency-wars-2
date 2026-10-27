@@ -1,0 +1,4468 @@
+[
+ {
+  "id": 350201,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Роликовые коньки",
+  "en": "Roller Skates",
+  "icon": "equip/350201",
+  "html": "",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.05,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   6
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350202,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Перочинный нож",
+  "en": "Folding Knife",
+  "icon": "equip/350202",
+  "html": "",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.1,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   4
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350203,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Пистолет мира",
+  "en": "Peace Pistol",
+  "icon": "equip/350203",
+  "html": "",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.1,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   5
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350204,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Счастливая звезда",
+  "en": "Lucky Star",
+  "icon": "equip/350204",
+  "html": "",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.05,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350205,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Цветок жизни",
+  "en": "Flower of Life",
+  "icon": "equip/350205",
+  "html": "",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.05,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350206,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Броня массового производства",
+  "en": "Batch Produced Armor",
+  "icon": "equip/350206",
+  "html": "",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.05,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350207,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Эфирное сверло",
+  "en": "Aether Drill",
+  "icon": "equip/350207",
+  "html": "",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.1,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   10
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350208,
+  "type": "Equipment",
+  "cat": "basic",
+  "name": "Фотонная ячейка",
+  "en": "Photon Cell",
+  "icon": "equip/350208",
+  "html": "",
+  "props": [
+   {
+    "n": "Изначальная энергия",
+    "v": 15,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   7
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350601,
+  "type": "Equipment",
+  "cat": "material",
+  "name": "Красный алмаз",
+  "en": "Red Gem",
+  "icon": "equip/350601",
+  "html": "Используется для синтеза эмблемы фракции.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Вновь подтверждается древний закон - красное и синее всегда притягиваются друг к другу».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [
+   24
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350602,
+  "type": "Equipment",
+  "cat": "material",
+  "name": "Синий алмаз",
+  "en": "Blue Gem",
+  "icon": "equip/350602",
+  "html": "Используется для синтеза эмблемы направления.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Вновь подтверждается древний закон - красное и синее всегда притягиваются друг к другу».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [
+   24
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 352101,
+  "type": "Equipment",
+  "cat": "trash",
+  "name": "Мусорный мешок",
+  "en": "Trash Bag",
+  "icon": "equip/352101",
+  "html": "<span class=\"c\" data-c=\"b4b4b4\"><i>«Не загрязняет. Не вредит. Не приносит пользы».</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.03,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.03,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.03,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.03,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.03,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Урон счастливого удара",
+    "v": 0.03,
+    "t": "ExtraLuckDamage"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   27
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030101,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Антигравитационные ботинки",
+  "en": "Anti-Grav Boots",
+  "icon": "equip/35030101",
+  "html": "В начале каждого хода владельца его усиление скорости повышается на <b class=\"v\">12%</b>. Эффект суммируется.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.25,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350201,
+   350201
+  ],
+  "tags": [
+   6,
+   11
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030102,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Огненная буря",
+  "en": "Firestorm Surge",
+  "icon": "equip/35030102",
+  "html": "После каждой атаки владельца сила на поле/вне поля владельца повышается на <b class=\"v\">6%</b>. Этот эффект может складываться.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.25,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.25,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350201,
+   350202
+  ],
+  "tags": [
+   11,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030103,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Электромагнитная катапульта",
+  "en": "Electromagnetic Catapult",
+  "icon": "equip/35030103",
+  "html": "В начале боя действие владельца продвигается вперёд на <b class=\"v\">100%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350203,
+   350201
+  ],
+  "tags": [
+   6
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030105,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Противоспиральный шаг",
+  "en": "Anti-Spiral Step",
+  "icon": "equip/47030105",
+  "html": "Каждый раз, когда владелец использует базовую атаку или навык, его усиление урона повышается на <b class=\"v\">5%</b>. Эффект суммируется.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.15,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [
+   350205,
+   350201
+  ],
+  "tags": [
+   37,
+   38
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030106,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Метеоритные крылья",
+  "en": "Meteor Wings",
+  "icon": "equip/35030106",
+  "html": "Усиление скорости всех союзников повышается на <b class=\"v\">15%</b>. После того как владелец использует сверхспособность, восстанавливается <b class=\"v\">1</b> оч. навыков.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.15,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350206,
+   350201
+  ],
+  "tags": [
+   3,
+   15
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030108,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Сапоги межзвездных странствий",
+  "en": "Starfaring Boots",
+  "icon": "equip/35030108_S2",
+  "html": "Значительно повышает усиление скорости. В начале каждого хода владелец фиксированно восстанавливает <b class=\"v\">10%</b> от своей макс. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.6,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 30,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350201
+  ],
+  "tags": [
+   6,
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 47030202,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Разбивающий звёзды клинок",
+  "en": "Starcleaver Blade",
+  "icon": "equip/35030202",
+  "html": "Значительно повышает Силу на поле. Урон владельца составляет <b class=\"v\">115%</b> от исходного.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Клинку таких размеров нужна жажда, утолить которую может лишь битва».</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350202,
+   350202
+  ],
+  "tags": [
+   4,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030205,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кровожадность",
+  "en": "Bloodthirsty",
+  "icon": "equip/35030205",
+  "html": "Когда владелец побеждает противника, он получает <b class=\"v\">1</b> ур. Красного глаза: усиление урона повышается на <b class=\"v\">8%</b>, а усиление НР — на <b class=\"v\">4%</b>. В каждом бою владелец начинает с <b class=\"v\">3</b> ур. Красного глаза.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350205,
+   350202
+  ],
+  "tags": [
+   21,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030207,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кинетический меч",
+  "en": "Momentum Edge",
+  "icon": "equip/35030207",
+  "html": "В начале хода владельца восстанавливается <b class=\"v\">2</b> оч. навыков. За каждое очко навыков, потраченное владельцем, его усиление урона повышается на <b class=\"v\">2%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350207,
+   350202
+  ],
+  "tags": [
+   15,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030208,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кодекс эволюции боя",
+  "en": "Codex of Combat",
+  "icon": "equip/35030208",
+  "html": "Владелец получает <b class=\"v\">7%</b> к усилению скорости и <b class=\"v\">7%</b> к усилению урона. Если владелец 2★/3★ или выше, эти бонусы увеличиваются в <b class=\"v\">3</b>/<b class=\"v\">6</b> раза соответственно.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Учись воевать на войне!»</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 20,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350202
+  ],
+  "tags": [
+   17,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030303,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Орбитальный рельсотрон",
+  "en": "Orbital Railgun",
+  "icon": "equip/35030303",
+  "html": "Значительно повышает Силу вне поля. Урон владельца составляет <b class=\"v\">115%</b> от исходного.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Снял лучника Легиона Антиматерии с 800 световых лет».</i></span>",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.6,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350203,
+   350203
+  ],
+  "tags": [
+   5,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030306,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Неназванная маска",
+  "en": "Uncalled Mask",
+  "icon": "equip/47030306",
+  "html": "Владелец получает бонусы в зависимости от своего Пути:<br>Память: Сила на поле/вне поля владельца и его духа памяти повышается на <b class=\"v\">80%</b>.<br>Радость: Радость повышается на <b class=\"v\">60%</b>, а усиление урона Радости — на <b class=\"v\">40%</b>.<br>Остальные: <b class=\"v\">35%</b> понижения получаемого урона.<br>(Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350206,
+   350203
+  ],
+  "tags": [
+   39
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 47030307,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Обезоруживающий удар",
+  "en": "Decapitation Operation",
+  "icon": "equip/35030307",
+  "html": "Усиление урона владельца повышается на <b class=\"v\">30%</b>, а в узлах встреч и узлах босса — дополнительно на <b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350207,
+   350203
+  ],
+  "tags": [
+   18,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030406,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Колоссальная воображаемая броня",
+  "en": "Colossal Imagenated Armor",
+  "icon": "equip/47030406",
+  "html": "После того как владельца атакует противник или он расходует НР, он получает <b class=\"v\">6%</b> к Силе на поле/вне поля. Эффект суммируется и срабатывает не более 1 раза за действие.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350206,
+   350204
+  ],
+  "tags": [
+   40,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030408,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Шуточный двигатель",
+  "en": "Pun Generator",
+  "icon": "equip/35030408",
+  "html": "Каждый раз, когда владелец использует сверхспособность, его шанс счастливого удара повышается на <b class=\"v\">10%</b>. После <b class=\"v\">5</b> повышений последующие использования вместо этого повышают урон счастливого удара на <b class=\"v\">8%</b>.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.1,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 60,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350204
+  ],
+  "tags": [
+   7,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47030508,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Чистая калорийность",
+  "en": "Caloric Overload",
+  "icon": "equip/35030508",
+  "html": "Когда союзники выполняют действие, они восстанавливают НР, равное <b class=\"v\">12%</b> от макс. НР владельца. После использования сверхспособности владелец восстанавливает <b class=\"v\">10</b> ед. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.15,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 20,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350205
+  ],
+  "tags": [
+   26,
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 35030104,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Погоня за звёздами",
+  "en": "Chasing Stars",
+  "icon": "equip/35030104",
+  "html": "После выполнения атаки владелец накладывает на атакованную цель статус Хрупкость, который повышает получаемый урон на <b class=\"v\">35%</b> на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.1,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [
+   350204,
+   350201
+  ],
+  "tags": [
+   1,
+   13
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030107,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Сверхскоростной пропеллер",
+  "en": "Light Speed Propeller",
+  "icon": "equip/35030107",
+  "html": "За каждые имеющиеся у владельца <b class=\"v\">10</b> ед. скорости во время боя он получает <b class=\"v\">2%</b> к силе на поле и <b class=\"v\">1%</b> к силе вне поля.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350207,
+   350201
+  ],
+  "tags": [
+   6,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030203,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Мастер по оружию",
+  "en": "Weapon Master",
+  "icon": "equip/35030203",
+  "html": "Сила на поле/вне поля союзников повышается на <b class=\"v\">25%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350203,
+   350202
+  ],
+  "tags": [
+   3
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030204,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Высокочастотная бензопила",
+  "en": "High-frequency Chainsaw",
+  "icon": "equip/35030204",
+  "html": "Если в начале боя владелец находится на поле, его урон счастливого удара повышается на <b class=\"v\">10%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.3,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [
+   350204,
+   350202
+  ],
+  "tags": [
+   4,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030206,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Инъектор уверенности",
+  "en": "Confidence Injector",
+  "icon": "equip/35030206",
+  "html": "Когда владелец использует умение на союзнике, он повышает силу на поле этого союзника на <b class=\"v\">30%</b> и даёт <b class=\"v\">10%</b> к понижению получаемого урона на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350206,
+   350202
+  ],
+  "tags": [
+   3,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030304,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Противоспутниковая винтовка",
+  "en": "Starfall Sniper",
+  "icon": "equip/35030304",
+  "html": "Если в начале боя владелец находится вне поля, его урон счастливого удара повышается на <b class=\"v\">10%</b>.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.3,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [
+   350204,
+   350203
+  ],
+  "tags": [
+   5,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030305,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Генератор блиндажа",
+  "en": "Bastion Projector",
+  "icon": "equip/35030305",
+  "html": "В начале хода владельца накладывает на всех союзников на поле щит, равный <b class=\"v\">30%</b> от макс. НР владельца, на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [
+   350205,
+   350203
+  ],
+  "tags": [
+   2,
+   19
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030308,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Зарядный парус",
+  "en": "Charging Sail",
+  "icon": "equip/35030308",
+  "html": "За каждую единицу индекса действия владелец восстанавливает <b class=\"v\">2</b> ед. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 20,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350203
+  ],
+  "tags": [
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 35030404,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кость произвольности",
+  "en": "Whatever Dice",
+  "icon": "equip/35030404",
+  "html": "В каждом узле Кость произвольности случайным образом заполняет два слота экипировки персонажа. (Для использования Кости произвольности требуются пустые слоты экипировки).",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350204,
+   350204
+  ],
+  "tags": [
+   23
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030405,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кулак ярости",
+  "en": "Fist of Fury",
+  "icon": "equip/35030405",
+  "html": "Когда макс. НР владельца становится выше <b class=\"v\">5000</b>, каждые 1000 НР повышают шанс счастливого удара на <b class=\"v\">2%</b> до макс. <b class=\"v\">60%</b>.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.1,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [
+   350205,
+   350204
+  ],
+  "tags": [
+   21,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030407,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Знамя победы",
+  "en": "Victory Banner",
+  "icon": "equip/35030407",
+  "html": "Шанс счастливого удара союзников повышается на <b class=\"v\">12%</b>, также позволяет избежать эффектов контроля <b class=\"v\">4</b> раз(а). Этот эффект может складываться.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.1,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350207,
+   350204
+  ],
+  "tags": [
+   3,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030505,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Кольцо жизни",
+  "en": "Ring of Life",
+  "icon": "equip/35030505",
+  "html": "Макс. НР союзников повышается на <b class=\"v\">15%</b>.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.15,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление исцеления",
+    "v": 0.2,
+    "t": "ExtraHealAddedRatio"
+   }
+  ],
+  "craft": [
+   350205,
+   350205
+  ],
+  "tags": [
+   2,
+   21
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030506,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Чип анальгезии",
+  "en": "Analgesia Chip",
+  "icon": "equip/35030506",
+  "html": "После того как владелец исцеляет союзника или накладывает на него щит, цель получает <b class=\"v\">15%</b> к понижению получаемого урона на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление исцеления",
+    "v": 0.2,
+    "t": "ExtraHealAddedRatio"
+   },
+   {
+    "n": "Усиление щита",
+    "v": 0.2,
+    "t": "ExtraShieldAddedRatio"
+   }
+  ],
+  "craft": [
+   350206,
+   350205
+  ],
+  "tags": [
+   2,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030507,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Расщепление материи",
+  "en": "Molecular Solvent",
+  "icon": "equip/35030507",
+  "html": "Первая атака владельца в каждом ходе наносит 1 случайной атакованной цели истинный урон, равный <b class=\"v\">3%</b> от макс. НР.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.15,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350207,
+   350205
+  ],
+  "tags": [
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030606,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Крепкая броня",
+  "en": "Sturdy Plate",
+  "icon": "equip/35030606",
+  "html": "Союзники получают <b class=\"v\">18%</b> к понижению получаемого урона.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350206,
+   350206
+  ],
+  "tags": [
+   2,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030607,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Ручная граната",
+  "en": "Flash Grenade",
+  "icon": "equip/35030607",
+  "html": "В начале боя противник получает статус Бессилие, который понижает наносимый урон на <b class=\"v\">20%</b>.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.1,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.15,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350207,
+   350206
+  ],
+  "tags": [
+   14
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030608,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Фотонный щит",
+  "en": "Photon Shield",
+  "icon": "equip/35030608",
+  "html": "Когда НР союзника на поле становится ниже <b class=\"v\">50%</b> от его макс. НР, владелец накладывает на цель щит, равный <b class=\"v\">300%</b> от своей защиты, на <b class=\"v\">2</b> ход(а). Этот эффект может сработать до <b class=\"v\">5</b> раз. Пока союзник на поле имеет щит, он игнорирует эффекты задержки действия.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Усиление щита",
+    "v": 0.2,
+    "t": "ExtraShieldAddedRatio"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 30,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350206
+  ],
+  "tags": [
+   2,
+   19
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030707,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Бур червоточины",
+  "en": "Wormhole Drill",
+  "icon": "equip/35030707",
+  "html": "Значительно повышает эффективность пробития уязвимости. Эффект пробития повышается на <b class=\"v\">250%</b>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Его бур создан, чтобы пронзить небеса!!!»</i></span>",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350207,
+   350207
+  ],
+  "tags": [
+   10
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030708,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Планетарная боеголовка",
+  "en": "Planetary Drill",
+  "icon": "equip/35030708",
+  "html": "После выполнения атаки владелец накладывает на атакованную цель статус Хрупкость, который повышает получаемый урон на <b class=\"v\">35%</b> на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.25,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 15,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350208,
+   350207
+  ],
+  "tags": [
+   1,
+   13
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35030808,
+  "type": "Equipment",
+  "cat": "advanced",
+  "name": "Вечный двигатель",
+  "en": "Perpetual Engine",
+  "icon": "equip/35030808",
+  "html": "В начале боя владелец активирует сверхспособность. После <b class=\"v\">3</b> раз использования сверхспособности его сверхспособность активируется повторно. Сверхспособности, активированные с помощью этой экипировки, не учитываются при подсчёте использований сверхспособности.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350208,
+   350208
+  ],
+  "tags": [
+   9
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 355100102,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Флот Сяньчжоу",
+  "en": "Xianzhou Fleet Emblem",
+  "icon": "equip/355100102",
+  "html": "Владелец получает связь Флот Сяньчжоу.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350601,
+   350202
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Флот Сяньчжоу"
+ },
+ {
+  "id": 355100202,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Сад чудесных зверей",
+  "en": "Beast Garden Emblem",
+  "icon": "equip/355100202",
+  "html": "Владелец получает связь Сад чудесных зверей.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.15,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350601,
+   350201
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Сад чудесных зверей"
+ },
+ {
+  "id": 355100302,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Игры фантаны",
+  "en": "Phantasmoon Games Emblem",
+  "icon": "equip/355100302",
+  "html": "Владелец получает связь Игры фантаны.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350601,
+   350203
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Игры фантаны"
+ },
+ {
+  "id": 355100402,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Межзвёздные путешественники",
+  "en": "Galactic Voyager Emblem",
+  "icon": "equip/355100402",
+  "html": "Владелец получает связь Межзвёздные путешественники.",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.4,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350601,
+   350207
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Межзвёздные путешественники"
+ },
+ {
+  "id": 355100502,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Серебряная дорога Освоения",
+  "en": "Trailblaze Silver Rail Emblem",
+  "icon": "equip/355100502",
+  "html": "Владелец получает связь Серебряная дорога Освоения.",
+  "props": [
+   {
+    "n": "Изначальная энергия",
+    "v": 45,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350601,
+   350208
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Серебряная дорога Освоения"
+ },
+ {
+  "id": 355100602,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Торговая гильдия Астрополиса",
+  "en": "Astropolis Merchant Guild Emblem",
+  "icon": "equip/355100602",
+  "html": "Владелец получает связь Торговая гильдия Астрополиса.",
+  "props": [
+   {
+    "n": "Усиление урона",
+    "v": 0.15,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Торговая гильдия Астрополиса"
+ },
+ {
+  "id": 355100802,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Охотники за Стелларонами",
+  "en": "Stellaron Hunters Emblem",
+  "icon": "equip/355100802",
+  "html": "Владелец получает связь Охотники за Стелларонами.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.15,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350601,
+   350206
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Охотники за Стелларонами"
+ },
+ {
+  "id": 355100902,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Маленький гигант",
+  "en": "Little Giant Emblem",
+  "icon": "equip/355100902",
+  "html": "Владелец получает связь Маленький гигант. За каждую единицу Роста Сила на поле/вне поля владельца повышается на <b class=\"v\">20%</b>.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.15,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [
+   350601,
+   350204
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Маленький гигант"
+ },
+ {
+  "id": 355101002,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Переплетение грёз",
+  "en": "Intertwined Dreamscapes Emblem",
+  "icon": "equip/355101002",
+  "html": "Владелец получает связь Переплетение грёз.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.15,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [
+   350601,
+   350205
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Переплетение грёз"
+ },
+ {
+  "id": 355101202,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Гранд-ресторан",
+  "en": "The Grand Restaurant Emblem",
+  "icon": "equip/355101202",
+  "html": "Владелец получает связь Гранд-ресторан.",
+  "props": [
+   {
+    "n": "Усиление урона",
+    "v": 0.15,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Гранд-ресторан"
+ },
+ {
+  "id": 355200102,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Бонус-атака",
+  "en": "Follow-Up ATK Emblem",
+  "icon": "equip/355200102",
+  "html": "Владелец получает связь Бонус-атака. После атаки наносит дополнительный урон в размере <b class=\"v\">100%</b> от силы атаки. После победы над противником действие владельца продвигается вперёд на <b class=\"v\">50%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350602,
+   350201
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Бонус-атака"
+ },
+ {
+  "id": 355200202,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Периодический урон",
+  "en": "DoT Emblem",
+  "icon": "equip/355200202",
+  "html": "Владелец получает связь Периодический урон. После атаки накладывает на цель Заморозку: защита понижается на <b class=\"v\">20%</b>, а в начале хода цели ей наносится ледяной периодический урон в размере <b class=\"v\">200%</b> от силы атаки владельца.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.1,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [
+   350602,
+   350206
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Периодический урон"
+ },
+ {
+  "id": 355200302,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Групповая атака",
+  "en": "AoE Emblem",
+  "icon": "equip/355200302",
+  "html": "Владелец получает связь Групповая атака. После атаки за каждого поражённого противника Сила на поле/вне поля повышается на <b class=\"v\">2%</b>. Эффект суммируется до <b class=\"v\">50</b> раз.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.1,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [
+   350602,
+   350204
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Групповая атака"
+ },
+ {
+  "id": 355200402,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Комбо",
+  "en": "Combo Emblem",
+  "icon": "equip/355200402",
+  "html": "Владелец получает связь Комбо. Даёт <b class=\"v\">20%</b> базового Комбо шанса, а урон в дополнительный ход от комбо повышается на <b class=\"v\">50%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350602,
+   350202
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Комбо"
+ },
+ {
+  "id": 355200502,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Пробитие",
+  "en": "Break Emblem",
+  "icon": "equip/355200502",
+  "html": "Владелец получает связь Пробитие. Эффект пробития повышается на <b class=\"v\">100%</b>. Когда владелец впервые пробивает уязвимость противника, тот получает истинный урон в размере <b class=\"v\">8%</b> от своего макс. НР.",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.2,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [
+   350602,
+   350207
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Пробитие"
+ },
+ {
+  "id": 355200602,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Призыв",
+  "en": "Summon Emblem",
+  "icon": "equip/355200602",
+  "html": "Владелец получает связь Призыв. За каждого союзника урон владельца и его духа памяти повышается на <b class=\"v\">8%</b>.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.1,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [
+   350602,
+   350205
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Призыв"
+ },
+ {
+  "id": 355200702,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Радость",
+  "en": "Elation Emblem",
+  "icon": "equip/355200702",
+  "html": "Владелец получает связь Радость. При входе в бой команда получает <b class=\"v\">25%</b> Радости.<br>Даёт навык Радости Эйфорический вихрь, который наносит всем противникам урон Радости в размере <b class=\"v\">100%</b> от характеристик владельца.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [
+   350602,
+   352101
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Радость"
+ },
+ {
+  "id": 355200802,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Контратака",
+  "en": "Counter Emblem",
+  "icon": "equip/355200802",
+  "html": "Владелец получает связь Контратака.<br>Если в начале боя владелец на поле: после атаки противника его действие продвигается вперёд на <b class=\"v\">10%</b>, а наносимый урон повышается на <b class=\"v\">20%</b> на <b class=\"v\">1</b> ход(а) (суммируется до <b class=\"v\">10</b> раз).<br>Если владелец вне поля: Король контратаки при атаке игнорирует <b class=\"v\">30%</b> защиты противника.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [
+   350602,
+   350203
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Контратака"
+ },
+ {
+  "id": 355200902,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Энергия",
+  "en": "Energy Emblem",
+  "icon": "equip/355200902",
+  "html": "Владелец получает связь Энергия. После использования сверхспособности восстанавливает всем союзникам энергию, равную <b class=\"v\">20%</b> от их макс. энергии. После срабатывания эффект можно активировать снова только через <b class=\"v\">100</b> ед. значения действия.",
+  "props": [
+   {
+    "n": "Изначальная энергия",
+    "v": 30,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [
+   350602,
+   350208
+  ],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Энергия"
+ },
+ {
+  "id": 355201002,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Исцеление",
+  "en": "Healing Emblem",
+  "icon": "equip/355201002",
+  "html": "Владелец получает связь Исцеление. Во время действия восстанавливает всем союзникам на поле НР, равное <b class=\"v\">10%</b> от своего макс. НР.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Лечение"
+ },
+ {
+  "id": 355201102,
+  "type": "Equipment",
+  "cat": "emblem",
+  "name": "Эмблема Защитник",
+  "en": "Defender Emblem",
+  "icon": "equip/355201102",
+  "html": "Владелец получает связь Защитник. В начале боя даёт всем союзникам на поле щит в размере <b class=\"v\">200%</b> от защиты владельца. В бою владелец получает усиление урона, равное прочности его щита × <b class=\"v\">0.2%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   25,
+   24
+  ],
+  "unique": true,
+  "starTrait": "Защита"
+ },
+ {
+  "id": 353101,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Тушёные тефтели",
+  "en": "Braised Meatballs",
+  "icon": "equip/353101",
+  "html": "После того как владельца атакуют или он расходует НР, этот предмет навсегда даёт дополнительно <b class=\"v\">5</b> ед. макс. НР. Этот эффект может сработать максимум <b class=\"v\">20</b> раз за бой.<br>Усиление урона базовой атаки/навыка владельца повышается на <b class=\"v\">8%</b> × Уровень ресторана.<br><br><span class=\"cond\">(4) Гранд-ресторан: постоянный прирост НР удваивается, как и уже накопленный прирост.</span>",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   21
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353101"
+ },
+ {
+  "id": 353102,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Пирог с бабочковым горошком",
+  "en": "Butterfly Pea Cake",
+  "icon": "equip/353102",
+  "html": "Владелец и его дух памяти получают <b class=\"v\">20%</b> + Уровень ресторана × <b class=\"v\">6%</b> к усилению урона. После победы над противником восстанавливает союзникам на поле НР в размере <b class=\"v\">25%</b> от макс. НР владельца.<br><br><span class=\"cond\">(4) Гранд-ресторан: дополнительно <b class=\"v\">60%</b> к усилению урона и восстановление <b class=\"v\">25%</b> от макс. НР.</span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353102"
+ },
+ {
+  "id": 353103,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Запечённый батат из Лабиринта",
+  "en": "Maze Roasted Sweet Potato",
+  "icon": "equip/353103",
+  "html": "При входе в новый узел владелец откусывает батат: получает <b class=\"v\">2</b> ед. опыта и восстанавливает <b class=\"v\">2</b> ед. НР команды. Можно откусить до <b class=\"v\">3</b> раз, счётчик сбрасывается при входе в узел награды.<br>В бою, когда владелец или его дух памяти используют навык на союзника, цель получает усиление урона <b class=\"v\">20%</b> + <b class=\"v\">4%</b> × Уровень ресторана на <b class=\"v\">3</b> ход(а).<br><br><span class=\"cond\">(4) Гранд-ресторан: вместо этого даёт <b class=\"v\">4</b> ед. опыта и восстанавливает <b class=\"v\">4</b> ед. НР команды, а батат можно есть бесконечно!</span>",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   3
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353103"
+ },
+ {
+  "id": 353104,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Лапша спасения мира",
+  "en": "World-Saving Braised Noodles",
+  "icon": "equip/353104",
+  "html": "На поле владелец получает <b class=\"v\">20%</b> + Уровень ресторана × <b class=\"v\">6%</b> к Силе на поле.<br>Вне поля владелец даёт команде <b class=\"v\">8%</b> + Уровень ресторана × <b class=\"v\">2%</b> к усилению урона.<br><br><span class=\"cond\">(4) Гранд-ресторан: эффект предмета умножается на стоимость владельца.</span>",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   43
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353104"
+ },
+ {
+  "id": 353105,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Знаменитая «Услада»",
+  "en": "Celebrity SoulGlad",
+  "icon": "equip/353105",
+  "html": "Владелец получает <b class=\"v\">20%</b> + <b class=\"v\">6%</b> × Уровень ресторана к усилению урона.<br>Если стоимость владельца 1/2, при входе в новый узел с шансом <b class=\"v\">50%</b> вы получаете его копию 1★.<br><br><span class=\"cond\">(4) Гранд-ресторан: если владелец 3★, он получает <b class=\"v\">80%</b> к усилению урона.</span>",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   44
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353105"
+ },
+ {
+  "id": 353106,
+  "type": "Equipment",
+  "cat": "food",
+  "name": "Праздничный набор",
+  "en": "Party Combo",
+  "icon": "equip/353106",
+  "html": "Владелец получает <b class=\"v\">20%</b> шанса счастливого удара, а команда — <b class=\"v\">2.5%</b> × Уровень ресторана шанса счастливого удара.<br><br><span class=\"cond\">(4) Гранд-ресторан: союзники из связей, где активировано 4 и более персонажа, получают <b class=\"v\">60%</b> урона счастливого удара.</span>",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   8
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353106"
+ },
+ {
+  "id": 353201,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Модуль энергии перегрузки",
+  "en": "Overload Energy Module",
+  "icon": "equip/353201",
+  "html": "Может носить только Королева Пом-Пом. Доля записанного урона, превращаемая в истинный урон, повышается на <b class=\"v\">20%</b>, а после хода восстанавливается <b class=\"v\">10</b> ед. энергии.<br>При входе в новый узел вы получаете <b class=\"v\">10</b>/<b class=\"v\">20</b>/<b class=\"v\">100</b> ед. Энергии Освоения в зависимости от звёздности Королевы Пом-Пом.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   22
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353201"
+ },
+ {
+  "id": 353202,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Модуль эволюционной модификации",
+  "en": "Evolution Modification Module",
+  "icon": "equip/353202",
+  "html": "Может носить только Королева Пом-Пом. Перед входом в бой первый надетый предмет продвинутой экипировки временно становится особой экипировкой.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353202"
+ },
+ {
+  "id": 353203,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Знамя навигатора",
+  "en": "Navigator's Banner",
+  "icon": "equip/353203",
+  "html": "Владелец получает <b class=\"v\">30%</b> к усилению урона навыка/сверхспособности. После использования навыка усиление урона сверхспособности владельца повышается на <b class=\"v\">10%</b> (суммируется до <b class=\"v\">6</b> раз). Эффект сбрасывается после использования сверхспособности.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   9
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353203"
+ },
+ {
+  "id": 353204,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Пронзающая облака молния",
+  "en": "Cloud-Piercer Thunder",
+  "icon": "equip/353204",
+  "html": "Владелец получает <b class=\"v\">30%</b> к усилению урона базовой атаки. За каждое потраченное очко навыков следующая базовая атака дополнительно получает <b class=\"v\">10%</b> урона счастливого удара, максимум <b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   15
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353204"
+ },
+ {
+  "id": 353205,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Доказательство безымянного",
+  "en": "Nameless Proof",
+  "icon": "equip/353205",
+  "html": "Значительно повышает Силу на поле/вне поля. Атаки владельца могут «Казнить» противников, чей запас НР ниже <b class=\"v\">12%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.5,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.5,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   45
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353205"
+ },
+ {
+  "id": 353206,
+  "type": "Equipment",
+  "cat": "trailblaze",
+  "name": "Гудок Освоения",
+  "en": "Trailblaze's Whistle",
+  "icon": "equip/353206",
+  "html": "После того как владелец использует сверхспособность, призывается Звёздный экспресс, который врезается во всех противников и наносит урон в зависимости от текущего уровня экспресса.<br>Световой рельс: Сила на поле/вне поля команды повышается на <b class=\"v\">30%</b>.<br>Активирует механику Светового рельса: после столкновения экспресса даёт 1 ур. Светового рельса. Макс. количество уровней Светового рельса повышается на <b class=\"v\">2</b>. Этот предел суммируется с однотипными эффектами.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   9
+  ],
+  "unique": true,
+  "starTrait": null,
+  "eqframe": "eqframe/353206"
+ },
+ {
+  "id": 353301,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Копировщик данных ур. 1",
+  "en": "Data Copier Lv. 1",
+  "icon": "equip/352301",
+  "html": "За каждые <b class=\"v\">3</b> боя с участием владельца вы получаете его копию 1★.<br>Также при любом получении владельца есть <b class=\"v\">30%</b> шанс получить его дополнительную копию 1★.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   44
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353301"
+ },
+ {
+  "id": 353302,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Вирусный файрвол ур. 1",
+  "en": "Virus Firewall Lv. 1",
+  "icon": "equip/352302",
+  "html": "Все противники получают эффект Хрупкость: получаемый урон повышается на <b class=\"v\">35%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   13
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353302"
+ },
+ {
+  "id": 353303,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Взломанный чип ур. 1",
+  "en": "Cracking Chip Lv. 1",
+  "icon": "equip/352303",
+  "html": "За каждые 2 боя с участием владельца 1 случайный последующий узел (кроме узлов наград) получает ослабление: макс. НР противников понижается на <b><span class=\"c\" data-c=\"f29e38\">8</span></b><b class=\"v\">%</b>, урон — на <b><span class=\"c\" data-c=\"f29e38\">8</span></b><b class=\"v\">%</b>, скорость — на <b class=\"v\">8%</b>.<br>Эффект срабатывает не более 2 раз.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   46
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353303"
+ },
+ {
+  "id": 353304,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Крутые очки ур. 1",
+  "en": "Awesome Shades Lv. 1",
+  "icon": "equip/352405",
+  "html": "Открывает более высокий предел ранга Скрытых очков. Когда Скрытые очки достигают <b class=\"v\">180</b>/<b class=\"v\">240</b> ед., усиление урона повышается на <b class=\"v\">15%</b>/<b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.1,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353304"
+ },
+ {
+  "id": 353401,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Копировщик данных ур. 2",
+  "en": "Data Copier Lv. 2",
+  "icon": "equip/352301",
+  "html": "За каждые <b class=\"v\">3</b> боя с участием владельца вы получаете его копию 1★.<br>Также при любом получении владельца есть <b class=\"v\">45%</b> шанс получить его дополнительную копию 1★.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   44
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353401"
+ },
+ {
+  "id": 353402,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Вирусный файрвол ур. 2",
+  "en": "Virus Firewall Lv. 2",
+  "icon": "equip/352302",
+  "html": "На всех противников накладывается Сверххрупкость: получаемый урон повышается на <b class=\"v\">50%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   13
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353402"
+ },
+ {
+  "id": 353403,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Взломанный чип ур. 2",
+  "en": "Cracking Chip Lv. 2",
+  "icon": "equip/352303",
+  "html": "За каждые 2 боя с участием владельца 1 случайный последующий узел (кроме узлов наград) получает ослабление: макс. НР противников понижается на <b class=\"v\">12%</b>, урон — на <b class=\"v\">12%</b>, скорость — на <b class=\"v\">12%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   46
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353403"
+ },
+ {
+  "id": 353404,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Крутые очки ур. 2",
+  "en": "Awesome Shades Lv. 2",
+  "icon": "equip/352405",
+  "html": "Открывает более высокий предел ранга Скрытых очков. Когда Скрытые очки достигают <b class=\"v\">180</b>/<b class=\"v\">240</b>/<b class=\"v\">300</b> ед., усиление урона повышается на <b class=\"v\">20%</b>/<b class=\"v\">40%</b>/<b class=\"v\">60%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353404"
+ },
+ {
+  "id": 353405,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Вирус Свиньи-копилки",
+  "en": "Trotter Virus",
+  "icon": "equip/352304",
+  "html": "В боях, кроме боёв с боссами, противники с определённым шансом превращаются в свинок-копилок. Победа над свинками-копилками приносит награды.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   28
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353405"
+ },
+ {
+  "id": 353406,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Радости",
+  "en": "Elation Cartridge",
+  "icon": "equip/352402",
+  "html": "Радость повышается на <b class=\"v\">40%</b>, а усиление урона Радости — на <b class=\"v\">20%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   1
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353406"
+ },
+ {
+  "id": 353407,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Игр фантаны",
+  "en": "Phantasmoon Game Cartridge",
+  "icon": "equip/353407",
+  "html": "За каждые 2 боя с участием владельца даёт 1 случайного персонажа со связью Игры фантаны стоимостью 3 или ниже.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   28
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353407"
+ },
+ {
+  "id": 353408,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Охотников за Стелларонами",
+  "en": "Stellaron Hunter Cartridge",
+  "icon": "equip/352404",
+  "html": "За каждый предмет Сценарной экипировки в команде Серебряный Волк получает <b class=\"v\">12%</b> к Силе на поле.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   1
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353408"
+ },
+ {
+  "id": 353501,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Копировщик данных ур. 3",
+  "en": "Data Copier Lv. 3",
+  "icon": "equip/352301",
+  "html": "За каждый <b class=\"v\">1</b> бой с участием владельца вы получаете копию 1★ случайного союзника стоимостью <span class=\"c\" data-c=\"f29e38\">4</span> и ниже.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.4,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   44
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353501"
+ },
+ {
+  "id": 353502,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Вирусный файрвол ур. 3",
+  "en": "Virus Firewall Lv. 3",
+  "icon": "equip/352302",
+  "html": "На всех противников накладываются Сверххрупкость и Сверхбессилие: получаемый урон повышается на <b class=\"v\">50%</b>, а наносимый урон понижается на <b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   47
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353502"
+ },
+ {
+  "id": 353503,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Взломанный чип ур. 3",
+  "en": "Cracking Chip Lv. 3",
+  "icon": "equip/352303",
+  "html": "При получении этого мода все узлы получают ослабление: макс. НР противников понижается на <b class=\"v\">16%</b>, урон — на <b class=\"v\">16%</b>, скорость — на <b class=\"v\">16%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   46
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353503"
+ },
+ {
+  "id": 353504,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Крутые очки ур. 3",
+  "en": "Awesome Shades Lv. 3",
+  "icon": "equip/352405",
+  "html": "Открывает более высокий предел ранга Скрытых очков. Когда Скрытые очки достигают <b class=\"v\">180</b>/<b class=\"v\">240</b>/<b class=\"v\">300</b> ед., усиление урона повышается на <b class=\"v\">25%</b>/<b class=\"v\">50%</b>/<b class=\"v\">75%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Урон счастливого удара",
+    "v": 0.4,
+    "t": "ExtraLuckDamage"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353504"
+ },
+ {
+  "id": 353505,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Вирус Свиньи-копилки+",
+  "en": "Trotter Virus+",
+  "icon": "equip/352304",
+  "html": "В боях, кроме боёв с боссами, противники с повышенным шансом превращаются в свинок-копилок. Победа над свинками-копилками приносит награды.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   28
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353505"
+ },
+ {
+  "id": 353506,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Радости+",
+  "en": "Elation Cartridge+",
+  "icon": "equip/352402",
+  "html": "Связь Радость +1. Радость повышается на <b class=\"v\">60%</b>, а усиление урона Радости — на <b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   29
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353506"
+ },
+ {
+  "id": 353507,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Игр фантаны+",
+  "en": "Phantasmoon Game Cartridge+",
+  "icon": "equip/353407",
+  "html": "Связь Игры фантаны +1. За каждые 2 боя с участием владельца даёт 1 случайного персонажа со связью Игры фантаны.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   29
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353507"
+ },
+ {
+  "id": 353508,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Картридж Охотников за Стелларонами+",
+  "en": "Stellaron Hunter Cartridge+",
+  "icon": "equip/352404",
+  "html": "Связь «Охотники за Стелларонами» +1. За каждый предмет «Сценарной экипировки» в отряде Серебряный Волк получает <b class=\"v\">18%</b> к Силе на поле.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41,
+   29
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353508"
+ },
+ {
+  "id": 353601,
+  "type": "Equipment",
+  "cat": "mod",
+  "name": "Пер⬛!? администратора",
+  "en": "Administrator Glo⬛!?",
+  "icon": "equip/352507",
+  "html": "<span class=\"c\" data-c=\"f29e38\">Щёлкни пальцами — и получишь ограниченный (?) контроль над всеми Валютными войнами.</span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.99,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.99,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.99,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.99,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.99,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Урон счастливого удара",
+    "v": 0.99,
+    "t": "ExtraLuckDamage"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "eqframe": "eqframe/353601"
+ },
+ {
+  "id": 47040101,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Антигравитационные ботинки: Привилегия",
+  "en": "Anti-Grav Boots: Privilege",
+  "icon": "equip/35030101",
+  "html": "В начале каждого хода владельца его усиление скорости повышается на <b class=\"v\">24%</b>. Эффект суммируется.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.5,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   6,
+   11
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040102,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Огненная буря: Привилегия",
+  "en": "Firestorm Surge: Privilege",
+  "icon": "equip/35030102",
+  "html": "После каждой атаки владельца сила на поле/вне поля владельца повышается на <b class=\"v\">12%</b>. Этот эффект может складываться.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.5,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.5,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   11,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040103,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Электромагнитная катапульта: Привилегия",
+  "en": "Electromagnetic Catapult: Privilege",
+  "icon": "equip/35030103",
+  "html": "В начале боя действие владельца продвигается вперёд на <b class=\"v\">100%</b>.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.4,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "t": "ExtraBackPowerAddedRatio1",
+    "n": "Сила вне поля",
+    "v": 0.6
+   }
+  ],
+  "craft": [],
+  "tags": [
+   5,
+   6
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040105,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Противоспиральный шаг: Привилегия",
+  "en": "Anti-Spiral Step: Privilege",
+  "icon": "equip/47030105",
+  "html": "Каждый раз, когда владелец использует базовую атаку или навык, его усиление урона повышается на <b class=\"v\">10%</b>. Эффект суммируется.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.3,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   4,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040106,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Метеоритные крылья: Привилегия",
+  "en": "Meteor Wings: Privilege",
+  "icon": "equip/35030106",
+  "html": "Усиление скорости всех союзников повышается на <b class=\"v\">30%</b>. После того как владелец использует сверхспособность, восстанавливается <b class=\"v\">1</b> оч. навыков.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.3,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   3,
+   15
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040108,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Сапоги межзвездных странствий: Привилегия",
+  "en": "Starfaring Boots: Privilege",
+  "icon": "equip/35030108_S2",
+  "html": "Значительно повышает усиление скорости. В начале каждого хода владелец фиксированно восстанавливает <b class=\"v\">20%</b> от своей макс. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 1.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 60,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   6,
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 47040202,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Разбивающий звёзды клинок: Привилегия",
+  "en": "Starcleaver Blade: Privilege",
+  "icon": "equip/35030202",
+  "html": "Значительно повышает Силу на поле. Урон владельца составляет <b class=\"v\">130%</b> от исходного.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Клинку таких размеров нужна жажда, утолить которую может лишь битва».</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 1.2,
+    "t": "ExtraFrontPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   4,
+   1
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 47040205,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кровожадность: Привилегия",
+  "en": "Bloodthirsty: Privilege",
+  "icon": "equip/35030205",
+  "html": "Когда владелец побеждает противника, он получает <b class=\"v\">1</b> ур. Красного глаза: усиление урона повышается на <b class=\"v\">16%</b>, а усиление НР — на <b class=\"v\">8%</b>. В каждом бою владелец начинает с <b class=\"v\">3</b> ур. Красного глаза.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.6,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   16,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040207,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кинетический меч: Привилегия",
+  "en": "Momentum Edge: Privilege",
+  "icon": "equip/35030207",
+  "html": "В начале хода владельца восстанавливается <b class=\"v\">3</b> оч. навыков. За каждое очко навыков, потраченное владельцем, его усиление урона повышается на <b class=\"v\">4%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.8,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   15,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040208,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кодекс эволюции боя: Привилегия",
+  "en": "Codex of Combat: Privilege",
+  "icon": "equip/35030208",
+  "html": "Владелец получает <b class=\"v\">14%</b> к усилению скорости и <b class=\"v\">14%</b> к усилению урона. Если владелец 2★/3★ или выше, эти бонусы увеличиваются в <b class=\"v\">3</b>/<b class=\"v\">6</b> раза соответственно.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Учись воевать на войне!»</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 40,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   17,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040303,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Орбитальный рельсотрон: Привилегия",
+  "en": "Orbital Railgun: Privilege",
+  "icon": "equip/35030303",
+  "html": "Значительно повышает Силу вне поля. Урон владельца составляет <b class=\"v\">130%</b> от исходного.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Снял лучника Легиона Антиматерии с 800 световых лет».</i></span>",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 1.2,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   5,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040306,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Неназванная маска: Привилегия",
+  "en": "Uncalled Mask: Privilege",
+  "icon": "equip/47030306",
+  "html": "Владелец получает бонусы в зависимости от своего Пути:<br>Память: Сила на поле/вне поля владельца и его духа памяти повышается на <b class=\"v\">160%</b>.<br>Радость: Радость повышается на <b class=\"v\">120%</b>, а усиление урона Радости — на <b class=\"v\">80%</b>.<br>Остальные: <b class=\"v\">60%</b> понижения получаемого урона.<br>(Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   4,
+   5
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 47040307,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Обезоруживающий удар: Привилегия",
+  "en": "Decapitation Operation: Privilege",
+  "icon": "equip/35030307",
+  "html": "Усиление урона владельца повышается на <b class=\"v\">60%</b>, а в узлах встреч и узлах босса — дополнительно на <b class=\"v\">60%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   18,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040406,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Гигантская боевая броня: Привилегия",
+  "en": "Colossal Imagenated Armor: Privilege",
+  "icon": "equip/47030406",
+  "html": "После того как владельца атакует противник или он расходует НР, он получает <b class=\"v\">12%</b> к Силе на поле/вне поля. Эффект суммируется и срабатывает не более 1 раза за действие.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.4,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   19,
+   12
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040408,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Шуточный двигатель: Привилегия",
+  "en": "Pun Generator: Privilege",
+  "icon": "equip/35030408",
+  "html": "Каждый раз, когда владелец использует сверхспособность, его шанс счастливого удара повышается на <b class=\"v\">20%</b>. После <b class=\"v\">5</b> повышений последующие использования вместо этого повышают урон счастливого удара на <b class=\"v\">16%</b>.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 120,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   7,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 47040508,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Чистая калорийность: Привилегия",
+  "en": "Caloric Overload: Privilege",
+  "icon": "equip/35030508",
+  "html": "Когда союзники выполняют действие, они восстанавливают НР, равное <b class=\"v\">24%</b> от макс. НР владельца. После использования сверхспособности владелец восстанавливает <b class=\"v\">20</b> ед. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.3,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 40,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   26,
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 35040104,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Погоня за звёздами: Привилегия",
+  "en": "Chasing Stars: Privilege",
+  "icon": "equip/35030104",
+  "html": "После выполнения атаки владелец накладывает на атакованную цель статус Хрупкость, который повышает получаемый урон на <b class=\"v\">70%</b> на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   1,
+   13
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040107,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Сверхскоростной пропеллер: Привилегия",
+  "en": "Light Speed Propeller: Privilege",
+  "icon": "equip/35030107",
+  "html": "За каждые имеющиеся у владельца <b class=\"v\">10</b> ед. скорости во время боя он получает <b class=\"v\">4%</b> к силе на поле и <b class=\"v\">2%</b> к силе вне поля.",
+  "props": [
+   {
+    "n": "Усиление скорости",
+    "v": 0.2,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   6,
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040203,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Мастер по оружию: Привилегия",
+  "en": "Weapon Master: Privilege",
+  "icon": "equip/35030203",
+  "html": "Сила на поле/вне поля союзников повышается на <b class=\"v\">50%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   3
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040204,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Высокочастотная бензопила: Привилегия",
+  "en": "High-frequency Chainsaw: Privilege",
+  "icon": "equip/35030204",
+  "html": "Если в начале боя владелец находится на поле, его урон счастливого удара повышается на <b class=\"v\">20%</b>.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.6,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   4,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040206,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Инъектор уверенности: Привилегия",
+  "en": "Confidence Injector: Privilege",
+  "icon": "equip/35030206",
+  "html": "Когда владелец использует умение на союзнике, он повышает силу на поле этого союзника на <b class=\"v\">60%</b> и даёт <b class=\"v\">20%</b> к понижению получаемого урона на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   3,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040304,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Противоспутниковая винтовка: Привилегия",
+  "en": "Starfall Sniper: Privilege",
+  "icon": "equip/35030304",
+  "html": "Если в начале боя владелец находится вне поля, его урон счастливого удара повышается на <b class=\"v\">20%</b>.",
+  "props": [
+   {
+    "n": "Сила вне поля",
+    "v": 0.6,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.6,
+    "t": "ExtraLuckChance"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   5,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040305,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Генератор блиндажа: Привилегия",
+  "en": "Bastion Projector: Privilege",
+  "icon": "equip/35030305",
+  "html": "В начале хода владельца накладывает на всех союзников на поле щит, равный <b class=\"v\">60%</b> от макс. НР владельца, на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2,
+   19
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040308,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Зарядный парус: Привилегия",
+  "en": "Charging Sail: Privilege",
+  "icon": "equip/35030308",
+  "html": "За каждую единицу индекса действия владелец восстанавливает <b class=\"v\">4</b> ед. энергии. (Уникальная экипировка)",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.6,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.6,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 40,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   7
+  ],
+  "unique": true,
+  "starTrait": null
+ },
+ {
+  "id": 35040404,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кость произвольности: Привилегия",
+  "en": "Whatever Dice: Privilege",
+  "icon": "equip/35030404",
+  "html": "В каждом узле Кость произвольности: Привилегия случайным образом заполняет два слота привилегированной экипировкой персонажа. (Для использования Кости произвольности: Привилегия требуются пустые слоты экипировки).",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.4,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Понижение урона",
+    "v": 0.4,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   23
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040405,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кулак ярости: Привилегия",
+  "en": "Fist of Fury: Privilege",
+  "icon": "equip/35030405",
+  "html": "Когда макс. НР владельца становится выше <b class=\"v\">5000</b>, каждые 1000 НР повышают шанс счастливого удара на <b class=\"v\">4%</b> до макс. <b class=\"v\">100%</b>.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   21,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040407,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Знамя победы: Привилегия",
+  "en": "Victory Banner: Privilege",
+  "icon": "equip/35030407",
+  "html": "Шанс счастливого удара союзников повышается на <b class=\"v\">24%</b>, также позволяет избежать эффектов контроля <b class=\"v\">8</b> раз(а). Этот эффект может складываться.",
+  "props": [
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.2,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   3,
+   8
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040505,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Кольцо жизни: Привилегия",
+  "en": "Ring of Life: Privilege",
+  "icon": "equip/35030505",
+  "html": "Макс. НР союзников повышается на <b class=\"v\">30%</b>.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.3,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление исцеления",
+    "v": 0.4,
+    "t": "ExtraHealAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2,
+   21
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040506,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Чип анальгезии: Привилегия",
+  "en": "Analgesia Chip: Privilege",
+  "icon": "equip/35030506",
+  "html": "После того как владелец исцеляет союзника или накладывает на него щит, цель получает <b class=\"v\">30%</b> к понижению получаемого урона на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Усиление исцеления",
+    "v": 0.4,
+    "t": "ExtraHealAddedRatio"
+   },
+   {
+    "n": "Усиление щита",
+    "v": 0.4,
+    "t": "ExtraShieldAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040507,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Расщепление материи: Привилегия",
+  "en": "Molecular Solvent: Privilege",
+  "icon": "equip/35030507",
+  "html": "Первая атака владельца в каждом ходе наносит 1 случайной атакованной цели истинный урон, равный <b class=\"v\">6%</b> от макс. НР.",
+  "props": [
+   {
+    "n": "Усиление НР",
+    "v": 0.2,
+    "t": "ExtraHPAddedRatio1"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.3,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   1
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040606,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Крепкая броня: Привилегия",
+  "en": "Sturdy Plate: Privilege",
+  "icon": "equip/35030606",
+  "html": "Союзники получают <b class=\"v\">36%</b> к понижению получаемого урона.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.4,
+    "t": "ExtraAllDamageReduce"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2,
+   20
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040607,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Ручная граната: Привилегия",
+  "en": "Flash Grenade: Privilege",
+  "icon": "equip/35030607",
+  "html": "В начале боя противник получает статус Бессилие, который понижает наносимый урон на <b class=\"v\">40%</b>.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Эффективность пробития",
+    "v": 0.2,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.3,
+    "t": "ExtraSpeedAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   14
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040608,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Фотонный щит: Привилегия",
+  "en": "Photon Shield: Privilege",
+  "icon": "equip/35030608",
+  "html": "Когда НР союзника на поле становится ниже <b class=\"v\">50%</b> от его макс. НР, владелец накладывает на цель щит, равный <b class=\"v\">600%</b> от своей защиты, на <b class=\"v\">2</b> ход(а). Этот эффект может сработать до <b class=\"v\">10</b> раз. Пока союзник на поле имеет щит, он игнорирует эффекты задержки действия.",
+  "props": [
+   {
+    "n": "Понижение урона",
+    "v": 0.2,
+    "t": "ExtraAllDamageReduce"
+   },
+   {
+    "n": "Усиление щита",
+    "v": 0.4,
+    "t": "ExtraShieldAddedRatio"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 60,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   2,
+   19
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040708,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Планетарная боеголовка: Привилегия",
+  "en": "Planetary Drill: Privilege",
+  "icon": "equip/35030708",
+  "html": "После выполнения атаки владелец накладывает на атакованную цель статус Хрупкость, который повышает получаемый урон на <b class=\"v\">70%</b> на <b class=\"v\">2</b> ход(а).",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 0.5,
+    "t": "StanceBreakAddedRatio"
+   },
+   {
+    "n": "Изначальная энергия",
+    "v": 30,
+    "t": "ExtraInitSP"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   1,
+   13
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040808,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Вечный двигатель: Привилегия",
+  "en": "Perpetual Engine: Privilege",
+  "icon": "equip/35030808",
+  "html": "В начале боя владелец активирует сверхспособность. После <b class=\"v\">3</b> раз использования сверхспособности его сверхспособность активируется повторно. Сверхспособности, активированные с помощью этой экипировки, не учитываются при подсчёте использований сверхспособности.",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.4,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.4,
+    "t": "ExtraBackPowerAddedRatio1"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   9
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 35040707,
+  "type": "Equipment",
+  "cat": "privilege",
+  "name": "Бур червоточины: Привилегия",
+  "en": "Wormhole Drill: Privilege",
+  "icon": "equip/35030707",
+  "html": "Значительно повышает эффективность пробития уязвимости. Эффект пробития повышается на <b class=\"v\">500%</b>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Его бур создан, чтобы пронзить небеса!!!»</i></span>",
+  "props": [
+   {
+    "n": "Эффективность пробития",
+    "v": 1,
+    "t": "StanceBreakAddedRatio"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   10
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 352201,
+  "type": "Equipment",
+  "cat": "trash",
+  "name": "Золотой мусорный мешок",
+  "en": "Golden Trash Bag",
+  "icon": "equip/352201",
+  "html": "<span class=\"c\" data-c=\"b4b4b4\"><i>«Слово <span class=\"c\" data-c=\"ffd471\">золотой</span>, поставленное перед любым предметом, пусть даже мусорным мешком, поднимает его ценность до небес».</i></span>",
+  "props": [
+   {
+    "n": "Сила на поле",
+    "v": 0.3,
+    "t": "ExtraFrontPowerAddedRatio1"
+   },
+   {
+    "n": "Усиление скорости",
+    "v": 0.3,
+    "t": "ExtraSpeedAddedRatio1"
+   },
+   {
+    "n": "Усиление урона",
+    "v": 0.3,
+    "t": "ExtraAllDamageTypeAddedRatio1"
+   },
+   {
+    "n": "Сила вне поля",
+    "v": 0.3,
+    "t": "ExtraBackPowerAddedRatio1"
+   },
+   {
+    "n": "Шанс счастливого удара",
+    "v": 0.3,
+    "t": "ExtraLuckChance"
+   },
+   {
+    "n": "Урон счастливого удара",
+    "v": 0.3,
+    "t": "ExtraLuckDamage"
+   }
+  ],
+  "craft": [],
+  "tags": [
+   27
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350701,
+  "type": "Equipment",
+  "cat": "crown",
+  "name": "Самоцвет богатства",
+  "en": "Wealth Gem",
+  "icon": "equip/350701",
+  "html": "Владение самоцветом увеличивает размер команды на 1, независимо от того, экипирован ли он на персонажа. Владелец даёт <b class=\"v\">1</b> золотую монету каждые <b class=\"v\">3</b> этапа подготовки.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Обладание самоцветом богатства есть обладание высшей силой - силой создавать богатство».</i></span>",
+  "props": [],
+  "craft": [
+   350601,
+   350601
+  ],
+  "tags": [
+   24
+  ],
+  "unique": false,
+  "starTrait": null
+ },
+ {
+  "id": 350101,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Ключ для разборки",
+  "en": "Disassembly Wrench",
+  "icon": "equip/350101",
+  "html": "Перетащите на персонажа, чтобы снять с него всю экипировку.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350102,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Точный ключ для разборки",
+  "en": "Precision Disassembly Wrench",
+  "icon": "equip/350102",
+  "html": "Перетащите на персонажа, чтобы снять с него всю экипировку. Можно использовать бесконечно.<br>Если у вас уже имеется ключ для разборки, то при повторном получении вместо него вы получите 1 золотую монету.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Вооружены до зубов? Давайте вырвем и их».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350103,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Плавильная печь",
+  "en": "Smelting Furnace",
+  "icon": "equip/350103",
+  "html": "Перетащите на экипировку, чтобы превратить её в случайную экипировку того же типа.<br>Перетащите на персонажа, чтобы снять с него всю экипировку и превратить её в экипировку того же типа.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350104,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Карта привилегии",
+  "en": "Special Privilege Card",
+  "icon": "equip/350104",
+  "html": "Перетащите на продвинутую экипировку, чтобы превратить её в соответствующую особую экипировку.<br>Перетащите на персонажа, чтобы выбрать одну из надетых продвинутых экипировок и превратить её в особую экипировку.<br>Этот предмет исчезнет после использования.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Обмен картами! Эволюция снаряжения!»</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350105,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Проектор сотрудника",
+  "en": "Staff Projector",
+  "icon": "equip/350105",
+  "html": "Перетащите на персонажа стоимостью 3</span> или ниже, чтобы создать его копию 1★ в зоне подготовки.<br>Этот предмет исчезнет после использования.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Любимый инструмент отдела кадров. Он значительно смягчил нехватку рабочей силы».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350106,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Идеальный проектор",
+  "en": "Perfect Projector",
+  "icon": "equip/350106",
+  "html": "Перетащите на любого персонажа, чтобы создать его копию 1★ в зоне подготовки.<br>Этот предмет исчезнет после использования.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Любимый инструмент отдела кадров. Он значительно смягчил нехватку рабочей силы».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99999,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Ящик с простым вооружением",
+  "en": "Basic Weapon Box",
+  "icon": "equip/GridFight_WeaponBox1",
+  "html": "Нажмите, чтобы открыть ящик с простым вооружением, и выбрать одну из четырёх простых экипировок.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99998,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Ящик с продвинутым вооружением",
+  "en": "Advanced Weapon Box",
+  "icon": "equip/GridFight_WeaponBox2",
+  "html": "Нажмите, чтобы открыть ящик с продвинутым вооружением, и выбрать одну из четырёх продвинутых экипировок.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99997,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Ящик с особым вооружением",
+  "en": "Privilege Weapon Box",
+  "icon": "equip/GridFight_WeaponBox3",
+  "html": "Нажмите, чтобы открыть ящик с особым вооружением, и выбрать одну из четырёх особых экипировок.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99996,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Контракт стоимостью 1",
+  "en": "Employment Contract: Cost 1",
+  "icon": "equip/GridFight_RoleBox1",
+  "html": "Нажмите, чтобы получить персонажа. Выберите одного из четырёх <span class=\"c\" data-c=\"b4b4b4\">персонажей стоимостью 1</span>.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99995,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Контракт стоимостью 2",
+  "en": "Employment Contract: Cost 2",
+  "icon": "equip/GridFight_RoleBox2",
+  "html": "Нажмите, чтобы получить персонажа. Выберите одного из четырёх персонажей стоимостью 2</span>.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99994,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Контракт стоимостью 3",
+  "en": "Employment Contract: Cost 3",
+  "icon": "equip/GridFight_RoleBox3",
+  "html": "Нажмите, чтобы получить персонажа. Выберите одного из четырёх персонажей стоимостью 3</span>.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99993,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Контракт стоимостью 4",
+  "en": "Employment Contract: Cost 4",
+  "icon": "equip/GridFight_RoleBox4",
+  "html": "Нажмите, чтобы получить персонажа. Выберите одного из четырёх персонажей стоимостью 4</span>.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99992,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Контракт стоимостью 5",
+  "en": "Employment Contract: Cost 5",
+  "icon": "equip/GridFight_RoleBox5",
+  "html": "Нажмите, чтобы получить персонажа. Выберите одного из четырёх <span class=\"c\" data-c=\"ffd471\">персонажей стоимостью 5</span>.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99991,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Кодекс эмблем",
+  "en": "Emblem Codex",
+  "icon": "equip/GridFight_StarBook",
+  "html": "Нажмите, чтобы открыть кодекс эмблем и выбрать одну из четырёх эмблем.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350107,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Талисман удачи",
+  "en": "Good Fortune Token",
+  "icon": "equip/350107",
+  "html": "Перетащите на персонажа. Можно выбрать один из четырёх рекомендуемых предметов продвинутой экипировки для этого персонажа.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99990,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Приглашение эксперта",
+  "en": "Expert Invitation",
+  "icon": "equip/GridFight_ExpertContract1",
+  "html": "Нажмите, чтобы открыть приглашение эксперта и выбрать одного из четырёх экспертов-консультантов или золотые монеты.<br>Этот предмет исчезнет после использования.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null,
+  "old": "отмечено вручную"
+ },
+ {
+  "id": 350110,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Карта привилегий Астрополиса",
+  "en": "Astropolis Privilege Card",
+  "icon": "equip/350108",
+  "html": "Перетащите на предмет продвинутой экипировки, чтобы превратить его в соответствующую особую экипировку. Изначально имеет определённое число использований.<br>За каждые <b class=\"v\">15</b> обновлений магазина даёт 1 дополнительное использование.<br><span class=\"c\" data-c=\"b4b4b4\"><i>«Простите, но привилегии и правда позволяют делать что угодно».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350108,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Проектор стажёра",
+  "en": "Intern Projector",
+  "icon": "equip/350110",
+  "html": "Перетащите на персонажа <span class=\"c\" data-c=\"b4b4b4\">стоимостью 1</span>, чтобы создать его копию 1★ в зоне подготовки.<br>После использования предмет исчезает.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>«Любимый инструмент отдела кадров. Сильно облегчил нехватку рабочих рук».</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350111,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Фантана: Сюжетная броня",
+  "en": "Phantasmoon: Plot Armor",
+  "icon": "equip/350111",
+  "html": "Перетащите на персонажа, чтобы использовать. Можно 1 раз выбрать сюжетную броню.<br>После использования предмет исчезает.<br><span class=\"c\" data-c=\"b4b4b4\"><i>«Все взгляды на меня! Объявляю: я главный герой!»</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350112,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Освоение: Проектор стажёра",
+  "en": "Trailblaze: Intern Projector",
+  "icon": "equip/350110",
+  "html": "Перетащите на персонажа со связью Серебряная дорога Освоения стоимостью 1</span>, чтобы создать его копию 1★ в зоне подготовки.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350113,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Освоение: Проектор сотрудника",
+  "en": "Trailblaze: Staff Projector",
+  "icon": "equip/350105",
+  "html": "Перетащите на персонажа со связью Серебряная дорога Освоения стоимостью 3</span> или ниже, чтобы создать его копию 1★ в зоне подготовки.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350114,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Освоение: Идеальный проектор",
+  "en": "Trailblaze: Perfect Projector",
+  "icon": "equip/350106",
+  "html": "Перетащите на любого персонажа со связью Серебряная дорога Освоения, чтобы создать его копию 1★ в зоне подготовки.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350115,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Аха: Ключ для разборки",
+  "en": "Aha: Disassembly Wrench",
+  "icon": "equip/350101",
+  "html": "Перетащите на индикатор Ахи, чтобы использовать. Снимает всю экипировку Ахи.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350116,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Аха: Плавильная печь",
+  "en": "Aha: Smelting Furnace",
+  "icon": "equip/350103",
+  "html": "Перетащите на индикатор Ахи, чтобы использовать. Выберите 1 предмет экипировки Ахи для перековки, затем выберите результат из 4 предметов того же типа.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350117,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Аха: Особая карта привилегий",
+  "en": "Aha: Special Privilege Card",
+  "icon": "equip/350104",
+  "html": "Перетащите на индикатор Ахи, чтобы использовать. Выберите 1 предмет продвинутой экипировки Ахи и превратите его в соответствующую особую экипировку.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 99989,
+  "type": "Forge",
+  "cat": "forge",
+  "name": "Ящик с простым вооружением Ахи",
+  "en": "Aha Basic Weapon Box",
+  "icon": "equip/99989",
+  "html": "Нажмите, чтобы открыть ящик с простым вооружением Ахи и выбрать 1 из 4 предметов простой экипировки Ахи.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350118,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Проектор химер",
+  "en": "Chimera Projector",
+  "icon": "equip/350118",
+  "html": "Перетащите на Сад чудесных зверей, чтобы использовать. Выберите 1 особую химеру персонажа и получите её копию 1★.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 350119,
+  "type": "Consumable",
+  "cat": "consumable",
+  "name": "Хитрая закуска",
+  "en": "Trick Snack",
+  "icon": "equip/350119",
+  "html": "Перетащите на Сад чудесных зверей, чтобы использовать. Выберите 1 особую химеру персонажа и повысьте её звёздность на 1.<br>После использования предмет исчезает.",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": null,
+  "starTrait": null
+ },
+ {
+  "id": 353001,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Мод: Разбивающий звёзды клинок",
+  "en": "Component: Starcleaver Blade",
+  "icon": "equip/35030202",
+  "iconPath": "SpriteOutput/GridFight/Equipment/35030202.png",
+  "html": "Сильно повышает силу на поле. Урон владельца составляет <b class=\"v\">115%</b> исходного.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Несъёмный мод брони Коллекционер клинков.</i></span>",
+  "props": [
+   {
+    "t": "ExtraFrontPowerAddedRatio1",
+    "n": "Сила на поле",
+    "v": 0.6
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "new": true
+ },
+ {
+  "id": 353002,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Мод: Орбитальная рельсовая пушка",
+  "en": "Component: Orbital Railgun",
+  "icon": "equip/35030303",
+  "iconPath": "SpriteOutput/GridFight/Equipment/35030303.png",
+  "html": "Сильно повышает силу вне поля. Урон владельца составляет <b class=\"v\">115%</b> исходного.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Несъёмный мод брони Коллекционер огнестрела.</i></span>",
+  "props": [
+   {
+    "t": "ExtraBackPowerAddedRatio1",
+    "n": "Сила вне поля",
+    "v": 0.6
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "new": true
+ },
+ {
+  "id": 353003,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Мод: Антигравитационные ботинки",
+  "en": "Component: Anti-Grav Boots",
+  "icon": "equip/35030101",
+  "iconPath": "SpriteOutput/GridFight/Equipment/35030101.png",
+  "html": "В начале каждого хода владельца усиление скорости растёт на <b class=\"v\">12%</b>. Суммируется.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Несъёмный мод брони Коллекционер сапог.</i></span>",
+  "props": [
+   {
+    "t": "ExtraSpeedAddedRatio1",
+    "n": "Усиление скорости",
+    "v": 0.25
+   }
+  ],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "new": true
+ },
+ {
+  "id": 353004,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Билет очка навыка",
+  "en": "Skill Point Ticket",
+  "icon": "equip/353004",
+  "iconPath": "SpriteOutput/GridFight/Equipment/353004.png",
+  "html": "Тратя очки навыка, персонаж получает случайный эффект:<br>1. +<b class=\"v\">5%</b> к усилению урона обычной атаки/навыка на <b class=\"v\">1</b> ход;<br>2. +<b class=\"v\">20%</b> к усилению урона обычной атаки/навыка на <b class=\"v\">1</b> ход;<br>3. восстанавливает <b class=\"v\">2</b> очка навыка и даёт <b class=\"v\">1</b> доп. ход;<br>4. даёт <b class=\"v\">1</b> золотую монету.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Несъёмный мод брони Лотерея очков навыка.</i></span>",
+  "props": [],
+  "craft": [],
+  "tags": [
+   41
+  ],
+  "unique": false,
+  "starTrait": null,
+  "new": true
+ },
+ {
+  "id": 353005,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Схлопывающаяся сингулярность",
+  "en": "Imploding Singularity",
+  "icon": "equip/353005",
+  "iconPath": "SpriteOutput/GridFight/Equipment/353005.png",
+  "html": "Даёт огромную прибавку к характеристикам. После идеальной победы бонус растёт на <b class=\"v\">2%</b>, после поражения — падает на <b class=\"v\">5%</b>.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Выдаётся в начале забега некоторыми правилами 2 сезона.</i></span>",
+  "props": [
+   {
+    "t": "ExtraFrontPowerAddedRatio1",
+    "n": "Сила на поле",
+    "v": 0.1
+   },
+   {
+    "t": "ExtraBackPowerAddedRatio1",
+    "n": "Сила вне поля",
+    "v": 0.1
+   },
+   {
+    "t": "ExtraLuckChance",
+    "n": "Шанс счастливого удара",
+    "v": 0.1
+   },
+   {
+    "t": "ExtraLuckDamage",
+    "n": "Урон счастливого удара",
+    "v": 0.1
+   },
+   {
+    "t": "ExtraSpeedAddedRatio1",
+    "n": "Усиление скорости",
+    "v": 0.1
+   },
+   {
+    "t": "ExtraAllDamageTypeAddedRatio1",
+    "n": "Усиление урона",
+    "v": 0.1
+   }
+  ],
+  "craft": [],
+  "tags": [
+   1
+  ],
+  "unique": false,
+  "starTrait": null,
+  "new": true,
+  "ec": "#c9b949"
+ },
+ {
+  "id": 35130999,
+  "type": "Equipment",
+  "cat": "armor",
+  "name": "Монета причуд",
+  "en": "Coin of Whimsy",
+  "icon": "equip/35130999",
+  "iconPath": "SpriteOutput/GridFight/Equipment/35130999.png",
+  "html": "После победы над противником даёт <b class=\"v\">1</b> заряд Монеты причуд, повышая множитель записи урона Цифер. При входе в узел босса даёт <b class=\"v\">1</b> монету за каждые <b class=\"v\">15</b> заряда.<br><span class=\"c\" data-c=\"b4b4b4\"><i>Уникальная экипировка Цифер (усиливается химерой Киса-воришка).</i></span>",
+  "props": [
+   {
+    "t": "ExtraLuckChance",
+    "n": "Шанс счастливого удара",
+    "v": 0.05
+   }
+  ],
+  "craft": [],
+  "tags": [
+   33
+  ],
+  "unique": true,
+  "starTrait": null,
+  "new": true,
+  "ec": "#f2be20",
+  "where": "Выдается фиксированно Цифер"
+ },
+ {
+  "id": 355201103,
+  "type": "Equipment",
+  "cat": "crown",
+  "name": "Богатство",
+  "en": "Wealth",
+  "icon": null,
+  "html": "Управляющий шерстяными финансами научит вас управлять деньгами. Смотрите и учитесь!",
+  "props": [],
+  "craft": [],
+  "tags": [],
+  "unique": false,
+  "where": "Выдается с инвестиционной стратегии Управляющий шерстяными финансами"
+ }
+]

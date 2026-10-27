@@ -1,0 +1,185 @@
+[
+ {
+  "id": 1011,
+  "name": "Предбоевая подготовка",
+  "en": "Battle Prep",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 20,
+  "pre": [],
+  "icon": "tal/1011",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "В начале боя активируются техники всех персонажей на поле. Если несколько эффектов техники в команде не могут активироваться одновременно, то сначала активируется техника персонажа, стоящего первым."
+ },
+ {
+  "id": 1021,
+  "name": "Усиление атаки",
+  "en": "ATK Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1011
+  ],
+  "icon": "tal/1021",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+  "html": "Повышает силу атаки на 12%."
+ },
+ {
+  "id": 1022,
+  "name": "Усиление НР",
+  "en": "HP Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1011
+  ],
+  "icon": "tal/1022",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+  "html": "Повышает макс. НР на 6%."
+ },
+ {
+  "id": 1031,
+  "name": "Благословение золота",
+  "en": "Gold Blessing",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   1021,
+   1022
+  ],
+  "icon": "tal/1031",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "Если в предыдущей партии было пройдено Измерение I, то в начале каждого Измерения в следующей партии вы получите золотых монет: 2."
+ },
+ {
+  "id": 1041,
+  "name": "Усиление крит. шанса",
+  "en": "CRIT Rate Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1031
+  ],
+  "icon": "tal/1041",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+  "html": "Повышает крит. шанс на 6%."
+ },
+ {
+  "id": 1042,
+  "name": "Усиление защиты",
+  "en": "DEF Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1031
+  ],
+  "icon": "tal/1042",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+  "html": "Повышает защиту на 8%."
+ },
+ {
+  "id": 1051,
+  "name": "Усиление крит. урона",
+  "en": "Wings Heed No Borders",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1031
+  ],
+  "icon": "tal/1051",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconCriticalDamage.png",
+  "html": "Повышает крит. урон на 12%."
+ },
+ {
+  "id": 1061,
+  "name": "Простое вооружение",
+  "en": "Basic Armament",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   1041
+  ],
+  "icon": "tal/1061",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "После прохождения босса Измерений I и II даёт случайную простую экипировку."
+ },
+ {
+  "id": 1062,
+  "name": "Дополнительные припасы",
+  "en": "Bonus Supply",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   1042
+  ],
+  "icon": "tal/1062",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "В начале этапа снабжения даёт дополнительную награду на выбор."
+ },
+ {
+  "id": 1071,
+  "name": "Усиление пробития",
+  "en": "Break Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1061
+  ],
+  "icon": "tal/1071",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+  "html": "Повышает эффект пробития на 15%."
+ },
+ {
+  "id": 1072,
+  "name": "Обновление стратегии",
+  "en": "Strategy Refresh",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 60,
+  "pre": [
+   1051
+  ],
+  "icon": "tal/1072",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "При выборе инвестиционной стратегии каждую стратегию можно обновить один раз."
+ },
+ {
+  "id": 1073,
+  "name": "Усиление сопротивления эффектам",
+  "en": "Effect RES Boost",
+  "tag": "Усиление боевых способностей",
+  "key": false,
+  "cost": 20,
+  "pre": [
+   1062
+  ],
+  "icon": "tal/1073",
+  "iconPath": "SpriteOutput/UI/Avatar/Icon/IconStatusResistance.png",
+  "html": "Повышает сопротивление эффектам на 8%."
+ },
+ {
+  "id": 1081,
+  "name": "Долгосрочная кампания",
+  "en": "Sustained Combat",
+  "tag": "Открытие механики",
+  "key": true,
+  "cost": 100,
+  "pre": [
+   1071,
+   1072,
+   1073
+  ],
+  "icon": "tal/1081",
+  "iconPath": "SpriteOutput/GridFight/AttributeIcon/WhiteIcon/GridFightSkillS1.png",
+  "html": "В начале игры дополнительно даёт простых экипировок: 1.<br>После боя в узле восстанавливается 2 ед. НР команды."
+ }
+]
