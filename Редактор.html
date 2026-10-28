@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Редактор справочника</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b091a;--panel:#14112b;--panel2:#1b1738;--panel3:#221d46;--line:rgba(196,176,255,.13);--line2:rgba(196,176,255,.26);--text:#efebff;--muted:#a8a1c9;--dim:#716a95;--gold:#e3c27c;--gold2:#b8955a;--hl:#f6aa4c;--ok:#5fd0a0;--bad:#ff7b7b;--violet:#8f72ff;
+  --serif:"PT Serif",Georgia,serif;--font:"Manrope",system-ui,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 var(--font);height:100vh;display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+img{display:block;object-fit:contain}
+header{display:flex;align-items:center;gap:14px;padding:10px 18px;background:rgba(20,17,43,.95);border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{margin:0;font:700 19px var(--serif);color:var(--gold);white-space:nowrap}
+.tabs{display:flex;gap:2px;flex:1 1 100%;order:9;flex-wrap:wrap}
+header h1{margin-right:auto !important}
+.tab{padding:7px 13px;border:0;background:none;border-radius:9px;color:var(--muted);font-weight:700}
+.tab:hover{color:var(--text)}.tab.on{background:var(--panel3);color:#fff}
+.btn{padding:8px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--panel2);font-weight:700;white-space:nowrap}
+.btn:hover{border-color:var(--gold2)}
+a.btn{color:var(--text);text-decoration:none}
+.btn.main{background:linear-gradient(180deg,#f2d79b,#d2aa5f);color:#1a1206;border-color:var(--gold)}
+.btn.danger{color:var(--bad)}
+.btn:disabled{opacity:.45;cursor:default}
+#status{font-size:12.5px;color:var(--muted);min-width:150px;text-align:right}
+#status.dirty{color:var(--hl)}
+main{display:grid;grid-template-columns:330px minmax(0,1fr);min-height:0}
+aside{display:flex;flex-direction:column;border-right:1px solid var(--line);min-height:0}
+.lhead{display:flex;gap:8px;padding:12px}
+.lhead input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:8px 12px;outline:none}
+.lfilter{display:flex;gap:6px;padding:0 12px 10px;flex-wrap:wrap}
+.chip{padding:4px 10px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--muted);font-size:12px;font-weight:700}
+.chip.on{background:var(--panel3);color:#fff;border-color:var(--violet)}
+#list{flex:1;overflow:auto;padding:0 8px 12px}
+.it{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;cursor:pointer;border:1px solid transparent}
+.it:hover{background:var(--panel)}.it.sel{background:var(--panel2);border-color:var(--line2)}
+.it img,.it .ph{width:36px;height:36px;border-radius:8px;background:#0e0a1e;flex:none}
+.it b{display:block;font-size:13.5px;line-height:1.25}
+.it small{color:var(--dim);font-size:11.5px}
+.mark{margin-left:auto;font-size:10.5px;font-weight:800;padding:1px 6px;border-radius:6px;white-space:nowrap}
+.mark.e{background:rgba(246,170,76,.15);color:var(--hl)}.mark.n{background:rgba(95,208,160,.15);color:var(--ok)}.mark.d{background:rgba(255,123,123,.15);color:var(--bad)}
+section#form{overflow:auto;padding:22px 28px 60px;min-height:0}
+.empty{color:var(--muted);padding:60px 0;text-align:center}
+.fhead{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+.drop{position:relative;width:96px;height:96px;flex:none;border-radius:14px;border:1.5px dashed var(--line2);display:grid;place-items:center;background:#0e0a1e;cursor:pointer;overflow:hidden}
+.drop img{width:100%;height:100%}
+.drop span{position:absolute;bottom:0;left:0;right:0;font-size:10.5px;text-align:center;background:rgba(0,0,0,.6);padding:2px}
+.drop.over{border-color:var(--gold)}
+.fhead h2{margin:0;font:700 24px var(--serif)}
+.fhead .acts{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px 16px;margin-bottom:16px}
+label.f{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--muted)}
+label.f input,label.f select,textarea{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:8px 10px;outline:none;font-weight:500;color:var(--text)}
+label.f input:focus,textarea:focus,label.f select:focus{border-color:var(--gold2)}
+.checks{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-weight:600;color:var(--text);font-size:13.5px}
+.checks input{accent-color:var(--gold)}
+h3.sec{margin:24px 0 10px;font:800 11.5px var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+h3.sec::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold2),transparent)}
+.rte{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--panel);margin-bottom:10px}
+.tb{display:flex;gap:4px;padding:6px;border-bottom:1px solid var(--line);flex-wrap:wrap;background:rgba(255,255,255,.02)}
+.tb button{padding:3px 9px;border-radius:7px;border:1px solid var(--line);background:var(--panel2);font-size:12px;font-weight:700}
+.tb button:hover{border-color:var(--gold2)}
+.rte textarea{display:block;width:100%;min-height:90px;border:0;border-radius:0;resize:vertical;font:13px/1.5 ui-monospace,Consolas,monospace}
+.pv{padding:10px 12px;border-top:1px dashed var(--line);font-size:14px;color:#ddd8f4}
+.pv b.v{color:var(--hl)}.pv a.ref{color:#9ad8ff;border-bottom:1px solid rgba(154,216,255,.35)}
+.pv .prop{color:#d9ccff;font-weight:700}
+.row{display:grid;grid-template-columns:90px 120px minmax(0,1fr) 34px;gap:10px;align-items:start;padding:10px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid var(--line);margin-bottom:8px}
+.row .x{width:34px;height:34px;border-radius:9px;border:1px solid var(--line2);background:var(--panel2);color:var(--bad)}
+.skill{padding:12px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid var(--line);margin-bottom:10px}
+.tchips{display:flex;flex-wrap:wrap;gap:6px}
+.tchip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer}
+.tchip img{width:20px;height:20px}
+.tchip.on{color:#fff;border-color:var(--gold);background:rgba(227,194,124,.12)}
+details{margin-top:24px}
+summary{cursor:pointer;color:var(--muted);font-weight:700}
+#json{width:100%;min-height:260px;margin-top:10px;font:12.5px/1.45 ui-monospace,Consolas,monospace}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 520px;gap:24px;align-items:start}
+@media (max-width:1300px){.split{grid-template-columns:minmax(0,1fr)}}
+.pvw{position:sticky;top:0;height:calc(100vh - 110px);min-height:520px;border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#05030c}
+.pvw iframe{width:100%;height:100%;border:0}
+.pvw b{position:absolute;left:10px;top:8px;z-index:2;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(5,3,12,.7);padding:2px 8px;border-radius:6px}
+.rwrow{display:grid;grid-template-columns:150px minmax(0,1fr) 70px 46px 96px;gap:8px;align-items:center;padding:8px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid var(--line);margin-bottom:6px}
+.rwrow select,.rwrow input{background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:6px 8px;outline:none;min-width:0;width:100%}
+.rwrow .ops{display:flex;gap:4px}
+.rwrow .ops button{width:28px;height:30px;border-radius:7px;border:1px solid var(--line2);background:var(--panel2)}
+.rwrow label{display:flex;gap:4px;align-items:center;font-size:12px;color:var(--muted)}
+.rwf{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
+.rwf select,.rwf input:not([type=checkbox]){flex:1 1 140px;min-width:0;background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:6px 8px;outline:none}
+.rwf label{display:flex;gap:4px;align-items:center;font-size:12px;color:var(--muted)}
+.rwf label input[type=number]{flex:0 0 70px}
+.stgrow{display:grid;grid-template-columns:160px minmax(0,1fr) 34px;gap:8px;margin-bottom:6px}
+.stgrow input,.stgrow select{background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:6px 8px;outline:none;min-width:0;color:var(--text)}
+.stgrow input[type=color]{padding:0;height:32px}
+.stgrow button{border-radius:8px;border:1px solid var(--line2);background:var(--panel2);color:var(--bad)}
+.cardmode{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+#spineFrame{width:100%;height:100%;border:0;display:none}
+#log{position:fixed;right:18px;bottom:18px;width:min(520px,90vw);max-height:40vh;overflow:auto;background:var(--panel2);border:1px solid var(--line2);border-radius:14px;padding:12px 14px;font:12px/1.45 ui-monospace,Consolas,monospace;white-space:pre-wrap;display:none;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+#log.show{display:block}
+#log .close{float:right;border:0;background:none;color:var(--muted)}
+.hint{color:var(--dim);font-size:12px;margin:-4px 0 10px}
+.hint select,.skill select,.skill input{background:var(--panel);border:1px solid var(--line2);border-radius:8px;color:var(--text);padding:3px 6px}
+.offline{padding:40px;max-width:640px;margin:40px auto;background:var(--panel);border:1px solid var(--line2);border-radius:16px}
+.offline code{background:#0e0a1e;padding:2px 6px;border-radius:6px}
+.sx-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:6px 0}
+.sx-obj>label.wide{grid-column:1/-1}
+.sx-obj input:not([type=checkbox]){width:100%}
+.sx-arr{display:flex;flex-direction:column;gap:8px;padding:8px;border:1px dashed var(--line2);border-radius:12px}
+.sx-it{display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:8px;align-items:start;padding:8px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid var(--line)}
+.sx-it>.x{width:34px;height:34px;border-radius:9px;border:1px solid var(--line2);background:var(--panel2);color:var(--bad);cursor:pointer}
+.sx-arr>.btn{align-self:flex-start}
+.sx-img{display:flex;gap:8px;align-items:center}.sx-img img,.sx-img .ph{width:48px;height:48px;border-radius:8px;background:#0e0a1e;object-fit:contain;flex:none}
+.sx-img input{flex:1;min-width:0}
+#lfilter select{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:8px 10px;color:var(--text)}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.th-c{display:flex;gap:6px;align-items:center}.th-c input[type=color]{width:56px;height:34px;padding:0;border:1px solid var(--line2);border-radius:8px;background:none}
+.th-xc{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+.th-xc>b{min-width:160px}.th-xc input[type=color]{width:40px;height:32px;padding:0;border:1px solid var(--line2);border-radius:8px;background:none}
+.th-prev{width:60px;height:40px;border-radius:8px;border:1px solid var(--line2)}
+.th-pics{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.th-pic{display:flex;gap:10px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}
+.th-pic img,.th-pic .ph{width:64px;height:64px;object-fit:contain;border-radius:8px;background:#0e0a1e;flex:none}
+.th-pic small{display:block;color:var(--muted);margin-bottom:6px}.th-b{display:flex;gap:6px;flex-wrap:wrap}
+.th-tpl{display:flex;gap:10px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px}.th-tpl small{color:var(--dim);flex:1}
+.cardmode select{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:7px 10px;color:var(--text)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Редактор справочника</h1>
+  <div class="tabs" id="tabs"></div>
+  <span id="status">Загрузка…</span>
+  <button class="btn" id="bUndo" title="Отменить последнее изменение (Ctrl+Z)" disabled>↶</button><button class="btn" id="bRedo" title="Вернуть (Ctrl+Y)" disabled>↷</button>
+  <button class="btn" id="bSave">Сохранить</button>
+  <button class="btn main" id="bBuild">Сохранить и собрать сайт</button>
+  <button class="btn" id="bPub" title="Выложить сайт в интернет (только просмотр)">Опубликовать…</button>
+  <a class="btn" href="index.html" target="_blank" style="text-decoration:none">Открыть сайт ↗</a>
+</header>
+<main>
+  <aside>
+    <div class="lhead"><input id="q" placeholder="Поиск…"><button class="btn" id="bAdd" title="Добавить новую запись">＋</button></div>
+    <div class="lfilter" id="lfilter"></div>
+    <div id="list"></div>
+  </aside>
+  <section id="form"><div class="empty">Выберите запись слева или добавьте новую.</div></section>
+</main>
+<iframe id="site" title="сайт" style="position:absolute;width:10px;height:10px;left:-9999px;top:0;border:0"></iframe>
+<dialog id="pubDlg" style="background:var(--panel2);color:var(--text);border:1px solid var(--line2);border-radius:14px;padding:18px;max-width:560px">
+  <h3 style="margin:0 0 8px">Публикация на GitHub Pages</h3>
+  <p class="hint" style="margin:0 0 12px">Посетители видят только сайт; редактор остаётся на этом компьютере. Токен хранится в build/publish.json и никуда, кроме GitHub, не отправляется.</p>
+  <label class="f">Адрес репозитория<input id="pubRepo" placeholder="https://github.com/ник/valutki"></label>
+  <label class="f" style="margin-top:10px">Токен GitHub (fine-grained, право Contents: Read and write)<input id="pubTok" type="password" placeholder="оставьте пустым, если уже сохранён"></label>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px"><button class="btn" id="pubCancel">Отмена</button><button class="btn main" id="pubGo">Собрать и опубликовать</button></div>
+</dialog>
+<div id="log"><button class="close" onclick="this.parentNode.classList.remove('show')">✕</button><div id="logt"></div></div>
+<script src="patch.js"></script>
+<script src="designer.js"></script>
+<script src="sections.js"></script>
+<script src="theme.js"></script>
+<script src="extras.js"></script>
+<script>
+(() => {
+'use strict';
+// Редактор хранит правки в build/overrides.json: изменённые и новые записи целиком + список удалённых id.
+// Сборка (make_site.py) накладывает их поверх данных игры, поэтому исходные данные не портятся.
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const clone = o => JSON.parse(JSON.stringify(o));
+
+const KINDS = {
+  roles:    {t:'Персонажи', icon:x => 'avs/' + x.avatar, sub:x => `Стоимость ${x.cost} · ${POS[x.pos] || x.pos}`},
+  traits:   {t:'Связи', icon:x => x.icon || 'trait/' + x.id, sub:x => KIND[x.kind] + ' · ' + (x.layers || []).map(l => l.n).join('/')},
+  items:    {t:'Экипировка и предметы', icon:x => x.icon, sub:x => CAT[x.cat] || x.cat},
+  augments: {t:'Стратегии', icon:x => x.icon, sub:x => QNAME[x.q] + (x.new ? ' · 2 сезон' : '') + (x.old ? ' · устар.' : '')},
+  buffs:    {t:'Среды', icon:x => x.icon, sub:x => (x.new ? '2 сезон' : '1 сезон') + (x.old ? ' · устар.' : '')},
+  bank:     {t:'База данных'},
+  theme:    {t:'Оформление'},
+  blocks:   {t:'Блоки и надписи'},
+  spine:    {t:'Анимации'},
+};
+const POS = {front:'На поле', back:'Вне поля', flex:'Универсал'};
+const KIND = {origin:'Фракция', class:'Роль', unique:'Уникальная', special:'Особая'};
+const QNAME = {Silver:'Серебро', Gold:'Золото', Prismatic:'Призма'};
+const QL = {None:'Бронза', Silver:'Серебро', Gold:'Золото', Multicolor:'Призма'};
+const CAT = {basic:'Простая', advanced:'Продвинутая', privilege:'Особая', emblem:'Эмблема', mod:'Модуль взлома', food:'Блюдо', trailblaze:'Товар Освоения', material:'Материал', trash:'Хлам', crown:'Корона', consumable:'Расходник', forge:'Кузница', armor:'Броня (мод)'};
+const SIDE = {front:'На поле', back:'Вне поля', servant:'Призыв'};
+const STYPE = ['Skill', 'Ultimate', 'Talent', 'Basic ATK', 'Elation Skill', 'Memosprite Skill', 'Memosprite Talent'];
+
+let CLIPS = {roles:{}, traits:{}}, clipsDirty = false;
+let BASE = null, OVR = {edit:{}, deleted:{}, sections:{}, theme:{}, templates:{}, blocks:[], texts:[]}, IMG = {}, NEWIMG = {}, SECB = {}, secPath = 'bank.armor';
+let kind = 'augments', selId = null, dirty = false, lf = '';
+
+function status(t, d) { const s = $('#status'); s.textContent = t; s.classList.toggle('dirty', !!d); }
+function setDirty() { dirty = true; status('Есть несохранённые правки', true); }
+window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+// ---------- данные ----------
+const base = (k, id) => BASE[k].find(x => x.id === id);
+const edited = (k, id) => (OVR.edit[k] || {})[id];
+const isDel = (k, id) => (OVR.deleted[k] || []).includes(id);
+const cur = (k, id) => edited(k, id) || base(k, id);
+function allOf(k) {
+  const L = BASE[k].map(x => edited(k, x.id) || x);
+  for (const o of Object.values(OVR.edit[k] || {})) if (!base(k, o.id)) L.push(o);
+  return L;
+}
+function put(k, obj) { snap(); (OVR.edit[k] = OVR.edit[k] || {})[obj.id] = obj; setDirty(); }
+// история: снимок правок перед изменением; быстрые подряд изменения (набор текста) объединяются в один шаг
+const HIST = [], FUT = []; let snapT = 0, lastSnap = '';
+function snap() {
+  const now = Date.now(), cur = JSON.stringify(OVR);
+  if (now - snapT > 700 && cur !== lastSnap) { HIST.push(cur); if (HIST.length > 200) HIST.shift(); FUT.length = 0; }
+  snapT = now; lastSnap = cur; histBtns();
+}
+function histBtns() { $('#bUndo').disabled = !HIST.length; $('#bRedo').disabled = !FUT.length; }
+function restore(json) { OVR = JSON.parse(json); OVR.sections = OVR.sections || {}; setDirty(); renderList(); if (selId != null && (kind === 'bank' || cur(kind, selId))) renderForm(); else { selId = null; $('#form').innerHTML = '<div class="empty">Выберите запись слева.</div>'; } histBtns(); }
+function undoAll() { if (!HIST.length) return; FUT.push(JSON.stringify(OVR)); lastSnap = ''; snapT = 0; restore(HIST.pop()); status('Отменено', true); }
+function redoAll() { if (!FUT.length) return; HIST.push(JSON.stringify(OVR)); lastSnap = ''; snapT = 0; restore(FUT.pop()); status('Возвращено', true); }
+const img = key => NEWIMG[key] || (SITE && SITE.CW_API ? SITE.CW_API.img(key) : '') || '';
+const ONLINE = location.hostname.endsWith(".github.io");  // открыт на GitHub Pages: правки через GitHub, без сервера
+let SITE = null; // окно собранного сайта: картинки, автокарточки и превью
+
+async function load() {
+  try {
+    BASE = await (await fetch('build/out/editor_base.json', {cache:'no-store'})).json();
+  } catch (e) {
+    $('main').innerHTML = `<div class="offline"><h2>Нужен локальный сервер</h2><p>Редактор сохраняет файлы и пересобирает сайт, поэтому его открывают через сервер, а не двойным щелчком.</p>
+      <p>1. Откройте терминал в папке сайта и выполните <code>python build/serve.py</code></p><p>2. Перейдите на <code>http://localhost:8765/Редактор.html</code></p></div>`;
+    status('Сервер не запущен'); return;
+  }
+  try { const r = await fetch('build/overrides.json', {cache:'no-store'}); if (r.ok) OVR = Object.assign({edit:{}, deleted:{}, sections:{}, theme:{}, templates:{}, blocks:[], texts:[]}, await r.json()); } catch (e) {}
+  try { const r = await fetch('clips/clips.json', {cache:'no-store'}); if (r.ok) CLIPS = Object.assign({roles:{}, traits:{}}, await r.json()); } catch (e) {}
+  try { SECB = await (await fetch('build/out/sections_base.json', {cache:'no-store'})).json(); } catch (e) {}
+  if (ONLINE && !(await onlineLoad())) return;
+  initSections(); initTheme(); initExtras();
+  status('Загружаю сайт для картинок и превью…');
+  await loadSite();
+  status('Готово');
+  renderTabs(); renderList();
+}
+
+function loadSite() {
+  return new Promise(res => {
+    const f = $('#site');
+    f.onload = async () => {
+      try { await f.contentWindow.CW_READY; } catch (e) {}  // сайт грузит data/*.json асинхронно
+      SITE = f.contentWindow;
+      // пометки «устаревшее» вычисляет сборка — берём их из собранного сайта
+      try { const F = SITE.CW_API.oldFlags(); for (const k in F) for (const x of BASE[k]) { if (F[k][x.id]) x.old = F[k][x.id]; } } catch (e) {}
+      res();
+    };
+    f.src = 'index.html?editor=' + Date.now() + '#buffs';
+  });
+}
+
+// ---------- оформление (theme.js) ----------
+function initTheme() {
+  CW_THEME.init({
+    theme: () => OVR.theme || {}, setTheme: t => { snap(); OVR.theme = t; setDirty(); },
+    templates: () => JSON.parse(JSON.stringify(OVR.templates || {})), setTemplates: t => { snap(); OVR.templates = t; setDirty(); },
+    img: k => img(k),
+    upload: async (k, src) => { const url = await toPng(src); NEWIMG[k] = url; await fetch('/api/upload?key=' + encodeURIComponent(k.replace('/', '__')), {method:'POST', body:url}); status('Картинка загружена — соберите сайт', true); },
+    resetImg: async k => { delete NEWIMG[k]; await fetch('/api/upload-delete?key=' + encodeURIComponent(k.replace('/', '__')), {method:'POST'}); status('Картинка вернётся как в игре после сборки', true); },
+    redraw: () => kind === 'theme' && CW_THEME.form($('#form')),
+  });
+}
+function showTheme(on) {
+  const full = on || kind === 'spine' || kind === 'blocks';
+  $('aside').style.display = full ? 'none' : '';
+  $('main').style.gridTemplateColumns = full ? '1fr' : '';
+  if (on) { $('#form').style.display = ''; CW_THEME.form($('#form')); }
+  if (kind === 'blocks') { $('#form').style.display = ''; CW_EXTRAS.blocksForm($('#form')); }
+}
+// ---------- дополнения, предметы, видео, анимации, блоки (extras.js) ----------
+function initExtras() {
+  CW_EXTRAS.init({
+    img: k => img(k), rte: (h, f, r) => rte(h, f, r), sec: t => sec(t), allOf: k => allOf(k),
+    pic: (...a) => CW_THEME.pic(...a),
+    siteCaptions: () => { try { return [...SITE.document.querySelectorAll('#tabs .tab, h1, h2, h3, h4, h6, .side-h, .subtab, button, .chip, .tag, .badge, label')].map(e => e.textContent.trim()).filter(t => t && t.length < 60); } catch (e) { return []; } },
+    siteWhere: x => { try { return SITE.CW_API.whereText(kind, x.id) || ''; } catch (e) { return ''; } },
+    ovr: () => JSON.parse(JSON.stringify({blocks:OVR.blocks || [], texts:OVR.texts || [], sections:OVR.sections || {}})),
+    setOvr: fn => { snap(); fn(OVR); setDirty(); },
+    clips: () => CLIPS, setClips: c => { CLIPS = c; clipsDirty = true; setDirty(); },
+    status: (t, d) => status(t, d),
+    redraw: () => kind === 'blocks' ? CW_EXTRAS.blocksForm($('#form')) : renderForm(),
+  });
+}
+// своя картинка у записи: рамка персонажа или фон карточки стратегии/среды
+function artField(x, prop, title, key, commit) {
+  const w = document.createElement('div');
+  w.append(sec(title));
+  w.append(CW_THEME.pic(x[prop] ? 'Своя картинка' : 'Как у всех (из «Оформления»)', x[prop], key, k => { if (k) x[prop] = k; else delete x[prop]; commit(); renderForm(); }));
+  return w;
+}
+
+// рамки персонажа: общая, отдельные по стоимостям (как у Эона Ахи), стоимость для рамки и подпись стоимости
+function costFrames(x, commit) {
+  const AHA = [151102, 151112, 151122, 151132];
+  const w = document.createElement('div');
+  w.append(sec('Рамка и стоимость на карточке'));
+  const all = CW_THEME.costs();
+  const top = document.createElement('div'); top.className = 'grid';
+  top.innerHTML = `<label class="f">Стоимость для рамки и цвета<select><option value="">как в игре (${x.id === 151102 ? 7 : x.cost})</option>${all.map(c => `<option${x.tier == c ? ' selected' : ''}>${c}</option>`).join('')}</select></label>
+    <label class="f">Подпись стоимости на карточке<input placeholder="${x.id === 151102 ? '3–7' : x.cost}" value="${esc(x.costLabel || '')}"></label>`;
+  const [tierSel, lbl] = top.querySelectorAll('select, input');
+  tierSel.onchange = () => { if (tierSel.value) x.tier = tierSel.value; else delete x.tier; commit(); renderForm(); };
+  lbl.oninput = () => { if (lbl.value) x.costLabel = lbl.value; else delete x.costLabel; commit(); };
+  w.append(top);
+  w.append(CW_THEME.pic(x.frame ? 'Своя рамка (для всех стоимостей)' : 'Общая рамка — как у всех', x.frame, 'frame/' + x.id, k => { if (k) x.frame = k; else delete x.frame; commit(); renderForm(); }));
+  // стоимости, для которых можно задать отдельную рамку
+  x.frames = x.frames || {};
+  const list = [...new Set([...(AHA.includes(x.id) ? [3, 4, 5, 7] : [x.tier || x.cost]), ...Object.keys(x.frames)].map(String))];
+  const pics = document.createElement('div'); pics.className = 'th-pics'; pics.style.marginTop = '10px';
+  for (const c of list) pics.append(CW_THEME.pic('Рамка при стоимости ' + c, x.frames[c], 'frame/' + x.id + '_' + c, k => { x.frames = x.frames || {}; if (k) x.frames[c] = k; else delete x.frames[c]; if (!Object.keys(x.frames).length) delete x.frames; commit(); renderForm(); }));
+  w.append(pics);
+  if (!Object.keys(x.frames).length) delete x.frames;
+  const rest = all.filter(c => !list.includes(String(c)));
+  if (rest.length) {
+    const add = document.createElement('div'); add.style.marginTop = '8px';
+    add.innerHTML = `<select><option value="">＋ Рамка для другой стоимости…</option>${rest.map(c => `<option>${c}</option>`).join('')}</select>`;
+    add.firstChild.onchange = e => { const c = e.target.value; if (!c) return; x.frames = x.frames || {}; x.frames[c] = ''; commit(); renderForm(); };
+    w.append(add);
+  }
+  if (x.id === 151102) w.append(Object.assign(document.createElement('p'), {className:'hint', textContent:'Рамки по стоимостям Эона Ахи переключаются кнопками форм 3 / 4 / 5 / 7 на сайте.'}));
+  return w;
+}
+
+// свои ромбы связи: отдельная картинка для каждого уровня
+function traitDias(x, commit) {
+  const Q = [['black', 'Неактивная'], ['None', 'Бронза'], ['Silver', 'Серебро'], ['Gold', 'Золото'], ['Multicolor', 'Призма'], ['unique', 'Уникальная']];
+  const w = document.createElement('div');
+  w.append(sec('Свои ромбы этой связи'));
+  w.append(Object.assign(document.createElement('p'), {className:'hint', textContent:'Пусто — ромб как у всех (меняется во вкладке «Оформление»).'}));
+  const g = document.createElement('div'); g.className = 'th-pics';
+  for (const [q, t] of Q) g.append(CW_THEME.pic(t, (x.dias || {})[q], 'dia/' + x.id + '_' + q, k => {
+    x.dias = x.dias || {}; if (k) x.dias[q] = k; else delete x.dias[q]; if (!Object.keys(x.dias).length) delete x.dias; commit(); renderForm();
+  }));
+  w.append(g);
+  return w;
+}
+
+// ---------- разделы «Базы данных» (sections.js) ----------
+function initSections() {
+  CW_SECTIONS.init({
+    get: p => OVR.sections[p] || SECB[p] || [],
+    base: p => SECB[p],
+    isEdited: p => !!OVR.sections[p],
+    set: (p, v) => { snap(); OVR.sections[p] = v; setDirty(); },
+    reset: p => { snap(); snapT = 0; delete OVR.sections[p]; setDirty(); renderTabs(); renderList(); renderForm(); },
+    img: k => img(k),
+    upload: async (k, src) => { const url = await toPng(src); NEWIMG[k] = url; await fetch('/api/upload?key=' + encodeURIComponent(k.replace('/', '__')), {method:'POST', body:url}); status('Картинка загружена — соберите сайт', true); },
+    rte: (h, f, r) => rte(h, f, r),
+    redraw: () => renderForm(),
+    relist: () => renderList(),
+    select: i => { selId = i; renderList(); renderForm(); },
+  });
+}
+function secList() {
+  const L = CW_SECTIONS.list(secPath, $('#q').value.trim());
+  $('#list').innerHTML = L.map(({x, i}) => { const ic = img(CW_SECTIONS.iconOf(x));
+    return `<div class="it${i === selId ? ' sel' : ''}" data-id="${i}">${ic ? `<img src="${ic}" alt="">` : '<span class="ph"></span>'}<div style="min-width:0"><b>${esc(CW_SECTIONS.label(x, i))}</b><small>${esc(x && x.en || '')}</small></div></div>`; }).join('')
+    || '<div class="empty">Пусто</div>';
+}
+
+// ---------- шапка и список ----------
+function renderTabs() {
+  if (kind === 'bank') { $('#tabs').innerHTML = Object.entries(KINDS).map(([k, v]) => `<button class="tab${k === kind ? ' on' : ''}" data-k="${k}">${v.t}</button>`).join('');
+    $('#lfilter').innerHTML = `<select id="secSel" style="width:100%">${Object.entries(CW_SECTIONS.LIST).map(([p, t]) => `<option value="${p}"${p === secPath ? ' selected' : ''}>${t}${OVR.sections[p] ? ' ✎' : ''}</option>`).join('')}</select>`;
+    $('#secSel').onchange = e => { secPath = e.target.value; selId = null; renderList(); $('#form').innerHTML = '<div class="empty">Выберите запись слева или добавьте новую.</div>'; };
+    return; }
+  $('#tabs').innerHTML = Object.entries(KINDS).map(([k, v]) => `<button class="tab${k === kind ? ' on' : ''}" data-k="${k}">${v.t}</button>`).join('');
+  $('#lfilter').innerHTML = [['', 'Все'], ['e', 'Изменённые'], ['n', 'Новые'], ['d', 'Удалённые']].map(([f, t]) => `<button class="chip${lf === f ? ' on' : ''}" data-f="${f}">${t}</button>`).join('');
+}
+$('#tabs').onclick = e => { const b = e.target.closest('.tab'); if (!b) return; kind = b.dataset.k; selId = null; renderTabs(); showSpine(kind === 'spine'); showTheme(kind === 'theme'); if (kind === 'spine' || kind === 'theme' || kind === 'blocks') return; renderList(); $('#form').innerHTML = '<div class="empty">Выберите запись слева или добавьте новую.</div>'; };
+// анимации — отдельный редактор (spine/editor.html) во всю ширину
+function showSpine(on) {
+  let f = $('#spineFrame');
+  if (on && !f) { f = document.createElement('iframe'); f.id = 'spineFrame'; f.src = 'spine/editor.html'; $('main').appendChild(f); }
+  $('main').style.gridTemplateColumns = on ? '1fr' : '';
+  $('aside').style.display = $('#form').style.display = on ? 'none' : '';
+  if (f) f.style.display = on ? 'block' : 'none';
+}
+$('#lfilter').onclick = e => { const b = e.target.closest('.chip'); if (!b || kind === 'bank') return; lf = b.dataset.f; renderTabs(); renderList(); };
+$('#q').oninput = () => renderList();
+function markOf(x) {
+  if (isDel(kind, x.id)) return 'd';
+  if (!base(kind, x.id)) return 'n';
+  return edited(kind, x.id) ? 'e' : '';
+}
+function renderList() {
+  if (kind === 'bank') return secList();
+  const q = $('#q').value.trim().toLowerCase();
+  const L = allOf(kind).filter(x => (!q || (x.name + ' ' + (x.en || '') + ' ' + x.id).toLowerCase().includes(q)) && (!lf || markOf(x) === lf));
+  const MT = {e:'изменено', n:'новое', d:'удалено'};
+  $('#list').innerHTML = L.map(x => { const m = markOf(x), ic = img(KINDS[kind].icon(x));
+    return `<div class="it${x.id === selId ? ' sel' : ''}" data-id="${x.id}">${ic ? `<img src="${ic}" alt="">` : '<span class="ph"></span>'}<div style="min-width:0"><b>${esc(x.name)}</b><small>${esc(KINDS[kind].sub(x))}</small></div>${m ? `<span class="mark ${m}">${MT[m]}</span>` : ''}</div>`; }).join('')
+    || '<div class="empty">Пусто</div>';
+}
+$('#list').onclick = e => { const it = e.target.closest('.it'); if (it) { selId = +it.dataset.id; renderList(); renderForm(); } };
+
+// ---------- добавление ----------
+$('#bAdd').onclick = () => {
+  if (kind === 'bank') { selId = CW_SECTIONS.add(secPath); setDirty(); renderList(); renderForm(); return; }
+  const ids = allOf(kind).map(x => x.id);
+  const id = Math.max(900000, ...ids) + 1;
+  const T = {
+    augments: {id, q:'Silver', cat:1, ch:[1, 2, 3], name:'Новая стратегия', en:'', icon:`custom/${id}`, new:true, html:''},
+    buffs: {id, name:'Новая среда', en:'', icon:`custom/${id}`, new:true, html:''},
+    items: {id, type:'Equipment', cat:'basic', name:'Новый предмет', en:'', icon:`custom/${id}`, html:'', props:[], craft:[], tags:[], unique:false},
+    traits: {id, name:'Новая связь', en:'', kind:'origin', icon:`trait/${id}`, desc:{html:''}, layers:[{n:2, q:'None', parts:[{html:''}]}], remarks:[], subs:[]},
+    roles: {id, avatar:id, name:'Новый персонаж', en:'', cost:1, pos:'front', traits:[], expert:false, skills:{front:[{name:'Навык', type:'Skill', desc:[{html:''}]}]}, stars:[{star:1, fp:100, props:[]}, {star:2, fp:160, props:[]}, {star:3, fp:250, props:[]}], one:{}, ranks:[], rec:{}, lc:[]},
+  }[kind];
+  put(kind, T); selId = id; renderList(); renderForm();
+};
+
+// ---------- редактор текста ----------
+// Визуальный: текст выглядит как на сайте (числа, цвета, значки характеристик, ссылки), правится прямо в нём.
+// Кнопки оформляют выделенное; «HTML» — для редких ручных правок разметки.
+const COLORS = [['f29e38', 'Оранжевый'], ['ffd471', 'Золотой'], ['927fe7', 'Фиолетовый'], ['7196ff', 'Синий'], ['6cce9f', 'Зелёный'], ['ff7b7b', 'Красный'], ['b4b4b4', 'Серый']];
+let PROPS = null; // значки характеристик: data-p -> подпись (собираются из текстов сайта)
+function propList() {
+  if (PROPS) return PROPS;
+  PROPS = {};
+  const all = JSON.stringify(BASE || {});
+  for (const m of all.matchAll(/class=\\"prop\\" data-p=\\"(\w+)\\">([^<]{1,40})</g)) PROPS[m[1]] = PROPS[m[1]] || m[2];
+  return PROPS;
+}
+let rteCss = false;
+function rteStyles() {
+  if (rteCss) return; rteCss = true;
+  const st = document.createElement('style');
+  let css = '';
+  try { css = SITE.CW_API.css(); } catch (e) {}
+  st.textContent = css + `
+.ed{min-height:60px;padding:10px 12px;outline:none;font-size:14px;line-height:1.6;color:#ddd8f4;white-space:normal}
+.ed:focus{background:rgba(255,255,255,.02)}
+.ed b.v{color:var(--hl);font-weight:800}.ed .c[data-c]{font-weight:600}
+${COLORS.map(([c]) => `.ed .c[data-c="${c}"]{color:#${c}}`).join('')}
+.ed u{text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.35)}
+.ed a.ref{color:#9ad8ff;border-bottom:1px solid rgba(154,216,255,.35);text-decoration:none}
+.ed .prop{color:#d9ccff;font-weight:700}
+.tb select{padding:3px 6px;border-radius:7px;border:1px solid var(--line);background:var(--panel2);font-size:12px;font-weight:700;color:var(--text)}
+.tb .sep{width:1px;background:var(--line);margin:0 2px}`;
+  document.head.appendChild(st);
+}
+function cleanHtml(h) {
+  return h.replace(/<div><br><\/div>/g, '<br>').replace(/<div>/g, '<br>').replace(/<\/div>/g, '').replace(/ style="[^"]*"/g, '')
+    .replace(/&nbsp;/g, ' ').replace(/^<br>/, '').replace(/<span>([^<]*)<\/span>/g, '$1');
+}
+function rte(html, onchange, rows = 4) {
+  rteStyles();
+  const w = document.createElement('div'); w.className = 'rte';
+  const props = propList();
+  w.innerHTML = `<div class="tb">
+      <button data-a="v" title="Выделенное — число (оранжевое, жирное)">123 Число</button>
+      <select data-a="color" title="Цвет выделенного"><option value="">Цвет…</option>${COLORS.map(([c, n]) => `<option value="${c}" style="color:#${c}">${n}</option>`).join('')}</select>
+      <button data-a="u" title="Термин с подчёркиванием, как ключевые слова игры">Термин</button>
+      <select data-a="prop" title="Вставить значок характеристики"><option value="">Значок характеристики…</option>${Object.entries(props).sort((a, b) => a[1].localeCompare(b[1], 'ru')).map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select>
+      <span class="sep"></span>
+      <button data-a="role">Персонаж</button><button data-a="item">Предмет</button>
+      <button data-a="br" title="Новая строка (или Shift+Enter)">↵</button>
+      <button data-a="clear" title="Убрать оформление с выделенного">Очистить</button>
+      <span class="sep"></span>
+      <button data-a="html" title="Показать разметку">HTML</button></div>
+    <div class="ed rt" contenteditable="true" spellcheck="true"></div>
+    <textarea rows="${rows}" hidden spellcheck="false"></textarea>`;
+  const ed = $('.ed', w), ta = $('textarea', w);
+  ed.innerHTML = html || '';
+  ed.style.minHeight = (rows * 24) + 'px';
+  const fire = () => onchange(cleanHtml(ed.innerHTML));
+  ed.addEventListener('input', fire);
+  ed.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); document.execCommand('insertLineBreak'); fire(); } });
+  ed.addEventListener('paste', e => { e.preventDefault(); document.execCommand('insertText', false, e.clipboardData.getData('text/plain')); });
+  ta.oninput = () => { ed.innerHTML = ta.value; onchange(ta.value); };
+  let saved = null;
+  const keep = () => { const s = getSelection(); if (s.rangeCount && ed.contains(s.anchorNode)) saved = s.getRangeAt(0).cloneRange(); };
+  ed.addEventListener('keyup', keep); ed.addEventListener('mouseup', keep);
+  const range = () => { const s = getSelection(); if (s.rangeCount && ed.contains(s.anchorNode)) return s.getRangeAt(0); if (saved) { s.removeAllRanges(); s.addRange(saved); return saved; } return null; };
+  const wrapEl = el => {
+    const r = range(); if (!r) return;
+    if (r.collapsed) { el.textContent = el.textContent || '…'; r.insertNode(el); } else { el.appendChild(r.extractContents()); r.insertNode(el); }
+    const s = getSelection(); s.removeAllRanges(); const nr = document.createRange(); nr.selectNodeContents(el); s.addRange(nr);
+    fire();
+  };
+  const unwrap = () => {
+    const r = range(); if (!r) return;
+    const box = r.commonAncestorContainer.nodeType === 1 ? r.commonAncestorContainer : r.commonAncestorContainer.parentNode;
+    const targets = [...ed.querySelectorAll('b.v, span.c, u, a.ref, span.prop')].filter(n => r.intersectsNode(n));
+    let n = box.closest && box.closest('b.v, span.c, u, a.ref, span.prop'); if (n && ed.contains(n)) targets.push(n);
+    for (const t of new Set(targets)) { if (t.classList.contains('prop')) { t.replaceWith(document.createTextNode(t.textContent)); continue; } t.replaceWith(...t.childNodes); }
+    fire();
+  };
+  w.querySelector('.tb').addEventListener('mousedown', e => { if (e.target.tagName === 'BUTTON') e.preventDefault(); });
+  w.querySelector('.tb').onclick = e => {
+    const a = (e.target.closest('button') || {}).dataset?.a; if (!a) return;
+    if (a === 'html') { const on = ta.hidden; if (on) ta.value = cleanHtml(ed.innerHTML); ta.hidden = !on; ed.hidden = on; e.target.classList.toggle('on', on); return; }
+    if (a === 'v') wrapEl(Object.assign(document.createElement('b'), {className:'v'}));
+    if (a === 'u') wrapEl(document.createElement('u'));
+    if (a === 'br') { range(); document.execCommand('insertLineBreak'); fire(); }
+    if (a === 'clear') unwrap();
+    if (a === 'role' || a === 'item') {
+      const L = allOf(a === 'role' ? 'roles' : 'items');
+      const nm = prompt('Название (' + (a === 'role' ? 'персонаж' : 'предмет') + '):'); if (!nm) return;
+      const x = L.find(y => y.name.toLowerCase() === nm.trim().toLowerCase()) || L.find(y => y.name.toLowerCase().includes(nm.trim().toLowerCase()));
+      if (!x) return alert('Не нашёл «' + nm + '»');
+      const el = document.createElement('a'); el.className = 'ref'; el.dataset.t = a; el.dataset.id = x.id; el.textContent = x.name; wrapEl(el);
+    }
+  };
+  w.querySelector('.tb').onchange = e => {
+    const a = e.target.dataset.a, v = e.target.value; if (!v) return;
+    if (a === 'color') { const el = document.createElement('span'); el.className = 'c'; el.dataset.c = v; wrapEl(el); }
+    if (a === 'prop') { const el = document.createElement('span'); el.className = 'prop'; el.dataset.p = v; el.textContent = props[v]; const r = range(); if (r) { r.collapse(false); r.insertNode(el); r.setStartAfter(el); fire(); } }
+    e.target.value = '';
+  };
+  return w;
+}
+
+// ---------- поля ----------
+const field = (label, html) => `<label class="f">${label}${html}</label>`;
+const inp = (k, v, type = 'text') => `<input data-k="${k}" type="${type}" value="${esc(v ?? '')}">`;
+const sel = (k, v, opts) => `<select data-k="${k}">${Object.entries(opts).map(([a, b]) => `<option value="${a}"${String(v) === a ? ' selected' : ''}>${b}</option>`).join('')}</select>`;
+
+function renderForm() {
+  if (kind === 'bank') return CW_SECTIONS.form(secPath, selId, $('#form'));
+  const x = clone(cur(kind, selId)); if (!x) return;
+  const F = $('#form'), del = isDel(kind, x.id), isNew = !base(kind, x.id);
+  const iconKey = kind === 'roles' ? 'av/' + x.avatar : KINDS[kind].icon(x);
+  F.innerHTML = `<div class="fhead">
+      <div class="drop" id="drop" title="Перетащите PNG или нажмите, чтобы выбрать">${img(iconKey) ? `<img src="${img(iconKey)}" alt="">` : ''}<span>${kind === 'roles' ? 'портрет' : 'иконка'} · PNG</span></div>
+      <div><h2>${esc(x.name)}</h2><div style="color:var(--dim)">id ${x.id}${isNew ? ' · новая запись' : ''}${del ? ' · удалена' : ''}</div></div>
+      <div class="acts">
+        ${edited(kind, x.id) && !isNew ? '<button class="btn" id="bReset">Вернуть как в игре</button>' : ''}
+        <button class="btn danger" id="bDel">${del ? 'Восстановить' : 'Удалить'}</button>
+      </div></div>
+    <input type="file" id="file" accept="image/png,image/webp,image/jpeg" hidden>
+    <div class="grid">${field('Название', inp('name', x.name))}${field('Английское название', inp('en', x.en))}${extraFields(x)}</div>
+    <div id="more"></div>
+    <details open><summary>Все поля записи: уровни, пояснения, варианты правил, навыки, звёзды…</summary><div id="allf"></div></details>
+    <details><summary>Все поля (JSON) — для редких правок</summary><textarea id="json" spellcheck="false"></textarea>
+      <div style="margin-top:8px"><button class="btn" id="bJson">Применить JSON</button></div></details>`;
+  const commit = () => { put(kind, x); $('#json').value = JSON.stringify(x, null, 1); renderList(); $('h2', F).textContent = x.name; };
+  $$('[data-k]', F).forEach(el => el.oninput = el.onchange = () => {
+    let v = el.type === 'number' ? +el.value : el.type === 'checkbox' ? el.checked : el.value;
+    const k = el.dataset.k;
+    if (k === 'ch') { x.ch = $$('[data-k="ch"]', F).filter(c => c.checked).map(c => +c.value); }
+    else if (k === 'old') { if (v) x.old = x.old || 'отмечено вручную'; else delete x.old; }
+    else if (k === 'cost') x.cost = +v;
+    else x[k] = v;
+    commit();
+  });
+  $('#json').value = JSON.stringify(x, null, 1);
+  $('#allf').append(CW_SECTIONS.fields(x, () => commit(), kind === 'roles' ? ['rec'] : null));  // rec правится своим блоком выше
+  $('#bJson').onclick = () => { try { const o = JSON.parse($('#json').value); o.id = x.id; put(kind, o); renderList(); renderForm(); } catch (e) { alert('Ошибка в JSON: ' + e.message); } };
+  $('#bDel').onclick = () => { snap(); snapT = 0; const L = OVR.deleted[kind] = OVR.deleted[kind] || []; del ? L.splice(L.indexOf(x.id), 1) : L.push(x.id); setDirty(); renderList(); renderForm(); };
+  if ($('#bReset')) $('#bReset').onclick = () => { if (confirm('Убрать все правки этой записи?')) { snap(); snapT = 0; delete OVR.edit[kind][x.id]; setDirty(); renderList(); renderForm(); } };
+  moreFields(x, $('#more'), commit);
+  if (kind === 'roles') $('#more').append(recEditor(x, commit), costFrames(x, commit));
+  if (kind === 'augments' || kind === 'buffs') $('#more').append(artField(x, 'bg', 'Свой фон большой карточки', 'cardbg/' + kind + x.id, commit));
+  if (kind === 'augments' || kind === 'buffs') $('#more').append(artField(x, 'plate', kind === 'augments' ? 'Своя подложка значка (шестиугольник)' : 'Своя подложка значка среды', 'plate/' + kind + x.id, commit));
+  if (kind === 'traits') $('#more').append(traitDias(x, commit));
+  if (kind === 'items') $('#more').append(CW_EXTRAS.itemLook(x, commit), CW_EXTRAS.itemProps(x, commit));
+  if (kind === 'roles') $('#more').append(CW_EXTRAS.roleAnim(x, commit), CW_EXTRAS.clips('roles', x));
+  if (kind === 'traits') $('#more').append(CW_EXTRAS.clips('traits', x));
+  if (['roles', 'traits', 'items'].includes(kind)) $('#more').append(CW_EXTRAS.where(x, commit));
+  $('#more').append(CW_EXTRAS.notes(x, commit, kind + x.id));
+  // картинка
+  const drop = $('#drop'), file = $('#file');
+  drop.onclick = () => file.click();
+  drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); if (e.dataTransfer.files[0]) setImage(e.dataTransfer.files[0]); };
+  file.onchange = () => file.files[0] && setImage(file.files[0]);
+  function setImage(f) {
+    const r = new FileReader();
+    r.onload = async () => {
+      const url = await toPng(r.result);
+      const keys = kind === 'roles' ? ['av/' + x.avatar, 'avs/' + x.avatar] : [iconKey];
+      for (const k of keys) { NEWIMG[k] = url; await fetch('/api/upload?key=' + encodeURIComponent(k.replace('/', '__')), {method:'POST', body:url}); }
+      if (kind !== 'roles' && !x.icon) { x.icon = iconKey; commit(); }
+      status('Картинка загружена — соберите сайт, чтобы увидеть её там', true); renderForm(); renderList();
+    };
+    r.readAsDataURL(f);
+  }
+}
+const toPng = src => new Promise(res => { const i = new Image(); i.onload = () => { const c = document.createElement('canvas'); c.width = i.width; c.height = i.height; c.getContext('2d').drawImage(i, 0, 0); res(c.toDataURL('image/png')); }; i.src = src; });
+
+function extraFields(x) {
+  if (kind === 'augments') return field('Качество', sel('q', x.q, QNAME))
+    + `<label class="f">Измерения<span class="checks">${[1, 2, 3].map(c => `<label><input type="checkbox" data-k="ch" value="${c}"${(x.ch || []).includes(c) ? ' checked' : ''}> ${['', 'I', 'II', 'III'][c]}</label>`).join('')}</span></label>`
+    + `<label class="f">Сезон<span class="checks"><label><input type="checkbox" data-k="new"${x.new ? ' checked' : ''}> 2 сезон</label><label><input type="checkbox" data-k="old"${x.old ? ' checked' : ''}> устаревшая</label></span></label>`;
+  if (kind === 'buffs') return `<label class="f">Сезон<span class="checks"><label><input type="checkbox" data-k="new"${x.new ? ' checked' : ''}> 2 сезон</label><label><input type="checkbox" data-k="old"${x.old ? ' checked' : ''}> устаревшая</label></span></label>`;
+  if (kind === 'items') return field('Категория', sel('cat', x.cat, CAT)) + field('Тип', sel('type', x.type, {Equipment:'Экипировка', Consumable:'Предмет'}))
+    + `<label class="f">Сезон<span class="checks"><label><input type="checkbox" data-k="old"${x.old ? ' checked' : ''}> устаревший</label></span></label>`;
+  if (kind === 'traits') return field('Тип связи', sel('kind', x.kind, KIND));
+  if (kind === 'roles') return field('Стоимость', sel('cost', x.cost, {1:'1', 2:'2', 3:'3', 4:'4', 5:'5'})) + field('Позиция', sel('pos', x.pos, POS))
+    + `<label class="f">Особое<span class="checks"><label><input type="checkbox" data-k="expert"${x.expert ? ' checked' : ''}> консультант</label></span></label>`;
+  return '';
+}
+
+function sec(t) { const h = document.createElement('h3'); h.className = 'sec'; h.textContent = t; return h; }
+function moreFields(x, M, commit) {
+  if (kind === 'items') M.append(sec('Описание'), rte(x.html, v => { x.html = v; commit(); }, 5));
+  if (kind === 'augments' || kind === 'buffs') cardEditor(x, M, commit);
+  if (kind === 'traits') {
+    M.append(sec('Описание'), rte(x.desc && x.desc.html, v => { x.desc = {html:v}; commit(); }, 4));
+    M.append(sec('Пороги'));
+    const box = document.createElement('div'); M.append(box);
+    const draw = () => {
+      box.innerHTML = '';
+      (x.layers || []).forEach((l, i) => {
+        const r = document.createElement('div'); r.className = 'row';
+        r.innerHTML = `${field('Персонажей', `<input type="number" min="1" value="${l.n}">`)}${field('Качество', `<select>${Object.entries(QL).map(([a, b]) => `<option value="${a}"${l.q === a ? ' selected' : ''}>${b}</option>`).join('')}</select>`)}<div></div><button class="x" title="Удалить порог">✕</button>`;
+        $('input', r).oninput = e => { l.n = +e.target.value; commit(); };
+        $('select', r).onchange = e => { l.q = e.target.value; commit(); };
+        r.children[2].append(rte((l.parts || []).map(p => p.html).join('<br>'), v => { l.parts = [{html:v}]; commit(); }, 3));
+        $('.x', r).onclick = () => { x.layers.splice(i, 1); commit(); draw(); };
+        box.append(r);
+      });
+      const add = document.createElement('button'); add.className = 'btn'; add.textContent = '＋ Порог';
+      add.onclick = () => { const last = (x.layers || []).slice(-1)[0]; (x.layers = x.layers || []).push({n:last ? last.n + 2 : 2, q:'None', parts:[{html:''}]}); commit(); draw(); };
+      box.append(add);
+    };
+    draw();
+  }
+  if (kind === 'roles') {
+    M.append(sec('Связи'));
+    const tc = document.createElement('div'); tc.className = 'tchips';
+    const drawT = () => { tc.innerHTML = allOf('traits').map(t => `<span class="tchip${x.traits.includes(t.id) ? ' on' : ''}" data-t="${t.id}">${img('trait/' + t.id) ? `<img src="${img('trait/' + t.id)}" alt="">` : ''}${esc(t.name)}</span>`).join(''); };
+    tc.onclick = e => { const c = e.target.closest('.tchip'); if (!c) return; const id = +c.dataset.t; x.traits = x.traits.includes(id) ? x.traits.filter(y => y !== id) : [...x.traits, id]; commit(); drawT(); };
+    drawT(); M.append(tc);
+    M.append(skillsEditor(x, commit));
+  }
+}
+
+// рекомендуемая экипировка: x.rec = {front|back: {first:[id], second:[id]}}; на сайте показываются first + second
+function recEditor(x, commit) {
+  const W = document.createElement('div');
+  const EQ = allOf('items').filter(i => i.type === 'Equipment' && !i.old && !isDel('items', i.id)).sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+  const byId = Object.fromEntries(EQ.map(i => [i.id, i]));
+  const ROW = {first:'Основная', second:'Дополнительная'};
+  const draw = () => {
+    W.innerHTML = ''; W.append(sec('Рекомендуемая экипировка'));
+    const rec = x.rec || {};
+    const sides = [...new Set([...Object.keys(rec), ...Object.keys(x.skills || {}).filter(s => s !== 'servant')])];
+    for (const side of sides.length ? sides : ['front']) {
+      const R = rec[side] || {};
+      const own = () => { x.rec = x.rec || {}; x.rec[side] = x.rec[side] || {}; return x.rec[side]; };
+      for (const row of Object.keys(ROW)) {
+        const L = R[row] || [];
+        const line = document.createElement('div'); line.style.cssText = 'display:grid;grid-template-columns:170px minmax(0,1fr);gap:8px;align-items:start;margin:8px 0';
+        line.innerHTML = `<span class="hint" style="padding-top:6px">${SIDE[side]} · ${ROW[row]}</span><div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0">` + L.map((id, i) => { const it = byId[id];
+          return `<span class="tchip on" data-i="${i}" title="Убрать">${it && img(it.icon) ? `<img src="${img(it.icon)}" alt="">` : ''}${esc(it ? it.name : 'нет предмета ' + id)} ✕</span>`; }).join('')
+          + `<select style="width:auto;max-width:100%;background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:8px;padding:4px 8px"><option value="">＋ Добавить предмет…</option>${EQ.map(i => `<option value="${i.id}">${esc(i.name)}${CAT[i.cat] ? ' · ' + CAT[i.cat] : ''}</option>`).join('')}</select></div>`;
+        line.onclick = e => { const c = e.target.closest('.tchip'); if (!c) return; own()[row].splice(+c.dataset.i, 1); commit(); draw(); };
+        $('select', line).onchange = e => { if (e.target.value) { const o = own(); (o[row] = o[row] || []).push(+e.target.value); commit(); draw(); } };
+        W.append(line);
+      }
+    }
+  };
+  draw();
+  return W;
+}
+
+// навыки персонажа: свои иконки, добавить / удалить / переставить, текст по звёздам; эйдолоны
+function skillsEditor(x, commit) {
+  const W = document.createElement('div');
+  const siteRole = (() => { try { return SITE.CW_API.role(x.id); } catch (e) { return null; } })();
+  const draw = () => {
+    W.innerHTML = '';
+    x.skills = x.skills || {}; x.one = x.one || {};
+    for (const side of Object.keys(SIDE)) {
+      if (!x.skills[side]) continue;
+      W.append(sec('Кратко · ' + SIDE[side]), rte((x.one[side] || {}).html, v => { x.one[side] = {html:v}; commit(); }, 2));
+      W.append(sec('Навыки · ' + SIDE[side]));
+      x.skills[side].forEach((s, i) => {
+        const b = document.createElement('div'); b.className = 'skill';
+        const gameIcon = siteRole && siteRole.skills && siteRole.skills[side] && siteRole.skills[side][i] ? siteRole.skills[side][i].icon : '';
+        b.innerHTML = `<div class="grid" style="margin-bottom:8px;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) auto">${field('Название навыка', `<input data-s="name" value="${esc(s.name)}">`)}
+          ${field('Тип', `<select data-s="type">${STYPE.map(t => `<option${s.type === t ? ' selected' : ''}>${t}</option>`).join('')}</select>`)}
+          ${field('Метка (необязательно)', `<input data-s="tag" value="${esc(s.tag || '')}" placeholder="например: Одиночная цель">`)}
+          <div style="display:flex;gap:6px;align-items:end"><button class="btn" data-a="up" title="Выше">↑</button><button class="btn" data-a="down" title="Ниже">↓</button><button class="btn danger" data-a="del">Удалить навык</button></div></div>`;
+        b.append(CW_THEME.pic(s.iconOwn ? 'Своя иконка навыка' : 'Иконка навыка (из игры; загрузите свою)', s.iconOwn || gameIcon, `skill/${x.id}_${side}_${i}_${Date.now() % 100000}`, k => { if (k) s.iconOwn = k; else delete s.iconOwn; commit(); draw(); }));
+        b.oninput = b.onchange = e => { const k = e.target.dataset.s; if (!k) return; if (e.target.value) s[k] = e.target.value; else delete s[k]; commit(); };
+        b.onclick = e => {
+          const a = e.target.dataset.a; if (!a) return;
+          const L = x.skills[side];
+          if (a === 'del' && confirm(`Удалить навык «${s.name}»?`)) L.splice(i, 1);
+          if (a === 'up' && i) L.splice(i - 1, 0, L.splice(i, 1)[0]);
+          if (a === 'down' && i < L.length - 1) L.splice(i + 1, 0, L.splice(i, 1)[0]);
+          if (a === 'addpart') s.desc.push({html:''});
+          if (a.startsWith('delpart')) s.desc.splice(+a.slice(7), 1);
+          commit(); draw();
+        };
+        s.desc = s.desc || [{html:''}];
+        s.desc.forEach((d, k) => {
+          const h = document.createElement('div'); h.className = 'hint'; h.style.cssText = 'display:flex;gap:8px;align-items:center;margin:8px 0 4px';
+          h.innerHTML = `<span>${s.desc.length > 1 ? 'Часть ' + (k + 1) : 'Описание'}</span><select title="Для какой звёздности этот текст"><option value="">для всех звёзд</option>${[1, 2, 3, 4].map(n => `<option value="${n}"${d.star === n ? ' selected' : ''}>только ${n}★</option>`).join('')}</select>${s.desc.length > 1 ? `<button class="btn danger" data-a="delpart${k}" style="padding:2px 8px">✕</button>` : ''}`;
+          h.querySelector('select').onchange = e => { if (e.target.value) d.star = +e.target.value; else delete d.star; commit(); };
+          b.append(h, rte(d.html, v => { d.html = v; commit(); }, 3));
+        });
+        const ap = document.createElement('button'); ap.className = 'btn'; ap.dataset.a = 'addpart'; ap.textContent = '＋ Часть текста (например, для другой звёздности)'; ap.style.marginTop = '6px'; b.append(ap);
+        W.append(b);
+      });
+      const add = document.createElement('button'); add.className = 'btn'; add.textContent = '＋ Навык · ' + SIDE[side];
+      add.onclick = () => { x.skills[side].push({id:'custom' + Date.now(), name:'Новый навык', type:'Skill', desc:[{html:''}]}); commit(); draw(); };
+      W.append(add);
+    }
+    const missing = Object.keys(SIDE).filter(k => !x.skills[k]);
+    if (missing.length) {
+      const row = document.createElement('div'); row.style.marginTop = '12px';
+      row.innerHTML = `<select><option value="">＋ Добавить навыки для…</option>${missing.map(k => `<option value="${k}">${SIDE[k]}</option>`).join('')}</select>`;
+      row.firstChild.onchange = e => { const k = e.target.value; if (!k) return; x.skills[k] = [{id:'custom' + Date.now(), name:'Новый навык', type:'Skill', desc:[{html:''}]}]; commit(); draw(); };
+      W.append(row);
+    }
+    W.append(sec('Эйдолоны'));
+    x.ranks = x.ranks || [];
+    x.ranks.forEach((rk, i) => {
+      const b = document.createElement('div'); b.className = 'skill';
+      b.innerHTML = `<div class="grid" style="margin-bottom:8px;grid-template-columns:90px minmax(0,1fr) auto">${field('Номер', `<input data-r="r" type="number" min="1" value="${rk.r}">`)}${field('Название', `<input data-r="name" value="${esc(rk.name || '')}">`)}<div style="display:flex;align-items:end"><button class="btn danger">Удалить</button></div></div>`;
+      b.oninput = e => { const k = e.target.dataset.r; if (k) { rk[k] = k === 'r' ? +e.target.value : e.target.value; commit(); } };
+      b.querySelector('button').onclick = () => { if (confirm('Удалить эйдолон?')) { x.ranks.splice(i, 1); commit(); draw(); } };
+      b.append(CW_THEME.pic(rk.iconOwn ? 'Своя иконка' : 'Иконка эйдолона', rk.iconOwn || rk.icon, `rank/${x.id}_${i}_${Date.now() % 100000}`, k => { if (k) rk.iconOwn = k; else delete rk.iconOwn; commit(); draw(); }));
+      b.append(rte(rk.html, v => { rk.html = v; commit(); }, 2));
+      W.append(b);
+    });
+    const ar = document.createElement('button'); ar.className = 'btn'; ar.textContent = '＋ Эйдолон';
+    ar.onclick = () => { x.ranks.push({r:x.ranks.length + 1, name:'Новый эйдолон', html:''}); commit(); draw(); };
+    W.append(ar);
+  };
+  draw();
+  return W;
+}
+
+// ---------- карточка стратегии / среды: описание, плашки, награды, превью ----------
+const RW_TYPES = {role:'Персонаж', item:'Предмет', emblem:'Эмблема связи', trait:'Персонаж связи (?)', coin:'Золотые монеты', gi:'Значок игры', hex:'Стратегия (качество)', remblem:'Случайные эмблемы', chim:'Компаньон', arrow:'Стрелка »', or:'Текст-разделитель'};
+const GI_KEYS = {exp:'Опыт', refresh:'Бесплатные обновления', hp:'Восстановление НР', expert:'Приглашение эксперта', wbox1:'Ящик простой', wbox2:'Ящик продвинутый', wbox3:'Ящик особый', rbox1:'Персонаж ст. 1', rbox2:'Персонаж ст. 2', rbox3:'Персонаж ст. 3', rbox4:'Персонаж ст. 4', rbox5:'Персонаж ст. 5', orb:'Сфера', star:'Книга звёзд'};
+function rwFields(d, onChange) {
+  const r = document.createElement('div'); r.className = 'rwf';
+  const traitsAll = () => [...allOf('traits'), ...((SITE && SITE.CW_API) ? SITE.CW_API.oldTraits() : []).map(t => ({...t, name:t.name + ' (1 сезон)'}))];
+  const opts = (L, v) => L.map(o => `<option value="${o.id}"${+v === o.id ? ' selected' : ''}>${esc(o.name)}</option>`).join('');
+  const draw = () => {
+    let what = '';
+    if (d.t === 'role') what = `<select data-f="id">${opts(allOf('roles').filter(y => ![151112, 151122, 151132].includes(y.id)).sort((a, b) => a.name.localeCompare(b.name, 'ru')), d.id)}</select>`;
+    else if (d.t === 'item') what = `<select data-f="id">${opts(allOf('items').sort((a, b) => a.name.localeCompare(b.name, 'ru')), d.id)}</select>`;
+    else if (d.t === 'emblem' || d.t === 'trait') what = `<select data-f="id">${opts(traitsAll(), d.id)}</select>`;
+    else if (d.t === 'gi') what = `<select data-f="k">${Object.entries(GI_KEYS).map(([k, v]) => `<option value="${k}"${d.k === k ? ' selected' : ''}>${v}</option>`).join('')}</select>`;
+    else if (d.t === 'hex') what = `<select data-f="q">${Object.entries(QNAME).map(([k, v]) => `<option value="${k}"${d.q === k ? ' selected' : ''}>${v}</option>`).join('')}</select>`;
+    else if (d.t === 'chim') what = `<select data-f="i">${Array.from({length:12}, (_, k) => `<option value="${k + 1}"${+d.i === k + 1 ? ' selected' : ''}>Компаньон ${k + 1}</option>`).join('')}</select>`;
+    else if (d.t === 'or') what = `<input data-f="s" value="${esc(d.s || '')}" placeholder="или / один из: / +">`;
+    const hasN = !['arrow', 'or'].includes(d.t), hasQ = ['gi', 'chim', 'trait'].includes(d.t);
+    r.innerHTML = `<select data-f="t">${Object.entries(RW_TYPES).map(([k, v]) => `<option value="${k}"${d.t === k ? ' selected' : ''}>${v}</option>`).join('')}</select>${what}
+      ${hasN ? `<label>Количество <input data-f="n" type="number" min="1" value="${d.n || 1}" style="width:70px"></label>` : ''}${hasQ ? `<label><input data-f="q" type="checkbox"${d.q ? ' checked' : ''}> случайное (?)</label>` : ''}`;
+  };
+  r.onchange = r.oninput = e => {
+    const f = e.target.dataset.f; if (!f) return;
+    if (f === 't') { for (const k in d) delete d[k]; d.t = e.target.value; draw(); return onChange(); }
+    if (f === 'q' && e.target.type === 'checkbox') { if (e.target.checked) d.q = '?'; else delete d.q; }
+    else if (f === 'id' || f === 'n' || f === 'i') d[f] = +e.target.value; else d[f] = e.target.value;
+    if (f === 'n' && d.n <= 1) delete d.n;
+    onChange();
+  };
+  draw();
+  return r;
+}
+function cardEditor(x, M, commit) {
+  const wrap = document.createElement('div'); wrap.className = 'split'; M.append(wrap);
+  const L = document.createElement('div'), P = document.createElement('div');
+  P.className = 'pvw'; P.innerHTML = '<b>Превью карточки</b>';
+  wrap.append(L, P);
+  // превью: отдельная копия сайта, в которую подставляем правки без пересборки
+  const pf = document.createElement('iframe'); P.append(pf);
+  let pready = false, ptimer = 0;
+  pf.onload = async () => { try { await pf.contentWindow.CW_READY; } catch (e) {} pready = true; refresh(); };
+  pf.src = 'index.html?preview=' + Date.now() + '#buffs';
+  const refresh = () => { clearTimeout(ptimer); ptimer = setTimeout(() => { if (pready && pf.contentWindow.CW_API) { try { pf.contentWindow.CW_API.preview(kind, clone(x)); } catch (e) { console.warn(e); } } }, 120); };
+  const save = () => { commit(); refresh(); };
+
+  L.append(sec('Описание'), rte(x.html, v => { x.html = v; save(); }, 5));
+  L.append(sec('Конструктор: своя раскладка карточки'));
+  const ds = document.createElement('div'); ds.className = 'cardmode'; L.append(ds);
+  const drawDs = () => {
+    const has = !!(x.layout && x.layout.items);
+    ds.innerHTML = `<span class="hint" style="margin:0">${has ? `Своя раскладка: ${x.layout.items.length} элементов. Плашки и награды ниже не используются.` : 'Расставьте всё как хотите: свои фото, текст, награды, плашки, подложки.'}</span>
+      <button class="btn main" data-d="open">${has ? 'Редактировать раскладку' : 'Открыть конструктор'}</button>${has ? '<button class="btn danger" data-d="off">Убрать раскладку</button><button class="btn" data-d="tsave">Сохранить как шаблон</button>' : ''}
+      ${Object.keys(OVR.templates || {}).length ? `<select data-d="tpick"><option value="">Применить шаблон…</option>${Object.keys(OVR.templates).map(n => `<option>${esc(n)}</option>`).join('')}</select><button class="btn" data-d="tbulk">Шаблон для многих…</button>` : ''}`;
+  };
+  ds.onchange = e => {
+    if (e.target.dataset.d !== 'tpick' || !e.target.value) return;
+    x.layout = clone(OVR.templates[e.target.value]); save(); drawDs();
+  };
+  ds.onclick = e => {
+    const d = (e.target.closest('button') || {}).dataset?.d; if (!d) return;
+    if (d === 'tsave') { const n = prompt('Название шаблона:', x.name); if (!n) return; snap(); OVR.templates = OVR.templates || {}; OVR.templates[n] = clone(x.layout); setDirty(); drawDs(); status('Шаблон «' + n + '» сохранён', true); return; }
+    if (d === 'tbulk') { bulkTemplate(); return; }
+    if (d === 'off') { if (!confirm('Убрать свою раскладку и вернуть обычную карточку?')) return; delete x.layout; save(); drawDs(); return; }
+    if (!SITE || !SITE.CW_API) return alert('Сайт ещё загружается, подождите пару секунд');
+    CWDesigner.open({kind, obj:clone(x), site:SITE, newImg:NEWIMG, rwFields,
+      upload: async (key, png) => { NEWIMG[key] = png; await fetch('/api/upload?key=' + encodeURIComponent(key.replace('/', '__')), {method:'POST', body:png}); },
+      onDone: layout => { x.layout = layout; save(); drawDs(); }});
+  };
+  drawDs();
+  L.append(sec('Плашки и награды в карточке'));
+  const mode = document.createElement('div'); mode.className = 'cardmode'; L.append(mode);
+  const box = document.createElement('div'); L.append(box);
+  const manual = () => !!(x.card && (x.card.stages || x.card.rewards));
+  const auto = () => (SITE && SITE.CW_API && SITE.CW_API.autoFor) ? SITE.CW_API.autoFor(kind, clone(x)) : {stages:[], rewards:[]};
+  const drawMode = () => {
+    mode.innerHTML = manual()
+      ? `<span class="hint" style="margin:0">Свои плашки и награды.</span><button class="btn" data-m="auto">Вернуть автоматические</button>`
+      : `<span class="hint" style="margin:0">Сейчас собираются автоматически из текста.</span><button class="btn" data-m="man">Настроить вручную</button>`;
+  };
+  mode.onclick = e => {
+    const m = (e.target.closest('button') || {}).dataset?.m; if (!m) return;
+    if (m === 'man') { const a = auto(); x.card = Object.assign(x.card || {}, {stages:a.stages, rewards:a.rewards}); }
+    else { delete x.card.stages; delete x.card.rewards; if (!x.card.text) delete x.card; }
+    save(); drawMode(); draw();
+  };
+  function draw() {
+    box.innerHTML = '';
+    if (!manual()) {
+      const a = auto();
+      box.innerHTML = `<div class="hint">Плашки: ${a.stages.map(s => esc(s.join(': '))).join(' · ') || 'нет'}. Наград найдено: ${a.rewards.filter(r => !['arrow', 'or'].includes(r.t)).length}.</div>`;
+      return;
+    }
+    const c = x.card;
+    // плашки
+    const sh = document.createElement('div'); sh.className = 'hint'; sh.textContent = 'Плашки (подпись и значение, например «Когда» — «Начало партии»):'; box.append(sh);
+    c.stages = c.stages || [];
+    c.stages.forEach((st, i) => {
+      const r = document.createElement('div'); r.className = 'stgrow';
+      r.innerHTML = `<input value="${esc(st[0])}" placeholder="Когда"><input value="${esc(st[1])}" placeholder="Начало партии"><button title="Удалить">✕</button>`;
+      const [a, b] = r.querySelectorAll('input');
+      a.oninput = () => { st[0] = a.value; save(); }; b.oninput = () => { st[1] = b.value; save(); };
+      r.querySelector('button').onclick = () => { c.stages.splice(i, 1); save(); draw(); };
+      box.append(r);
+    });
+    const as = document.createElement('button'); as.className = 'btn'; as.textContent = '＋ Плашка'; as.style.marginBottom = '14px';
+    as.onclick = () => { c.stages.push(['Когда', '']); save(); draw(); }; box.append(as);
+    // награды
+    const rh = document.createElement('div'); rh.className = 'hint'; rh.textContent = 'Награды по порядку (тип · что именно · количество · «?» = случайное):'; box.append(rh);
+    c.rewards = c.rewards || [];
+    c.rewards.forEach((d, i) => {
+      const r = document.createElement('div'); r.className = 'rwrow';
+      r.style.gridTemplateColumns = 'minmax(0,1fr) 96px';
+      r.append(rwFields(d, save));
+      const ops = document.createElement('div'); ops.className = 'ops';
+      ops.innerHTML = '<button data-o="up" title="Выше">↑</button><button data-o="down" title="Ниже">↓</button><button data-o="del" title="Удалить" style="color:var(--bad)">✕</button>';
+      r.append(ops);
+      r.querySelector('.ops').onclick = e => {
+        const o = (e.target.closest('button') || {}).dataset?.o; if (!o) return;
+        if (o === 'del') c.rewards.splice(i, 1);
+        if (o === 'up' && i > 0) [c.rewards[i - 1], c.rewards[i]] = [c.rewards[i], c.rewards[i - 1]];
+        if (o === 'down' && i < c.rewards.length - 1) [c.rewards[i + 1], c.rewards[i]] = [c.rewards[i], c.rewards[i + 1]];
+        save(); draw();
+      };
+      box.append(r);
+    });
+    const ar = document.createElement('button'); ar.className = 'btn'; ar.textContent = '＋ Награда';
+    ar.onclick = () => { c.rewards.push({t:'coin', n:1}); save(); draw(); }; box.append(ar);
+  }
+  drawMode(); draw();
+  L.append(sec('Подробное описание (блок под наградами)'));
+  L.append(Object.assign(document.createElement('p'), {className:'hint', textContent:'Необязательно. Сюда можно расписать, как работает эффект, советы и примеры — блок появится внизу большой карточки.'}));
+  L.append(rte(x.card && x.card.text, v => { if (v) { x.card = x.card || {}; x.card.text = v; } else if (x.card) { delete x.card.text; if (!manual()) delete x.card; } save(); }, 4));
+}
+
+// применить шаблон раскладки сразу к нескольким стратегиям/средам
+function bulkTemplate() {
+  const names = Object.keys(OVR.templates || {}); if (!names.length) return;
+  const n = prompt('Какой шаблон применить?\n' + names.map((t, i) => `${i + 1}. ${t}`).join('\n'), '1'); if (!n) return;
+  const name = names[+n - 1] || names.find(t => t === n); if (!name) return alert('Нет такого шаблона');
+  const scope = prompt('К каким записям? Напишите одно:\nвсе — все записи этой вкладки\nSilver / Gold / Prismatic — стратегии этого качества\nили часть названия', 'все'); if (!scope) return;
+  const q = scope.trim().toLowerCase();
+  const L = allOf(kind).filter(x => q === 'все' || (kind === 'augments' && x.q && x.q.toLowerCase() === q) || x.name.toLowerCase().includes(q));
+  if (!L.length) return alert('Ничего не нашлось');
+  if (!confirm(`Применить шаблон «${name}» к ${L.length} записям? Свои раскладки у них будут заменены.`)) return;
+  snap(); snapT = 0;
+  for (const x of L) { const y = clone(x); y.layout = clone(OVR.templates[name]); (OVR.edit[kind] = OVR.edit[kind] || {})[y.id] = y; }
+  setDirty(); renderList(); if (selId) renderForm(); status(`Шаблон применён к ${L.length} записям`, true);
+}
+
+// ---------- онлайн-режим (редактор открыт на GitHub Pages) ----------
+// Вход — токен GitHub с правом записи в репозиторий сайта. Правки сохраняются в online.json репозитория
+// (разница с опубликованным состоянием); сайт накладывает их сразу, а домашняя публикация переносит их в overrides.json.
+let ORIG = null, GH = null;
+const gh = async (path, opt = {}) => fetch('https://api.github.com/repos/' + GH.repo + path, {...opt, cache:'no-store', headers:{Authorization:'Bearer ' + GH.token, Accept:'application/vnd.github+json'}});
+const b64 = s => { const u = new TextEncoder().encode(s); let t = ''; for (let i = 0; i < u.length; i += 0x8000) t += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(t); };
+const unb64 = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), c => c.charCodeAt(0)));
+async function onlineLoad() {
+  GH = {repo: location.hostname.split('.')[0] + '/' + location.pathname.split('/')[1], token: ''};
+  try { GH.token = localStorage.getItem('cw_gh_token') || ''; } catch (e) {}
+  for (;;) {
+    if (!GH.token) GH.token = (prompt('Вход в редактор.\nВставьте токен GitHub с доступом к репозиторию ' + GH.repo + ' (Contents: Read and write).') || '').trim();
+    if (!GH.token) { $('main').innerHTML = '<div class="offline"><h2>Нужен вход</h2><p>Обновите страницу и вставьте токен GitHub.</p></div>'; status('Нет входа'); return false; }
+    const r = await gh('');
+    const j = r.ok ? await r.json() : {};
+    if (j.permissions && j.permissions.push) break;
+    alert(r.ok ? 'У этого токена нет права записи в репозиторий.' : 'Токен не подошёл.');
+    GH.token = '';
+  }
+  try { localStorage.setItem('cw_gh_token', GH.token); } catch (e) {}
+  ORIG = clone(OVR);
+  const r = await gh('/contents/online.json');
+  if (r.ok) { const f = await r.json(); GH.sha = f.sha; onlineApply(JSON.parse(unb64(f.content) || '{}')); }
+  // всё, что требует файлов на домашнем компьютере, онлайн недоступно
+  const F = window.fetch;
+  window.fetch = (u, o) => /^\/(api|save-)/.test(String(u)) ? (status('Это доступно только дома (картинки, видео, анимации, сборка)', true), Promise.resolve(new Response('', {status:403}))) : F(u, o);
+  $('#bPub').style.display = 'none'; $('#bBuild').textContent = 'Сохранить на сайт';
+  $('#bSave').onclick = save;
+  return true;
+}
+function onlineApply(O) {
+  const P = CW_PATCH;
+  for (const k in O.edit || {}) for (const id in O.edit[k]) (OVR.edit[k] = OVR.edit[k] || {})[id] = P.merge(cur(k, +id) || cur(k, id), O.edit[k][id]);
+  for (const p in O.sections || {}) OVR.sections[p] = P.merge(p in OVR.sections ? OVR.sections[p] : SECB[p], O.sections[p]);
+  for (const k in O.deleted || {}) OVR.deleted[k] = [...new Set([...(OVR.deleted[k] || []), ...O.deleted[k]])];
+}
+async function onlineSave() {
+  const P = CW_PATCH, O = {edit:{}, sections:{}, deleted:{}};
+  const was = (k, id) => ((ORIG.edit[k] || {})[id]) || base(k, +id) || base(k, id);
+  for (const k of new Set([...Object.keys(OVR.edit), ...Object.keys(ORIG.edit)]))
+    for (const id of new Set([...Object.keys(OVR.edit[k] || {}), ...Object.keys(ORIG.edit[k] || {})])) {
+      const d = P.diff(was(k, id), (OVR.edit[k] || {})[id] || base(k, +id) || base(k, id));
+      if (d) (O.edit[k] = O.edit[k] || {})[id] = d;
+    }
+  for (const p of new Set([...Object.keys(OVR.sections || {}), ...Object.keys(ORIG.sections || {})])) {
+    const d = P.diff(p in ORIG.sections ? ORIG.sections[p] : SECB[p], p in OVR.sections ? OVR.sections[p] : SECB[p]);
+    if (d) O.sections[p] = d;
+  }
+  for (const k in OVR.deleted) { const n = OVR.deleted[k].filter(id => !(ORIG.deleted[k] || []).includes(id)); if (n.length) O.deleted[k] = n; }
+  status('Сохраняю на сайт…', true);
+  const r = await gh('/contents/online.json', {method:'PUT', body:JSON.stringify({message:'Правки из онлайн-редактора', content:b64(JSON.stringify(O, null, 1)), sha:GH.sha, branch:'main'})});
+  if (!r.ok) { status(r.status === 409 ? 'Файл правок изменился с другого устройства — обновите страницу' : 'Не удалось сохранить (' + r.status + ')', true); return false; }
+  GH.sha = (await r.json()).content.sha;
+  dirty = false; status('Сохранено ✓ На сайте появится примерно через минуту'); return true;
+}
+
+// ---------- сохранение и сборка ----------
+async function save() {
+  if (ONLINE) return onlineSave();
+  const r = await fetch('/api/overrides', {method:'POST', body:JSON.stringify(OVR, null, 1)});
+  if (!r.ok) { status('Не удалось сохранить', true); return false; }
+  if (clipsDirty) { const c = await fetch('/api/clips', {method:'POST', body:JSON.stringify(CLIPS)}); if (!c.ok) { status('Не удалось сохранить список видео', true); return false; } clipsDirty = false; }
+  dirty = false; status('Сохранено'); return true;
+}
+$('#bSave').onclick = save;
+$('#bPub').onclick = async () => {
+  try { const c = await (await fetch('/api/publish-config')).json(); $('#pubRepo').value = c.repo || ''; $('#pubTok').placeholder = c.hasToken ? 'токен сохранён — оставьте пустым' : 'вставьте токен'; } catch (e) {}
+  $('#pubDlg').showModal();
+};
+$('#pubCancel').onclick = () => $('#pubDlg').close();
+$('#pubGo').onclick = async () => {
+  const b = $('#pubGo'); b.disabled = true;
+  await fetch('/api/publish-config', {method:'POST', body:JSON.stringify({repo:$('#pubRepo').value, token:$('#pubTok').value})});
+  $('#pubTok').value = '';
+  if (!(await save())) { b.disabled = false; return; }
+  status('Собираю сайт…', true);
+  let r = await fetch('/api/build', {method:'POST'}); let t = await r.text();
+  let ok = r.ok;
+  if (r.ok) {
+    status('Публикую…', true); await fetch('/api/publish', {method:'POST'});
+    // ждём окончания, показывая ход загрузки из git (проценты)
+    for (;;) {
+      await new Promise(res => setTimeout(res, 1500));
+      const st = await (await fetch('/api/publish-status')).json();
+      const last = st.log.split(/[\r\n]+/).filter(Boolean).pop() || '';
+      if (st.running) { status('Публикую… ' + last.slice(0, 90), true); continue; }
+      t += '\n' + st.log.replace(/[^\n]*\r(?!\n)/g, ''); ok = st.ok; break;
+    }
+  }
+  $('#pubDlg').close(); $('#logt').textContent = t; $('#log').classList.add('show');
+  status(ok ? 'Опубликовано ✓' : 'Ошибка публикации — см. лог', !ok); b.disabled = false;
+  // публикация перенесла правки из онлайн-редактора в overrides.json — берём их, иначе следующее сохранение их затрёт
+  if (t.includes('Перенёс онлайн-правки')) { alert('Публикация забрала правки, сделанные онлайн. Редактор перезагрузится, чтобы их показать.'); location.reload(); }
+};
+$('#bUndo').onclick = undoAll; $('#bRedo').onclick = redoAll;
+$('#bBuild').onclick = async () => {
+  if (ONLINE) return save();
+  const b = $('#bBuild'); b.disabled = true;
+  if (!(await save())) { b.disabled = false; return; }
+  status('Собираю сайт…', true);
+  const r = await fetch('/api/build', {method:'POST'}); const t = await r.text();
+  $('#logt').textContent = t; $('#log').classList.add('show');
+  status(r.ok ? 'Сайт собран ✓' : 'Ошибка сборки — см. лог', !r.ok);
+  if (r.ok) { await loadSite(); NEWIMG = {}; renderList(); if (selId) renderForm(); }
+  b.disabled = false;
+};
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); save(); }
+  if ($('#dz-wrap')) return; // в конструкторе своя история
+  // в полях ввода Ctrl+Z отменяет набор текста как обычно; вне полей — откатывает правки записей
+  const inField = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+  const k = e.key.toLowerCase();
+  if ((e.ctrlKey || e.metaKey) && !inField && (k === 'z' || k === 'я')) { e.preventDefault(); e.shiftKey ? redoAll() : undoAll(); }
+  if ((e.ctrlKey || e.metaKey) && !inField && (k === 'y' || k === 'н')) { e.preventDefault(); redoAll(); }
+});
+
+load();
+})();
+</script>
+</body>
+</html>

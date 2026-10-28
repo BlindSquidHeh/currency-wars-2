@@ -726,6 +726,7 @@ h1,h2,h3,h4,h5{letter-spacing:0}
 <script src="spine/spine-webgl.min.js"></script>
 <script src="spine/cwspine.js"></script>
 <script src="spine/cfg.js"></script>
+<script src="patch.js"></script>
 <script>
 // данные сайта: data/*.json (раздел = файл) и список картинок img/index.json, их собирает make_site.py
 window.CW_READY = (async () => {
@@ -735,6 +736,8 @@ window.CW_READY = (async () => {
     if (typeof v === 'string') DB[k] = await j('data/' + v);
     else { DB[k] = {}; await Promise.all(Object.entries(v).map(async ([kk, p]) => { DB[k][kk] = await j('data/' + p); })); }
   }));
+  // правки из онлайн-редактора (online.json), ещё не собранные дома в data/
+  try { CW_PATCH.applyOnline(DB, await j('online.json')); } catch (e) {}
   window.DB = DB; window.IMG = await j('img/index.json');
 })();
 CW_READY.catch(() => document.body.insertAdjacentHTML('afterbegin', '<div style="padding:24px;font:16px sans-serif;color:#fff;background:#3a1530">Не удалось загрузить данные. Сайт открывается через сервер: «Запустить редактор.bat» (http://localhost:8765) или GitHub Pages, а не двойным щелчком по файлу.</div>'));
