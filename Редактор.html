@@ -97,6 +97,23 @@ summary{cursor:pointer;color:var(--muted);font-weight:700}
 .stgrow button{border-radius:8px;border:1px solid var(--line2);background:var(--panel2);color:var(--bad)}
 .cardmode{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
 #spineFrame{width:100%;height:100%;border:0;display:none}
+#siteEdit{width:100%;height:100%;border:0;display:none}
+#edp{position:fixed;right:14px;bottom:14px;width:min(560px,92vw);max-height:62vh;overflow:auto;background:var(--panel2);border:1px solid var(--gold2);border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.6);padding:12px 14px;z-index:60;display:none}
+#edp.show{display:block}
+#siteBar{display:none;gap:8px;align-items:center;flex-wrap:wrap;padding:6px 10px;border-bottom:1px solid var(--line);background:var(--panel)}
+#siteBar.show{display:flex}
+#siteBar .sp{flex:1}
+select{background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:8px;padding:6px 8px}
+#edp select,#edp input,#edp textarea{background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:8px;padding:6px 8px;max-width:100%}
+#siteBar select{max-width:230px;background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:10px;padding:7px 10px}
+select option{background:var(--panel);color:var(--text)}
+#form.drawer{position:fixed;right:0;top:0;bottom:0;width:min(760px,100vw);z-index:70;overflow:auto;background:var(--bg);border-left:1px solid var(--gold2);padding:46px 16px 24px;box-shadow:-18px 0 50px rgba(0,0,0,.6);display:block}
+#drBar{position:fixed;right:14px;top:8px;z-index:80;display:none}
+#drBar.show{display:block}
+main.siteMode{grid-template-rows:auto minmax(0,1fr)}
+#edp h4{margin:0 0 4px;font-size:14px;color:var(--gold)}
+#edp .where{color:var(--dim);font-size:12px;margin-bottom:8px;word-break:break-all}
+#edp .x{float:right}
 #log{position:fixed;right:18px;bottom:18px;width:min(520px,90vw);max-height:40vh;overflow:auto;background:var(--panel2);border:1px solid var(--line2);border-radius:14px;padding:12px 14px;font:12px/1.45 ui-monospace,Consolas,monospace;white-space:pre-wrap;display:none;box-shadow:0 18px 50px rgba(0,0,0,.55)}
 #log.show{display:block}
 #log .close{float:right;border:0;background:none;color:var(--muted)}
@@ -146,6 +163,8 @@ summary{cursor:pointer;color:var(--muted);font-weight:700}
   </aside>
   <section id="form"><div class="empty">Выберите запись слева или добавьте новую.</div></section>
 </main>
+<div id="edp"></div>
+<div id="drBar"><button class="btn main" id="drClose">✕ Закрыть карточку</button></div>
 <iframe id="site" title="сайт" style="position:absolute;width:10px;height:10px;left:-9999px;top:0;border:0"></iframe>
 <dialog id="pubDlg" style="background:var(--panel2);color:var(--text);border:1px solid var(--line2);border-radius:14px;padding:18px;max-width:560px">
   <h3 style="margin:0 0 8px">Публикация на GitHub Pages</h3>
@@ -171,6 +190,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 const clone = o => JSON.parse(JSON.stringify(o));
 
 const KINDS = {
+  site:     {t:'✎ Править на сайте'},
   roles:    {t:'Персонажи', icon:x => 'avs/' + x.avatar, sub:x => `Стоимость ${x.cost} · ${POS[x.pos] || x.pos}`},
   traits:   {t:'Связи', icon:x => x.icon || 'trait/' + x.id, sub:x => KIND[x.kind] + ' · ' + (x.layers || []).map(l => l.n).join('/')},
   items:    {t:'Экипировка и предметы', icon:x => x.icon, sub:x => CAT[x.cat] || x.cat},
@@ -191,7 +211,8 @@ const STYPE = ['Skill', 'Ultimate', 'Talent', 'Basic ATK', 'Elation Skill', 'Mem
 
 let CLIPS = {roles:{}, traits:{}}, clipsDirty = false;
 let BASE = null, OVR = {edit:{}, deleted:{}, sections:{}, theme:{}, templates:{}, blocks:[], texts:[]}, IMG = {}, NEWIMG = {}, SECB = {}, secPath = 'bank.armor';
-let kind = 'augments', selId = null, dirty = false, lf = '';
+let OVR_V = '';
+let kind = 'site', selId = null, dirty = false, lf = '';
 
 function status(t, d) { const s = $('#status'); s.textContent = t; s.classList.toggle('dirty', !!d); }
 function setDirty() { dirty = true; status('Есть несохранённые правки', true); }
@@ -207,7 +228,7 @@ function allOf(k) {
   for (const o of Object.values(OVR.edit[k] || {})) if (!base(k, o.id)) L.push(o);
   return L;
 }
-function put(k, obj) { snap(); (OVR.edit[k] = OVR.edit[k] || {})[obj.id] = obj; setDirty(); }
+function put(k, obj) { snap(); (OVR.edit[k] = OVR.edit[k] || {})[obj.id] = obj; setDirty(); siteSync(k, obj); }
 // история: снимок правок перед изменением; быстрые подряд изменения (набор текста) объединяются в один шаг
 const HIST = [], FUT = []; let snapT = 0, lastSnap = '';
 function snap() {
@@ -216,7 +237,7 @@ function snap() {
   snapT = now; lastSnap = cur; histBtns();
 }
 function histBtns() { $('#bUndo').disabled = !HIST.length; $('#bRedo').disabled = !FUT.length; }
-function restore(json) { OVR = JSON.parse(json); OVR.sections = OVR.sections || {}; setDirty(); renderList(); if (selId != null && (kind === 'bank' || cur(kind, selId))) renderForm(); else { selId = null; $('#form').innerHTML = '<div class="empty">Выберите запись слева.</div>'; } histBtns(); }
+function restore(json) { OVR = JSON.parse(json); OVR.sections = OVR.sections || {}; setDirty(); resyncSite(); renderList(); if (selId != null && (kind === 'bank' || cur(kind, selId))) renderForm(); else { selId = null; $('#form').innerHTML = '<div class="empty">Выберите запись слева.</div>'; } histBtns(); }
 function undoAll() { if (!HIST.length) return; FUT.push(JSON.stringify(OVR)); lastSnap = ''; snapT = 0; restore(HIST.pop()); status('Отменено', true); }
 function redoAll() { if (!FUT.length) return; HIST.push(JSON.stringify(OVR)); lastSnap = ''; snapT = 0; restore(FUT.pop()); status('Возвращено', true); }
 const img = key => NEWIMG[key] || (SITE && SITE.CW_API ? SITE.CW_API.img(key) : '') || '';
@@ -231,7 +252,7 @@ async function load() {
       <p>1. Откройте терминал в папке сайта и выполните <code>python build/serve.py</code></p><p>2. Перейдите на <code>http://localhost:8765/Редактор.html</code></p></div>`;
     status('Сервер не запущен'); return;
   }
-  try { const r = await fetch('build/overrides.json', {cache:'no-store'}); if (r.ok) OVR = Object.assign({edit:{}, deleted:{}, sections:{}, theme:{}, templates:{}, blocks:[], texts:[]}, await r.json()); } catch (e) {}
+  try { const r = await fetch('build/overrides.json', {cache:'no-store'}); OVR_V = r.headers.get('X-Ovr-Mtime') || ''; if (r.ok) OVR = Object.assign({edit:{}, deleted:{}, sections:{}, theme:{}, templates:{}, blocks:[], texts:[]}, await r.json()); } catch (e) {}
   try { const r = await fetch('clips/clips.json', {cache:'no-store'}); if (r.ok) CLIPS = Object.assign({roles:{}, traits:{}}, await r.json()); } catch (e) {}
   try { SECB = await (await fetch('build/out/sections_base.json', {cache:'no-store'})).json(); } catch (e) {}
   if (ONLINE && !(await onlineLoad())) return;
@@ -239,7 +260,8 @@ async function load() {
   status('Загружаю сайт для картинок и превью…');
   await loadSite();
   status('Готово');
-  renderTabs(); renderList();
+  renderTabs();
+  if (kind === 'site') { showTheme(false); showSiteEdit(true); } else renderList();
 }
 
 function loadSite() {
@@ -268,7 +290,7 @@ function initTheme() {
   });
 }
 function showTheme(on) {
-  const full = on || kind === 'spine' || kind === 'blocks';
+  const full = on || kind === 'spine' || kind === 'blocks' || kind === 'site';
   $('aside').style.display = full ? 'none' : '';
   $('main').style.gridTemplateColumns = full ? '1fr' : '';
   if (on) { $('#form').style.display = ''; CW_THEME.form($('#form')); }
@@ -348,7 +370,7 @@ function initSections() {
     get: p => OVR.sections[p] || SECB[p] || [],
     base: p => SECB[p],
     isEdited: p => !!OVR.sections[p],
-    set: (p, v) => { snap(); OVR.sections[p] = v; setDirty(); },
+    set: (p, v) => { snap(); OVR.sections[p] = v; setDirty(); sectionSync(p, v); },
     reset: p => { snap(); snapT = 0; delete OVR.sections[p]; setDirty(); renderTabs(); renderList(); renderForm(); },
     img: k => img(k),
     upload: async (k, src) => { const url = await toPng(src); NEWIMG[k] = url; await fetch('/api/upload?key=' + encodeURIComponent(k.replace('/', '__')), {method:'POST', body:url}); status('Картинка загружена — соберите сайт', true); },
@@ -374,7 +396,340 @@ function renderTabs() {
   $('#tabs').innerHTML = Object.entries(KINDS).map(([k, v]) => `<button class="tab${k === kind ? ' on' : ''}" data-k="${k}">${v.t}</button>`).join('');
   $('#lfilter').innerHTML = [['', 'Все'], ['e', 'Изменённые'], ['n', 'Новые'], ['d', 'Удалённые']].map(([f, t]) => `<button class="chip${lf === f ? ' on' : ''}" data-f="${f}">${t}</button>`).join('');
 }
-$('#tabs').onclick = e => { const b = e.target.closest('.tab'); if (!b) return; kind = b.dataset.k; selId = null; renderTabs(); showSpine(kind === 'spine'); showTheme(kind === 'theme'); if (kind === 'spine' || kind === 'theme' || kind === 'blocks') return; renderList(); $('#form').innerHTML = '<div class="empty">Выберите запись слева или добавьте новую.</div>'; };
+$('#tabs').onclick = e => { const b = e.target.closest('.tab'); if (!b) return; kind = b.dataset.k; selId = null; renderTabs(); showSpine(kind === 'spine'); showTheme(kind === 'theme'); showSiteEdit(kind === 'site'); if (kind === 'spine' || kind === 'theme' || kind === 'blocks' || kind === 'site') return; renderList(); $('#form').innerHTML = '<div class="empty">Выберите запись слева или добавьте новую.</div>'; };
+// ---------- «Править на сайте»: сайт во всю ширину, щелчок по тексту открывает его редактор ----------
+function showSiteEdit(on) {
+  let f = $('#siteEdit');
+  if (on && !f) { f = document.createElement('iframe'); f.id = 'siteEdit'; f.src = 'index.html?edit=1&e=' + Date.now() + '#traits'; $('main').appendChild(f); }
+  if (on) siteBar();
+  if ($('#siteBar')) $('#siteBar').classList.toggle('show', on);
+  $('main').classList.toggle('siteMode', on);
+  clearInterval(barT); if (on) barT = setInterval(barTick, 700);
+  if (f) f.style.display = on ? 'block' : 'none';
+  if (on) { $('aside').style.display = $('#form').style.display = 'none'; $('main').style.gridTemplateColumns = '1fr'; }
+  if (!on) $('#edp').classList.remove('show');
+}
+const RKINDS = ['roles', 'traits', 'items', 'augments', 'buffs'], CK = {role:'roles', trait:'traits', item:'items', aug:'augments', buff:'buffs'};
+function walkStr(o, s, path, out) {
+  if (typeof o === 'string') { if (o === s) out.push(path.slice()); }
+  else if (o && typeof o === 'object') for (const k in o) { path.push(Array.isArray(o) ? +k : k); walkStr(o[k], s, path, out); path.pop(); }
+}
+function setIn(o, path, v) { for (const k of path.slice(0, -1)) o = o[k]; o[path[path.length - 1]] = v; }
+function locate(s, ctx) {
+  const hits = [];
+  for (const k of RKINDS) for (const x of allOf(k)) { const out = []; walkStr(x, s, [], out); out.forEach(p => hits.push({k, id:x.id, name:x.name, path:p})); }
+  for (const p of Object.keys(CW_SECTIONS.LIST)) { const v = OVR.sections[p] || SECB[p]; if (!v) continue; const out = []; walkStr(v, s, [], out); out.forEach(q => hits.push({sec:p, path:q, name:CW_SECTIONS.LIST[p]})); }
+  return (ctx && hits.find(h => h.k === CK[ctx.kind] && h.id === ctx.id)) || hits[0];
+}
+// ---------- полный контроль на сайте: создать, все поля, удалить ----------
+let drawer = null, syncT = 0, barT = 0, objOn = false;
+const KLABEL = {roles:'персонаж', traits:'связь', items:'экипировка', augments:'стратегия', buffs:'среда'};
+function siteBar() {
+  if ($('#siteBar')) return;
+  const b = document.createElement('div'); b.id = 'siteBar';
+  b.innerHTML = '<button class="btn" id="sbObj" title="Режим объектов: нажимайте на любой элемент (цифру, звезду, картинку, фон, блок), двигайте мышью, тяните за угол">⌖ Объекты: выкл</button><span class="hint">Создать:</span>' + [['roles', '＋ Персонаж'], ['traits', '＋ Связь'], ['items', '＋ Экипировка'], ['augments', '＋ Стратегия'], ['buffs', '＋ Среда']].map(([k, t]) => `<button class="btn" data-new="${k}">${t}</button>`).join('')
+    + `<select id="sbSec"><option value="">＋ Запись раздела…</option>${Object.entries(CW_SECTIONS.LIST).map(([p, t]) => `<option value="${p}">${t}</option>`).join('')}</select><span class="sp"></span><span id="sbCard" class="hint">Откройте карточку на сайте — здесь появятся действия над ней</span>`;
+  $('main').insertBefore(b, $('#siteEdit'));
+  b.onclick = e => { const n = e.target.closest('[data-new]'); if (n) openDrawer(n.dataset.new, null, true); const a = e.target.closest('[data-card]'); if (a) cardAction(a.dataset.card); };
+  $('#sbObj').onclick = () => { objOn = !objOn; $('#sbObj').textContent = '⌖ Объекты: ' + (objOn ? 'ВКЛ (правка текста отключена)' : 'выкл'); $('#sbObj').classList.toggle('main', objOn); $('#siteEdit').contentWindow.CW_API.setObjMode(objOn); if (!objOn) $('#edp').classList.remove('show'); };
+  $('#sbSec').onchange = e => { const p = e.target.value; e.target.value = ''; if (p) openSecDrawer(p, null, true); };
+}
+function siteCtx() {
+  try { const m = $('#siteEdit').contentWindow.location.hash.match(/(role|trait|item|aug|buff)=(\d+)/); return m && CK[m[1]] ? {k:CK[m[1]], id:+m[2]} : null; } catch (e) { return null; }
+}
+function barTick() {
+  const el = $('#sbCard'); if (!el || kind !== 'site') return;
+  const c = siteCtx(), x = c && cur(c.k, c.id);
+  el.innerHTML = x ? `Открыта карточка: <b>${esc(x.name)}</b> (${KLABEL[c.k]}) <button class="btn" data-card="open">Все поля</button>${edited(c.k, c.id) ? ' <button class="btn" data-card="reset">Вернуть как в игре</button>' : ''} <button class="btn danger" data-card="del">${isDel(c.k, c.id) ? 'Восстановить' : 'Удалить'}</button>` : 'Откройте карточку на сайте — здесь появятся действия над ней';
+}
+function openDrawerUi(prev) {
+  drawer = {prevKind: prev};
+  $('#form').classList.add('drawer'); $('#form').style.display = 'block'; $('#drBar').classList.add('show');
+}
+function openDrawer(k, id, isNew) {
+  const prev = kind; kind = k;
+  openDrawerUi(prev);
+  if (isNew) addNew(); else { selId = id; renderForm(); }
+}
+function openSecDrawer(p, idx, isNew) {
+  const prev = kind; kind = 'bank'; secPath = p;
+  openDrawerUi(prev);
+  if (isNew) { selId = CW_SECTIONS.add(p); setDirty(); } else selId = idx;
+  renderForm();
+}
+function closeDrawer() {
+  if (!drawer) return;
+  kind = drawer.prevKind; selId = null; drawer = null;
+  const F = $('#form'); F.classList.remove('drawer'); F.style.display = 'none'; F.innerHTML = ''; $('#drBar').classList.remove('show');
+  status('Правки в редакторе. «Сохранить» — записать; новые и удалённые карточки появятся на сайте после «Сохранить и собрать сайт»', true);
+  const W = $('#siteEdit').contentWindow; try { W.CW_API.refresh(); } catch (e) {}
+}
+$('#drClose').onclick = closeDrawer;
+function cardAction(a) {
+  const c = siteCtx(); if (!c) return;
+  if (a === 'open') return openDrawer(c.k, c.id, false);
+  if (a === 'reset') { if (!confirm('Убрать все правки этой карточки?')) return; snap(); snapT = 0; delete OVR.edit[c.k][c.id]; setDirty(); status('Вернётся как в игре после «Сохранить и собрать сайт»', true); }
+  if (a === 'del') { snap(); snapT = 0; const L = OVR.deleted[c.k] = OVR.deleted[c.k] || [], i = L.indexOf(c.id); i >= 0 ? L.splice(i, 1) : L.push(c.id); setDirty(); status('Изменение появится на сайте после «Сохранить и собрать сайт»', true); }
+  barTick();
+}
+function siteSync(k, obj) {
+  if (!drawer || kind === 'bank') return;
+  clearTimeout(syncT);
+  syncT = setTimeout(() => {
+    const W = ($('#siteEdit') || {}).contentWindow; if (!W || !W.DB || !W.DB[k]) return;
+    if (!W.DB[k].some(r => r.id === obj.id)) { status('Новая карточка появится на сайте после «Сохранить и собрать сайт»', true); return; }
+    W.CW_API.setRec(k, obj.id, clone(obj)); W.CW_API.refresh();
+  }, 600);
+}
+function sectionSync(p, v) {
+  if (!drawer) return;
+  clearTimeout(syncT);
+  syncT = setTimeout(() => { const W = ($('#siteEdit') || {}).contentWindow; if (W && W.CW_API) { W.CW_API.setAt(p.split('.'), clone(v)); W.CW_API.refresh(); } }, 600);
+}
+
+// действия над блоком списка (уровень связи, пояснение, навык, строка…): удалить, переставить, копия, новый после
+function blankLike(v, key) {
+  if (typeof v === 'string') return key === 'html' || key === 'ru' || key === 'desc' ? 'Новый текст' : v.length < 24 ? v : '';
+  if (Array.isArray(v)) return v.map(x => blankLike(x));
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, blankLike(x, k)]));
+  return v;
+}
+function blockAction(src, ctx, a) {
+  const h = Array.isArray(src) ? resolvePath(src) : locate(src, ctx);
+  if (!h) { status('Этот блок собирается автоматически — используйте «Все поля» карточки', true); return; }
+  const x = clone(h.sec ? (OVR.sections[h.sec] || SECB[h.sec]) : cur(h.k, h.id));
+  const path = h.path; let contPath = [], idx = -1;
+  for (let i = h.sec ? 1 : 0; i < path.length; i++) if (typeof path[i] === 'number') { contPath = path.slice(0, i); idx = path[i]; break; }
+  if (idx < 0 && h.sec) idx = path[0];
+  if (idx < 0) { status('Это одиночное поле, а не блок списка — правьте через «Все поля» карточки', true); return; }
+  let cont = x; for (const k of contPath) cont = cont[k];
+  if (!Array.isArray(cont)) return;
+  if (a === 'del') { if (!confirm('Удалить этот блок?')) return; cont.splice(idx, 1); }
+  else if (a === 'dup') cont.splice(idx + 1, 0, clone(cont[idx]));
+  else if (a === 'add') cont.splice(idx + 1, 0, blankLike(cont[idx]));
+  else if (a === 'up' && idx > 0) [cont[idx - 1], cont[idx]] = [cont[idx], cont[idx - 1]];
+  else if (a === 'down' && idx < cont.length - 1) [cont[idx + 1], cont[idx]] = [cont[idx], cont[idx + 1]];
+  else return;
+  const W = $('#siteEdit').contentWindow;
+  if (h.sec) { snap(); snapT = 0; OVR.sections[h.sec] = x; setDirty(); W.CW_API.setAt(h.sec.split('.'), clone(x)); }
+  else { put(h.k, x); W.CW_API.setRec(h.k, h.id, clone(x)); }
+  W.CW_API.refresh();
+  status(a === 'add' ? 'Добавлен новый блок — нажмите на его текст и впишите своё' : 'Готово', true);
+}
+// ---------- текст, зашитый в код сайта: замена «было → стало» (применяется при сборке ко всему сайту) ----------
+let TPL = null;
+async function editStatic(text, node) {
+  if (TPL === null) { try { TPL = await (await fetch('build/template.html', {cache:'no-store'})).text(); } catch (e) { TPL = ''; } }
+  const P = $('#edp'); P.classList.add('show');
+  OVR.texts = OVR.texts || [];
+  let ent = OVR.texts.find(t => t && t.to === text) || OVR.texts.find(t => t && t.from === text);
+  const inTpl = TPL.includes(text);
+  P.innerHTML = '<button class="btn x" id="edx">Готово</button><h4>Текст из кода сайта</h4>';
+  $('#edx').onclick = () => P.classList.remove('show');
+  if (!ent && !inTpl) {
+    P.insertAdjacentHTML('beforeend', '<div class="where">Этот текст складывается из нескольких частей (данные и подписи вместе), поэтому заменить его целиком нельзя. Правьте его части: нажмите на соседние выделяющиеся при наведении тексты или откройте «Все поля» карточки на панели сверху.</div>');
+    return;
+  }
+  P.insertAdjacentHTML('beforeend', '<div class="where">Замена применится при «Сохранить и собрать сайт» везде, где этот текст встречается на сайте.' + (ent && ent.from !== text ? ' Исходный текст: «' + esc(ent.from) + '»' : '') + '</div>');
+  const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'width:100%;min-height:90px'; P.append(ta); ta.focus();
+  ta.oninput = () => {
+    snap();
+    if (!ent) { ent = {from:text, to:ta.value}; OVR.texts.push(ent); } else ent.to = ta.value;
+    if (ent.to === ent.from) OVR.texts = OVR.texts.filter(t => t !== ent), ent = null;
+    setDirty(); try { node.textContent = ta.value; } catch (e) {}
+  };
+}
+// после отката/возврата правок сайт в окне приводится к текущему состоянию правок
+function resyncSite() {
+  const se = $('#siteEdit'); if (!se || !se.contentWindow || !se.contentWindow.CW_API || !BASE) return;
+  const W = se.contentWindow, A = W.CW_API;
+  try {
+    A.setAllStyles(clone(OVR.styles || {}));
+    for (const k of RKINDS) for (const x of allOf(k)) if (W.DB[k] && W.DB[k].some(r => r.id === x.id)) A.setRec(k, x.id, clone(x));
+    for (const p of Object.keys(CW_SECTIONS.LIST)) { const v = OVR.sections[p] || SECB[p]; if (v !== undefined) A.setAt(p.split('.'), clone(v)); }
+    A.refresh();
+    if ($('#edp').classList.contains('show')) $('#edp').classList.remove('show');
+  } catch (e) {}
+}
+// ---------- дерево объектов блока в правой панели: блок и каждый предмет внутри по отдельности ----------
+let treeUp = 0;
+function appendTree(reset) {
+  const P = $('#edp'); if (reset !== false) treeUp = 0;
+  let box = $('#edTree'); if (box) box.remove();
+  const W = $('#siteEdit').contentWindow; let T = null; try { T = W.CW_API.objTree(treeUp); } catch (e) {}
+  if (!T || !T.length) return;
+  box = document.createElement('div'); box.id = 'edTree'; box.style.cssText = 'margin-top:12px;border-top:1px solid var(--line2);padding-top:8px';
+  box.innerHTML = `<h4>Объекты в этом блоке <button class="btn" id="trUp" style="margin-left:8px">↑ взять блок шире</button> <button class="btn main" id="trAll" style="margin-left:6px" title="Все размеры и положения этого блока повторяются во всех таких же блоках рядом">⧉ Сделать так во всех таких блоках</button></h4><div class="where">Первая строка — сам блок, ниже каждый его элемент отдельно. Сдвиг X/Y и ширина/высота в пикселях, масштаб в процентах, шрифт в пикселях. Пусто или 0 — как было.</div>
+    <div style="display:grid;grid-template-columns:minmax(120px,1fr) repeat(6,54px);gap:3px 4px;align-items:center;font-size:11px;color:var(--dim)"><span></span><span>X</span><span>Y</span><span>%</span><span>Шир.</span><span>Выс.</span><span>Шрифт</span></div>
+    <div id="trRows" style="display:grid;gap:3px"></div>`;
+  P.append(box);
+  $('#trUp').onclick = () => { treeUp++; appendTree(false); };
+  $('#trAll').onclick = () => {
+    const R = W.CW_API.copyBlockStyles(treeUp);
+    if (!R || !R.map || !Object.keys(R.map).length) { status('В этом блоке ещё нет заданных размеров или положений, копировать нечего', true); return; }
+    snap(); snapT = 0;
+    for (const [k, st] of Object.entries(R.map)) { OVR.styles = OVR.styles || {}; OVR.styles[k] = st; W.CW_API.setObjStyle(k, st); }
+    setDirty(); status(`Размеры и положения повторены в ${R.sibs} таких же блоках`, true);
+  };
+  const rows = $('#trRows', box);
+  const FS = ['x', 'y', 's', 'w', 'h', 'fs'];
+  for (const n of T) {
+    const o = n.style || {}, r = document.createElement('div');
+    r.style.cssText = 'display:grid;grid-template-columns:minmax(120px,1fr) repeat(6,54px);gap:4px;align-items:center';
+    r.innerHTML = `<span style="padding-left:${Math.min(n.depth, 5) * 10}px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px" title="${esc(n.label)}">${n.depth ? '└ ' : '■ '}${esc(n.label)}</span>` + FS.map(f => `<input type="number" data-f="${f}" style="padding:3px 4px;font-size:12px;width:54px" value="${f === 's' ? Math.round((o.s || 1) * 100) : (o[f] || '')}">`).join('');
+    r.onmouseenter = () => { try { W.CW_API.flashObj(n.key); } catch (e) {} };
+    r.oninput = () => {
+      const q = {}; for (const f of FS) { const v = +r.querySelector(`[data-f=${f}]`).value; if (f === 's') q.s = v ? v / 100 : 1; else if (v) q[f] = v; }
+      objStore(n.key, q); W.CW_API.setObjStyle(n.key, cleanObj(q));
+    };
+    rows.append(r);
+  }
+}
+// ---------- режим объектов: положение и размер любого элемента ----------
+let objKeyCur = null;
+function objSelect(key, o, label) {
+  objKeyCur = key;
+  const P = $('#edp'); P.classList.add('show');
+  OVR.styles = OVR.styles || {};
+  P.innerHTML = `<button class="btn x" id="edx">Готово</button><h4>Объект: ${esc(label || '')}</h4>
+    <div class="where">Перетаскивайте мышью на странице, тяните за зелёный угол (масштаб), стрелки на клавиатуре двигают на 1 px (с Shift — на 10). «↑ родитель» над рамкой выбирает весь блок вокруг. Здесь числа точно.</div>
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:6px 8px;align-items:center">
+      <span>Сдвиг вправо X, px</span><input id="obX" type="number"><span>Сдвиг вниз Y, px</span><input id="obY" type="number">
+      <span>Масштаб, %</span><input id="obS" type="number" min="5" max="800"><span>Ширина, px</span><input id="obW" type="number" min="0" placeholder="как было">
+      <span>Высота, px</span><input id="obH" type="number" min="0" placeholder="как было"><span>Размер шрифта, px</span><input id="obF" type="number" min="0" placeholder="как было"></div>
+    <div style="margin-top:8px"><button class="btn" id="obR">Сбросить объект</button></div>`;
+  const fill = o => { $('#obX').value = o.x || 0; $('#obY').value = o.y || 0; $('#obS').value = Math.round((o.s || 1) * 100); $('#obW').value = o.w || ''; $('#obH').value = o.h || ''; $('#obF').value = o.fs || ''; };
+  fill(o || {});
+  const send = () => {
+    const o2 = {x: +$('#obX').value || 0, y: +$('#obY').value || 0, s: (+$('#obS').value || 100) / 100, w: +$('#obW').value || 0, h: +$('#obH').value || 0, fs: +$('#obF').value || 0};
+    objStore(objKeyCur, o2);
+    $('#siteEdit').contentWindow.CW_API.setObjStyle(objKeyCur, cleanObj(o2));
+  };
+  ['obX', 'obY', 'obS', 'obW', 'obH', 'obF'].forEach(i => $('#' + i).oninput = send);
+  $('#obR').onclick = () => { fill({}); send(); };
+  $('#edx').onclick = () => P.classList.remove('show');
+}
+function cleanObj(o) { const c = {}; ['x', 'y', 's', 'w', 'h', 'fs'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) c[f] = o[f]; }); return c; }
+function objStore(key, o) {
+  OVR.styles = OVR.styles || {}; const c = cleanObj(o);
+  snap(); if (Object.keys(c).length) OVR.styles[key] = c; else delete OVR.styles[key]; setDirty();
+}
+function objChange(key, o) {
+  objStore(key, o);
+  if ($('#obX') && key === objKeyCur) { $('#obX').value = o.x || 0; $('#obY').value = o.y || 0; $('#obS').value = Math.round((o.s || 1) * 100); }
+}
+// ---------- размеры объектов (кнопка ⤢ на панели блока) ----------
+function sizePanel(key, w0, h0) {
+  const P = $('#edp'); P.classList.add('show');
+  if (!key) { P.innerHTML = '<button class="btn x" id="edx">✕</button><h4>Размер</h4><div class="where">У этого элемента нет метки, на него нельзя назначить размер. Наведите на текст или значок внутри нужного блока.</div>'; $('#edx').onclick = () => P.classList.remove('show'); return; }
+  OVR.styles = OVR.styles || {};
+  const W = $('#siteEdit').contentWindow;
+  let blk = !!OVR.styles['b:' + key] && !OVR.styles[key];
+  const get = () => OVR.styles[blk ? 'b:' + key : key] || {};
+  P.innerHTML = `<button class="btn x" id="edx">Готово</button><h4>Размер объекта</h4>
+    <div class="where">Сейчас: ${Math.round(w0 || 0)}×${Math.round(h0 || 0)} px. Пустое поле — как было. Всё сохраняется в «Сохранить» и попадает на сайт.</div>
+    <label style="display:flex;gap:6px;align-items:center;margin:6px 0"><input type="checkbox" id="szB"${blk ? ' checked' : ''}> менять весь блок вокруг (а не только этот объект)</label>
+    <div style="display:grid;grid-template-columns:150px 1fr 70px;gap:6px 8px;align-items:center">
+      <span>Масштаб, %</span><input type="range" id="szS" min="20" max="400" step="5"><input id="szSn" type="number" min="20" max="400">
+      <span>Ширина, px</span><input id="szW" type="number" min="0" placeholder="авто" style="grid-column:2/4">
+      <span>Высота, px</span><input id="szH" type="number" min="0" placeholder="авто" style="grid-column:2/4">
+      <span>Размер шрифта, px</span><input id="szF" type="number" min="0" placeholder="как было" style="grid-column:2/4"></div>
+    <div style="margin-top:8px"><button class="btn" id="szR">Сбросить размер</button></div>`;
+  const fill = () => { const o = get(); $('#szS').value = $('#szSn').value = Math.round((o.s || 1) * 100); $('#szW').value = o.w || ''; $('#szH').value = o.h || ''; $('#szF').value = o.fs || ''; };
+  const apply = () => {
+    const k = (blk ? 'b:' : '') + key, o = {};
+    const s = +$('#szSn').value / 100; if (s && s !== 1) o.s = +s.toFixed(2);
+    if (+$('#szW').value) o.w = +$('#szW').value; if (+$('#szH').value) o.h = +$('#szH').value; if (+$('#szF').value) o.fs = +$('#szF').value;
+    snap(); if (Object.keys(o).length) OVR.styles[k] = o; else delete OVR.styles[k]; setDirty();
+    W.CW_API.setStyle(k, Object.keys(o).length ? o : null); W.CW_API.refresh();
+  };
+  fill();
+  $('#szS').oninput = () => { $('#szSn').value = $('#szS').value; apply(); };
+  $('#szSn').oninput = () => { $('#szS').value = $('#szSn').value; apply(); };
+  ['szW', 'szH', 'szF'].forEach(i => $('#' + i).oninput = apply);
+  $('#szB').onchange = e => { const old = (blk ? 'b:' : '') + key; delete OVR.styles[old]; W.CW_API.setStyle(old, null); blk = e.target.checked; apply(); };  // значения из полей переносятся на выбранный режим
+  $('#szR').onclick = () => { const k = (blk ? 'b:' : '') + key; snap(); delete OVR.styles[k]; setDirty(); W.CW_API.setStyle(k, null); W.CW_API.refresh(); fill(); };
+  $('#edx').onclick = () => P.classList.remove('show');
+}
+let edTimer = 0;
+// ---------- правка по явному пути (имена, числа, списки, «Где взять», экипировка) ----------
+function resolvePath(path) {
+  if (RKINDS.includes(path[0])) return {k:path[0], id:path[1], name:(cur(path[0], path[1]) || {}).name, path:path.slice(2)};
+  const keys = Object.keys(CW_SECTIONS.LIST).sort((a, b) => b.length - a.length);
+  for (const key of keys) { const parts = key.split('.'); if (parts.every((x, i) => String(path[i]) === x)) return {sec:key, name:CW_SECTIONS.LIST[key], path:path.slice(parts.length)}; }
+  return null;
+}
+function rootOf(h) { return h.sec ? clone(OVR.sections[h.sec] || SECB[h.sec]) : clone(cur(h.k, h.id)); }
+function getIn(o, path) { for (const k of path) { if (o == null) return undefined; o = o[k]; } return o; }
+function writeAt(h, x, delay) {
+  const W = $('#siteEdit').contentWindow;
+  let spath;
+  if (h.sec) { snap(); OVR.sections[h.sec] = x; spath = h.sec.split('.'); setDirty(); }
+  else { put(h.k, x); }
+  const apply = () => {
+    if (h.sec) W.CW_API.setAt(spath, clone(x)); else W.CW_API.setRec(h.k, h.id, clone(x));
+    const sc = W.document.querySelector('.modal.show'), top = sc ? sc.scrollTop : 0, wy = W.scrollY;
+    W.CW_API.refresh(); const m2 = W.document.querySelector('.modal.show'); if (m2) m2.scrollTop = top; W.scrollTo(0, wy);
+  };
+  if (delay) { clearTimeout(edTimer); edTimer = setTimeout(apply, delay); } else apply();
+}
+function editPath(path, kindOf) {
+  const P = $('#edp'), h = resolvePath(path);
+  P.classList.add('show');
+  if (!h) { P.innerHTML = '<button class="btn x" id="edx">✕</button><h4>Не нашёл, где это хранится</h4>'; $('#edx').onclick = () => P.classList.remove('show'); return; }
+  const x = rootOf(h);
+  P.innerHTML = `<button class="btn x" id="edx">Готово</button> <button class="btn x" id="edall" style="margin-right:6px">Вся запись…</button><h4>${esc(h.name || '')}</h4><div class="where">${esc((h.sec || h.k) + ' › ' + h.path.join(' › '))}</div>`;
+  $('#edx').onclick = () => P.classList.remove('show');
+  $('#edall').onclick = () => { P.classList.remove('show'); h.sec ? openSecDrawer(h.sec, h.path[0], false) : openDrawer(h.k, h.id, false); };
+  const commitAll = () => writeAt(h, x, 500);
+  const set = v => { const par = getIn(x, h.path.slice(0, -1)); par[h.path[h.path.length - 1]] = v; commitAll(); };
+  const val = getIn(x, h.path);
+  if (kindOf === 'html') P.append(rte(val || '', set, 6));
+  else if (kindOf === 'num') { const i = document.createElement('input'); i.type = 'number'; i.step = 'any'; i.value = val ?? ''; i.oninput = () => i.value !== '' && set(+i.value); P.append(i); i.focus(); }
+  else if (kindOf === 'layerhead') {
+    const L = getIn(x, h.path.slice(0, -1));
+    P.insertAdjacentHTML('beforeend', `<div class="where">Уровень связи: номер на значке (сколько персонажей нужно, или просто номер уровня, как у Торговой гильдии Астрополиса) и цвет значка. Текст уровня правится нажатием на него.</div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:center"><span>Вид значка</span><select id="lhB"><option value="">Ромб (как у большинства связей)</option><option value="pill"${x.badge === 'pill' ? ' selected' : ''}>Овал с номером и звёздами (как у Астрополиса)</option></select><span>Звёзд в овале</span><input type="number" min="0" max="6" id="lhS" value="${L.stars == null ? 3 : L.stars}"><span>Номер на значке</span><input type="number" id="lhN" value="${L.n}"><span>Цвет значка</span><select id="lhQ">${Object.entries(QL).map(([a, b]) => `<option value="${a}"${L.q === a ? ' selected' : ''}>${b}</option>`).join('')}<option value="Unique"${L.q === 'Unique' ? ' selected' : ''}>Уникальный</option></select></div>`);
+    $('#lhN').oninput = e => { L.n = +e.target.value; commitAll(); };
+    const pk = h.path.slice(0, -1).join('_');
+    const picOval = CW_THEME.pic(L.pillImg ? 'Свой овал (PNG) этого уровня' : 'Овал: загрузить свою картинку для этого уровня (PNG)', L.pillImg, `pill/${h.id}_${pk}`, k => { if (k) L.pillImg = k; else delete L.pillImg; if (k && NEWIMG[k]) $('#siteEdit').contentWindow.CW_API.setImg(k, NEWIMG[k]); commitAll(); });
+    const picStar = CW_THEME.pic(x.starImg ? 'Свои звёзды (одна PNG) для всех уровней связи' : 'Звёзды: одна картинка со всеми звёздами (PNG) для всех уровней', x.starImg, `star/${h.id}`, k => { if (k) x.starImg = k; else delete x.starImg; if (k && NEWIMG[k]) $('#siteEdit').contentWindow.CW_API.setImg(k, NEWIMG[k]); commitAll(); });
+    const allBtn = document.createElement('button'); allBtn.className = 'btn'; allBtn.textContent = 'Этот овал — всем уровням связи'; allBtn.onclick = () => { if (!L.pillImg) return alert('Сначала загрузите овал'); for (const y of x.layers || []) y.pillImg = L.pillImg; commitAll(); };
+    P.append(picOval, allBtn, picStar);
+    $('#lhB').onchange = e => { if (e.target.value) x.badge = e.target.value; else delete x.badge; commitAll(); };
+    $('#lhS').oninput = e => { L.stars = +e.target.value; commitAll(); };
+    $('#lhQ').onchange = e => { L.q = e.target.value; commitAll(); };
+  }
+  else if (kindOf === 'rec') P.append(recEditor(x, commitAll));
+  else if (kindOf === 'where') P.append(CW_EXTRAS.where(x, commitAll));
+  else if (kindOf === 'traits') {
+    const tc = document.createElement('div'); tc.className = 'tchips';
+    const draw = () => { tc.innerHTML = allOf('traits').map(t => `<span class="tchip${(x.traits || []).includes(t.id) ? ' on' : ''}" data-t="${t.id}">${img('trait/' + t.id) ? `<img src="${img('trait/' + t.id)}" alt="">` : ''}${esc(t.name)}</span>`).join(''); };
+    tc.onclick = e => { const c = e.target.closest('.tchip'); if (!c) return; const id = +c.dataset.t; x.traits = (x.traits || []).includes(id) ? x.traits.filter(y => y !== id) : [...(x.traits || []), id]; commitAll(); draw(); };
+    draw(); P.append(tc);
+  }
+  else { const i = document.createElement('input'); i.value = val ?? ''; i.style.width = '100%'; i.oninput = () => set(i.value); P.append(i); i.focus(); i.select(); }
+}
+
+function editText(src, ctx) {
+  const P = $('#edp'), W = $('#siteEdit').contentWindow, h = locate(src, ctx);
+  P.classList.add('show');
+  if (!h) { P.innerHTML = '<button class="btn x" id="edx">✕</button><h4>Этот текст собирается автоматически</h4><div class="where">Он складывается из нескольких кусочков данных. Правьте составные части: описание связи, уровни, пояснения или подписи блоков в разделе «База данных».</div>'; $('#edx').onclick = () => P.classList.remove('show'); return; }
+  P.innerHTML = `<button class="btn x" id="edx">Готово</button> <button class="btn x" id="edall" style="margin-right:6px">Вся запись…</button><h4>${esc(h.name || '')}</h4><div class="where">${esc((h.sec || h.k) + ' › ' + h.path.join(' › '))}</div>`;
+  $('#edx').onclick = () => P.classList.remove('show');
+  $('#edall').onclick = () => { P.classList.remove('show'); h.sec ? openSecDrawer(h.sec, h.path[0], false) : openDrawer(h.k, h.id, false); };
+  let cur0 = src;
+  P.append(rte(src, v => {
+    let x, spath;
+    if (h.sec) { x = clone(OVR.sections[h.sec] || SECB[h.sec]); setIn(x, h.path, v); snap(); OVR.sections[h.sec] = x; spath = [...h.sec.split('.'), ...h.path]; }
+    else { x = clone(cur(h.k, h.id)); setIn(x, h.path, v); put(h.k, x); spath = [h.k, W.DB[h.k].findIndex(r => r.id === h.id), ...h.path]; }
+    setDirty(); cur0 = v;
+    clearTimeout(edTimer);
+    edTimer = setTimeout(() => { const sc = W.document.querySelector('.modal.show'), top = sc ? sc.scrollTop : 0, wy = W.scrollY; W.CW_API.setAt(spath, v); W.CW_API.refresh(); const m2 = W.document.querySelector('.modal.show'); if (m2) m2.scrollTop = top; W.scrollTo(0, wy); }, 500);
+  }, 6));
+}
+window.CW_EDITOR = {editText: (...a) => { editText(...a); appendTree(); }, blockAction, editPath: (...a) => { editPath(...a); appendTree(); }, editStatic: async (...a) => { await editStatic(...a); appendTree(); }, sizePanel, objSelect, objChange, undo: () => undoAll(), redo: () => redoAll()};
+
 // анимации — отдельный редактор (spine/editor.html) во всю ширину
 function showSpine(on) {
   let f = $('#spineFrame');
@@ -403,7 +758,7 @@ function renderList() {
 $('#list').onclick = e => { const it = e.target.closest('.it'); if (it) { selId = +it.dataset.id; renderList(); renderForm(); } };
 
 // ---------- добавление ----------
-$('#bAdd').onclick = () => {
+function addNew() {
   if (kind === 'bank') { selId = CW_SECTIONS.add(secPath); setDirty(); renderList(); renderForm(); return; }
   const ids = allOf(kind).map(x => x.id);
   const id = Math.max(900000, ...ids) + 1;
@@ -415,7 +770,8 @@ $('#bAdd').onclick = () => {
     roles: {id, avatar:id, name:'Новый персонаж', en:'', cost:1, pos:'front', traits:[], expert:false, skills:{front:[{name:'Навык', type:'Skill', desc:[{html:''}]}]}, stars:[{star:1, fp:100, props:[]}, {star:2, fp:160, props:[]}, {star:3, fp:250, props:[]}], one:{}, ranks:[], rec:{}, lc:[]},
   }[kind];
   put(kind, T); selId = id; renderList(); renderForm();
-};
+}
+$('#bAdd').onclick = addNew;
 
 // ---------- редактор текста ----------
 // Визуальный: текст выглядит как на сайте (числа, цвета, значки характеристик, ссылки), правится прямо в нём.
@@ -919,6 +1275,7 @@ function onlineApply(O) {
   const P = CW_PATCH;
   for (const k in O.edit || {}) for (const id in O.edit[k]) (OVR.edit[k] = OVR.edit[k] || {})[id] = P.merge(cur(k, +id) || cur(k, id), O.edit[k][id]);
   for (const p in O.sections || {}) OVR.sections[p] = P.merge(p in OVR.sections ? OVR.sections[p] : SECB[p], O.sections[p]);
+  if (O.styles) OVR.styles = Object.assign({}, OVR.styles || {}, O.styles);
   for (const k in O.deleted || {}) OVR.deleted[k] = [...new Set([...(OVR.deleted[k] || []), ...O.deleted[k]])];
 }
 async function onlineSave() {
@@ -934,6 +1291,7 @@ async function onlineSave() {
     if (d) O.sections[p] = d;
   }
   for (const k in OVR.deleted) { const n = OVR.deleted[k].filter(id => !(ORIG.deleted[k] || []).includes(id)); if (n.length) O.deleted[k] = n; }
+  if (JSON.stringify(OVR.styles || {}) !== JSON.stringify(ORIG.styles || {})) O.styles = OVR.styles || {};
   status('Сохраняю на сайт…', true);
   const r = await gh('/contents/online.json', {method:'PUT', body:JSON.stringify({message:'Правки из онлайн-редактора', content:b64(JSON.stringify(O, null, 1)), sha:GH.sha, branch:'main'})});
   if (!r.ok) {
@@ -951,8 +1309,10 @@ async function onlineSave() {
 // ---------- сохранение и сборка ----------
 async function save() {
   if (ONLINE) return onlineSave();
-  const r = await fetch('/api/overrides', {method:'POST', body:JSON.stringify(OVR, null, 1)});
+  const r = await fetch('/api/overrides', {method:'POST', headers:OVR_V ? {'X-Ovr-Mtime':OVR_V} : {}, body:JSON.stringify(OVR, null, 1)});
+  if (r.status === 409) { const m = 'Файл правок изменился, пока эта вкладка была открыта (другая вкладка редактора, публикация или правка скриптом). Чтобы не затереть чужие правки, сохранение отменено. Скопируйте нужное, обновите страницу (F5) и сделайте правку заново.'; status('Сохранение отменено: файл правок изменился', true); alert(m); return false; }
   if (!r.ok) { status('Не удалось сохранить', true); return false; }
+  OVR_V = (await r.text()).trim();
   if (clipsDirty) { const c = await fetch('/api/clips', {method:'POST', body:JSON.stringify(CLIPS)}); if (!c.ok) { status('Не удалось сохранить список видео', true); return false; } clipsDirty = false; }
   dirty = false; status('Сохранено'); return true;
 }
@@ -995,14 +1355,14 @@ $('#bBuild').onclick = async () => {
   const r = await fetch('/api/build', {method:'POST'}); const t = await r.text();
   $('#logt').textContent = t; $('#log').classList.add('show');
   status(r.ok ? 'Сайт собран ✓' : 'Ошибка сборки — см. лог', !r.ok);
-  if (r.ok) { await loadSite(); NEWIMG = {}; renderList(); if (selId) renderForm(); }
+  if (r.ok) { await loadSite(); NEWIMG = {}; const se = $('#siteEdit'); if (se) { const hh = se.contentWindow.location.hash; se.src = 'index.html?edit=1&e=' + Date.now() + hh; } if (kind !== 'site') { renderList(); if (selId) renderForm(); } }
   b.disabled = false;
 };
 document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); save(); }
   if ($('#dz-wrap')) return; // в конструкторе своя история
   // в полях ввода Ctrl+Z отменяет набор текста как обычно; вне полей — откатывает правки записей
-  const inField = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+  const inField = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !(document.activeElement.closest('#edTree') || document.activeElement.closest('#edp') && document.activeElement.type === 'number');
   const k = e.key.toLowerCase();
   if ((e.ctrlKey || e.metaKey) && !inField && (k === 'z' || k === 'я')) { e.preventDefault(); e.shiftKey ? redoAll() : undoAll(); }
   if ((e.ctrlKey || e.metaKey) && !inField && (k === 'y' || k === 'н')) { e.preventDefault(); redoAll(); }

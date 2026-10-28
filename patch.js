@@ -53,6 +53,7 @@ window.CW_PATCH = (() => {
       }
     }
     for (const path in O.sections || {}) secSet(DB, path, merge(secGet(DB, path), O.sections[path]));
+    if (O.styles) DB.styles = Object.assign({}, DB.styles || {}, O.styles);
     for (const kind in O.deleted || {}) if (Array.isArray(DB[kind])) { const g = new Set(O.deleted[kind].map(String)); DB[kind] = DB[kind].filter(x => !g.has(String(x.id))); }
   }
   return {diff, merge, secGet, secSet, applyOnline};

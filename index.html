@@ -318,6 +318,11 @@ table.stats td.n{font-weight:800;font-variant-numeric:tabular-nums}
 .layer{--lq:#b07a4a;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;margin-bottom:10px;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,color-mix(in srgb,var(--lq) 14%,transparent),rgba(255,255,255,.02));border:1px solid color-mix(in srgb,var(--lq) 30%,transparent)}
 .layer.lq-Silver{--lq:#b9c6dc}.layer.lq-Gold{--lq:#e7b45a}.layer.lq-Multicolor{--lq:#b69bff}
 .layer .dia{--s:46px}
+.layer.pillrow{grid-template-columns:max-content 1fr;gap:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 13px;border-radius:999px;border:1px solid rgba(0,0,0,.35);background:linear-gradient(180deg,var(--pa),var(--pb));box-shadow:0 2px 6px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.35);--pa:#f0b27a;--pb:#a8643a}
+.pill b{font:600 24px/1 var(--font);color:#111;min-width:13px;text-align:center}
+.pill .pst{display:inline-flex;gap:0}.pill .pst img{width:18px;height:22px;object-fit:contain;filter:drop-shadow(0 0 4px rgba(255,236,170,.95))}.pill .pst img.whole{width:auto;height:28px;filter:none}
+.pill.pq-Silver{--pa:#d6e4ff;--pb:#8a99cc}.pill.pq-Gold{--pa:#ffe58f;--pb:#d49a2a}.pill.pq-Unique{--pa:#ffe58f;--pb:#d49a2a}.pill.pq-Multicolor{--pa:#78c2ff;--pb:#ff8fdc}
 .layer .dia .n{right:-5px;bottom:-5px}
 .layer .rt{font-size:14.5px;line-height:1.55}
 .note{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03);border:1px dashed var(--line2);margin-bottom:8px;font-size:13.5px}
@@ -822,6 +827,8 @@ const STYPE = {'Skill':'Навык','BPSkill':'Навык','Ultimate':'Свер�
 const SIDE = {front:'На поле', back:'Вне поля', servant:'Призыв'};
 const ROMAN = ['','I','II','III'];
 const BANK = DB.bank || {};
+// подписи блоков (магазины и т. д.) — данные bank.notes, их правят в редакторе
+const noteHtml = k => ((BANK.notes || []).find(n => n.id === k) || {}).html || '';
 const roleTraits = r => r.traits.map(id => (r.s1 ? S1T : T)[id]).filter(Boolean);
 const membersOf = tid => (S1T[tid] && !T[tid] ? DB.s1roles : listRoles).filter(r => r.traits.includes(tid)).sort((a, b) => a.cost - b.cost || a.name.localeCompare(b.name, 'ru'));
 const costOf = r => r.costLabel || (r.id === 151102 ? '4–7' : r.cost);
@@ -927,7 +934,169 @@ function decorate(html) {
   // убрать двойные иконки подряд
   return parts.join('').replace(/(<span class="pi" data-p="([^"]+)"[^>]*><\/span>)((?:\s|<(?!span class="pi")[^>]*>)*)<span class="pi" data-p="\2"[^>]*><\/span>/g, '$1$3');
 }
-const rt = h => decorate(String(h).replace(/<\/span>\/<span/g, '</span> / <span'));
+const rt0 = h => decorate(String(h).replace(/<\/span>\/<span/g, '</span> / <span'));
+// режим «Править на сайте» (?edit=1, из редактора): каждый текст из данных помечен, по щелчку его открывает редактор
+const EDIT = /[?&]edit=1/.test(location.search), ED_REG = [];
+const STYLES = () => DB.styles || {};
+const hash32 = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
+const stStyle = (o, blockMode) => !o ? '' : [!blockMode && ((o.s && o.s !== 1) || o.w || o.h) ? 'display:inline-block' : '', o.s && o.s !== 1 ? `zoom:${o.s}` : '', o.w ? `width:${o.w}px;max-width:none` : '', o.h ? `height:${o.h}px` : '', o.fs ? `font-size:${o.fs}px;line-height:1.3` : ''].filter(Boolean).join(';');
+const hasSt = k => { const S = STYLES(); return !!(S[k] || S['b:' + k]); };
+const ep = (path, inner, kind = 'text') => EDIT || hasSt(JSON.stringify(path)) ? (k => `<span class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}" data-ky="${esc(k)}" style="${stStyle(STYLES()[k])}">${inner}</span>`)(JSON.stringify(path)) : inner;
+const rt = h => {
+  const t = String(h), k = 'h:' + hash32(t);
+  if (!EDIT && !hasSt(k)) return rt0(t);
+  return `<span class="ed-t" ${EDIT ? `data-es="${ED_REG.push(t) - 1}" ` : ''}data-ky="${k}" style="${stStyle(STYLES()[k])}">${rt0(t)}</span>`;
+};
+// размеры «весь блок»: ключ b:<ключ объекта> применяется к ближайшему блоку вокруг объекта
+const BLKSEL = '.layer,.note,.skill,.rw,.shop-row,.acard,.tl,.mini,.svg-mod>.rt,.svg-mod,.unote,.chim,.get,.where-box,.rec,.trait-links,.xc,.id-head,.rd-side';
+function applyBlockStyles() {
+  const S = STYLES();
+  for (const k in S) {
+    if (k.slice(0, 2) !== 'b:') continue;
+    const key = k.slice(2);
+    document.querySelectorAll('[data-ky]').forEach(el => { if (el.dataset.ky === key) { const b = el.closest(BLKSEL); if (b) b.style.cssText += ';' + stStyle(S[k], true); } });
+  }
+}
+new MutationObserver(() => { clearTimeout(window.__abs); window.__abs = setTimeout(() => { applyBlockStyles(); applyObjStyles(); }, 30); }).observe(document.documentElement, {childList: true, subtree: true});
+// ---------- объекты: размер и положение любого элемента (цифра, картинка, фон, блок) по структурному адресу ----------
+const OSEP = '§';
+function objRoot(el) {
+  const k = el.closest('[data-ky]'); if (k) return {key: 'k:' + k.dataset.ky, root: k};
+  const m = el.closest('#mcontent'); if (m) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return {key: 'm:' + (h ? h[1] + h[2] : ''), root: m}; }
+  const v = el.closest('#view'); if (v) return {key: 't:' + S.tab, root: v};
+  return null;
+}
+const objPath = (el, root) => { const p = []; while (el && el !== root && el.parentElement) { p.unshift(Array.prototype.indexOf.call(el.parentElement.children, el)); el = el.parentElement; } return p.join('.'); };
+const objKey = el => { const r = objRoot(el); return r ? {key: 'o:' + r.key + OSEP + objPath(el, r.root), root: r.root} : null; };
+function objApply(el, o) {
+  if (!el) return;
+  const t = [(o && (o.x || o.y)) ? `translate(${o.x || 0}px,${o.y || 0}px)` : '', o && o.s && o.s !== 1 ? `scale(${o.s})` : ''].filter(Boolean).join(' ');
+  el.style.transform = t; el.style.width = o && o.w ? o.w + 'px' : ''; el.style.height = o && o.h ? o.h + 'px' : ''; el.style.fontSize = o && o.fs ? o.fs + 'px' : '';
+  if (o && (t || o.w || o.h) && getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
+  if (o && (o.w || o.h)) el.style.maxWidth = 'none';
+}
+function objFind(key) {
+  const i = key.lastIndexOf(OSEP), rk = key.slice(2, i), path = key.slice(i + 1);
+  let roots = [];
+  if (rk.startsWith('k:')) roots = [...document.querySelectorAll('[data-ky]')].filter(e => e.dataset.ky === rk.slice(2));
+  else if (rk.startsWith('m:')) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if ((h ? h[1] + h[2] : '') === rk.slice(2) && $('#modal').classList.contains('show')) roots = [$('#mcontent')]; }
+  else if (rk.startsWith('t:') && rk.slice(2) === S.tab) roots = [$('#view')];
+  return roots.map(r => path === '' ? r : path.split('.').reduce((e, n) => e && e.children[+n], r)).filter(Boolean);
+}
+function applyObjStyles() { const St = STYLES(); for (const k in St) if (k.startsWith('o:')) objFind(k).forEach(el => objApply(el, St[k])); }
+
+let OBJ = false, selEl = null, selKey = null;
+if (EDIT) {
+  document.head.insertAdjacentHTML('beforeend', '<style>#edSel{position:fixed;z-index:99998;border:2px dashed #5fd0a0;pointer-events:none;display:none;box-shadow:0 0 0 1px rgba(0,0,0,.6)}#edSel .hd{position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;background:#5fd0a0;border:2px solid #0b091a;border-radius:3px;pointer-events:auto;cursor:nwse-resize}#edSelBar{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #5fd0a0;border-radius:8px;padding:3px}#edSelBar button{all:unset;box-sizing:border-box;height:24px;padding:0 8px;border-radius:6px;border:1px solid rgba(196,176,255,.3);background:#221d46;color:#efebff;cursor:pointer;font:600 12px sans-serif;line-height:22px}.ed-hov{outline:1px solid #5fd0a0!important;outline-offset:1px}body.obj-mode *{cursor:crosshair!important}</style>');
+  const selBox = document.createElement('div'); selBox.id = 'edSel'; selBox.innerHTML = '<div class="hd"></div>'; document.body.appendChild(selBox);
+  const selBar = document.createElement('div'); selBar.id = 'edSelBar'; selBar.innerHTML = '<button data-a="up">↑ родитель</button><button data-a="rs">сброс</button>'; document.body.appendChild(selBar);
+  const curStyle = () => (selKey && STYLES()[selKey]) || {};
+  function placeSel() {
+    if (!selEl || !selEl.isConnected) { selBox.style.display = selBar.style.display = 'none'; return; }
+    const r = selEl.getBoundingClientRect();
+    Object.assign(selBox.style, {display: 'block', left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px'});
+    Object.assign(selBar.style, {display: 'flex', left: Math.max(2, r.left) + 'px', top: Math.max(2, r.top - 30) + 'px'});
+  }
+  function pick(el) {
+    const k = objKey(el); if (!k) return;
+    selEl = el; selKey = k.key; placeSel();
+    try { parent.CW_EDITOR.objSelect(selKey, curStyle(), el.tagName.toLowerCase() + (el.className && typeof el.className === 'string' ? '.' + el.className.split(' ')[0] : '')); } catch (err) {}
+  }
+  function commit(o) {
+    const clean = {}; ['x', 'y', 's', 'w', 'h', 'fs'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) clean[f] = o[f]; });
+    DB.styles = DB.styles || {};
+    if (Object.keys(clean).length) DB.styles[selKey] = clean; else delete DB.styles[selKey];
+    objFind(selKey).forEach(e => objApply(e, clean)); placeSel();
+    try { parent.CW_EDITOR.objChange(selKey, clean); } catch (err) {}
+  }
+  window.__objApi = {
+    set: on => { OBJ = on; document.body.classList.toggle('obj-mode', on); if (!on) { selEl = null; placeSel(); } },
+    style: (key, o) => { DB.styles = DB.styles || {}; if (o && Object.keys(o).length) DB.styles[key] = o; else delete DB.styles[key]; objFind(key).forEach(e => objApply(e, o)); placeSel(); },
+  };
+  let drag = null;
+  const inside = t => t.closest('#mcontent,#view') && !t.closest('#edSel,#edSelBar,#edTb');
+  document.addEventListener('mouseover', e => { if (!OBJ) return; document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov')); if (inside(e.target)) e.target.classList.add('ed-hov'); }, true);
+  document.addEventListener('mousedown', e => {
+    if (!OBJ) return;
+    if (e.target.closest('#edSelBar')) return;
+    e.preventDefault(); e.stopPropagation();
+    if (e.target.classList.contains('hd') && selEl) { const r = selEl.getBoundingClientRect(), o = {...curStyle()}; drag = {mode: 'scale', mx: e.clientX, w0: r.width, s0: o.s || 1, o}; return; }
+    if (!inside(e.target)) return;
+    document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov'));
+    if (e.target !== selEl) pick(e.target);
+    drag = {mode: 'move', mx: e.clientX, my: e.clientY, o: {...curStyle()}, x0: curStyle().x || 0, y0: curStyle().y || 0};
+  }, true);
+  document.addEventListener('mousemove', e => {
+    if (!drag) return;
+    if (drag.mode === 'move') commit({...drag.o, x: Math.round(drag.x0 + e.clientX - drag.mx), y: Math.round(drag.y0 + e.clientY - drag.my)});
+    else commit({...drag.o, s: Math.max(0.1, +(drag.s0 * Math.max(0.1, (drag.w0 + e.clientX - drag.mx) / drag.w0)).toFixed(2))});
+  }, true);
+  document.addEventListener('mouseup', () => { drag = null; }, true);
+  for (const ev of ['click', 'dblclick', 'contextmenu']) document.addEventListener(ev, e => { if (OBJ && !e.target.closest('#edSelBar')) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); } }, true);
+  document.addEventListener('keydown', e => {
+    if (!OBJ || !selEl || !selKey || /INPUT|TEXTAREA/.test((e.target || {}).tagName)) return;
+    const st = e.shiftKey ? 10 : 1, o = {...curStyle()};
+    if (e.key === 'ArrowLeft') o.x = (o.x || 0) - st; else if (e.key === 'ArrowRight') o.x = (o.x || 0) + st; else if (e.key === 'ArrowUp') o.y = (o.y || 0) - st; else if (e.key === 'ArrowDown') o.y = (o.y || 0) + st; else return;
+    e.preventDefault(); commit(o);
+  }, true);
+  selBar.addEventListener('click', e => {
+    const a = (e.target.closest('button') || {}).dataset?.a; if (!a || !selEl) return;
+    if (a === 'up' && selEl.parentElement && objRoot(selEl.parentElement)) pick(selEl.parentElement);
+    if (a === 'rs') commit({});
+  });
+  document.addEventListener('scroll', placeSel, true); window.addEventListener('resize', placeSel);
+  // Ctrl+Z / Ctrl+Y внутри сайта работают как в редакторе (откат правок, размеров и положений)
+  document.addEventListener('keydown', e => {
+    if (!(e.ctrlKey || e.metaKey) || /INPUT|TEXTAREA/.test((e.target || {}).tagName)) return;
+    const k = e.key.toLowerCase();
+    if (k === 'z' || k === 'я') { e.preventDefault(); try { e.shiftKey ? parent.CW_EDITOR.redo() : parent.CW_EDITOR.undo(); } catch (err) {} }
+    else if (k === 'y' || k === 'н') { e.preventDefault(); try { parent.CW_EDITOR.redo(); } catch (err) {} }
+  }, true);
+  document.head.insertAdjacentHTML('beforeend', '<style>.modal.show #mcontent{cursor:text}.ed-t{cursor:text;border-radius:4px;transition:.12s}.ed-t:hover{outline:1px dashed #e3c27c;outline-offset:2px;background:rgba(227,194,124,.10)}</style>');
+  document.addEventListener('click', e => {
+    window.__lastEl = e.target;
+    const t = e.target.closest('.ed-t');
+    if (!t) {
+      // текст, которого нет в данных (зашит в код сайта): редактор предложит заменить его своим
+      if (e.target.closest('#edTb,a,button,[data-item],[data-role],[data-trait],[data-aug],[data-buff],.tab,.chip,.mini,.tl,.get,.forms,.subtab,.mbtn,input,textarea,select')) return;
+      if (!e.target.closest('#mcontent,.modal.show')) return;
+      const rg = document.caretRangeFromPoint ? document.caretRangeFromPoint(e.clientX, e.clientY) : null, nd = rg && rg.startContainer;
+      if (nd && nd.nodeType === 3 && nd.textContent.trim().length > 1) {
+        e.preventDefault(); e.stopPropagation();
+        try { parent.CW_EDITOR.editStatic(nd.textContent.trim(), nd); } catch (err) {}
+      }
+      return;
+    }
+    e.preventDefault(); e.stopPropagation();
+    const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/);
+    try { if (t.dataset.ep) parent.CW_EDITOR.editPath(JSON.parse(t.dataset.ep), t.dataset.ek); else parent.CW_EDITOR.editText(ED_REG[+t.dataset.es], m ? {kind: m[1], id: +m[2]} : null); } catch (err) {}
+  }, true);
+  // панель действий над блоком (уровень, пояснение, навык, строка магазина…): ✕ ↑ ↓ ⧉ ＋
+  document.head.insertAdjacentHTML('beforeend', '<style>#edTb{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #e3c27c;border-radius:9px;padding:3px;box-shadow:0 6px 20px rgba(0,0,0,.6)}#edTb button{all:unset;box-sizing:border-box;text-align:center;width:28px;height:26px;border-radius:6px;border:1px solid rgba(196,176,255,.25);background:#221d46;color:#efebff;cursor:pointer;font-size:14px;line-height:1;padding:0}#edTb button:hover{background:#2f2659}#edTb .ed-del{color:#ff7b7b;border-color:#ff7b7b}#edTb .ed-add{color:#5fd0a0;border-color:#5fd0a0}.ed-blk{outline:1px dashed rgba(227,194,124,.55);outline-offset:2px}</style>');
+  const BLK = '.layer,.note,.skill,.rw,.shop-row,.acard,.tl,.mini,.svg-mod>.rt,.svg-mod,.unote,.chim,.get,.where-box,.rec,.trait-links';
+  const tb = document.createElement('div'); tb.id = 'edTb';
+  tb.innerHTML = '<button class="ed-del" data-a="del" title="Удалить блок">✕</button><button data-a="up" title="Выше">↑</button><button data-a="down" title="Ниже">↓</button><button data-a="dup" title="Копия блока">⧉</button><button class="ed-add" data-a="add" title="Добавить новый блок после этого">＋</button><button data-a="size" title="Размер объекта">⤢</button>';
+  document.body.appendChild(tb);
+  let tbSrc = null, tbBlk = null, tbT = 0, tbHov = null;
+  const hideTb = () => { tbT = setTimeout(() => { tb.style.display = 'none'; if (tbBlk) tbBlk.classList.remove('ed-blk'); tbBlk = null; }, 350); };
+  const ctxNow = () => { const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return m ? {kind: m[1], id: +m[2]} : null; };
+  document.addEventListener('mouseover', e => {
+    if (tb.contains(e.target)) { clearTimeout(tbT); return; }
+    const x = e.target.closest('.ed-t'); if (!x) return;
+    const blk = x.closest(BLK) || x; clearTimeout(tbT);
+    if (tbBlk && tbBlk !== blk) tbBlk.classList.remove('ed-blk');
+    tbBlk = blk; blk.classList.add('ed-blk');
+    tbHov = x;
+    const first = blk.querySelector('.ed-t') || x; tbSrc = first.dataset.ep ? JSON.parse(first.dataset.ep) : ED_REG[+first.dataset.es];
+    const r = x.getBoundingClientRect(), tw = 6 * 31 + 8;
+    tb.style.display = 'flex'; tb.style.left = Math.max(2, Math.min(innerWidth - tw - 4, r.left)) + 'px';
+    tb.style.top = Math.max(4, Math.min(innerHeight - 40, r.top > 40 ? r.top - 36 : r.bottom + 4)) + 'px';
+  }, true);
+  document.addEventListener('mouseout', e => { if (tbBlk && !tbBlk.contains(e.relatedTarget) && !tb.contains(e.relatedTarget)) hideTb(); }, true);
+  tb.addEventListener('mouseenter', () => clearTimeout(tbT)); tb.addEventListener('mouseleave', hideTb);
+  document.addEventListener('scroll', e => { if (!tb.contains(e.target)) tb.style.display = 'none'; }, true);
+  tb.addEventListener('click', e => { const b = e.target.closest('button'); if (!b || !tbSrc) return; e.preventDefault(); e.stopPropagation(); tb.style.display = 'none'; try { if (b.dataset.a === 'size') parent.CW_EDITOR.sizePanel(tbHov && tbHov.dataset.ky, tbHov && tbHov.getBoundingClientRect().width, tbHov && tbHov.getBoundingClientRect().height); else parent.CW_EDITOR.blockAction(tbSrc, ctxNow(), b.dataset.a); } catch (err) {} });
+}
 function paint(root) {
   $$('.c', root).forEach(s => { s.style.color = CMAP[s.dataset.c] || ('#' + s.dataset.c); });
   $$('a.ref', root).forEach(a => { a.dataset.tip = `${a.dataset.t}:${a.dataset.id}`; a.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); openRef(a.dataset.t, +a.dataset.id); }); });
@@ -1184,13 +1353,13 @@ function roleDetail(r) {
     <aside class="rd-side" style="--cc:${COSTC[costKey(r)]}">
       ${roleFrame(r, true)}
       <div>
-        <h2>${esc(r.name)}</h2><div class="rd-en">${esc(r.en)}</div>
+        <h2>${ep(['roles', r.id, 'name'], esc(r.name))}</h2><div class="rd-en">${ep(['roles', r.id, 'en'], esc(r.en))}</div>
         <div class="badges"><span class="badge costb"><span class="coin"></span>Стоимость ${costOf(r)}</span><span class="badge"><img src="${img(POSICON[r.pos])}" alt="">${POS[r.pos]}</span>${r.expert ? '<span class="badge" style="color:var(--gold)">Консультант</span>' : ''}${r.isNew ? '<span class="badge newb">Новый</span>' : r.s1 ? '<span class="badge">1 сезон</span>' : ''}</div>
         ${season}${notesBlock(r)}
-        <div class="side-h">Связи${r.s1 ? ' 1 сезона' : ''}</div><div class="trait-links">${tl}</div>
-        ${rec ? `<div class="side-h">Рекомендуемая экипировка</div>${rec}` : ''}
+        <div class="side-h">Связи${r.s1 ? ' 1 сезона' : ''}</div>${ep(['roles', r.id, 'traits'], `<div class="trait-links">${tl}</div>`, 'traits')}
+        ${rec || EDIT ? `<div class="side-h">Рекомендуемая экипировка</div>${ep(['roles', r.id, 'rec'], rec || '<div class="rec" style="min-height:44px;color:var(--dim)">пусто — нажмите, чтобы выбрать</div>', 'rec')}` : ''}
         <div class="side-h">Где взять</div>
-        ${r.s1 ? whereBox('1 сезон', ['Появлялся в магазине 1 сезона (4.6).']) : whereBox(r.whereTitle || 'Магазин', whereOf(r, ['Появляется в магазине; шанс зависит от уровня магазина и стоимости.' + (src.length ? ' Также выдаётся эффектами:' : '')]), srcList(src))}
+        ${r.s1 ? whereBox('1 сезон', ['Появлялся в магазине 1 сезона (4.6).']) : ep(['roles', r.id, 'where'], whereBox(r.whereTitle || 'Магазин', whereOf(r, ['Появляется в магазине; шанс зависит от уровня магазина и стоимости.' + (src.length ? ' Также выдаётся эффектами:' : '')]), srcList(src)), 'where')}
         ${variants}
       </div>
     </aside>
@@ -1231,11 +1400,11 @@ function roleSub(r, k) {
     const one = r.one[side] ? `<div class="summary"><b>Кратко</b><span class="rt">${rt(r.one[side].html)}</span></div>` : '';
     const multi = r.skills[side].some(s => s.desc.length > 1 || /class="s\d"/.test(s.desc.map(d => d.html).join('') + (s.extra ? s.extra.html : '')));
     const legend = multi ? `<div class="legend">Значения по звёздам: <i class="st1">1★</i>/<i class="st2">2★</i>/<i class="st3">3★</i></div>` : '';
-    return one + legend + r.skills[side].map(s => {
+    return one + legend + r.skills[side].map((s, si) => {
       const dl = s.desc.map(d => d.star ? `<div class="starv"><b>${'★'.repeat(d.star)}</b> <span class="rt">${rt(d.html)}</span></div>` : `<div class="rt">${rt(d.html)}</div>`).join('');
       const el = s.el ? `<img src="${img('el/' + s.el)}" alt="" title="${s.el}">` : '';
       return `<div class="skill"><div class="sic">${[s.iconOwn, s.icon].find(k => k && img(k)) ? `<img src="${img([s.iconOwn, s.icon].find(k => k && img(k)))}" alt="">` : ''}</div><div>
-        <h4>${esc(s.name)} ${el}${clipBtn(roleClips(r).find(c => c.skill === String(s.id)))}</h4>
+        <h4>${ep(['roles', r.id, 'skills', side, si, 'name'], esc(s.name))} ${el}${clipBtn(roleClips(r).find(c => c.skill === String(s.id)))}</h4>
         <div class="stype">${STYPE[s.type] || 'Умение'}${s.tag ? ' · ' + esc(s.tag) : ''}${s.sp ? ' · энергия ' + s.sp : ''}</div>
         ${dl}${s.extra ? `<div class="extra rt">${rt(s.extra.html)}</div>` : ''}</div></div>`;
     }).join('');
@@ -1426,11 +1595,11 @@ function viewTraits(v) {
 // магазин Ахи (данные 4.7, GridFightSpecialGoods): две версии ассортимента, цены в монетах
 function ahaShop() {
   const S = DB.shops; if (!S || !S.aha1) return '';
-  const row = g => `<div class="shop-row"><span class="shop-cost">${g.cost ? `<span class="coin"></span>${g.cost}` : 'бесплатно'}</span><div><b>${esc(g.name)}</b><div class="rt">${rt(g.ru)}</div></div></div>`;
+  const row = (g, sk, i) => `<div class="shop-row"><span class="shop-cost">${ep(['shops', sk, i, 'cost'], g.cost ? `<span class="coin"></span>${g.cost}` : 'бесплатно', 'num')}</span><div><b>${ep(['shops', sk, i, 'name'], esc(g.name))}</b><div class="rt">${rt(g.ru)}</div></div></div>`;
   return `<div class="side-h">Магазин Ахи</div>
-    <div class="note">Аха влияет на магазин: в нём появляются особые товары. В данных игры два набора — обычный и улучшенный (у улучшенного выше значения и ниже цены).</div>
+    <div class="note rt">${rt(noteHtml('aha'))}</div>
     <div class="shop-tabs"><button class="chip on" data-shop="aha1">Обычный (${S.aha1.length})</button><button class="chip" data-shop="aha2">Улучшенный (${S.aha2.length})</button></div>
-    <div class="shop-list" data-shoplist="aha1">${S.aha1.map(row).join('')}</div><div class="shop-list" data-shoplist="aha2" hidden>${S.aha2.map(row).join('')}</div>`;
+    <div class="shop-list" data-shoplist="aha1">${S.aha1.map((g, i) => row(g, 'aha1', i)).join('')}</div><div class="shop-list" data-shoplist="aha2" hidden>${S.aha2.map((g, i) => row(g, 'aha2', i)).join('')}</div>`;
 }
 // магазин Освоения (данные 4.7): энергия по уровням связи и что в нём продаётся
 // награда из таблиц игры (bank452.reward): золото, предмет, персонаж, руда и т. д.
@@ -1455,11 +1624,11 @@ function trailShop() {
     const ic = g.item && I[g.item] ? eqIcon(I[g.item], '40px') : g.role && findRole(g.role) ? ava(findRole(g.role), 40) : g.icon && img(g.icon) ? `<img class="shop-ic" src="${img(g.icon)}" alt="">` : '';
     const nm = g.item && I[g.item] ? I[g.item].name : g.role && findRole(g.role) ? findRole(g.role).name : g.name;
     const pre = g.pre && G.find(x => x.id === g.pre);
-    return `<div class="shop-row"${g.item ? ` data-item="${g.item}"` : ''}><span class="shop-cost">${g.id === 999 ? 12 : g.cost || '—'}</span><div>${ic}<b>${esc(nm)}</b> <small class="tag">${esc(g.kind)}</small>${g.html ? `<div class="rt">${g.html}</div>` : ''}${pre ? `<div class="rt" style="color:var(--dim)">Нужно сначала: ${esc(pre.name)}</div>` : ''}${g.id === 101 ? '<div class="rt" style="color:var(--dim)">Есть сразу при включении связи.</div>' : ''}</div></div>`;
+    return `<div class="shop-row"${g.item ? ` data-item="${g.item}"` : ''}><span class="shop-cost">${ep(['bank', 'trail', G.indexOf(g), 'cost'], g.id === 999 ? 12 : g.cost || '—', 'num')}</span><div>${ic}<b>${ep(['bank', 'trail', G.indexOf(g), 'name'], esc(nm))}</b> <small class="tag">${ep(['bank', 'trail', G.indexOf(g), 'kind'], esc(g.kind))}</small>${g.html ? `<div class="rt">${ep(['bank', 'trail', G.indexOf(g), 'html'], g.html, 'html')}</div>` : ''}${pre ? `<div class="rt" style="color:var(--dim)">Нужно сначала: ${esc(pre.name)}</div>` : ''}${g.id === 101 ? '<div class="rt" style="color:var(--dim)">Есть сразу при включении связи.</div>' : ''}</div></div>`;
   };
   const kinds = ['Экспресс', 'Персонаж', 'Предмет', 'Характеристика', 'Энергия Освоения', 'Обновление'];
   return `<div class="side-h">Магазин Освоения</div>
-    <div class="note">После каждого боя связь копит <b>Энергию Освоения</b>, на неё в Магазине Освоения покупаются улучшения Экспресса, персонажи со связью Серебряная дорога Освоения, моды связи и характеристики. Цены в энергии — из таблицы магазина 4.6.54. На витрине 4 товара и «Обновить всё».</div>
+    <div class="note rt">${rt(noteHtml('trail'))}</div>
     <div class="shop-list">${lv.map(([n, e, d]) => `<div class="shop-row"><span class="shop-cost">${T[100502] && T[100502].layers[n - 1] ? T[100502].layers[n - 1].n + ' перс.' : 'ур. ' + n}</span><div><b>+${e} энергии Освоения за бой</b>${d ? `<div class="rt">${d}</div>` : ''}</div></div>`).join('')}</div>
     ${kinds.map(k => { const L = G.filter(g => g.kind === k); return L.length ? `<div class="side-h">${k === 'Экспресс' ? 'Улучшения Экспресса' : k === 'Персонаж' ? 'Персонажи' : k === 'Предмет' ? 'Предметы и моды связи' : k === 'Характеристика' ? 'Характеристики команды' : k}</div><div class="shop-list" style="max-height:none">${L.map(row).join('')}</div>` : ''; }).join('')}`;
 }
@@ -1467,9 +1636,9 @@ function trailShop() {
 function jadeShop() {
   const G = BANK.jade || []; if (!G.length) return '';
   const tiers = [[1, 'Яшма 1★'], [2, 'Яшма 2★ и выше'], [3, 'Яшма 3★: особые товары']];
-  const row = g => `<div class="shop-row"><span class="shop-cost">${g.cost} ${g.hp ? 'НР' : 'зол.'}</span><div>${g.name && !['gold', 'exp', 'refresh', 'hp'].includes((g.rw[0] || {}).t) ? `<b>${esc(g.name)}</b>` : ''}<div class="rw-in">${g.rw.map(rwItem).join('')}</div></div></div>`;
+  const row = g => `<div class="shop-row"><span class="shop-cost">${ep(['bank', 'jade', G.indexOf(g), 'cost'], g.cost, 'num')} ${g.hp ? 'НР' : 'зол.'}</span><div>${g.name && !['gold', 'exp', 'refresh', 'hp'].includes((g.rw[0] || {}).t) ? `<b>${ep(['bank', 'jade', G.indexOf(g), 'name'], esc(g.name))}</b>` : ''}<div class="rw-in">${g.rw.map(rwItem).join('')}</div></div></div>`;
   return `<div class="side-h">Магазин чёрного рынка</div>
-    <div class="note">Первая ячейка — фирменный товар за НР отряда, его можно покупать сколько угодно раз. Остальные ячейки обновляются с узлами, каждый товар покупается один раз; с Яшмой 3★ магазин можно обновить за 2 золота. Цены — из таблицы магазина 4.6.54.</div>
+    <div class="note rt">${rt(noteHtml('jade'))}</div>
     ${tiers.map(([t, h]) => { const L = G.filter(g => g.tier === t); return L.length ? `<div class="side-h">${h}</div><div class="shop-list" style="max-height:none">${L.map(row).join('')}</div>` : ''; }).join('')}`;
 }
 // Игры фантаны, правило «Сила желаний»: пороги и руда
@@ -1479,6 +1648,12 @@ function wishBlock() {
   return `<div class="side-h">Сила желаний: награды</div>
     <div class="note">После каждого боя связь копит Силу желаний (${esc(gain)}), за идеальную победу — ×${(W.mult || [1, 2])[1]}. Награды приходят рудой на порогах ниже. Данные — таблицы 4.6.54.</div>
     <div class="shop-list" style="max-height:none">${W.levels.map(l => `<div class="shop-row"><span class="shop-cost">${l.at}</span><div class="rw-in">${l.rw.map(rwItem).join('')}</div></div>`).join('')}</div>`;
+}
+// овальный значок уровня связи: номер и звёзды из файлов игры (Торговая гильдия Астрополиса считает 3★ персонажей)
+function pillBadge(l, t) {
+  const n = l.stars == null ? 3 : l.stars, whole = (t && t.starImg && img(t.starImg)) || (n >= 1 && n <= 4 && img('ux/starrank' + n)), st = img('ux/star');
+  const own = l.pillImg && img(l.pillImg) ? ` style="background:url(${img(l.pillImg)}) center/100% 100% no-repeat;border:0;box-shadow:none"` : '';
+  return `<span class="pill pq-${l.q || 'None'}"${own}><b>${esc(l.n)}</b><span class="pst">${whole ? `<img class="whole" src="${whole}" alt="">` : Array.from({length: n}, () => st ? `<img src="${st}" alt="">` : '✦').join('')}</span></span>`;
 }
 function traitDetail(t) {
   const mem = membersOf(t.id);
@@ -1491,17 +1666,17 @@ function traitDetail(t) {
   const how = [hint, mem.length && !t.s1 ? 'Выставляйте персонажей с этой связью — каждый засчитывается в счётчик.' : ''].filter(Boolean);
   const extra = (emb || giving.length) ? `<div class="get-list">${[emb, ...giving].filter(Boolean).map(i => `<div class="get" data-item="${i.id}">${eqIcon(i, '40px')}<div><b>${esc(i.name)}</b><small>${CAT[i.cat] || ''}</small></div></div>`).join('')}</div>` : '';
   return `<div class="tdc">
-    <div class="tdc-head">${traitDia(t, '84px')}<div style="text-align:left"><span class="tag">${KIND[t.kind]}</span>${t.s1 ? ' <span class="tag">1 сезон</span>' : ''}<h2 style="margin-top:6px">${esc(t.name)}</h2><div class="rd-en">${esc(t.en)}</div></div></div>
+    <div class="tdc-head">${traitDia(t, '84px')}<div style="text-align:left"><span class="tag">${KIND[t.kind]}</span>${t.s1 ? ' <span class="tag">1 сезон</span>' : ''}<h2 style="margin-top:6px">${ep(['traits', t.id, 'name'], esc(t.name))}</h2><div class="rd-en">${ep(['traits', t.id, 'en'], esc(t.en))}</div></div></div>
     <div class="divider"><i></i></div>
     <div class="tdc-cols"><div>
       <div class="rt lead">${rt(t.desc.html)}</div>
-      ${t.layers.map(l => `<div class="layer lq-${l.q || 'None'}">${dia(t, l.q || 'None', l.n)}<div>${l.parts.map(p => `<div class="rt">${rt(p.html)}</div>`).join('') || '<span style="color:var(--muted)">—</span>'}</div></div>`).join('')}
+      ${t.layers.map((l, li) => `<div class="layer lq-${l.q || 'None'}${t.badge === 'pill' ? ' pillrow' : ''}">${ep(['traits', t.id, 'layers', li, 'n'], t.badge === 'pill' ? pillBadge(l, t) : dia(t, l.q || 'None', l.n), 'layerhead')}<div>${l.parts.map(p => `<div class="rt">${rt(p.html)}</div>`).join('') || '<span style="color:var(--muted)">—</span>'}</div></div>`).join('')}
       ${remarks}${subs}${notesBlock(t)}
       ${t.id === 300602 ? ahaShop() : t.id === 100502 ? trailShop() : t.id === 300502 ? svarogBlock() : t.id === 100202 ? chimBlock() : t.id === 300402 ? jadeShop() : t.id === 100302 ? wishBlock() : ''}
     </div><div>
       ${mem.length ? `<div class="members corners"><h4>Персонажи</h4><div class="mgrid">${mem.map(r => `<div class="m" data-role="${r.id}" style="--cc:${COSTC[costKey(r)]}">${ava(r)}${esc(r.name)}</div>`).join('')}</div></div>` : ''}
       <div class="side-h">Как получить</div>
-      ${whereBox(t.whereTitle || 'Счётчик связи', whereOf(t, how), extra ? '<div style="margin-top:6px">Также +1 к связи дают:</div>' + extra : '')}
+      ${ep(['traits', t.id, 'where'], whereBox(t.whereTitle || 'Счётчик связи', whereOf(t, how), extra ? '<div style="margin-top:6px">Также +1 к связи дают:</div>' + extra : ''), 'where')}
     </div></div></div>`;
 }
 
@@ -1530,7 +1705,7 @@ function itemDetail(i) {
   const used = usedIn(i.id);
   const recBy = listRoles.filter(r => Object.values(r.rec).some(s => [...(s.first || []), ...(s.second || [])].includes(i.id)));
   const src = SRC.item[i.id] || [];
-  return `<div class="id-head">${eqIcon(i, '84px')}<div><span class="tag">${CAT[i.cat] || i.cat}</span>${i.unique ? ' <span class="tag">уникальная</span>' : ''}<h2>${esc(i.name)}</h2><div class="rd-en" style="text-align:left">${esc(i.en)}</div></div></div>
+  return `<div class="id-head">${eqIcon(i, '84px')}<div><span class="tag">${CAT[i.cat] || i.cat}</span>${i.unique ? ' <span class="tag">уникальная</span>' : ''}<h2>${ep(['items', i.id, 'name'], esc(i.name))}</h2><div class="rd-en" style="text-align:left">${ep(['items', i.id, 'en'], esc(i.en))}</div></div></div>
   <div class="id-body">
     <div class="divider" style="margin-bottom:14px"><i></i></div>
     ${i.props.length ? `<div class="props">${i.props.filter(p => p.v != null).map(p => `<span>${propIconKey(p.t) ? `<img src="${img('at/' + propIconKey(p.t))}" alt="">` : ''}${esc(p.n)} <b>+${pct(p.t, p.v)}</b></span>`).join('')}</div>` : ''}
@@ -1538,7 +1713,7 @@ function itemDetail(i) {
     ${notesBlock(i)}
     ${craft.length ? `<div class="side-h">Рецепт</div><div class="recipe">${craft.map(id => `<span data-item="${id}">${eqIcon(I[id])}</span>`).join('<span class="plus">+</span>')}<span class="plus">=</span>${eqIcon(i)}</div>` : ''}
     <div class="side-h">Где взять</div>
-    ${whereBox(i.whereTitle || CAT[i.cat] || 'Источник', whereOf(i, [CAT_HINT[i.cat] || '']), src.length ? '<div style="margin-top:8px">Выдаётся эффектами:</div>' + srcList(src) : '')}
+    ${ep(['items', i.id, 'where'], whereBox(i.whereTitle || CAT[i.cat] || 'Источник', whereOf(i, [CAT_HINT[i.cat] || '']), src.length ? '<div style="margin-top:8px">Выдаётся эффектами:</div>' + srcList(src) : ''), 'where')}
     ${used.length ? `<div class="side-h">Используется в рецептах (${used.length})</div><div class="small-list">${used.map(x => `<div class="mini" data-item="${x.id}">${eqIcon(x)}${esc(x.name)}</div>`).join('')}</div>` : ''}
     ${recBy.length ? `<div class="side-h">Рекомендуется персонажам</div><div class="small-list">${recBy.map(r => `<div class="mini" data-role="${r.id}">${ava(r, 30)}${esc(r.name)}</div>`).join('')}</div>` : ''}
   </div>`;
@@ -1685,7 +1860,7 @@ function viewNpc(v) {
 // химеры Сада чудесных зверей (данные 4.7) — в карточке связи
 function chimBlock() {
   const C = BANK.chim || []; if (!C.length) return '';
-  return `<div class="side-h">Химеры сада</div><div class="note">Химеры живут в саду и дают эффекты по уровням (звёздам). Химеры персонажей усиливают и команда, и своего героя.</div>
+  return `<div class="side-h">Химеры сада</div><div class="note rt">${rt(noteHtml('chim'))}</div>
     <div class="chim-list">${C.map(c => { const r = c.role && findRole(c.role); return `<div class="chim"><img src="${img(c.icon)}" alt="" loading="lazy"><div><b>${esc(c.name)}</b>${r ? ` ${ava(r, 24)}` : ''}<div class="rd-en" style="text-align:left">${esc(c.en)}</div>
       ${c.lv.map(l => `<div class="rt"><span class="tag">${'★'.repeat(l.n)}</span> ${rt(l.team)}${l.own ? ' ' + rt(l.own) : ''}</div>`).join('')}<small class="bk-why">${esc(c.line)}</small></div></div>`; }).join('')}</div>`;
 }
@@ -1693,8 +1868,8 @@ function chimBlock() {
 function svarogBlock() {
   const S2 = BANK.svarog || []; if (!S2.length) return '';
   return `<div class="side-h">${img('ui/svarog') ? `<img src="${img('ui/svarog')}" alt="" style="width:22px;height:22px">` : ''}Модификации Сварога</div>
-    <div class="note">Первая модификация модуля открывает его и повышает шанс следующих модификаций того же модуля. Каждая модификация даёт Кларе +6% к усилению урона. Числа — из таблицы модификаций беты 4.6.52.</div>
-    ${S2.map(g => `<div class="svg-mod" style="--mc:#${g.c}"><div class="svg-h">${g.icon && img(g.icon) ? `<img src="${img(g.icon)}" alt="">` : ''}<b>${esc(g.mod)}</b></div>${(g.list || []).map(m => `<div class="rt"><span class="tag">${esc(m.name)}</span> ${m.html}</div>`).join('')}</div>`).join('')}`;
+    <div class="note rt">${rt(noteHtml('svarog'))}</div>
+    ${S2.map((g, gi) => `<div class="svg-mod" style="--mc:#${g.c}"><div class="svg-h">${g.icon && img(g.icon) ? `<img src="${img(g.icon)}" alt="">` : ''}<b>${ep(['bank', 'svarog', gi, 'mod'], esc(g.mod))}</b></div>${(g.list || []).map((m, mi) => `<div class="rt"><span class="tag">${ep(['bank', 'svarog', gi, 'list', mi, 'name'], esc(m.name))}</span> ${ep(['bank', 'svarog', gi, 'list', mi, 'html'], m.html, 'html')}</div>`).join('')}</div>`).join('')}`;
 }
 
 function viewMisc(v) {
@@ -1889,7 +2064,7 @@ function xDetail(kind, x) {
   const rw = (card.rewards || []).map(rwRender).join('');
   return `<div class="xc${isAug ? ' q-' + x.q : ''}"${x.bg && img(x.bg) ? ` style="background:url(${img(x.bg)}) center/cover no-repeat"` : ''}>
     ${icon}
-    <h2>${esc(x.name)}</h2><div class="xc-en">${esc(x.en)}</div>
+    <h2>${ep([isAug ? 'augments' : 'buffs', x.id, 'name'], esc(x.name))}</h2><div class="xc-en">${ep([isAug ? 'augments' : 'buffs', x.id, 'en'], esc(x.en))}</div>
     <div class="xc-tags">${tags}</div>
     <div class="xc-desc rt">${rt(x.html || '')}</div>
     ${st ? `<div class="xc-stages">${st}</div>` : ''}
@@ -2079,6 +2254,51 @@ window.CW_API = {
   layoutFrom: (kind, obj) => layoutFrom(kind === 'augments' ? 'aug' : 'buff', obj),
   setImg: (k, url) => { IMG[k] = url; },
   rwHtml: d => rwRender(d),
+  // редактор «на сайте»: записать значение в данные сайта по пути и перерисовать
+  setAt: (path, val) => { let o = DB; for (const k of path.slice(0, -1)) o = o[k]; o[path[path.length - 1]] = val; },
+  // заменить запись на месте (производные таблицы сайта держат ссылки на те же объекты)
+  // дерево объектов вокруг последнего нажатого элемента: блок и всё внутри него по отдельности
+  objTree: up => {
+    let b = window.__lastEl; if (!b || !b.isConnected) return null;
+    b = b.closest(BLKSEL) || b;
+    for (let i = 0; i < (up || 0); i++) { const p = b.parentElement && b.parentElement.closest(BLKSEL); if (p) b = p; }
+    const St = STYLES(), out = [];
+    const lab = el => el.tagName === 'IMG' ? 'картинка ' + (el.getAttribute('src') || '').split('/').pop().slice(0, 22)
+      : [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) ? '«' + el.textContent.trim().replace(/\s+/g, ' ').slice(0, 26) + '»'
+      : el.tagName.toLowerCase() + (typeof el.className === 'string' && el.className ? '.' + el.className.split(' ')[0] : '');
+    const walk = (el, d) => {
+      if (out.length > 70 || d > 6) return;
+      const k = objKey(el); const r = el.getBoundingClientRect();
+      const meaningful = el === b || el.tagName === 'IMG' || [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) || /pill|dia|rw|ava|eq|coin|tag|prop/.test(typeof el.className === 'string' ? el.className : '');
+      if (k && r.width > 0 && r.height > 0 && meaningful) out.push({key: k.key, label: lab(el), depth: d, style: St[k.key] || {}});
+      for (const c of el.children) if (!/^(SCRIPT|STYLE|BR)$/.test(c.tagName)) walk(c, d + 1);
+    };
+    walk(b, 0);
+    return out;
+  },
+  // размеры и положения внутри этого блока -> такие же блоки рядом (все уровни связи, все строки списка)
+  copyBlockStyles: up => {
+    let b = window.__lastEl; if (!b || !b.isConnected) return null;
+    b = b.closest(BLKSEL) || b;
+    for (let i = 0; i < (up || 0); i++) { const p = b.parentElement && b.parentElement.closest(BLKSEL); if (p) b = p; }
+    if (!b.parentElement) return {};
+    const cls = el => (typeof el.className === 'string' ? el.className : '').split(' ')[0];
+    const sibs = [...b.parentElement.children].filter(c => c !== b && c.tagName === b.tagName && cls(c) === cls(b));
+    const St = STYLES(), out = {}, rel = el => { const p = []; while (el && el !== b) { p.unshift(Array.prototype.indexOf.call(el.parentElement.children, el)); el = el.parentElement; } return p; };
+    for (const el of [b, ...b.querySelectorAll('*')]) {
+      const k = objKey(el); if (!k || !St[k.key]) continue;
+      const r = rel(el);
+      for (const sb of sibs) { const t = r.reduce((e, n) => e && e.children[n], sb); const k2 = t && objKey(t); if (k2) out[k2.key] = {...St[k.key]}; }
+    }
+    return {map: out, sibs: sibs.length};
+  },
+  flashObj: key => { objFind(key).forEach(el => { el.classList.add('ed-hov'); setTimeout(() => el.classList.remove('ed-hov'), 900); }); },
+  setAllStyles: S => { DB.styles = S || {}; },
+  setObjMode: on => window.__objApi && window.__objApi.set(on),
+  setObjStyle: (key, o) => window.__objApi && window.__objApi.style(key, o),
+  setStyle: (key, st) => { DB.styles = DB.styles || {}; if (st) DB.styles[key] = st; else delete DB.styles[key]; },
+  setRec: (kind, id, obj) => { const o = DB[kind].find(r => r.id === id); if (!o) return; for (const k of Object.keys(o)) delete o[k]; Object.assign(o, obj); },
+  refresh: () => { ED_REG.length = 0; render(); const mm = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if (mm) openModal(mm[1], +mm[2], false); },
   oldFlags: () => Object.fromEntries(['augments', 'buffs', 'items'].map(k => [k, Object.fromEntries(DB[k].filter(x => x.old).map(x => [x.id, x.old]))])),
 };
 

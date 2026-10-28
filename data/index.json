@@ -31,8 +31,10 @@
   "trail": "bank/trail.json",
   "wish": "bank/wish.json",
   "nodes": "bank/nodes.json",
-  "res": "bank/res.json"
+  "res": "bank/res.json",
+  "notes": "bank/notes.json"
  },
+ "styles": "styles.json",
  "custom": "custom.json",
  "theme": "theme.json",
  "blocks": "blocks.json",
