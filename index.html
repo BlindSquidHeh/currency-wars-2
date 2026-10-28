@@ -916,6 +916,7 @@ const PHRASES = [
   [/([Уу]силени[еяю] НР)/g, 'ExtraHPAddedRatio1'], [/(«Рост[аеу]?»|(?<![а-яё])[Рр]ост[аеу]?(?![а-яё]))/g, 'ExtraHeight'], [/(«Сил[аеуы] призыва»|[Сс]ил[аеуы] призыва)/g, 'ExtraSummonPower'],
 ];
 function decorate(html) {
+  if (/class="ai0"/.test(html)) return String(html);  // автоматические значки отключены: в тексте только те, что поставлены вручную
   const parts = String(html || '').split(/(<[^>]+>)/);
   // внутри ссылок и .prop (у них свой значок) фразы не помечаем
   let inA = 0, inProp = false;
@@ -1063,12 +1064,14 @@ if (EDIT) {
     const t = e.target.closest('.ed-t');
     if (!t) {
       // текст, которого нет в данных (зашит в код сайта): редактор предложит заменить его своим
-      if (e.target.closest('#edTb,a,button,[data-item],[data-role],[data-trait],[data-aug],[data-buff],.tab,.chip,.mini,.tl,.get,.forms,.subtab,.mbtn,input,textarea,select')) return;
-      if (!e.target.closest('#mcontent,.modal.show')) return;
-      const rg = document.caretRangeFromPoint ? document.caretRangeFromPoint(e.clientX, e.clientY) : null, nd = rg && rg.startContainer;
+      if (e.target.closest('#edTb,a,button,.tab,.chip,.forms,.subtab,.mbtn,input,textarea,select,#tabs,.search,#gs')) return;
+      if (!e.target.closest('#mcontent,.modal.show,#view')) return;
+      const sl = getSelection(), selText = sl && !sl.isCollapsed ? sl.toString().trim() : '';
+      const rg = document.caretRangeFromPoint ? document.caretRangeFromPoint(e.clientX, e.clientY) : null;
+      const nd = selText && sl.anchorNode && sl.anchorNode.nodeType === 3 ? sl.anchorNode : rg && rg.startContainer;
       if (nd && nd.nodeType === 3 && nd.textContent.trim().length > 1) {
         e.preventDefault(); e.stopPropagation();
-        try { parent.CW_EDITOR.editStatic(nd.textContent.trim(), nd); } catch (err) {}
+        try { parent.CW_EDITOR.editStatic(nd.textContent.trim(), nd, selText); } catch (err) {}
       }
       return;
     }
@@ -2274,7 +2277,7 @@ window.CW_API = {
     const walk = (el, d) => {
       if (out.length > 70 || d > 6) return;
       const k = objKey(el); const r = el.getBoundingClientRect();
-      const meaningful = el === b || el.tagName === 'IMG' || [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) || /pill|dia|rw|ava|eq|coin|tag|prop/.test(typeof el.className === 'string' ? el.className : '');
+      const meaningful = el === b || el.tagName === 'IMG' || [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) || /pill|dia|rw|ava|eq|coin|tag|prop|pi/.test(typeof el.className === 'string' ? el.className : '');
       if (k && r.width > 0 && r.height > 0 && meaningful) out.push({key: k.key, label: lab(el), depth: d, style: St[k.key] || {}});
       for (const c of el.children) if (!/^(SCRIPT|STYLE|BR)$/.test(c.tagName)) walk(c, d + 1);
     };
@@ -2298,6 +2301,7 @@ window.CW_API = {
     return {map: out, sibs: sibs.length};
   },
   flashObj: key => { objFind(key).forEach(el => { el.classList.add('ed-hov'); setTimeout(() => el.classList.remove('ed-hov'), 900); }); },
+  decorateHtml: h => decorate(h),
   setAllStyles: S => { DB.styles = S || {}; },
   setObjMode: on => window.__objApi && window.__objApi.set(on),
   setObjStyle: (key, o) => window.__objApi && window.__objApi.style(key, o),

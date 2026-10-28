@@ -518,15 +518,80 @@ function blockAction(src, ctx, a) {
 }
 // ---------- текст, зашитый в код сайта: замена «было → стало» (применяется при сборке ко всему сайту) ----------
 let TPL = null;
-async function editStatic(text, node) {
+async function editStatic(text, node, selText) {
   if (TPL === null) { try { TPL = await (await fetch('build/template.html', {cache:'no-store'})).text(); } catch (e) { TPL = ''; } }
   const P = $('#edp'); P.classList.add('show');
   OVR.texts = OVR.texts || [];
   let ent = OVR.texts.find(t => t && t.to === text) || OVR.texts.find(t => t && t.from === text);
+  // сначала ищем этот текст в данных (названия, описания в списках и карточках): тогда правим его там
+  const hits = []; for (const k of RKINDS) for (const x of allOf(k)) { const o = []; walkStr(x, text, [], o); o.forEach(p => hits.push({k, id:x.id, name:x.name, path:p})); }
+  for (const p of Object.keys(CW_SECTIONS.LIST)) { const v = OVR.sections[p] || SECB[p]; if (!v) continue; const o = []; walkStr(v, text, [], o); o.forEach(q => hits.push({sec:p, name:CW_SECTIONS.LIST[p], path:q})); }
+  if (hits.length && !ent) {
+    P.innerHTML = '<button class="btn x" id="edx">Готово</button><h4>Текст из данных</h4>';
+    $('#edx').onclick = () => P.classList.remove('show');
+    let cur = hits[0];
+    const where = document.createElement('div'); where.className = 'where';
+    if (hits.length > 1) { where.innerHTML = `Такой же текст есть в ${hits.length} местах, выберите, какое правим: `; const sel0 = document.createElement('select'); sel0.innerHTML = hits.map((h, i) => `<option value="${i}">${esc(h.name || '')} › ${esc(h.path.join(' › '))}</option>`).join(''); sel0.onchange = () => { cur = hits[+sel0.value]; lab(); }; where.append(sel0); }
+    const lab = () => { const l = P.querySelector('.hw'); if (l) l.textContent = (cur.sec || cur.k) + ' › ' + cur.path.join(' › '); };
+    P.append(where); P.insertAdjacentHTML('beforeend', '<div class="where hw"></div>'); lab();
+    const ta0 = document.createElement('textarea'); ta0.value = text; ta0.style.cssText = 'width:100%;min-height:80px'; P.append(ta0); ta0.focus();
+    const fullBtn = document.createElement('button'); fullBtn.className = 'btn'; fullBtn.textContent = 'Вся запись…'; fullBtn.onclick = () => { P.classList.remove('show'); cur.sec ? openSecDrawer(cur.sec, cur.path[0], false) : openDrawer(cur.k, cur.id, false); }; P.append(fullBtn);
+    ta0.oninput = () => { const x = rootOf(cur); setIn(x, cur.path, ta0.value); writeAt(cur, x, 400); try { node.textContent = ta0.value; } catch (e) {} };
+    return;
+  }
+  // выделенный фрагмент: правим именно его
+  if (selText && selText !== text && !ent && TPL.includes(selText)) {
+    const full = node.textContent; text = selText;
+    ent = OVR.texts.find(t => t && t.to === selText) || null;
+    const fromTxt = ent ? ent.from : selText;
+    P.innerHTML = '<button class="btn x" id="edx">Готово</button><h4>Выделенный фрагмент</h4><div class="where">Замена применится при «Сохранить и собрать сайт» везде, где этот фрагмент встречается в коде сайта.</div>';
+    $('#edx').onclick = () => P.classList.remove('show');
+    const t2 = document.createElement('textarea'); t2.value = selText; t2.style.cssText = 'width:100%;min-height:70px'; P.append(t2); t2.focus();
+    let curTxt = selText;
+    t2.oninput = () => {
+      snap(); const e2 = OVR.texts.find(t => t && t.from === fromTxt);
+      if (e2) e2.to = t2.value; else OVR.texts.push({from:fromTxt, to:t2.value});
+      OVR.texts = OVR.texts.filter(t => t.from !== t.to); setDirty();
+      try { node.textContent = node.textContent.replace(curTxt, t2.value); curTxt = t2.value; } catch (e) {}
+    };
+    return;
+  }
   const inTpl = TPL.includes(text);
   P.innerHTML = '<button class="btn x" id="edx">Готово</button><h4>Текст из кода сайта</h4>';
   $('#edx').onclick = () => P.classList.remove('show');
   if (!ent && !inTpl) {
+    // составной текст: разбираем на куски, которые есть в коде сайта дословно (правятся), и подставленные значения (серые)
+    const has = s => TPL.includes(s);
+    const parts = []; let i = 0, dyn = '';
+    while (i < text.length) {
+      let lo = 0, hi = text.length - i;
+      while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (has(text.slice(i, i + mid))) lo = mid; else hi = mid - 1; }
+      if (lo >= 6) { if (dyn) { parts.push({dyn: dyn}); dyn = ''; } parts.push({st: text.slice(i, i + lo)}); i += lo; }
+      else { dyn += text[i]; i++; }
+    }
+    if (dyn) parts.push({dyn});
+    if (!parts.some(p => p.st)) {
+      P.insertAdjacentHTML('beforeend', '<div class="where">Здесь нет постоянных кусочков текста: он целиком собирается из данных. Выделите мышью нужное слово и нажмите ещё раз, либо правьте данные через «Вся запись…».</div>');
+      return;
+    }
+    P.insertAdjacentHTML('beforeend', '<div class="where">Этот текст собирается из частей. <b>Серые</b> куски подставляются из данных, их не править здесь. Остальные правятся: меняете кусок, он заменяется в коде сайта при сборке. Можно и просто выделить мышью нужное слово и нажать на него.</div>');
+    const box = document.createElement('div'); box.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;align-items:center'; P.append(box);
+    for (const pt of parts) {
+      if (pt.dyn) { box.insertAdjacentHTML('beforeend', `<span style="background:var(--panel3);color:var(--dim);padding:3px 8px;border-radius:8px;font-size:12px" title="подставляется из данных">${esc(pt.dyn)}</span>`); continue; }
+      const inp0 = document.createElement('input'); inp0.value = pt.st; inp0.style.cssText = `width:${Math.min(520, Math.max(120, pt.st.length * 8))}px`;
+      let was = pt.st;
+      inp0.oninput = () => {
+        snap(); const e2 = OVR.texts.find(t => t && t.to === was) || OVR.texts.find(t => t && t.from === pt.st);
+        const fromT = e2 ? e2.from : pt.st;
+        if (e2) e2.to = inp0.value; else OVR.texts.push({from:fromT, to:inp0.value});
+        OVR.texts = OVR.texts.filter(t => t.from !== t.to); setDirty();
+        try { node.textContent = node.textContent.replace(was, inp0.value); } catch (e) {} was = inp0.value;
+      };
+      box.append(inp0);
+    }
+    return;
+  }
+  if (false) {
     P.insertAdjacentHTML('beforeend', '<div class="where">Этот текст складывается из нескольких частей (данные и подписи вместе), поэтому заменить его целиком нельзя. Правьте его части: нажмите на соседние выделяющиеся при наведении тексты или откройте «Все поля» карточки на панели сверху.</div>');
     return;
   }
@@ -780,9 +845,15 @@ const COLORS = [['f29e38', 'Оранжевый'], ['ffd471', 'Золотой'], 
 let PROPS = null; // значки характеристик: data-p -> подпись (собираются из текстов сайта)
 function propList() {
   if (PROPS) return PROPS;
-  PROPS = {};
+  // все характеристики игры, для которых у сайта есть значок, плюс найденные в текстах
+  PROPS = {FrontBack:'Сила на поле/вне поля', ExtraFrontPowerAddedRatio1:'Сила на поле', ExtraBackPowerAddedRatio1:'Сила вне поля', ExtraSpeedAddedRatio1:'Усиление скорости',
+    ExtraAllDamageTypeAddedRatio1:'Усиление урона', ExtraElementDamageAddedRatio1:'Усиление стихийного урона', ExtraDOTDamageAddedRatio1:'Усиление периодического урона',
+    ExtraInsertDamageAddedRatio1:'Усиление урона бонус-атаки', ExtraUltraDamageAddedRatio1:'Усиление урона сверхспособности', ExtraLuckChance:'Шанс счастливого удара',
+    ExtraLuckDamage:'Урон счастливого удара', ExtraComboRate:'Шанс комбо', ExtraHeight:'Рост', ExtraInitSP:'Изначальная энергия', ExtraAllDamageReduce:'Понижение урона',
+    ExtraShieldAddedRatio:'Усиление щита', ExtraHealAddedRatio:'Усиление исцеления', ExtraQuantumResonance:'Квантовый резонанс', ExtraSummonPower:'Сила призыва',
+    StanceBreakAddedRatio:'Эффективность пробития', ExtraHPAddedRatio1:'Усиление НР'};
   const all = JSON.stringify(BASE || {});
-  for (const m of all.matchAll(/class=\\"prop\\" data-p=\\"(\w+)\\">([^<]{1,40})</g)) PROPS[m[1]] = PROPS[m[1]] || m[2];
+  for (const m of all.matchAll(/class=\\"prop\\" data-p=\\"(\w+)\\">([^<]{1,40})</g)) PROPS[m[1]] = PROPS[m[1]] || m[2];  // (уже заданное выше не перетираем)
   return PROPS;
 }
 let rteCss = false;
@@ -816,6 +887,8 @@ function rte(html, onchange, rows = 4) {
       <select data-a="color" title="Цвет выделенного"><option value="">Цвет…</option>${COLORS.map(([c, n]) => `<option value="${c}" style="color:#${c}">${n}</option>`).join('')}</select>
       <button data-a="u" title="Термин с подчёркиванием, как ключевые слова игры">Термин</button>
       <select data-a="prop" title="Вставить значок характеристики"><option value="">Значок характеристики…</option>${Object.entries(props).sort((a, b) => a[1].localeCompare(b[1], 'ru')).map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('')}</select>
+      <select data-a="pi" title="Вставить значок БЕЗ текста, отдельно (потом его можно двигать, менять размер, удалять)"><option value="">Только значок…</option>${Object.entries(props).sort((a, b) => a[1].localeCompare(b[1], 'ru')).map(([k, n]) => `<option value="${k}">${n}</option>`).join('')}</select>
+      <button data-a="autoi" title="Значки, которые сайт сам ставит рядом со словами (Рост, Усиление урона…), сделать обычными: тогда каждый можно удалить, добавить, передвинуть"></button>
       <span class="sep"></span>
       <button data-a="role">Персонаж</button><button data-a="item">Предмет</button>
       <button data-a="br" title="Новая строка (или Shift+Enter)">↵</button>
@@ -826,8 +899,11 @@ function rte(html, onchange, rows = 4) {
     <textarea rows="${rows}" hidden spellcheck="false"></textarea>`;
   const ed = $('.ed', w), ta = $('textarea', w);
   ed.innerHTML = html || '';
-  ed.style.minHeight = (rows * 24) + 'px';
-  const fire = () => onchange(cleanHtml(ed.innerHTML));
+  ed.style.minHeight = (rows * 24) + 'px'; setTimeout(() => autoLabel());
+  const fire = () => { onchange(cleanHtml(ed.innerHTML)); autoLabel(); };
+  const autoBtn = () => w.querySelector('[data-a=autoi]');
+  const autoLabel = () => { const off = !!ed.querySelector('.ai0'); const b = autoBtn(); if (b) { b.textContent = off ? '✦ Значки: вручную (вернуть авто)' : '✦ Значки по отдельности'; b.classList.toggle('on', off); } };
+  ed.addEventListener('click', e => { const p = e.target.closest('.pi'); if (p) { const r = document.createRange(); r.selectNode(p); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } });
   ed.addEventListener('input', fire);
   ed.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); document.execCommand('insertLineBreak'); fire(); } });
   ed.addEventListener('paste', e => { e.preventDefault(); document.execCommand('insertText', false, e.clipboardData.getData('text/plain')); });
@@ -857,6 +933,16 @@ function rte(html, onchange, rows = 4) {
     if (a === 'v') wrapEl(Object.assign(document.createElement('b'), {className:'v'}));
     if (a === 'u') wrapEl(document.createElement('u'));
     if (a === 'br') { range(); document.execCommand('insertLineBreak'); fire(); }
+    if (a === 'autoi') {
+      const off = ed.querySelector('.ai0');
+      if (!off) {  // сайтовые авто-значки превращаем в обычные: видно и можно править каждый
+        const dec = SITE.CW_API.decorateHtml(cleanHtml(ed.innerHTML));
+        ed.innerHTML = '<span class="ai0"></span>' + dec;
+      } else {  // вернуть автоматические
+        ed.querySelectorAll('.ai0, .pi').forEach(n => n.remove());
+      }
+      fire();
+    }
     if (a === 'clear') unwrap();
     if (a === 'role' || a === 'item') {
       const L = allOf(a === 'role' ? 'roles' : 'items');
@@ -869,6 +955,7 @@ function rte(html, onchange, rows = 4) {
   w.querySelector('.tb').onchange = e => {
     const a = e.target.dataset.a, v = e.target.value; if (!v) return;
     if (a === 'color') { const el = document.createElement('span'); el.className = 'c'; el.dataset.c = v; wrapEl(el); }
+    if (a === 'pi') { const el = document.createElement('span'); el.className = 'pi'; el.dataset.p = v; const r = range(); if (r) { r.collapse(false); r.insertNode(el); r.setStartAfter(el); if (!ed.querySelector('.ai0')) ed.insertBefore(Object.assign(document.createElement('span'), {className: 'ai0'}), ed.firstChild); fire(); } }
     if (a === 'prop') { const el = document.createElement('span'); el.className = 'prop'; el.dataset.p = v; el.textContent = props[v]; const r = range(); if (r) { r.collapse(false); r.insertNode(el); r.setStartAfter(el); fire(); } }
     e.target.value = '';
   };
