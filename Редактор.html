@@ -378,6 +378,7 @@ $('#tabs').onclick = e => { const b = e.target.closest('.tab'); if (!b) return; 
 // анимации — отдельный редактор (spine/editor.html) во всю ширину
 function showSpine(on) {
   let f = $('#spineFrame');
+  if (on && !f && ONLINE) { f = document.createElement('div'); f.id = 'spineFrame'; f.className = 'empty'; f.textContent = 'Анимации настраиваются только дома: им нужны файлы анимаций с компьютера.'; $('main').appendChild(f); }
   if (on && !f) { f = document.createElement('iframe'); f.id = 'spineFrame'; f.src = 'spine/editor.html'; $('main').appendChild(f); }
   $('main').style.gridTemplateColumns = on ? '1fr' : '';
   $('aside').style.display = $('#form').style.display = on ? 'none' : '';
@@ -933,7 +934,14 @@ async function onlineSave() {
   for (const k in OVR.deleted) { const n = OVR.deleted[k].filter(id => !(ORIG.deleted[k] || []).includes(id)); if (n.length) O.deleted[k] = n; }
   status('Сохраняю на сайт…', true);
   const r = await gh('/contents/online.json', {method:'PUT', body:JSON.stringify({message:'Правки из онлайн-редактора', content:b64(JSON.stringify(O, null, 1)), sha:GH.sha, branch:'main'})});
-  if (!r.ok) { status(r.status === 409 ? 'Файл правок изменился с другого устройства — обновите страницу' : 'Не удалось сохранить (' + r.status + ')', true); return false; }
+  if (!r.ok) {
+    const why = r.status === 409 ? 'Файл правок изменился с другого устройства — обновите страницу'
+      : r.status === 403 || r.status === 404 ? 'GitHub не дал записать: у токена нет права Contents: Read and write на этот репозиторий. Сделайте новый токен с этим правом.'
+      : 'Не удалось сохранить (' + r.status + ')';
+    status(why, true); alert(why);
+    if (r.status === 403 || r.status === 404) { try { localStorage.removeItem('cw_gh_token'); } catch (e) {} }
+    return false;
+  }
   GH.sha = (await r.json()).content.sha;
   dirty = false; status('Сохранено ✓ На сайте появится примерно через минуту'); return true;
 }
