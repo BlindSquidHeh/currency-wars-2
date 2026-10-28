@@ -17941,28 +17941,6 @@
   "skills": {
    "back": [
     {
-     "id": "60420202",
-     "name": "Совершенная чистка",
-     "type": "Skill",
-     "tag": "Групповой урон",
-     "el": "Quantum",
-     "stars": [
-      1,
-      2,
-      3
-     ],
-     "desc": [
-      {
-       "html": "Наносит всем противникам квантовый урон в размере <span class=\"c\" data-c=\"f29e38\"><b class=\"v\"><i class=\"s1\">800%</i><i class=\"sl\">/</i><i class=\"s2\">1000%</i><i class=\"sl\">/</i><i class=\"s3\">8000%</i></b></span> от силы атаки Королевы Пом-Пом и повышает получаемый ими урон на <span class=\"c\" data-c=\"f29e38\"><b class=\"v\"><i class=\"s1\">30%</i><i class=\"sl\">/</i><i class=\"s2\">40%</i><i class=\"sl\">/</i><i class=\"s3\">60%</i></b></span> на <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">2</b></span> ход(а)."
-      }
-     ],
-     "extra": {
-      "html": "Активируется во время действия. Королева Пом-Пом действует со скоростью <b class=\"v\"><i class=\"s1\">160%</i><i class=\"sl\">/</i><i class=\"s2\">200%</i><i class=\"sl\">/</i><i class=\"s3\">240%</i></b>."
-     },
-     "sp": null,
-     "icon": "sk/6042_SkillIcon_Monster_PamRage"
-    },
-    {
      "id": "60420203",
      "name": "Насыщенная уборка",
      "type": "Ultimate",
@@ -17982,6 +17960,7 @@
       "html": "Активируется при полной энергии. Навык восстанавливает <b class=\"v\">60</b> ед. энергии."
      },
      "sp": 120,
+     "iconOwn": "skill/604202_back_0_93400",
      "icon": "sk/6042_SkillIcon_Monster_PamRage"
     },
     {
@@ -18002,6 +17981,30 @@
      ],
      "extra": null,
      "sp": null,
+     "iconOwn": "skill/604202_back_2_98961",
+     "icon": "sk/6042_SkillIcon_Monster_PamRage"
+    },
+    {
+     "id": "60420202",
+     "name": "Совершенная чистка",
+     "type": "Skill",
+     "tag": "Групповой урон",
+     "el": "Quantum",
+     "stars": [
+      1,
+      2,
+      3
+     ],
+     "desc": [
+      {
+       "html": "Наносит всем противникам квантовый урон в размере <span class=\"c\" data-c=\"f29e38\"><b class=\"v\"><i class=\"s1\">800%</i><i class=\"sl\">/</i><i class=\"s2\">1000%</i><i class=\"sl\">/</i><i class=\"s3\">8000%</i></b></span> от силы атаки Королевы Пом-Пом и повышает получаемый ими урон на <span class=\"c\" data-c=\"f29e38\"><b class=\"v\"><i class=\"s1\">30%</i><i class=\"sl\">/</i><i class=\"s2\">40%</i><i class=\"sl\">/</i><i class=\"s3\">60%</i></b></span> на <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">2</b></span> ход(а)."
+      }
+     ],
+     "extra": {
+      "html": "Активируется во время действия. Королева Пом-Пом действует со скоростью <b class=\"v\"><i class=\"s1\">160%</i><i class=\"sl\">/</i><i class=\"s2\">200%</i><i class=\"sl\">/</i><i class=\"s3\">240%</i></b>."
+     },
+     "sp": null,
+     "iconOwn": "skill/604202_back_0_62664",
      "icon": "sk/6042_SkillIcon_Monster_PamRage"
     }
    ]

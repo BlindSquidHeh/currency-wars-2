@@ -159,7 +159,7 @@
   "en": "2-Cost Reinforcement",
   "icon": "aug/100401",
   "new": false,
-  "html": "Даёт случайных персонажей стоимостью 2</span>: <b class=\"v\">4</b>.",
+  "html": "Даёт случайных <span class=\"c\" data-c=\"6cce9f\">персонажей стоимостью 2</span>: <b class=\"v\">4</b>.",
   "seasons": [
    1,
    2
@@ -176,7 +176,7 @@
   "en": "3-Cost Reinforcement",
   "icon": "aug/100402",
   "new": false,
-  "html": "Даёт случайных персонажей стоимостью 3</span>: <b class=\"v\">4</b>.",
+  "html": "Даёт случайных <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью 3</span>: <b class=\"v\">4</b>.",
   "seasons": [
    1,
    2
@@ -193,7 +193,7 @@
   "en": "4-Cost Reinforcement",
   "icon": "aug/100403",
   "new": false,
-  "html": "Даёт случайных персонажа стоимостью 4</span>: <b class=\"v\">4</b>.",
+  "html": "Даёт случайных <span class=\"c\" data-c=\"927fe7\">персонажа стоимостью 4</span>: <b class=\"v\">4</b>.",
   "seasons": [
    1,
    2
@@ -532,7 +532,7 @@
   "en": "Market Intervention",
   "icon": "aug/102201",
   "new": false,
-  "html": "Следующие и каждые <b class=\"v\">4</b> шт. обновлений магазина будет содержать только персонажей стоимостью <b class=\"v\">3</b></span>. Даёт обновлений: <b class=\"v\">5</b>.",
+  "html": "Следующие и каждые <b class=\"v\">4</b> шт. обновлений магазина будет содержать только <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью <b class=\"v\">3</b></span>. Даёт обновлений: <b class=\"v\">5</b>.",
   "seasons": [
    1,
    2
@@ -566,7 +566,7 @@
   "en": "Team Expansion",
   "icon": "aug/102401",
   "new": false,
-  "html": "Даёт <span class=\"c\" data-c=\"b4b4b4\">персонажей стоимостью 1</span>: <b class=\"v\">2</b>, персонажей стоимостью 2</span>: <b class=\"v\">2</b> и персонажей стоимостью 3</span>: <b class=\"v\">1</b>.",
+  "html": "Даёт <span class=\"c\" data-c=\"b4b4b4\">персонажей стоимостью 1</span>: <b class=\"v\">2</b>, <span class=\"c\" data-c=\"6cce9f\">персонажей стоимостью 2</span>: <b class=\"v\">2</b> и <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью 3</span>: <b class=\"v\">1</b>.",
   "seasons": [
    1,
    2
@@ -584,7 +584,7 @@
   "en": "Weapon Support",
   "icon": "aug/102501",
   "new": false,
-  "html": "Даёт случайных простых экипировок: <b class=\"v\">1</b> и случайных персонажей стоимостью 3</span>: <b class=\"v\">2</b>.",
+  "html": "Даёт случайных простых экипировок: <b class=\"v\">1</b> и случайных <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью 3</span>: <b class=\"v\">2</b>.",
   "seasons": [
    1,
    2
@@ -601,7 +601,7 @@
   "en": "Weapon Support+",
   "icon": "aug/102501",
   "new": false,
-  "html": "Даёт случайных простых экипировок: <b class=\"v\">1</b>, случайных персонажей стоимостью 4</span>: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">6</b>.",
+  "html": "Даёт случайных простых экипировок: <b class=\"v\">1</b>, случайных <span class=\"c\" data-c=\"927fe7\">персонажей стоимостью 4</span>: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">6</b>.",
   "seasons": [
    1,
    2
@@ -928,7 +928,7 @@
   "en": "Market Vitality",
   "icon": "aug/200801",
   "new": false,
-  "html": "В магазине есть шанс появления персонажей 2★ стоимостью 1 или 2</span>, вероятность появления повышается с уровнем.",
+  "html": "В магазине есть шанс появления персонажей 2★ стоимостью 1 или <span class=\"c\" data-c=\"6cce9f\">2</span>, вероятность появления повышается с уровнем.",
   "seasons": [
    1,
    2
@@ -1044,7 +1044,7 @@
   "en": "Gold Panning",
   "icon": "aug/201501",
   "new": false,
-  "html": "При синтезе персонажа стоимостью 2</span> уровня <b class=\"v\">2</b>★ даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>.",
+  "html": "При синтезе персонажа <span class=\"c\" data-c=\"6cce9f\">стоимостью 2</span> уровня <b class=\"v\">2</b>★ даёт <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>.",
   "seasons": [
    1
   ],
@@ -1147,7 +1147,7 @@
   "en": "Express Cohort Emblem",
   "icon": "aug/210101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1179,7 +1179,7 @@
   "en": "Belobog Emblem",
   "icon": "aug/210501",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051005\">Эмблема Белобог</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051005\">Эмблема Белобог</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1195,7 +1195,7 @@
   "en": "Galactic Voyager Emblem",
   "icon": "aug/210601",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1243,7 +1243,7 @@
   "en": "Planet of Festivities Emblem",
   "icon": "aug/211001",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1259,7 +1259,7 @@
   "en": "Day Demigod Emblem",
   "icon": "aug/211101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1307,7 +1307,7 @@
   "en": "Break Emblem",
   "icon": "aug/220201",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052002\">Эмблема Пробитие</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052002\">Эмблема Пробитие</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1339,7 +1339,7 @@
   "en": "Energy Emblem",
   "icon": "aug/220401",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1355,7 +1355,7 @@
   "en": "Healing Emblem",
   "icon": "aug/220501",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1387,7 +1387,7 @@
   "en": "Debuff Emblem",
   "icon": "aug/220701",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1403,7 +1403,7 @@
   "en": "DoT Emblem",
   "icon": "aug/220801",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1419,7 +1419,7 @@
   "en": "Quantum Resonance Emblem",
   "icon": "aug/220901",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052009\">Эмблема Квантовый резонанс</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052009\">Эмблема Квантовый резонанс</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1435,7 +1435,7 @@
   "en": "Shield Emblem",
   "icon": "aug/221001",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1451,7 +1451,7 @@
   "en": "Skill Point Emblem",
   "icon": "aug/221101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052011\">Эмблема Очки навыков</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052011\">Эмблема Очки навыков</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1644,7 +1644,7 @@
   "en": "Just in Time",
   "icon": "aug/300701",
   "new": false,
-  "html": "Даёт случайных персонажей 2★ стоимостью 4</span>: <b class=\"v\">3</b>, предметов <a class=\"ref\" data-t=\"item\" data-id=\"350106\">Идеальный проектор</a>: <b class=\"v\">1</b> и бесплатных обновлений: <b class=\"v\">4</b>.",
+  "html": "Даёт случайных <span class=\"c\" data-c=\"927fe7\">персонажей 2★ стоимостью 4</span>: <b class=\"v\">3</b>, предметов <a class=\"ref\" data-t=\"item\" data-id=\"350106\">Идеальный проектор</a>: <b class=\"v\">1</b> и бесплатных обновлений: <b class=\"v\">4</b>.",
   "seasons": [
    1,
    2
@@ -1781,7 +1781,7 @@
   "en": "IPC Curated",
   "icon": "aug/301401",
   "new": false,
-  "html": "Сейчас и в начале каждого Измерения открывает магазин с <b class=\"v\">5</b> шт. уникальных персонажей стоимостью <b class=\"v\">4</b></span> и даёт золотых монет: <b class=\"v\">3</b>.",
+  "html": "Сейчас и в начале каждого Измерения открывает магазин с <b class=\"v\">5</b> шт. уникальных <span class=\"c\" data-c=\"927fe7\">персонажей стоимостью <b class=\"v\">4</b></span> и даёт золотых монет: <b class=\"v\">3</b>.",
   "seasons": [
    1,
    2
@@ -1814,7 +1814,7 @@
   "en": "Express Cohort Emblem Set",
   "icon": "aug/210101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1846,7 +1846,7 @@
   "en": "Belobog Emblem Set",
   "icon": "aug/210501",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051005\">Эмблема Белобог</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030203\">Мастер по оружию</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051005\">Эмблема Белобог</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030203\">Мастер по оружию</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1862,7 +1862,7 @@
   "en": "Galactic Voyager Emblem Set",
   "icon": "aug/210601",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1910,7 +1910,7 @@
   "en": "Planet of Festivities Emblem Set",
   "icon": "aug/211001",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>.",
   "seasons": [
    1
   ],
@@ -1926,7 +1926,7 @@
   "en": "Day Demigod Emblem Set",
   "icon": "aug/211101",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
   "seasons": [
    1
   ],
@@ -1974,7 +1974,7 @@
   "en": "Break Emblem Set",
   "icon": "aug/220201",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052002\">Эмблема Пробитие</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030106\">Метеоритные крылья</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052002\">Эмблема Пробитие</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030106\">Метеоритные крылья</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2006,7 +2006,7 @@
   "en": "Energy Emblem Set",
   "icon": "aug/220401",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030407\">Знамя победы</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030407\">Знамя победы</a>.",
   "seasons": [
    1
   ],
@@ -2022,7 +2022,7 @@
   "en": "Healing Emblem Set",
   "icon": "aug/220501",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
   "seasons": [
    1
   ],
@@ -2054,7 +2054,7 @@
   "en": "Debuff Emblem Set",
   "icon": "aug/220701",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
   "seasons": [
    1
   ],
@@ -2070,7 +2070,7 @@
   "en": "DoT Emblem Set",
   "icon": "aug/220801",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>.",
   "seasons": [
    1
   ],
@@ -2086,7 +2086,7 @@
   "en": "Quantum Resonance Emblem Set",
   "icon": "aug/220901",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052009\">Эмблема Квантовый резонанс</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052009\">Эмблема Квантовый резонанс</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2102,7 +2102,7 @@
   "en": "Shield Emblem Set",
   "icon": "aug/221001",
   "new": false,
-  "html": "Даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030306\">Адаптивный экзоскелет</a>.",
+  "html": "Даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030306\">Адаптивный экзоскелет</a>.",
   "seasons": [
    1
   ],
@@ -2118,7 +2118,7 @@
   "en": "Skill Point Emblem Set",
   "icon": "aug/221101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052011\">Эмблема Очки навыков</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052011\">Эмблема Очки навыков</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2392,7 +2392,7 @@
   "en": "Personnel Restructuring",
   "icon": "aug/102801",
   "new": false,
-  "html": "Продаёт всех персонажей на поле и в зоне подготовки. Даёт <b class=\"v\">1</b> случайных персонажей 2★ стоимостью 3</span>, <b class=\"v\">2</b> персонажей 2★ стоимостью 2</span> и <b class=\"v\">2</b> <span class=\"c\" data-c=\"b4b4b4\">персонажей 2★ стоимостью 1</span>.",
+  "html": "Продаёт всех персонажей на поле и в зоне подготовки. Даёт <b class=\"v\">1</b> случайных <span class=\"c\" data-c=\"7196ff\">персонажей 2★ стоимостью 3</span>, <b class=\"v\">2</b> <span class=\"c\" data-c=\"6cce9f\">персонажей 2★ стоимостью 2</span> и <b class=\"v\">2</b> <span class=\"c\" data-c=\"b4b4b4\">персонажей 2★ стоимостью 1</span>.",
   "seasons": [
    1
   ],
@@ -2444,7 +2444,7 @@
   "en": "Recruitment Funds",
   "icon": "aug/103101",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99994\">Контракт стоимостью 3</a></span>: <b class=\"v\">2</b> и золотых монет: <b class=\"v\">4</b>.",
+  "html": "Даёт предметов <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"item\" data-id=\"99994\">Контракт стоимостью 3</a></span>: <b class=\"v\">2</b> и золотых монет: <b class=\"v\">4</b>.",
   "seasons": [
    1,
    2
@@ -2461,7 +2461,7 @@
   "en": "Recruitment Funds+",
   "icon": "aug/100403",
   "new": false,
-  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99993\">Контракт стоимостью 4</a></span>: <b class=\"v\">2</b> и золотых монет: <b class=\"v\">5</b>.",
+  "html": "Даёт предметов <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"item\" data-id=\"99993\">Контракт стоимостью 4</a></span>: <b class=\"v\">2</b> и золотых монет: <b class=\"v\">5</b>.",
   "seasons": [
    1,
    2
@@ -2883,7 +2883,7 @@
   "en": "4-Cost Promotion",
   "icon": "aug/202201",
   "new": false,
-  "html": "Следующий купленный вами персонаж стоимостью 4</span> сразу улучшится до 2★. Даёт золотых монет: <b class=\"v\">12</b>.",
+  "html": "Следующий купленный вами <span class=\"c\" data-c=\"927fe7\">персонаж стоимостью 4</span> сразу улучшится до 2★. Даёт золотых монет: <b class=\"v\">12</b>.",
   "seasons": [
    1,
    2
@@ -3037,7 +3037,7 @@
   "en": "Hiring Spree",
   "icon": "aug/203101",
   "new": false,
-  "html": "Вы теряете золотые монеты. За каждые 4 потерянные монеты даёт случайного персонажа стоимостью 4</span>, максимум теряется золотых монет: <b class=\"v\">40</b>. Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"350106\">Идеальный проектор</a>: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">10</b>.",
+  "html": "Вы теряете золотые монеты. За каждые 4 потерянные монеты даёт случайного <span class=\"c\" data-c=\"927fe7\">персонажа стоимостью 4</span>, максимум теряется золотых монет: <b class=\"v\">40</b>. Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"350106\">Идеальный проектор</a>: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">10</b>.",
   "seasons": [
    1,
    2
@@ -3411,7 +3411,7 @@
   "en": "Triple Threes",
   "icon": "aug/250701",
   "new": false,
-  "html": "Даёт <b class=\"v\">10%</b> к усилению скорости и <b class=\"v\">25%</b> к силе на поле/вне поля персонажам 3★, стоимостью 3</span> или экипированным тремя предметами, эффекты от разных условий складываются.",
+  "html": "Даёт <b class=\"v\">10%</b> к усилению скорости и <b class=\"v\">25%</b> к силе на поле/вне поля персонажам 3★, <span class=\"c\" data-c=\"7196ff\">стоимостью 3</span> или экипированным тремя предметами, эффекты от разных условий складываются.",
   "seasons": [
    1,
    2
@@ -3833,7 +3833,7 @@
   "en": "Value Investing: Prismatic",
   "icon": "aug/200401",
   "new": false,
-  "html": "Даёт 1 случайного персонажа 2★ стоимостью 2</span>. При входе в новый узел даёт того же персонажа 1★. После снабжения даёт ещё <b class=\"v\">2</b>, действует до конца текущей партии.",
+  "html": "Даёт 1 случайного <span class=\"c\" data-c=\"6cce9f\">персонажа 2★ стоимостью 2</span>. При входе в новый узел даёт того же персонажа 1★. После снабжения даёт ещё <b class=\"v\">2</b>, действует до конца текущей партии.",
   "seasons": [
    1,
    2
@@ -4867,7 +4867,7 @@
   "en": "Idol Economy",
   "icon": "aug/303401",
   "new": false,
-  "html": "Даёт <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> и «Подарочную коробку: <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>». Коробка откроется через <b class=\"v\">10</b> узл. и принесёт огромные награды! Если бой завершается идеальной победой, отсчёт дополнительно уменьшается на 1.",
+  "html": "Даёт <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> и «Подарочную коробку: <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>». Коробка откроется через <b class=\"v\">10</b> узл. и принесёт огромные награды! Если бой завершается идеальной победой, отсчёт дополнительно уменьшается на 1.",
   "seasons": [
    1
   ],
@@ -5356,7 +5356,7 @@
   "en": "Elation Emblem",
   "icon": "aug/203701",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052012\">Эмблема Радость</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052012\">Эмблема Радость</a> и <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span>.",
   "seasons": [
    1
   ],
@@ -5512,7 +5512,7 @@
   "en": "Hacker Expert: Silver Wolf",
   "icon": "aug/253401",
   "new": false,
-  "html": "Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1006\">Серебряный Волк</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. Даёт случайных Хакерских модов стоимостью <b class=\"v\">4</b>: <b class=\"v\">1</b>.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1006\">Серебряный Волк</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. Даёт случайных Хакерских модов стоимостью <b class=\"v\">4</b>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -5737,7 +5737,7 @@
   "en": "Doctoral Studies",
   "icon": "aug/251901",
   "new": false,
-  "html": "В начале боя, если активирована связь Космические учёные, случайный персонаж со связью Космические учёные стоимостью 1 или 2 становится 3★. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1009\">Аста</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>.",
+  "html": "В начале боя, если активирована связь Космические учёные, случайный персонаж со связью Космические учёные стоимостью 1 или 2 становится 3★. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1009\">Аста</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1303\">Жуань Мэй</a></span>.",
   "seasons": [
    1
   ],
@@ -5753,7 +5753,7 @@
   "en": "Steel Aesthetics",
   "icon": "aug/252001",
   "new": false,
-  "html": "Двигатель созидания наносит урон, равный <b class=\"v\">400%</b> от изначального урона, но не может победить цель. Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>.",
+  "html": "Двигатель созидания наносит урон, равный <b class=\"v\">400%</b> от изначального урона, но не может победить цель. Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>.",
   "seasons": [
    1
   ],
@@ -5891,7 +5891,7 @@
   "en": "Quantum Mechanics",
   "icon": "aug/252901",
   "new": false,
-  "html": "Когда суммарное количество звёзд персонажей со связью Квантовый резонанс достигает <b class=\"v\">3</b>/<b class=\"v\">6</b>/<b class=\"v\">9</b>, дополнительно даёт <b class=\"v\">1</b>/<b class=\"v\">2</b>/<b class=\"v\">3</b> ур. Частоты резонанса соответственно. Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>.",
+  "html": "Когда суммарное количество звёзд персонажей со связью Квантовый резонанс достигает <b class=\"v\">3</b>/<b class=\"v\">6</b>/<b class=\"v\">9</b>, дополнительно даёт <b class=\"v\">1</b>/<b class=\"v\">2</b>/<b class=\"v\">3</b> ур. Частоты резонанса соответственно. Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1102\">Зеле</a></span>.",
   "seasons": [
    1
   ],
@@ -6083,7 +6083,7 @@
   "en": "Tactical Expert: Pela",
   "icon": "aug/260801",
   "new": false,
-  "html": "Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1106\">Пела</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. За каждого персонажа с разной стоимостью в команде сверхспособность персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1106\">Пела</a></span> дополнительно понижает защиту противников на <b class=\"v\">12%</b>.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1106\">Пела</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. За каждого персонажа с разной стоимостью в команде сверхспособность персонажа <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1106\">Пела</a></span> дополнительно понижает защиту противников на <b class=\"v\">12%</b>.",
   "seasons": [
    1
   ],
@@ -6101,7 +6101,7 @@
   "en": "Navigation Expert: Himeko",
   "icon": "aug/260901",
   "new": false,
-  "html": "Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1003\">Химеко</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. В начале боя <a class=\"ref\" data-t=\"role\" data-id=\"1003\">Химеко</a> приглашает всех попробовать кофе: в зависимости от её звёздности действие всех союзников продвигается вперёд на <b class=\"v\">40%</b>/<b class=\"v\">70%</b>/<b class=\"v\">100%</b>, и они получают усиление скорости на <b class=\"v\">25%</b>/<b class=\"v\">50%</b>/<b class=\"v\">90%</b>, а все персонажи на поле теряют <b class=\"v\">40%</b> текущего НР.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1003\">Химеко</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. В начале боя <a class=\"ref\" data-t=\"role\" data-id=\"1003\">Химеко</a> приглашает всех попробовать кофе: в зависимости от её звёздности действие всех союзников продвигается вперёд на <b class=\"v\">40%</b>/<b class=\"v\">70%</b>/<b class=\"v\">100%</b>, и они получают усиление скорости на <b class=\"v\">25%</b>/<b class=\"v\">50%</b>/<b class=\"v\">90%</b>, а все персонажи на поле теряют <b class=\"v\">40%</b> текущего НР.",
   "seasons": [
    1
   ],
@@ -6224,7 +6224,7 @@
   "en": "A Flash: Moonlit Reflection",
   "icon": "aug/352701",
   "new": false,
-  "html": "Даёт <a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> и особого <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 1. Они получают связь Наставник и ученик. Когда <a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 2★, <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится персонажем стоимостью 3. Когда <a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 3★, <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится привычным <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 5.",
+  "html": "Даёт <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> и особого <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 1. Они получают связь Наставник и ученик. Когда <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 2★, <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится персонажем стоимостью 3. Когда <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 3★, <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится привычным <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 5.",
   "seasons": [
    1
   ],
@@ -6242,7 +6242,7 @@
   "en": "A Flash: Sword Legacy",
   "icon": "aug/352702",
   "new": false,
-  "html": "Даёт персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1209\">Яньцин</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a>, они получают связь Наставник и ученик. Каскад небесной реки персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1209\">Яньцин</a></span> получает усиление и наносит урон, равный <b class=\"v\">15%</b> от суммарного урона, нанесённого Повелителем молний связи Сяньчжоу и персонажем <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a> в ходе боя. Когда оба персонажа находятся на поле одновременно, при переходе к каждому новому узлу это значение повышается на <b class=\"v\">4%</b>.{SPACE}",
+  "html": "Даёт персонажей <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1209\">Яньцин</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a>, они получают связь Наставник и ученик. Каскад небесной реки персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1209\">Яньцин</a></span> получает усиление и наносит урон, равный <b class=\"v\">15%</b> от суммарного урона, нанесённого Повелителем молний связи Сяньчжоу и персонажем <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a> в ходе боя. Когда оба персонажа находятся на поле одновременно, при переходе к каждому новому узлу это значение повышается на <b class=\"v\">4%</b>.{SPACE}",
   "seasons": [
    1
   ],
@@ -6565,11 +6565,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Покровительство",
+  "name": "Эмблема Защитник",
   "en": "Defender Emblem",
   "icon": "aug/222201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Покровительство</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защитник</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a>.",
   "seasons": [
    2
   ]
@@ -6583,7 +6583,7 @@
   "en": "Xianzhou Fleet Emblem Set",
   "icon": "aug/311501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Звёздные ролики</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Сапоги межзвездных странствий</a>.",
   "seasons": [
    2
   ]
@@ -6758,7 +6758,7 @@
   "en": "DoT Emblem Set",
   "icon": "aug/321301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Звёздные ролики</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Сапоги межзвездных странствий</a>.",
   "seasons": [
    2
   ]
@@ -6884,7 +6884,7 @@
   "en": "Defender Emblem Set",
   "icon": "aug/322201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Покровительство</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защитник</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
   "seasons": [
    2
   ]
@@ -7044,7 +7044,7 @@
   "en": "Newbie Reporting In",
   "icon": "aug/204901",
   "new": true,
-  "html": "После каждого боя даёт 1 персонажа стоимостью 2</span> или <span class=\"c\" data-c=\"b4b4b4\">персонажа стоимостью 1</span>.",
+  "html": "После каждого боя даёт 1 <span class=\"c\" data-c=\"6cce9f\">персонажа стоимостью 2</span> или <span class=\"c\" data-c=\"b4b4b4\">персонажа стоимостью 1</span>.",
   "seasons": [
    2
   ]
