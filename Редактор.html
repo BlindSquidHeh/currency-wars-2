@@ -909,7 +909,9 @@ async function onlineLoad() {
   // всё, что требует файлов на домашнем компьютере, онлайн недоступно
   const F = window.fetch;
   window.fetch = (u, o) => /^\/(api|save-)/.test(String(u)) ? (status('Это доступно только дома (картинки, видео, анимации, сборка)', true), Promise.resolve(new Response('', {status:403}))) : F(u, o);
-  $('#bPub').style.display = 'none'; $('#bBuild').textContent = 'Сохранить на сайт';
+  $('#bBuild').textContent = 'Сохранить на сайт';
+  $('#bPub').textContent = 'Сменить токен'; $('#bPub').title = 'Выйти и вставить другой токен GitHub';
+  $('#bPub').onclick = () => { try { localStorage.removeItem('cw_gh_token'); } catch (e) {} location.reload(); };
   $('#bSave').onclick = save;
   return true;
 }
