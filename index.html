@@ -940,7 +940,12 @@ const EDIT = /[?&]edit=1/.test(location.search), ED_REG = [];
 const STYLES = () => DB.styles || {};
 const hash32 = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
 const stStyle = (o, blockMode) => !o ? '' : [!blockMode && ((o.s && o.s !== 1) || o.w || o.h) ? 'display:inline-block' : '', o.s && o.s !== 1 ? `zoom:${o.s}` : '', o.w ? `width:${o.w}px;max-width:none` : '', o.h ? `height:${o.h}px` : '', o.fs ? `font-size:${o.fs}px;line-height:1.3` : ''].filter(Boolean).join(';');
-const hasSt = k => { const S = STYLES(); return !!(S[k] || S['b:' + k]); };
+const hasSt = k => {
+  const S = STYLES(); if (S[k] || S['b:' + k]) return true;
+  // у объекта внутри (цифра, звезда…) свой стиль: оболочка-ключ нужна и на обычном сайте, не только в редакторе
+  const pre = 'o:k:' + k + '§'; for (const x in S) if (x.startsWith(pre)) return true;
+  return false;
+};
 const ep = (path, inner, kind = 'text') => EDIT || hasSt(JSON.stringify(path)) ? (k => `<span class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}" data-ky="${esc(k)}" style="${stStyle(STYLES()[k])}">${inner}</span>`)(JSON.stringify(path)) : inner;
 const rt = h => {
   const t = String(h), k = 'h:' + hash32(t);
