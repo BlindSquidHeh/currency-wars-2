@@ -19,7 +19,7 @@ const LIST = {
   'custom': '★ Свои вкладки сайта',
 };
 // пустые записи для разделов, где ещё нечего копировать
-const NEW = {custom: () => ({title:'Новая вкладка', desc:'Описание вкладки', icon:'', color:'#e3c27c', items:[{name:'Новая запись', en:'', icon:'', bg:'', color:'', html:'Текст'}]})};
+const NEW = {custom: () => ({title:'Новый раздел', desc:'Описание раздела', icon:'', color:'#e3c27c', view:'cards', items:[{name:'Новая запись', en:'', icon:'', bg:'', color:'', html:'Текст'}]})};
 // подписи полей; остальные показываются по имени ключа
 const LABEL = {
   name:'Название', en:'Английское название', html:'Описание', desc:'Описание', get:'Что получить', why:'Откуда берётся',
@@ -30,6 +30,7 @@ const LABEL = {
   abbr:'Сокращение', rules:'Правила ранга', promo:'Матч вознесения (подранги)', aff:'Аффиксов у врагов', hp:'НР врагов (×, от и до)',
   atk:'Атака врагов (×, от и до)', key:'Ключевой талант', pre:'Сначала нужны (id талантов)', iconPath:'Путь иконки в игре', tag:'Вид',
   removed:'Нет во 2 сезоне', s1:'1 сезон', skills:'Навыки', stars:'Характеристики по звёздам', ranks:'Эйдолоны', lc:'Сигнатура', traits:'Связи (id)',
+  view:'Вид раздела: cards — карточки, table — таблица',
   pos:'Позиция (front/back/flex)', expert:'Консультант', layers:'Уровни связи', remarks:'Пояснения', subs:'Варианты правил', kind:'Вид связи',
 };
 const LONG = new Set(['html', 'desc', 'get', 'why', 'line', 'team', 'own', 'ru', 'text']);
@@ -121,6 +122,7 @@ function form(path, idx, el) {
       <button class="btn" data-a="up" title="Выше">↑</button><button class="btn" data-a="down" title="Ниже">↓</button>
       <button class="btn" data-a="dup">Копия</button>
       ${edited ? '<button class="btn" data-a="reset">Вернуть раздел как в игре</button>' : ''}
+      ${path === 'custom' ? '<button class="btn" data-a="json" title="Файл .json: список записей (массив объектов). Все поля записей попадут на сайт">⬆ Записи из JSON…</button><button class="btn" data-a="fld" title="Новое поле (столбец) сразу во всех записях раздела">＋ Поле</button><button class="btn" data-a="exp">⬇ Скачать JSON</button>' : ''}
       <button class="btn danger" data-a="del">Удалить</button></div></div><div id="sxBody"></div>
     <details><summary>Запись целиком (JSON)</summary><textarea id="sxJson" spellcheck="false"></textarea>
       <div style="margin-top:8px"><button class="btn" id="sxJsonApply">Применить JSON</button></div></details>`;
@@ -135,7 +137,32 @@ function form(path, idx, el) {
     if (a === 'up' && idx > 0) { [L[idx - 1], L[idx]] = [L[idx], L[idx - 1]]; api.set(path, L); api.select(idx - 1); }
     if (a === 'down' && idx < L.length - 1) { [L[idx + 1], L[idx]] = [L[idx], L[idx + 1]]; api.set(path, L); api.select(idx + 1); }
     if (a === 'reset') { if (confirm('Убрать все правки этого раздела?')) api.reset(path); }
+    if (a === 'fld') { const k = (prompt('Название нового поля (например: Редкость, Цена, Где взять):') || '').trim(); if (!k) return; x.items = (x.items || []).map(it => k in it ? it : {...it, [k]: ''}); L[idx] = x; api.set(path, L); api.redraw(); }
+    if (a === 'exp') { const u = URL.createObjectURL(new Blob([JSON.stringify(x.items || [], null, 1)], {type: 'application/json'})); const l = document.createElement('a'); l.href = u; l.download = (x.title || 'razdel') + '.json'; l.click(); setTimeout(() => URL.revokeObjectURL(u), 1000); }
+    if (a === 'json') {
+      const f = document.createElement('input'); f.type = 'file'; f.accept = '.json,application/json';
+      f.onchange = async () => {
+        let d; try { d = JSON.parse(await f.files[0].text()); } catch (err) { alert('Это не JSON: ' + err.message); return; }
+        const rows = importRows(d); if (!rows.length) { alert('В файле не нашлось списка записей (нужен массив объектов).'); return; }
+        const add = (x.items || []).length && confirm(`Найдено записей: ${rows.length}. Добавить к имеющимся (${x.items.length})? «Отмена» — заменить ими все записи раздела.`);
+        x.items = add ? [...x.items, ...rows] : rows; if (!x.title || x.title === 'Новый раздел') x.title = f.files[0].name.replace(/\.json$/i, '');
+        L[idx] = x; api.set(path, L); api.redraw(); api.relist();
+      };
+      f.click();
+    }
   };
+}
+// JSON любого вида → записи раздела: массив, {ключ: запись} или первый массив внутри объекта
+function importRows(d) {
+  if (d && !Array.isArray(d) && typeof d === 'object') { const arrs = Object.values(d).filter(Array.isArray); d = arrs.length ? arrs.sort((a, b) => b.length - a.length)[0] : Object.entries(d).map(([k, v]) => v && typeof v === 'object' ? {id: k, ...v} : {name: k, value: v}); }
+  if (!Array.isArray(d)) return [];
+  return d.map(r => {
+    if (!r || typeof r !== 'object') return {name: String(r ?? '')};
+    const pick = (...ks) => { for (const k of ks) for (const kk of Object.keys(r)) if (kk.toLowerCase() === k && typeof r[kk] !== 'object') { const v = r[kk]; delete r[kk]; return v; } return ''; };
+    const o = {name: String(pick('name', 'title', 'название', 'имя') || ''), en: String(pick('en', 'name_en', 'english') || ''), icon: String(pick('icon', 'image', 'img', 'картинка') || ''), html: String(pick('html', 'desc', 'description', 'text', 'описание') || '')};
+    if (!o.name) { const k = Object.keys(r).find(k => typeof r[k] === 'string'); if (k) { o.name = r[k]; delete r[k]; } }
+    return {...o, ...r};
+  });
 }
 function add(path) {
   const L = clone(api.get(path) || []);

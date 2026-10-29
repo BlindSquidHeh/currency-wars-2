@@ -19708,8 +19708,23 @@
   }
  },
  "templates": {},
- "blocks": [],
- "texts": [],
+ "blocks": [
+  {
+   "id": "bmvsv6l8twjg",
+   "where": "tab:traits:at",
+   "title": "",
+   "html": "<div class=\"uvid\" data-yt=\"wiRE6k_uSDo\"></div>",
+   "off": false,
+   "anchor": "o:t:traits§0.0.0.1",
+   "pos": "after"
+  }
+ ],
+ "texts": [
+  {
+   "from": "Данные: клиент игры (StarRailData), hsr.nanoka.cc. Тексты — официальная русская локализация, недостающее переведено вручную в терминах игры.",
+   "to": "Данные: клиент игры. Тексты — официальная русская локализация, недостающее переведено вручную в терминах игры."
+  }
+ ],
  "styles": {
   "o:k:[\"traits\",100602,\"layers\",5,\"n\"]§0": {
    "x": -15,
@@ -19782,6 +19797,15 @@
   },
   "o:k:h:1mfn0ij§": {
    "x": -25
+  },
+  "o:t:traits§3.2": {
+   "y": -1
+  },
+  "o:u:bmvsv6l8twjg§": {
+   "wp": 75
+  },
+  "o:u:bmvsv6l8twjg§@m": {
+   "wp": 100
   }
  }
 }

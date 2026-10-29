@@ -318,6 +318,12 @@ table.stats td.n{font-weight:800;font-variant-numeric:tabular-nums}
 .layer{--lq:#b07a4a;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;margin-bottom:10px;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,color-mix(in srgb,var(--lq) 14%,transparent),rgba(255,255,255,.02));border:1px solid color-mix(in srgb,var(--lq) 30%,transparent)}
 .layer.lq-Silver{--lq:#b9c6dc}.layer.lq-Gold{--lq:#e7b45a}.layer.lq-Multicolor{--lq:#b69bff}
 .layer .dia{--s:46px}
+.fx h1,.fx h2,.fx h3,.fx h4{font-size:inherit;color:inherit;font-family:inherit;text-align:inherit;font-weight:inherit}.anim{opacity:0;transition:opacity var(--ad,.6s) ease var(--al,0s),translate var(--ad,.6s) ease var(--al,0s),scale var(--ad,.6s) ease var(--al,0s)}.an-up{translate:0 28px}.an-down{translate:0 -28px}.an-left{translate:28px 0}.an-right{translate:-28px 0}.an-zoom{scale:.88}.anim.an-in{opacity:1;translate:none;scale:none}
+.ubanner{padding:34px 26px;border-radius:16px;text-align:center;background:linear-gradient(135deg,#3b2a86,#a64fd2);color:#fff}.ubanner h2{margin:0 0 8px;font-size:30px}.ubanner p{margin:0 0 14px;opacity:.92}
+.uquote{padding:16px 20px;border-left:4px solid var(--gold);background:var(--panel);border-radius:0 12px 12px 0;font-size:17px;font-style:italic}.uquote small{display:block;margin-top:8px;font-style:normal;color:var(--muted)}
+.ublock details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:6px 0}.ublock summary{cursor:pointer;font-weight:700}.ublock table{width:100%;border-collapse:collapse}.ublock td,.ublock th{border:1px solid var(--line);padding:8px 10px;text-align:left}.ublock th{background:var(--panel2)}
+.ucard{padding:16px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}.ucard h4{margin:0 0 6px;font-size:17px}.ucard p{margin:0;color:var(--muted)}
+.ublock{margin:14px 0;grid-column:1/-1}.urow{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;grid-column:1/-1}.urow>*{flex:1 1 240px;min-width:0;margin-top:0!important;margin-bottom:0!important}.urow>.ublock{grid-column:auto}.uvid{cursor:pointer;position:relative;aspect-ratio:16/9;width:100%;border-radius:12px;overflow:hidden;background:#000}.uvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.uvid img.yt-th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.uvid .yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;border-radius:14px;background:rgba(20,17,43,.82);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;transition:.15s}.uvid .yt-play::after{content:'';border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}.uvid:hover .yt-play{background:#e5322d;border-color:#fff}.uvids{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.ublock img{max-width:100%;border-radius:10px;display:block}.ublock video,.ublock iframe{max-width:100%;border-radius:10px}.ubtn{display:inline-block;padding:9px 18px;border-radius:10px;background:linear-gradient(180deg,#f2cf7a,#b98a2c);color:#2a1a0e!important;font-weight:700;text-decoration:none}.ublock hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}.ucols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.ucols>div:not(.uvid){padding:12px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
 .layer.pillrow{grid-template-columns:max-content 1fr;gap:12px}
 .pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 13px;border-radius:999px;border:1px solid rgba(0,0,0,.35);background:linear-gradient(180deg,var(--pa),var(--pb));box-shadow:0 2px 6px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.35);--pa:#f0b27a;--pb:#a8643a}
 .pill b{font:600 24px/1 var(--font);color:#111;min-width:13px;text-align:center}
@@ -687,6 +693,8 @@ h1,h2,h3,h4,h5{letter-spacing:0}
   .mbox:has(.rd) .rd-side,.mbox:has(.rd) .rd-main{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
   .mbox:has(.tdc) #mcontent{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
 }
+.cx-f{display:grid;gap:3px;margin-top:8px;font-size:13px}.cx-f>div{display:flex;gap:8px}.cx-f span{color:var(--dim);min-width:90px}
+.cx-tw{overflow-x:auto;max-width:100%}.cx-t{border-collapse:collapse;width:100%;font-size:14px}.cx-t th,.cx-t td{border-bottom:1px solid #ffffff1a;padding:7px 10px;text-align:left;vertical-align:top}.cx-t th{color:var(--gold,#e3c27c);font-weight:600}.cx-t img{width:40px;height:40px;object-fit:contain}
 </style>
 </head>
 <body>
@@ -717,7 +725,7 @@ h1,h2,h3,h4,h5{letter-spacing:0}
 <div id="ubTop"></div><main id="view"></main><div id="ubBot"></div>
 
 <footer><div class="in">
-  <div>Данные: клиент игры (StarRailData), hsr.nanoka.cc. Тексты — официальная русская локализация, недостающее переведено вручную в терминах игры.<br>Фанатский справочник, не связан с HoYoverse.</div>
+  <div>Данные: клиент игры. Тексты — официальная русская локализация, недостающее переведено вручную в терминах игры.<br>Фанатский справочник, не связан с HoYoverse.</div>
   <div class="partners" id="partners"></div>
 </div></footer>
 
@@ -902,7 +910,47 @@ function notesBlock(x) {
 }
 // свои блоки из редактора (Блоки и тексты): DB.blocks = [{where, title, html, off}]
 // where: tab:<вкладка>:top|bottom, modal:<role|trait|item|aug|buff|pet>:<id или *>:top|bottom, page:top|bottom
-const blocksAt = (pref, pos) => (DB.blocks || []).filter(b => !b.off && b.where === pref + ':' + pos).map(b => `<div class="ublock">${b.title ? `<h3>${esc(b.title)}</h3>` : ''}${b.html || ''}</div>`).join('');
+const blockHtml = (b, i) => `<div class="ublock"${b.id ? ` data-bid="${esc(b.id)}"` : ''}>${b.title ? `<h3>${ep(['@blocks', i, 'title'], esc(b.title))}</h3>` : ''}${ep(['@blocks', i, 'html'], b.html || '', 'html')}</div>`;
+const blocksAt = (pref, pos) => (DB.blocks || []).map((b, i) => [b, i]).filter(([b]) => !b.off && !b.anchor && b.where === pref + ':' + pos).map(([b, i]) => blockHtml(b, i)).join('');
+// блоки, вставленные рядом с конкретным элементом (до / после)
+function curCtxWhere() { const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return $('#modal').classList.contains('show') && m ? `modal:${m[1]}:${m[2]}` : 'tab:' + S.tab; }
+// видео YouTube: сначала только картинка с кнопкой «играть», само видео грузится и запускается по нажатию
+function facadeVideos() {
+  document.querySelectorAll('.uvid').forEach(v => {
+    if (v.dataset.fd) return;
+    let id = v.dataset.yt; const f = v.querySelector('iframe[src*="youtube.com/embed/"]');
+    if (!id && f) { const m = f.src.match(/embed\/([\w-]{11})/); id = m && m[1]; }
+    if (!id) return;
+    v.dataset.fd = '1'; v.dataset.yt = id;
+    v.innerHTML = `<img class="yt-th" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span>`;
+  });
+}
+document.addEventListener('click', e => {
+  const v = e.target.closest && e.target.closest('.uvid[data-yt]'); if (!v || v.querySelector('iframe')) return;
+  if (window.EDIT_BLOCK_CLICKS) return;
+  v.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.dataset.yt}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+});
+function placeAnchored() {
+  const L = (DB.blocks || []).map((b, i) => [b, i]).filter(([b]) => b.anchor && !b.off); if (!L.length) return;
+  const ctx = curCtxWhere(), star = ctx.replace(/:\d+$/, ':*'), q = id => document.querySelector(`[data-bid="${CSS.escape(String(id))}"]`), last = {};
+  for (let pass = 0; pass < 3; pass++) for (const [b, i] of L) {
+    const w = String(b.where || '').replace(/:at$/, ''); if (w !== ctx && w !== star) continue;
+    const id = b.id || 'i' + i; if (!b.id) b.id = id;
+    if (q(id)) { last[b.anchor] = q(id); continue; }
+    const a = b.anchor.startsWith('b:') ? q(b.anchor.slice(2)) : objFind(b.anchor)[0]; if (!a || !a.parentNode) continue;
+    const tmp = document.createElement('div'); tmp.innerHTML = blockHtml(b, i); const node = tmp.firstElementChild;
+    if (a.id === 'view' || a.id === 'mcontent' || a === document.body) {  // привязка к странице целиком: в начало или в конец
+      if (b.pos === 'before' || b.pos === 'left') a.insertBefore(node, a.firstChild); else a.appendChild(node);
+      last[b.anchor] = node; continue;
+    }
+    if (b.pos === 'left' || b.pos === 'right') {
+      let row = a.parentNode.classList && a.parentNode.classList.contains('urow') ? a.parentNode : null;
+      if (!row) { row = document.createElement('div'); row.className = 'urow'; a.parentNode.insertBefore(row, a); row.appendChild(a); }
+      if (b.pos === 'left') row.insertBefore(node, row.firstChild === a && last[b.anchor] ? (last[b.anchor].nextSibling || a) : (last[b.anchor] ? last[b.anchor].nextSibling : row.firstChild)); else row.appendChild(node);
+    } else if (b.pos === 'before') a.parentNode.insertBefore(node, a); else (last[b.anchor] || a).insertAdjacentElement('afterend', node);
+    last[b.anchor] = node;
+  }
+}
 const mediaSrc = k => /^(media|clips)\//.test(k || '') ? k : img(k);
 const hexa = a => `<span class="hexa hq-${a.q}" style="${ownBg(a.plate)}"><img src="${img(a.icon)}" alt=""></span>`;
 const ava = (r, size = 0) => `<img class="ava" style="--cc:${COSTC[costKey(r)]}${size ? `;width:${size}px;height:${size}px` : ''}" src="${img('avs/' + r.avatar)}" alt="" data-tip="role${r.s1 ? 1 : ''}:${r.id}">`;
@@ -939,6 +987,9 @@ const rt0 = h => decorate(String(h).replace(/<\/span>\/<span/g, '</span> / <span
 // режим «Править на сайте» (?edit=1, из редактора): каждый текст из данных помечен, по щелчку его открывает редактор
 const EDIT = /[?&]edit=1/.test(location.search), ED_REG = [];
 const STYLES = () => DB.styles || {};
+// раскладка по экранам: компьютер — основной ключ, планшет — ключ@t, телефон — ключ@m (значения поверх основных)
+const bpNow = () => innerWidth <= 760 ? '@m' : innerWidth <= 1024 ? '@t' : '';
+const styleOf = (S, key) => { const b = bpNow(); return b ? {...(S[key] || {}), ...(S[key + b] || {})} : (S[key] || {}); };
 const hash32 = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
 const stStyle = (o, blockMode) => !o ? '' : [!blockMode && ((o.s && o.s !== 1) || o.w || o.h) ? 'display:inline-block' : '', o.s && o.s !== 1 ? `zoom:${o.s}` : '', o.w ? `width:${o.w}px;max-width:none` : '', o.h ? `height:${o.h}px` : '', o.fs ? `font-size:${o.fs}px;line-height:1.3` : ''].filter(Boolean).join(';');
 const hasSt = k => {
@@ -947,7 +998,7 @@ const hasSt = k => {
   const pre = 'o:k:' + k + '§'; for (const x in S) if (x.startsWith(pre)) return true;
   return false;
 };
-const ep = (path, inner, kind = 'text') => EDIT || hasSt(JSON.stringify(path)) ? (k => `<span class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}" data-ky="${esc(k)}" style="${stStyle(STYLES()[k])}">${inner}</span>`)(JSON.stringify(path)) : inner;
+const ep = (path, inner, kind = 'text') => EDIT || hasSt(JSON.stringify(path)) ? (k => { const tg = path[0] === '@blocks' && path[2] === 'html' ? 'div' : 'span'; return `<${tg} class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}" data-ky="${esc(k)}" style="${stStyle(STYLES()[k], tg === 'div')}">${inner}</${tg}>`; })(JSON.stringify(path)) : inner;
 const rt = h => {
   const t = String(h), k = 'h:' + hash32(t);
   if (!EDIT && !hasSt(k)) return rt0(t);
@@ -963,84 +1014,220 @@ function applyBlockStyles() {
     document.querySelectorAll('[data-ky]').forEach(el => { if (el.dataset.ky === key) { const b = el.closest(BLKSEL); if (b) b.style.cssText += ';' + stStyle(S[k], true); } });
   }
 }
-new MutationObserver(() => { clearTimeout(window.__abs); window.__abs = setTimeout(() => { applyBlockStyles(); applyObjStyles(); }, 30); }).observe(document.documentElement, {childList: true, subtree: true});
+new MutationObserver(() => { clearTimeout(window.__abs); window.__abs = setTimeout(() => { try { placeAnchored(); facadeVideos(); } catch (e) {} applyBlockStyles(); applyObjStyles(); }, 30); }).observe(document.documentElement, {childList: true, subtree: true});
 // ---------- объекты: размер и положение любого элемента (цифра, картинка, фон, блок) по структурному адресу ----------
 const OSEP = '§';
 function objRoot(el) {
+  if (el.matches && el.matches('.ublock[data-bid]')) return {key: 'u:' + el.dataset.bid, root: el};  // свой блок целиком: адрес по его id
   const k = el.closest('[data-ky]'); if (k) return {key: 'k:' + k.dataset.ky, root: k};
   const m = el.closest('#mcontent'); if (m) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return {key: 'm:' + (h ? h[1] + h[2] : ''), root: m}; }
   const v = el.closest('#view'); if (v) return {key: 't:' + S.tab, root: v};
   return null;
 }
-const objPath = (el, root) => { const p = []; while (el && el !== root && el.parentElement) { p.unshift(Array.prototype.indexOf.call(el.parentElement.children, el)); el = el.parentElement; } return p.join('.'); };
+const kidsOf = el => { const o = []; for (const c of el.children) { if (c.classList && c.classList.contains('urow')) o.push(...kidsOf(c)); else if (!c.dataset || (!c.dataset.bid && c.id !== 'edIns')) o.push(c); } return o; };
+const objPath = (el, root) => { const p = []; while (el && el !== root && el.parentElement) { let par = el.parentElement; while (par.classList.contains('urow') && par !== root && par.parentElement) par = par.parentElement; p.unshift(kidsOf(par).indexOf(el)); el = par; } return p.join('.'); };
 const objKey = el => { const r = objRoot(el); return r ? {key: 'o:' + r.key + OSEP + objPath(el, r.root), root: r.root} : null; };
 function objApply(el, o) {
   if (!el) return;
+  if (el.parentElement && el.parentElement.closest('.uvid')) o = null;  // части видео (обложка, кнопка) не стилизуются отдельно
+
   const t = [(o && (o.x || o.y)) ? `translate(${o.x || 0}px,${o.y || 0}px)` : '', o && o.s && o.s !== 1 ? `scale(${o.s})` : ''].filter(Boolean).join(' ');
   el.style.transform = t; el.style.width = o && o.w ? o.w + 'px' : ''; el.style.height = o && o.h ? o.h + 'px' : ''; el.style.fontSize = o && o.fs ? o.fs + 'px' : '';
   if (o && (t || o.w || o.h) && getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
   if (o && (o.w || o.h)) el.style.maxWidth = 'none';
+  // оформление: цвет текста, фон, рамка, скругление, прозрачность, отступ, жирность
+  el.style.color = o && o.c ? o.c : ''; el.style.background = o && o.bg ? o.bg : '';
+  el.style.borderRadius = o && o.r ? o.r + 'px' : ''; el.style.opacity = o && o.op ? o.op / 100 : '';
+  el.style.border = o && o.bd ? `${o.bw || 1}px solid ${o.bd}` : ''; el.style.padding = o && o.pd ? o.pd + 'px' : ''; el.style.fontWeight = o && o.fw ? o.fw : '';
+  if (o && (o.bg || o.bd || o.pd) && getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
+  // шрифт, градиент, межбуквенный интервал; скрытие на телефоне / на компьютере
+  // своя картинка: у <img> подменяется src, у остальных элементов ставится фоном
+  if (o && o.im) {
+    if (el.tagName === 'IMG') { if (el.dataset.src0 == null) el.dataset.src0 = el.getAttribute('src') || ''; if (el.getAttribute('src') !== o.im) { el.removeAttribute('srcset'); el.setAttribute('src', o.im); } }
+    else { el.dataset.imSet = '1'; el.style.backgroundImage = `url("${o.im}")`; el.style.backgroundSize = 'contain'; el.style.backgroundRepeat = 'no-repeat'; el.style.backgroundPosition = 'center'; }
+  } else {
+    if (el.tagName === 'IMG' && el.dataset.src0 != null) { el.setAttribute('src', el.dataset.src0); delete el.dataset.src0; }
+    else if (el.dataset.imSet) { el.style.backgroundImage = ''; el.style.backgroundSize = ''; el.style.backgroundRepeat = ''; el.style.backgroundPosition = ''; delete el.dataset.imSet; }
+  }
+  objAnim(el, o);
+  // ширина блока в % и выравнивание (как у блоков Tilda): высота подстраивается сама, у видео сохраняется 16:9
+  if (o && o.wp) { el.style.width = o.wp + '%'; el.style.maxWidth = 'none'; if (getComputedStyle(el).display === 'inline') el.style.display = 'block'; }
+  if (o && (o.gc || o.gg != null || o.gv)) {
+    const d = getComputedStyle(el).display;
+    if (o.gc && d !== 'grid') el.style.display = 'grid';
+    el.style.gridTemplateColumns = o.gc || ''; if (o.gg != null && o.gg !== '') el.style.gap = o.gg + 'px'; else el.style.gap = '';
+    el.style.alignItems = o.gv || '';
+  } else { el.style.gridTemplateColumns = ''; el.style.gap = ''; el.style.alignItems = ''; }
+  el.style.marginLeft = o && o.ja && o.ja !== 'l' ? 'auto' : ''; el.style.marginRight = o && o.ja && o.ja !== 'r' ? 'auto' : '';
+  el.style.fontFamily = o && o.ff ? o.ff : ''; el.style.letterSpacing = o && o.ls ? o.ls + 'px' : '';
+  if (o && o.g1 && o.g2) el.style.background = `linear-gradient(${o.ga == null ? 135 : o.ga}deg,${o.g1},${o.g2})`;
+  const mob = matchMedia('(max-width:760px)').matches, hide = !!(o && ((o.hm && mob) || (o.hd && !mob)));
+  if (hide) { el.dataset.edHid = '1'; if (EDIT) el.style.opacity = '.3'; else el.style.setProperty('display', 'none', 'important'); }
+  else if (el.dataset.edHid) { delete el.dataset.edHid; el.style.removeProperty('display'); }
 }
+const animIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('an-in'); animIO.unobserve(e.target); } }), {threshold: .12}) : null;
+function objAnim(el, o) {
+  el.classList.remove('an-fade', 'an-up', 'an-down', 'an-left', 'an-right', 'an-zoom');
+  if (!o || !o.an || EDIT || !animIO) { el.classList.remove('anim'); return; }
+  el.classList.add('anim', 'an-' + o.an); el.style.setProperty('--ad', (o.ad || 600) + 'ms'); el.style.setProperty('--al', (o.al || 0) + 'ms');
+  if (!el.classList.contains('an-in') && !el.dataset.anObs) { el.dataset.anObs = '1'; animIO.observe(el); }
+}
+window.addEventListener('resize', () => { clearTimeout(window.__rz); window.__rz = setTimeout(() => { try { applyObjStyles(); } catch (e) {} }, 150); });
 function objFind(key) {
   const i = key.lastIndexOf(OSEP), rk = key.slice(2, i), path = key.slice(i + 1);
   let roots = [];
   if (rk.startsWith('k:')) roots = [...document.querySelectorAll('[data-ky]')].filter(e => e.dataset.ky === rk.slice(2));
   else if (rk.startsWith('m:')) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if ((h ? h[1] + h[2] : '') === rk.slice(2) && $('#modal').classList.contains('show')) roots = [$('#mcontent')]; }
   else if (rk.startsWith('t:') && rk.slice(2) === S.tab) roots = [$('#view')];
-  return roots.map(r => path === '' ? r : path.split('.').reduce((e, n) => e && e.children[+n], r)).filter(Boolean);
+  else if (rk.startsWith('u:')) roots = [...document.querySelectorAll('.ublock[data-bid]')].filter(e => e.dataset.bid === rk.slice(2));
+  return roots.map(r => path === '' ? r : path.split('.').reduce((e, n) => e && kidsOf(e)[+n], r)).filter(Boolean);
 }
-function applyObjStyles() { const St = STYLES(); for (const k in St) if (k.startsWith('o:')) objFind(k).forEach(el => objApply(el, St[k])); }
+function applyObjStyles() { const St = STYLES(), bases = new Set(Object.keys(St).filter(k => k.startsWith('o:')).map(k => k.replace(/@[mt]$/, ''))); bases.forEach(k => objFind(k).forEach(el => objApply(el, styleOf(St, k)))); }
 
-let OBJ = false, selEl = null, selKey = null;
+let OBJ = true, selEl = null, selKey = null, selEls = [];
+const INTER = '#edIns,#edPal,a,button,.tab,.chip,.subtab,.mbtn,input,textarea,select,#tabs,.search,#gs,#edSel,#edSelBar,#edTb,#totop,#tip,.modal:not(.show),.forms';
 if (EDIT) {
-  document.head.insertAdjacentHTML('beforeend', '<style>#edSel{position:fixed;z-index:99998;border:2px dashed #5fd0a0;pointer-events:none;display:none;box-shadow:0 0 0 1px rgba(0,0,0,.6)}#edSel .hd{position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;background:#5fd0a0;border:2px solid #0b091a;border-radius:3px;pointer-events:auto;cursor:nwse-resize}#edSelBar{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #5fd0a0;border-radius:8px;padding:3px}#edSelBar button{all:unset;box-sizing:border-box;height:24px;padding:0 8px;border-radius:6px;border:1px solid rgba(196,176,255,.3);background:#221d46;color:#efebff;cursor:pointer;font:600 12px sans-serif;line-height:22px}.ed-hov{outline:1px solid #5fd0a0!important;outline-offset:1px}body.obj-mode *{cursor:crosshair!important}</style>');
+  document.head.insertAdjacentHTML('beforeend', '<style>#edSel{position:fixed;z-index:99998;border:2px dashed #5fd0a0;pointer-events:none;display:none;box-shadow:0 0 0 1px rgba(0,0,0,.6)}#edSel .hd{position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;background:#5fd0a0;border:2px solid #0b091a;border-radius:3px;pointer-events:auto;cursor:nwse-resize}#edSelBar{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #5fd0a0;border-radius:8px;padding:3px}#edSelBar button{all:unset;box-sizing:border-box;height:24px;padding:0 8px;border-radius:6px;border:1px solid rgba(196,176,255,.3);background:#221d46;color:#efebff;cursor:pointer;font:600 12px sans-serif;line-height:22px}.ed-hov{outline:1px solid #5fd0a0!important;outline-offset:1px}body.obj-mode *{cursor:default!important}body.obj-mode .ed-t{cursor:default!important}</style>');
   const selBox = document.createElement('div'); selBox.id = 'edSel'; selBox.innerHTML = '<div class="hd"></div>'; document.body.appendChild(selBox);
-  const selBar = document.createElement('div'); selBar.id = 'edSelBar'; selBar.innerHTML = '<button data-a="up">↑ родитель</button><button data-a="rs">сброс</button>'; document.body.appendChild(selBar);
-  const curStyle = () => (selKey && STYLES()[selKey]) || {};
+  const selBar = document.createElement('div'); selBar.id = 'edSelBar'; selBar.innerHTML = '<button data-a="edit" title="Править содержимое (двойной щелчок)">✎ Править</button><button data-a="up" title="Выбрать блок вокруг">↑ Блок</button><button data-a="dup" title="Копировать этот блок">⧉</button><button data-a="add" title="Добавить блок: сверху, снизу, слева или справа от выбранного">＋ Блок</button><button data-a="mvu" title="Выше">▲</button><button data-a="mvd" title="Ниже">▼</button><button data-a="del" title="Удалить блок" style="color:#ff7b7b">✕</button><button data-a="copy" title="Скопировать блок (Ctrl+C), потом вставить на любой странице">⎘</button><button data-a="paste" title="Вставить скопированный блок после этого (Ctrl+V)">⎗</button><button data-a="rs" title="Сбросить размер и положение">⟲</button><button data-a="open" title="Открыть эту карточку, как на сайте" id="edOpen" style="display:none">Открыть ↗</button>'; document.body.appendChild(selBar);
+  const curStyle = () => selKey ? styleOf(STYLES(), selKey) : {};
   function placeSel() {
-    if (!selEl || !selEl.isConnected) { selBox.style.display = selBar.style.display = 'none'; return; }
+    if (!selEl || !selEl.isConnected) { selBox.style.display = selBar.style.display = 'none'; document.querySelectorAll('.edSelX').forEach(x => x.remove()); return; }
     const r = selEl.getBoundingClientRect();
     Object.assign(selBox.style, {display: 'block', left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px'});
+    document.querySelectorAll('.edSelX').forEach(x => x.remove());
+    selEls = selEls.filter(s => s.el.isConnected);
+    for (const s of selEls) { const q = s.el.getBoundingClientRect(), d = document.createElement('div'); d.className = 'edSelX'; Object.assign(d.style, {position: 'fixed', zIndex: 99997, pointerEvents: 'none', border: '2px dashed #f2cf7a', left: q.left + 'px', top: q.top + 'px', width: q.width + 'px', height: q.height + 'px'}); document.body.appendChild(d); }
     Object.assign(selBar.style, {display: 'flex', left: Math.max(2, r.left) + 'px', top: Math.max(2, r.top - 30) + 'px'});
   }
-  function pick(el) {
+  const groupOf = key => { const S = STYLES(); for (const id in S) if (id.startsWith('grp:') && (S[id].keys || []).includes(key)) return {id, keys: S[id].keys}; return null; };
+  // один объект = одна вещь: клик по обложке или кнопке видео выбирает всё видео,
+  // а видео/картинка, у которых своя обёртка-блок, выбираются вместе с этой обёрткой
+  const unit = el => { const u = el && el.closest && el.closest('.uvid'); if (u) el = u; while (el && el.parentElement && el.parentElement.matches('.ublock,.ublock>.ed-t') && el.parentElement.children.length === 1) el = el.parentElement; return el; };
+  window.__unit = unit;
+  function pick(el, add) {
+    el = unit(el);
     const k = objKey(el); if (!k) return;
-    selEl = el; selKey = k.key; placeSel();
-    try { parent.CW_EDITOR.objSelect(selKey, curStyle(), el.tagName.toLowerCase() + (el.className && typeof el.className === 'string' ? '.' + el.className.split(' ')[0] : '')); } catch (err) {}
+    if (add && selEl && el !== selEl) {
+      const i = selEls.findIndex(x => x.el === el); if (i >= 0) selEls.splice(i, 1); else selEls.push({el, key: k.key});
+      placeSel(); try { parent.CW_EDITOR.objMulti(1 + selEls.length, false); } catch (err) {} return;
+    }
+    selEls = [];
+    selEl = el; selKey = k.key; window.__lastEl = el;
+    const grp = groupOf(k.key);
+    if (grp) selEls = grp.keys.filter(x => x !== k.key).map(kk => ({el: objFind(kk)[0], key: kk})).filter(x => x.el);
+    placeSel();
+    const op = document.getElementById('edOpen'); if (op) op.style.display = el.closest('[data-item],[data-role],[data-trait],[data-aug],[data-buff],[data-pet],[data-cmp],[data-open]') ? '' : 'none';
+    if (selEls.length) { try { parent.CW_EDITOR.objMulti(1 + selEls.length, !!grp); } catch (err) {} return; }
+    try { parent.CW_EDITOR.objSelect(selKey, curStyle(), el.tagName.toLowerCase() + (el.className && typeof el.className === 'string' ? '.' + el.className.split(' ')[0] : ''), {cols: !!(el.matches && el.matches('.ucols,.uvids,.urow')), img: el.tagName === 'IMG', src: el.tagName === 'IMG' ? (el.currentSrc || el.getAttribute('src') || '') : '', bgimg: el.tagName !== 'IMG' && /url\(/.test(getComputedStyle(el).backgroundImage) ? getComputedStyle(el).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '') : ''}); } catch (err) {}
   }
-  function commit(o) {
-    const clean = {}; ['x', 'y', 's', 'w', 'h', 'fs'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) clean[f] = o[f]; });
+  function commit(o, key) {
+    const K = key || selKey;
+    const clean = {}; ['x', 'y', 's', 'w', 'h', 'fs', 'c', 'bg', 'r', 'op', 'bd', 'bw', 'pd', 'fw', 'ff', 'g1', 'g2', 'ga', 'ls', 'hm', 'hd', 'an', 'ad', 'al', 'wp', 'ja', 'gc', 'gg', 'gv', 'im'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) clean[f] = o[f]; });
     DB.styles = DB.styles || {};
-    if (Object.keys(clean).length) DB.styles[selKey] = clean; else delete DB.styles[selKey];
-    objFind(selKey).forEach(e => objApply(e, clean)); placeSel();
-    try { parent.CW_EDITOR.objChange(selKey, clean); } catch (err) {}
+    const wk = K + bpNow();
+    if (Object.keys(clean).length) DB.styles[wk] = clean; else delete DB.styles[wk];
+    objFind(K).forEach(e => objApply(e, styleOf(STYLES(), K))); placeSel();
+    try { parent.CW_EDITOR.objChange(K, clean); } catch (err) {}
   }
   window.__objApi = {
+    pick: el => pick(el),
+    styleSave: (key, o) => commit(o, key),
+    sel: () => selEl, selKey: () => selKey, extras: () => selEls, commitKey: (o, k) => commit(o, k),
     set: on => { OBJ = on; document.body.classList.toggle('obj-mode', on); if (!on) { selEl = null; placeSel(); } },
-    style: (key, o) => { DB.styles = DB.styles || {}; if (o && Object.keys(o).length) DB.styles[key] = o; else delete DB.styles[key]; objFind(key).forEach(e => objApply(e, o)); placeSel(); },
+    style: (key, o) => { DB.styles = DB.styles || {}; const wk = key + bpNow(); if (o && Object.keys(o).length) DB.styles[wk] = o; else delete DB.styles[wk]; objFind(key).forEach(e => objApply(e, styleOf(STYLES(), key))); placeSel(); },
   };
   let drag = null;
-  const inside = t => t.closest('#mcontent,#view') && !t.closest('#edSel,#edSelBar,#edTb');
-  document.addEventListener('mouseover', e => { if (!OBJ) return; document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov')); if (inside(e.target)) e.target.classList.add('ed-hov'); }, true);
+  const inside = t => !t.closest(INTER) && !t.closest('script,style') && t !== document.body && t !== document.documentElement;
+  document.addEventListener('mouseover', e => { if (!OBJ) return; document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov')); if (inside(e.target)) unit(e.target).classList.add('ed-hov'); }, true);
   document.addEventListener('mousedown', e => {
     if (!OBJ) return;
     if (e.target.closest('#edSelBar')) return;
+    if (!inside(e.target) && !e.target.classList.contains('hd')) return;
     e.preventDefault(); e.stopPropagation();
-    if (e.target.classList.contains('hd') && selEl) { const r = selEl.getBoundingClientRect(), o = {...curStyle()}; drag = {mode: 'scale', mx: e.clientX, w0: r.width, s0: o.s || 1, o}; return; }
-    if (!inside(e.target)) return;
+    if (e.target.classList.contains('hd') && selEl) {
+      const r = selEl.getBoundingClientRect(), o = {...curStyle()}, disp = getComputedStyle(selEl).display;
+      const isBlock = /^(block|flex|grid|list-item|table|flow-root)$/.test(disp) && r.width > 140 && selEl.parentElement;
+      drag = isBlock ? {mode: 'size', mx: e.clientX, w0: r.width, o, pw: selEl.parentElement.getBoundingClientRect().width} : {mode: 'scale', mx: e.clientX, w0: r.width, s0: o.s || 1, o}; return;
+    }
     document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov'));
-    if (e.target !== selEl) pick(e.target);
-    drag = {mode: 'move', mx: e.clientX, my: e.clientY, o: {...curStyle()}, x0: curStyle().x || 0, y0: curStyle().y || 0};
+    if (e.ctrlKey || e.metaKey) { pick(e.target, true); return; }
+    if (e.target !== selEl && !selEls.some(s => s.el === e.target)) pick(e.target);
+    if (e.shiftKey && selEl) { const blk = selEl.closest(BLK) || selEl; drag = {mode: 'reorder', blk, drop: null}; blk.classList.add('ed-hov'); return; }
+    drag = {mode: 'move', mx: e.clientX, my: e.clientY, o: {...curStyle()}, x0: curStyle().x || 0, y0: curStyle().y || 0, r0: selEl.getBoundingClientRect(),
+      group: selEls.map(s => ({key: s.key, o: {...styleOf(STYLES(), s.key)}})), cand: null};
+    // линии привязки: края и центр контейнера и соседей
+    if (!selEls.length && selEl.parentElement) {
+      const xs = [], ys = [], add = q => { xs.push(q.left, (q.left + q.right) / 2, q.right); ys.push(q.top, (q.top + q.bottom) / 2, q.bottom); };
+      add(selEl.parentElement.getBoundingClientRect()); for (const c of kidsOf(selEl.parentElement)) if (c !== selEl && !c.contains(selEl) && c.getBoundingClientRect().width) add(c.getBoundingClientRect());
+      drag.cand = {xs, ys};
+    }
   }, true);
+  const guide = (id, css) => { let g = document.getElementById(id); if (!g) { g = document.createElement('div'); g.id = id; document.body.appendChild(g); } Object.assign(g.style, {position: 'fixed', zIndex: 99996, pointerEvents: 'none', background: '#ff3d9a', display: 'none'}, css); return g; };
+  const hideGuides = () => ['edGx', 'edGy'].forEach(i => { const g = document.getElementById(i); if (g) g.style.display = 'none'; });
   document.addEventListener('mousemove', e => {
     if (!drag) return;
-    if (drag.mode === 'move') commit({...drag.o, x: Math.round(drag.x0 + e.clientX - drag.mx), y: Math.round(drag.y0 + e.clientY - drag.my)});
+    if (drag.mode === 'reorder') {
+      const cls = el => (typeof el.className === 'string' ? el.className : '').split(' ')[0];
+      const under = document.elementFromPoint(e.clientX, e.clientY) || e.target, tg = under && under.closest && under.closest(BLK);
+      const ind = document.getElementById('edDrop') || Object.assign(document.body.appendChild(document.createElement('div')), {id: 'edDrop'});
+      Object.assign(ind.style, {position: 'fixed', zIndex: 99999, height: '4px', background: '#5fd0a0', borderRadius: '2px', pointerEvents: 'none', display: 'none'});
+      if (tg && tg !== drag.blk && tg.parentElement === drag.blk.parentElement && cls(tg) === cls(drag.blk)) {
+        const r = tg.getBoundingClientRect(), after = e.clientY > r.top + r.height / 2;
+        Object.assign(ind.style, {display: 'block', left: r.left + 'px', width: r.width + 'px', top: (after ? r.bottom + 1 : r.top - 3) + 'px'});
+        drag.drop = {tg, after};
+      } else { ind.style.display = 'none'; drag.drop = null; }
+      return;
+    }
+    if (drag.mode === 'move') {
+      let dx = e.clientX - drag.mx, dy = e.clientY - drag.my;
+      if (drag.cand && !e.altKey) {
+        const R = drag.r0, snap = (vals, cands) => { let best = null; for (const v of vals) for (const c of cands) { const d = c - v; if (Math.abs(d) < 6 && (!best || Math.abs(d) < Math.abs(best.d))) best = {d, c}; } return best; };
+        const bx = snap([R.left + dx, R.left + dx + R.width / 2, R.left + dx + R.width], drag.cand.xs), by = snap([R.top + dy, R.top + dy + R.height / 2, R.top + dy + R.height], drag.cand.ys);
+        if (bx) { dx += bx.d; guide('edGx', {display: 'block', left: bx.c + 'px', top: 0, width: '1px', height: '100vh'}); } else guide('edGx', {display: 'none'});
+        if (by) { dy += by.d; guide('edGy', {display: 'block', top: by.c + 'px', left: 0, height: '1px', width: '100vw'}); } else guide('edGy', {display: 'none'});
+      }
+      commit({...drag.o, x: Math.round(drag.x0 + dx), y: Math.round(drag.y0 + dy)});
+      for (const g of drag.group || []) commit({...g.o, x: Math.round((g.o.x || 0) + dx), y: Math.round((g.o.y || 0) + dy)}, g.key);
+    }
+    else if (drag.mode === 'size') {
+      let wp = Math.round((drag.w0 + e.clientX - drag.mx) / drag.pw * 100); wp = Math.max(10, Math.min(100, wp));
+      if (!e.altKey) for (const st of [25, 33, 50, 66, 75, 100]) if (Math.abs(wp - st) <= 2) wp = st;
+      commit({...drag.o, wp});
+    }
     else commit({...drag.o, s: Math.max(0.1, +(drag.s0 * Math.max(0.1, (drag.w0 + e.clientX - drag.mx) / drag.w0)).toFixed(2))});
   }, true);
-  document.addEventListener('mouseup', () => { drag = null; }, true);
-  for (const ev of ['click', 'dblclick', 'contextmenu']) document.addEventListener(ev, e => { if (OBJ && !e.target.closest('#edSelBar')) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); } }, true);
+  document.addEventListener('mouseup', () => {
+    hideGuides();
+    if (drag && drag.mode === 'reorder') {
+      const ind = document.getElementById('edDrop'); if (ind) ind.style.display = 'none';
+      const blk = drag.blk; blk.classList.remove('ed-hov');
+      if (drag.drop) {
+        const sibs = [...blk.parentElement.children].filter(c => c.tagName === blk.tagName && c.className.split(' ')[0] === blk.className.split(' ')[0]);
+        const from = sibs.indexOf(blk); let to = sibs.indexOf(drag.drop.tg) + (drag.drop.after ? 1 : 0); if (to > from) to--;
+        const steps = to - from;
+        if (steps) {
+          const first = blk.querySelector('.ed-t') || blk.closest('.ed-t');
+          const src = first && first.dataset.ep ? JSON.parse(first.dataset.ep) : first && first.dataset.es != null ? ED_REG[+first.dataset.es] : null;
+          const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/);
+          if (src != null) { try { parent.CW_EDITOR.blockAction(src, m ? {kind: m[1], id: +m[2]} : null, steps < 0 ? 'up' : 'down', Math.abs(steps)); } catch (err) {} selEl = null; placeSel(); }
+        }
+      }
+    }
+    drag = null;
+  }, true);
+  for (const ev of ['click', 'contextmenu']) document.addEventListener(ev, e => { if (window.__pass) return; if (OBJ && inside(e.target) && !e.target.closest('#edSelBar')) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); } }, true);
   document.addEventListener('keydown', e => {
-    if (!OBJ || !selEl || !selKey || /INPUT|TEXTAREA/.test((e.target || {}).tagName)) return;
+    if (!OBJ || !selEl || !selKey || /INPUT|TEXTAREA|SELECT/.test((e.target || {}).tagName) || (e.target && e.target.isContentEditable)) return;
+    const k0 = (e.key || '').toLowerCase();
+    if (e.key === 'Delete') { e.preventDefault(); const b = selBar.querySelector('[data-a=del]'); b && b.click(); return; }
+    if ((e.ctrlKey || e.metaKey) && !e.altKey && k0 === 'd') { e.preventDefault(); const b = selBar.querySelector('[data-a=dup]'); b && b.click(); return; }
+    if ((e.ctrlKey || e.metaKey) && e.altKey && (k0 === 'c' || k0 === 'с')) { e.preventDefault(); const n = window.CW_API.fmtCopy(); try { parent.CW_EDITOR.note('Вид скопирован (' + n + ' свойств). Ctrl+Alt+V вставляет его на выбранные объекты.'); } catch (err) {} return; }
+    if ((e.ctrlKey || e.metaKey) && e.altKey && (k0 === 'v' || k0 === 'м')) { e.preventDefault(); const n = window.CW_API.fmtPaste(); try { parent.CW_EDITOR.note(n ? 'Вид вставлен' : 'Сначала скопируйте вид: Ctrl+Alt+C на нужном объекте'); } catch (err) {} return; }
+    if (e.key === 'Escape') { e.stopImmediatePropagation(); e.preventDefault(); selEl = null; selEls = []; placeSel(); return; }  // первое Esc снимает выбор и не закрывает карточку
+    if ((e.ctrlKey || e.metaKey) && !e.altKey && (k0 === 'g' || k0 === 'п')) { e.preventDefault(); const ok = window.CW_API.groupSel(!e.shiftKey); try { parent.CW_EDITOR.note(e.shiftKey ? 'Группа разобрана' : ok ? 'Сгруппировано: теперь это один объект' : 'Выберите два и больше объектов Ctrl+кликом, затем Ctrl+G', true); } catch (err) {} placeSel(); return; }
+    if ((e.ctrlKey || e.metaKey) && !e.altKey && (k0 === 'c' || k0 === 'с')) { e.preventDefault(); const h = window.CW_API.copyHtml(); try { parent.CW_EDITOR.setClip(h); } catch (err) {} return; }
+    if ((e.ctrlKey || e.metaKey) && !e.altKey && (k0 === 'v' || k0 === 'м')) { e.preventDefault(); const b = selEl.closest('.ublock[data-bid]') || selEl, a = b.dataset && b.dataset.bid ? 'b:' + b.dataset.bid : (objKey(b) || {}).key; try { parent.CW_EDITOR.pasteClip(a, 'after'); } catch (err) {} return; }
     const st = e.shiftKey ? 10 : 1, o = {...curStyle()};
     if (e.key === 'ArrowLeft') o.x = (o.x || 0) - st; else if (e.key === 'ArrowRight') o.x = (o.x || 0) + st; else if (e.key === 'ArrowUp') o.y = (o.y || 0) - st; else if (e.key === 'ArrowDown') o.y = (o.y || 0) + st; else return;
     e.preventDefault(); commit(o);
@@ -1049,7 +1236,51 @@ if (EDIT) {
     const a = (e.target.closest('button') || {}).dataset?.a; if (!a || !selEl) return;
     if (a === 'up' && selEl.parentElement && objRoot(selEl.parentElement)) pick(selEl.parentElement);
     if (a === 'rs') commit({});
+    if (a === 'copy') { try { parent.CW_EDITOR.setClip(window.CW_API.copyHtml()); } catch (err) {} return; }
+    if (a === 'paste') { const b = selEl.closest('.ublock[data-bid]') || selEl, an = b.dataset && b.dataset.bid ? 'b:' + b.dataset.bid : (objKey(b) || {}).key; try { parent.CW_EDITOR.pasteClip(an, 'after'); } catch (err) {} return; }
+    if (a === 'edit') { const r = selEl.getBoundingClientRect(); selEl.dispatchEvent(new MouseEvent('dblclick', {bubbles: true, cancelable: true, clientX: r.left + Math.min(r.width / 2, 40), clientY: r.top + Math.min(r.height / 2, 14), view: window})); }
+    if (a === 'open') { const c = selEl.closest('[data-item],[data-role],[data-trait],[data-aug],[data-buff],[data-pet],[data-cmp],[data-open]'); if (c) { window.__pass = true; c.click(); window.__pass = false; } }
+    if (a === 'add') { const r = selBar.getBoundingClientRect(); window.__openPal(r.left, r.bottom + 6, selEl, 'after'); return; }
+    if (['dup', 'mvu', 'mvd', 'del'].includes(a)) {
+      // свой блок (добавленный в редакторе): действие над списком блоков
+      const ub = selEl.closest('.ublock[data-bid]'), bi = ub ? (DB.blocks || []).findIndex(x => x.id === ub.dataset.bid) : -1;
+      if (bi >= 0) { try { parent.CW_EDITOR.blockAction(['@blocks', bi], null, {dup: 'dup', mvu: 'up', mvd: 'down', del: 'del'}[a]); } catch (err) {} selEl = null; placeSel(); return; }
+      const blk = selEl.closest(BLK) || selEl, first = blk.querySelector('.ed-t') || selEl.closest('.ed-t') || selEl;
+      const src = first.dataset && first.dataset.ep ? JSON.parse(first.dataset.ep) : (first.dataset && first.dataset.es != null ? ED_REG[+first.dataset.es] : null);
+      if (src == null) {  // часть страницы без своей записи: «удалить» = скрыть (вернуть можно в «☰ Слои»)
+        if (a === 'del' && selKey) { window.CW_API.toggleHide(selKey); try { parent.CW_EDITOR.note('Объект скрыт. Вернуть: «☰ Слои» → глаз', true); } catch (err) {} selEl = null; placeSel(); return; }
+        try { parent.CW_EDITOR.blockNoSrc(); } catch (err) {} return; }
+      const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/);
+      try { parent.CW_EDITOR.blockAction(src, m ? {kind: m[1], id: +m[2]} : null, {dup: 'dup', add: 'add', mvu: 'up', mvd: 'down', del: 'del'}[a]); } catch (err) {}
+      selEl = null; placeSel();
+    }
   });
+  // ＋ между блоками: наведи на верхнюю или нижнюю границу любого блока
+  document.head.insertAdjacentHTML('beforeend', '<style>#edIns{position:fixed;z-index:99997;display:none;height:22px;pointer-events:none;border-top:2px solid #5fd0a0}#edIns button{all:unset;pointer-events:auto;position:absolute;left:50%;top:-13px;transform:translateX(-50%);background:#5fd0a0;color:#08241a;font:700 12px sans-serif;padding:3px 12px;border-radius:999px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.5)}#edPal{position:fixed;z-index:100000;display:none;background:#14112b;border:1px solid #5fd0a0;border-radius:12px;padding:6px;box-shadow:0 12px 40px rgba(0,0,0,.6);min-width:210px}#edPal button{all:unset;display:block;box-sizing:border-box;width:100%;padding:7px 12px;border-radius:8px;color:#efebff;font:600 13px sans-serif;cursor:pointer}#edPal button:hover{background:#2f2659}</style>');
+  const insEl = document.createElement('div'); insEl.id = 'edIns'; insEl.innerHTML = '<button>＋ Добавить блок сюда</button>'; document.body.appendChild(insEl);
+  const palEl = document.createElement('div'); palEl.id = 'edPal'; palEl.innerHTML = '<div id="palPos" style="display:flex;gap:4px;margin-bottom:6px">' + [['before', '↑ Выше'], ['after', '↓ Ниже'], ['left', '← Слева'], ['right', 'Справа →']].map(([k, n]) => `<button data-pos="${k}" style="text-align:center;border:1px solid rgba(196,176,255,.3);padding:5px 4px">${n}</button>`).join('') + '</div>' + [['text', 'Текст'], ['h', 'Заголовок'], ['img', 'Картинка…'], ['video', 'Видео YouTube'], ['videos', 'Несколько видео подряд (сетка)'], ['btn', 'Кнопка-ссылка'], ['cols', 'Две колонки'], ['hr', 'Разделитель'], ['lib_vt', '▸ Видео + текст'], ['lib_3', '▸ Три карточки'], ['lib_ban', '▸ Баннер с кнопкой'], ['lib_q', '▸ Цитата'], ['lib_acc', '▸ Спойлер'], ['lib_tab', '▸ Таблица']].map(([k, n]) => `<button data-k="${k}">${n}</button>`).join(''); document.body.appendChild(palEl);
+  let insT = null, insHide = 0;
+  const hideIns = () => { insEl.style.display = 'none'; };
+  document.addEventListener('mousemove', e => {
+    if (drag || !OBJ || palEl.style.display === 'block') return;
+    if (e.target.closest && e.target.closest('#edIns,#edPal,#edSelBar')) return;
+    const b = e.target.closest && e.target.closest(BLKSEL + ',.ublock');
+    if (!b || !objRoot(b) || b.closest('#tabs')) { hideIns(); return; }
+    const r = b.getBoundingClientRect(), pos = e.clientY - r.top < 10 ? 'before' : r.bottom - e.clientY < 10 ? 'after' : null;
+    if (!pos) { hideIns(); return; }
+    insT = {b, pos}; Object.assign(insEl.style, {display: 'block', left: r.left + 'px', width: r.width + 'px', top: (pos === 'before' ? r.top - 2 : r.bottom - 2) + 'px'});
+  }, true);
+  insEl.querySelector('button').addEventListener('click', e => { e.stopPropagation(); if (!insT) return; const r = insEl.getBoundingClientRect(); window.__openPal(r.left + r.width / 2 - 105, r.bottom + 6, insT.b, insT.pos); });
+  const palSet = pos => { palEl.dataset.pos = pos; palEl.querySelectorAll('[data-pos]').forEach(b => { b.style.background = b.dataset.pos === pos ? '#2f6e55' : ''; }); };
+  window.__openPal = (x, y, el, pos) => { insT = {b: el, pos}; palSet(pos); Object.assign(palEl.style, {display: 'block', left: Math.max(4, Math.min(innerWidth - 240, x)) + 'px', top: Math.max(4, Math.min(innerHeight - 360, y)) + 'px'}); };
+  palEl.addEventListener('click', e => {
+    const bt = e.target.closest('button'); if (!bt) return;
+    if (bt.dataset.pos) { palSet(bt.dataset.pos); return; }
+    const k = bt.dataset.k; palEl.style.display = 'none'; hideIns(); if (!k || !insT) return;
+    const b = insT.b, own = b.dataset.bid ? b : b.closest('.ublock[data-bid]'), anchor = own ? 'b:' + own.dataset.bid : (objKey(b) || {}).key; if (!anchor) return;
+    try { parent.CW_EDITOR.addAt(k, anchor, palEl.dataset.pos || insT.pos); } catch (err) {}
+  });
+  document.addEventListener('mousedown', e => { if (palEl.style.display === 'block' && !e.target.closest('#edPal,#edIns')) palEl.style.display = 'none'; }, true);
   document.addEventListener('scroll', placeSel, true); window.addEventListener('resize', placeSel);
   // Ctrl+Z / Ctrl+Y внутри сайта работают как в редакторе (откат правок, размеров и положений)
   document.addEventListener('keydown', e => {
@@ -1058,14 +1289,14 @@ if (EDIT) {
     if (k === 'z' || k === 'я') { e.preventDefault(); try { e.shiftKey ? parent.CW_EDITOR.redo() : parent.CW_EDITOR.undo(); } catch (err) {} }
     else if (k === 'y' || k === 'н') { e.preventDefault(); try { parent.CW_EDITOR.redo(); } catch (err) {} }
   }, true);
-  document.head.insertAdjacentHTML('beforeend', '<style>.modal.show #mcontent{cursor:text}.ed-t{cursor:text;border-radius:4px;transition:.12s}.ed-t:hover{outline:1px dashed #e3c27c;outline-offset:2px;background:rgba(227,194,124,.10)}</style>');
-  document.addEventListener('click', e => {
+  document.head.insertAdjacentHTML('beforeend', '<style>.modal.show #mcontent{cursor:text}.ed-t{cursor:text;border-radius:4px;transition:.12s}div.ed-t{display:block}.ed-t:hover{outline:1px dashed #e3c27c;outline-offset:2px;background:rgba(227,194,124,.10)}</style>');
+  document.addEventListener('dblclick', e => {
     window.__lastEl = e.target;
     const t = e.target.closest('.ed-t');
     if (!t) {
       // текст, которого нет в данных (зашит в код сайта): редактор предложит заменить его своим
       if (e.target.closest('#edTb,a,button,.tab,.chip,.forms,.subtab,.mbtn,input,textarea,select,#tabs,.search,#gs')) return;
-      if (!e.target.closest('#mcontent,.modal.show,#view')) return;
+      if (e.target.closest('.modal:not(.show)') || e.target.closest('#totop,#tip')) return;  // править можно любой текст страницы: шапку, подвал, вкладки, подсказки…
       const sl = getSelection(), selText = sl && !sl.isCollapsed ? sl.toString().trim() : '';
       const rg = document.caretRangeFromPoint ? document.caretRangeFromPoint(e.clientX, e.clientY) : null;
       const nd = selText && sl.anchorNode && sl.anchorNode.nodeType === 3 ? sl.anchorNode : rg && rg.startContainer;
@@ -1089,6 +1320,7 @@ if (EDIT) {
   const hideTb = () => { tbT = setTimeout(() => { tb.style.display = 'none'; if (tbBlk) tbBlk.classList.remove('ed-blk'); tbBlk = null; }, 350); };
   const ctxNow = () => { const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return m ? {kind: m[1], id: +m[2]} : null; };
   document.addEventListener('mouseover', e => {
+    if (OBJ) return;
     if (tb.contains(e.target)) { clearTimeout(tbT); return; }
     const x = e.target.closest('.ed-t'); if (!x) return;
     const blk = x.closest(BLK) || x; clearTimeout(tbT);
@@ -1169,17 +1401,24 @@ const TABS = [
   {k:'guide', t:'Как играть', icon:'ui/tab_misc'}, {k:'roles', t:'Персонажи'}, {k:'traits', t:'Связи'}, {k:'items', t:'Экипировка'},
   {k:'augments', t:'Стратегии'}, {k:'buffs', t:'Среды'}, {k:'pets', t:'Компаньоны'}, {k:'misc', t:'Предметы'},
   {k:'nodes', t:'Узлы'}, ...(DB.ranks ? [{k:'ranks', t:'Ранги'}] : []), {k:'armor', t:'Броня'}, {k:'affix', t:'Аффиксы'}, {k:'opp', t:'Противники'}, {k:'npc', t:'НПС'},
-  ...(DB.custom || []).map((c, i) => ({k:'c' + i, t:c.title || 'Вкладка', icon:c.icon})),
 ];
+const TABS0 = TABS.slice();
 $('#heroStats').innerHTML = [[listRoles.length, 'персонажей'], [traits.length, 'связей'], [nEq, 'экипировки'], [augs.filter(a => !a.old).length, 'стратегий'], [buffs.filter(b => !b.old).length, 'сред'], [(DB.pets || []).length, 'компаньонов']]
   .map(([n, t]) => `<div><b>${n}</b><span>${t}</span></div>`).join('');
-$('#tabs').innerHTML = TABS.map(t => `<button class="tab" data-k="${t.k}"><img src="${img(t.icon || 'ui/tab_' + t.k)}" alt="">${esc(t.t)}</button>`).join('');
+// вкладки: встроенные + свои разделы (DB.custom), перерисовываются при правке в редакторе
+function drawTabs() {
+  TABS.length = 0; TABS.push(...TABS0, ...(DB.custom || []).map((c, i) => ({k:'c' + i, t:c.title || 'Вкладка', icon:c.icon})));
+  let cur = ''; try { cur = S.tab; } catch (e) {}  // при первом вызове состояния ещё нет
+  $('#tabs').innerHTML = TABS.map(t => `<button class="tab${cur === t.k ? ' on' : ''}" data-k="${t.k}"><img src="${img(t.icon || 'ui/tab_' + t.k)}" alt="">${esc(t.t)}</button>`).join('');
+}
+drawTabs();
 $('#partners').innerHTML = Array.from({length:12}, (_, i) => img('ui/partner' + (i + 1)) ? `<img src="${img('ui/partner' + (i + 1))}" alt="">` : '').join('');
 
 // ---------- состояние ----------
 const S = {showOld:false, tab:'roles', guide:{}, roles:{cost:0, pos:'', trait:0, q:''}, traits:{kind:'', q:''}, items:{cat:'', q:''}, augments:{q:'', ql:'', news:false, ch:0}, buffs:{q:'', news:true}, misc:{q:''}, nodes:{}, ranks:{}, armor:{q:''}, affix:{q:''}, opp:{q:''}, npc:{}};
 try { const saved = JSON.parse(localStorage.getItem('cw-state-v2') || 'null'); if (saved) for (const k in S) if (saved[k] !== undefined) S[k] = typeof S[k] === 'object' ? Object.assign(S[k], saved[k]) : saved[k]; } catch (e) {}
 const save = () => { try { localStorage.setItem('cw-state-v2', JSON.stringify(S)); } catch (e) {} };
+drawTabs();
 (DB.custom || []).forEach((c, i) => { S['c' + i] = S['c' + i] || {q:''}; });
 if (!TABS.some(t => t.k === S.tab)) S.tab = 'roles';
 
@@ -1848,11 +2087,19 @@ function viewOpp(v) {
   bindQ(v, f);
 }
 // свои вкладки из редактора: {title, desc, icon, color, items:[{name, en, icon, html, bg}]}
+// свои разделы: любые поля записи кроме стандартных показываются строками «поле: значение»
+const CSTD = new Set(['name', 'en', 'html', 'icon', 'bg', 'color']);
+const cval = x => x == null ? '' : typeof x === 'object' ? esc(Array.isArray(x) && x.every(y => typeof y !== 'object') ? x.join(', ') : JSON.stringify(x)) : typeof x === 'boolean' ? (x ? 'да' : 'нет') : rt(String(x));
+const customExtra = a => { const K = Object.keys(a).filter(k => !CSTD.has(k) && a[k] !== '' && a[k] != null); return K.length ? `<div class="cx-f">${K.map(k => `<div><span>${esc(k)}</span><b class="rt">${cval(a[k])}</b></div>`).join('')}</div>` : ''; };
+function customTable(L) {
+  const K = [...new Set(L.flatMap(a => Object.keys(a)))].filter(k => !['icon', 'bg', 'color'].includes(k));
+  return `<div class="cx-tw"><table class="cx-t"><thead><tr>${L.some(a => a.icon) ? '<th></th>' : ''}${K.map(k => `<th>${esc({name:'Название', en:'English', html:'Описание'}[k] || k)}</th>`).join('')}</tr></thead><tbody>${L.map(a => `<tr>${L.some(x => x.icon) ? `<td>${a.icon && img(a.icon) ? `<img src="${img(a.icon)}" alt="" loading="lazy">` : ''}</td>` : ''}${K.map(k => `<td>${cval(a[k])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
 function viewCustom(v, i) {
-  const C = DB.custom[i], f = S['c' + i], q = norm(f.q || '');
+  const C = DB.custom[i] || {}, f = S['c' + i] = S['c' + i] || {q:''}, q = norm(f.q || '');
   const L = (C.items || []).filter(a => !q || norm((a.name || '') + ' ' + (a.en || '') + ' ' + (a.html || '')).includes(q));
   v.innerHTML = head(esc(C.title || ''), C.desc || '', L.length) + bankSearch(f, 'Поиск…')
-    + `<div class="grid-aug">${L.map(a => `<div class="acard bank-card" style="--qa:${a.color || C.color || '#e3c27c'}${a.bg && img(a.bg) ? `;background:url(${img(a.bg)}) center/cover` : ''}">${a.icon && img(a.icon) ? `<img class="bk-ic" src="${img(a.icon)}" alt="" loading="lazy">` : ''}<div style="min-width:0"><h3>${esc(a.name || '')}</h3>${a.en ? `<div class="rd-en" style="text-align:left">${esc(a.en)}</div>` : ''}<div class="desc rt">${rt(a.html || '')}</div></div></div>`).join('')}</div>`;
+    + (C.view === 'table' ? customTable(L) : `<div class="grid-aug">${L.map(a => `<div class="acard bank-card" style="--qa:${a.color || C.color || '#e3c27c'}${a.bg && img(a.bg) ? `;background:url(${img(a.bg)}) center/cover` : ''}">${a.icon && img(a.icon) ? `<img class="bk-ic" src="${img(a.icon)}" alt="" loading="lazy">` : ''}<div style="min-width:0"><h3>${esc(a.name || '')}</h3>${a.en ? `<div class="rd-en" style="text-align:left">${esc(a.en)}</div>` : ''}<div class="desc rt">${rt(a.html || '')}</div>${customExtra(a)}</div></div>`).join('')}</div>`);
   bindQ(v, f);
 }
 function viewNpc(v) {
@@ -2292,22 +2539,83 @@ window.CW_API = {
     if (!b.parentElement) return {};
     const cls = el => (typeof el.className === 'string' ? el.className : '').split(' ')[0];
     const sibs = [...b.parentElement.children].filter(c => c !== b && c.tagName === b.tagName && cls(c) === cls(b));
-    const St = STYLES(), out = {}, rel = el => { const p = []; while (el && el !== b) { p.unshift(Array.prototype.indexOf.call(el.parentElement.children, el)); el = el.parentElement; } return p; };
+    const St = STYLES(), out = {}, rel = el => { const p = []; while (el && el !== b) { p.unshift(kidsOf(el.parentElement).indexOf(el)); el = el.parentElement; } return p; };
     for (const el of [b, ...b.querySelectorAll('*')]) {
       const k = objKey(el); if (!k || !St[k.key]) continue;
       const r = rel(el);
-      for (const sb of sibs) { const t = r.reduce((e, n) => e && e.children[n], sb); const k2 = t && objKey(t); if (k2) out[k2.key] = {...St[k.key]}; }
+      for (const sb of sibs) { const t = r.reduce((e, n) => e && kidsOf(e)[n], sb); const k2 = t && objKey(t); if (k2) out[k2.key] = {...St[k.key]}; }
     }
     return {map: out, sibs: sibs.length};
   },
   flashObj: key => { objFind(key).forEach(el => { el.classList.add('ed-hov'); setTimeout(() => el.classList.remove('ed-hov'), 900); }); },
   decorateHtml: h => decorate(h),
-  setAllStyles: S => { DB.styles = S || {}; },
+  where: () => { const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return {modal: m ? m[1] + ':' + m[2] : null, tab: S.tab}; },
+  bp: () => bpNow(),
+  styleOf: key => styleOf(STYLES(), key),
+  setAllStyles: S => { DB.styles = S || {}; applyGlobal(); },
+  setGlobal: g => { DB.styles = DB.styles || {}; if (g && Object.keys(g).length) DB.styles['g:site'] = g; else delete DB.styles['g:site']; applyGlobal(); },
+  getGlobal: () => (DB.styles || {})['g:site'] || {},
+  selectKey: key => { const el = objFind(key)[0]; if (el) { window.__lastEl = el; window.__objApi.pick(el); } },
+  // слои: все заметные объекты текущей карточки или вкладки
+  layerTree: () => {
+    const root = $('#modal').classList.contains('show') ? $('#mcontent') : $('#view'); if (!root) return [];
+    const out = [], St = STYLES();
+    const lab = el => el.classList && el.classList.contains('ublock') ? 'блок страницы' : el.tagName === 'IMG' ? 'картинка' : el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' ? 'заголовок «' + el.textContent.trim().slice(0, 22) + '»' : [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 1) ? '«' + el.textContent.trim().replace(/\s+/g, ' ').slice(0, 28) + '»' : (typeof el.className === 'string' && el.className ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase());
+    const walk = (el, d) => {
+      if (out.length > 120 || d > 5) return;
+      for (const c of kidsOf(el)) {
+        if (/^(SCRIPT|STYLE|BR)$/.test(c.tagName) || c.id === 'edSel' || c.id === 'edSelBar') continue;
+        const r = c.getBoundingClientRect(); const block = c.matches && c.matches(BLKSEL + ',.ublock,img,h1,h2,h3,.ed-t,.urow,.rd-side,.rd-main,.xc');
+        const k = objKey(c);
+        if (block && k && (r.width > 0 || c.dataset.edHid)) { const s = styleOf(St, k.key); out.push({key: k.key, label: lab(c), depth: d, hidden: !!(bpNow() === '@m' ? s.hm : s.hd), tag: c.tagName.toLowerCase()}); }
+        walk(c, block ? d + 1 : d);
+      }
+    };
+    walk(root, 0); return out;
+  },
+  toggleHide: key => { const s = {...styleOf(STYLES(), key)}, f = bpNow() === '@m' ? 'hm' : 'hd'; if (s[f]) delete s[f]; else s[f] = 1; window.__objApi.styleSave(key, s); },
+  fmtCopy: () => { const s = styleOf(STYLES(), window.__objApi.selKey() || ''); const keep = {}; ['c', 'bg', 'r', 'op', 'bd', 'bw', 'pd', 'fw', 'ff', 'g1', 'g2', 'ga', 'ls', 'fs', 'an', 'ad', 'al'].forEach(f => { if (s[f] != null) keep[f] = s[f]; }); window.__fmt = keep; return Object.keys(keep).length; },
+  fmtPaste: () => { if (!window.__fmt) return 0; const items = [{key: window.__objApi.selKey()}, ...window.__objApi.extras()].filter(i => i.key); items.forEach(i => window.__objApi.styleSave(i.key, {...styleOf(STYLES(), i.key), ...window.__fmt})); return items.length; },
+  groupSel: on => {
+    const items = [{key: window.__objApi.selKey()}, ...window.__objApi.extras()].filter(i => i.key);
+    if (on && items.length < 2) return false;
+    DB.styles = DB.styles || {};
+    for (const id of Object.keys(DB.styles)) if (id.startsWith('grp:') && (DB.styles[id].keys || []).some(k => items.some(i => i.key === k))) { delete DB.styles[id]; try { parent.CW_EDITOR.groupSet(id, null); } catch (e) {} }
+    if (on) { const id = 'grp:' + Date.now().toString(36); DB.styles[id] = {keys: items.map(i => i.key)}; try { parent.CW_EDITOR.groupSet(id, DB.styles[id]); } catch (e) {} }
+    return true;
+  },
+  copyHtml: () => {
+    let el = window.__objApi.sel(); if (!el) return '';
+    const u = el.closest('.ublock'); if (u && u.dataset.bid) { const b = (DB.blocks || []).find(x => x.id === u.dataset.bid); if (b) return b.html || ''; }
+    el = el.closest(BLKSEL + ',.ublock') || el;
+    const c = el.cloneNode(true);
+    c.querySelectorAll('.ed-t').forEach(n => { n.replaceWith(...n.childNodes); });
+    [c, ...c.querySelectorAll('*')].forEach(n => { [...n.attributes].forEach(a => { if (/^(data-(?!yt)|id$|on)/.test(a.name) || a.name === 'tabindex') n.removeAttribute(a.name); }); n.classList.remove('ed-hov', 'anim', 'an-in'); if (!n.getAttribute('class')) n.removeAttribute('class'); });
+    c.querySelectorAll('script,style').forEach(n => n.remove());
+    return c.outerHTML;
+  },
+  alignSel: mode => {
+    const items = [{el: window.__objApi.sel(), key: window.__objApi.selKey()}, ...window.__objApi.extras()].filter(i => i.el && i.el.isConnected);
+    if (items.length < 2) return;
+    const R = items.map(i => i.el.getBoundingClientRect());
+    const L = Math.min(...R.map(r => r.left)), Rr = Math.max(...R.map(r => r.right)), T = Math.min(...R.map(r => r.top)), Bm = Math.max(...R.map(r => r.bottom));
+    let order = items.map((it, k) => k);
+    if (mode === 'dh') order.sort((a, b) => R[a].left - R[b].left); if (mode === 'dv') order.sort((a, b) => R[a].top - R[b].top);
+    const total = order.reduce((s, k) => s + (mode === 'dh' ? R[k].width : R[k].height), 0), gap = mode === 'dh' ? (Rr - L - total) / (order.length - 1) : (Bm - T - total) / (order.length - 1);
+    let pos = mode === 'dh' ? L : T;
+    items.forEach((it, k) => {
+      const r = R[k], cur = styleOf(STYLES(), it.key), o = {...cur};
+      if (mode === 'l') o.x = (cur.x || 0) + (L - r.left); if (mode === 'r') o.x = (cur.x || 0) + (Rr - r.right); if (mode === 'cx') o.x = (cur.x || 0) + ((L + Rr) / 2 - (r.left + r.right) / 2);
+      if (mode === 't') o.y = (cur.y || 0) + (T - r.top); if (mode === 'b') o.y = (cur.y || 0) + (Bm - r.bottom); if (mode === 'cy') o.y = (cur.y || 0) + ((T + Bm) / 2 - (r.top + r.bottom) / 2);
+      if (mode === 'dh' || mode === 'dv') { const i2 = order.indexOf(k), before = order.slice(0, i2).reduce((s, q) => s + (mode === 'dh' ? R[q].width : R[q].height), 0), target = (mode === 'dh' ? L : T) + before + gap * i2; if (mode === 'dh') o.x = (cur.x || 0) + (target - r.left); else o.y = (cur.y || 0) + (target - r.top); }
+      o.x = Math.round(o.x || 0); o.y = Math.round(o.y || 0); window.__objApi.commitKey(o, it.key);
+    });
+  },
   setObjMode: on => window.__objApi && window.__objApi.set(on),
   setObjStyle: (key, o) => window.__objApi && window.__objApi.style(key, o),
   setStyle: (key, st) => { DB.styles = DB.styles || {}; if (st) DB.styles[key] = st; else delete DB.styles[key]; },
   setRec: (kind, id, obj) => { const o = DB[kind].find(r => r.id === id); if (!o) return; for (const k of Object.keys(o)) delete o[k]; Object.assign(o, obj); },
-  refresh: () => { ED_REG.length = 0; render(); const mm = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if (mm) openModal(mm[1], +mm[2], false); },
+  refresh: () => { ED_REG.length = 0; drawTabs(); render(); const mm = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if (mm) openModal(mm[1], +mm[2], false); },
   oldFlags: () => Object.fromEntries(['augments', 'buffs', 'items'].map(k => [k, Object.fromEntries(DB[k].filter(x => x.old).map(x => [x.id, x.old]))])),
 };
 
@@ -2318,7 +2626,18 @@ const h = decodeURIComponent(location.hash.slice(1));
 const m = h.match(/^(role|trait|item|aug|buff|pet)=(\d+)$/);
 if (TABS.some(t => t.k === h)) S.tab = h;
 $('#ubTop').innerHTML = blocksAt('page', 'top'); $('#ubBot').innerHTML = blocksAt('page', 'bottom');
+// общие стили сайта (редактор: «🎨 Стиль сайта»): цвета, шрифт, размер текста, скругление, ширина контента
+function applyGlobal() {
+  const g = (DB.styles || {})['g:site'] || {}, R = document.documentElement.style;
+  const V = {accent: ['--gold', '--gold2'], hl: ['--hl'], bg: ['--bg'], panel: ['--panel'], panel2: ['--panel2'], text: ['--text'], muted: ['--muted']};
+  for (const [k, vars] of Object.entries(V)) for (const v of vars) { if (g[k]) R.setProperty(v, g[k]); else R.removeProperty(v); }
+  if (g.rad != null && g.rad !== '') R.setProperty('--r', g.rad + 'px'); else R.removeProperty('--r');
+  document.body.style.fontFamily = g.ff || ''; document.body.style.fontSize = g.fs ? g.fs + 'px' : '';
+  const v = document.getElementById('view'); const mw = g.mw ? g.mw + 'px' : '';
+  document.querySelectorAll('main#view, header .wrap, .wrap').forEach(e => { e.style.maxWidth = mw; });
+}
 setTab(S.tab);
+applyGlobal();
 if (m) openModal(m[1], +m[2]);
 // ссылки вида #role=100402 открывают карточку и без перезагрузки
 window.addEventListener('hashchange', () => { const x = decodeURIComponent(location.hash.slice(1)).match(/^(role|trait|item|aug|buff|pet)=(\d+)$/); if (x) openModal(x[1], +x[2]); });

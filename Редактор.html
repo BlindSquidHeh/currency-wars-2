@@ -97,7 +97,7 @@ summary{cursor:pointer;color:var(--muted);font-weight:700}
 .stgrow button{border-radius:8px;border:1px solid var(--line2);background:var(--panel2);color:var(--bad)}
 .cardmode{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
 #spineFrame{width:100%;height:100%;border:0;display:none}
-#siteEdit{width:100%;height:100%;border:0;display:none}
+#siteEdit{width:100%;height:100%;border:0;display:none;background:var(--bg)}
 #edp{position:fixed;right:14px;bottom:14px;width:min(560px,92vw);max-height:62vh;overflow:auto;background:var(--panel2);border:1px solid var(--gold2);border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.6);padding:12px 14px;z-index:60;display:none}
 #edp.show{display:block}
 #siteBar{display:none;gap:8px;align-items:center;flex-wrap:wrap;padding:6px 10px;border-bottom:1px solid var(--line);background:var(--panel)}
@@ -427,19 +427,38 @@ const KLABEL = {roles:'персонаж', traits:'связь', items:'экипи
 function siteBar() {
   if ($('#siteBar')) return;
   const b = document.createElement('div'); b.id = 'siteBar';
-  b.innerHTML = '<button class="btn" id="sbObj" title="Режим объектов: нажимайте на любой элемент (цифру, звезду, картинку, фон, блок), двигайте мышью, тяните за угол">⌖ Объекты: выкл</button><span class="hint">Создать:</span>' + [['roles', '＋ Персонаж'], ['traits', '＋ Связь'], ['items', '＋ Экипировка'], ['augments', '＋ Стратегия'], ['buffs', '＋ Среда']].map(([k, t]) => `<button class="btn" data-new="${k}">${t}</button>`).join('')
-    + `<select id="sbSec"><option value="">＋ Запись раздела…</option>${Object.entries(CW_SECTIONS.LIST).map(([p, t]) => `<option value="${p}">${t}</option>`).join('')}</select><span class="sp"></span><span id="sbCard" class="hint">Откройте карточку на сайте — здесь появятся действия над ней</span>`;
+  b.innerHTML = '<button class="btn" id="sbPaste" title="Вставить скопированный блок в конец этой страницы (Ctrl+C на блоке, затем сюда)" disabled>📋 Вставить блок</button><button class="btn" id="sbHist" title="Предыдущие сохранённые версии правок: можно вернуть любую">🕘 История</button><button class="btn" id="sbGl" title="Цвета, шрифт и размеры для всего сайта сразу">🎨 Стиль сайта</button><button class="btn" id="sbLay" title="Список всех элементов этой страницы: выбор, скрытие">☰ Слои</button><span id="sbDev" title="Как страница выглядит на разных экранах"><button class="btn on" data-w="">🖥 Компьютер</button><button class="btn" data-w="820">▭ Планшет</button><button class="btn" data-w="400">📱 Телефон</button></span> <span class="hint">Нажмите на элемент и двигайте мышью · двойной щелчок — править · Shift+перетащить блок — поменять порядок</span> <span class="hint">Создать:</span>' + [['roles', '＋ Персонаж'], ['traits', '＋ Связь'], ['items', '＋ Экипировка'], ['augments', '＋ Стратегия'], ['buffs', '＋ Среда']].map(([k, t]) => `<button class="btn" data-new="${k}">${t}</button>`).join('')
+    + `<select id="sbBlk" title="Добавить на текущую страницу или карточку новый блок"><option value="">＋ Блок на странице…</option><option value="text">Текст</option><option value="h">Заголовок</option><option value="img">Картинка из файла…</option><option value="btn">Кнопка-ссылка</option><option value="video">Видео YouTube / файл</option><option value="videos">Несколько видео подряд (сетка)</option><option value="hr">Разделитель</option><option value="cols">Две колонки</option><optgroup label="Готовые секции"><option value="lib_vt">Видео + текст (2 колонки)</option><option value="lib_3">Три карточки</option><option value="lib_ban">Баннер с кнопкой</option><option value="lib_q">Цитата</option><option value="lib_acc">Спойлер (раскрывается)</option><option value="lib_tab">Таблица</option></optgroup></select><button class="btn" id="sbNewSec" title="Новая вкладка сайта со своими записями: заполнить вручную или загрузить из JSON">＋ Раздел (своя база)</button><select id="sbSec"><option value="">＋ Запись раздела…</option>${Object.entries(CW_SECTIONS.LIST).map(([p, t]) => `<option value="${p}">${t}</option>`).join('')}</select><span class="sp"></span><span id="sbCard" class="hint">Откройте карточку на сайте — здесь появятся действия над ней</span>`;
   $('main').insertBefore(b, $('#siteEdit'));
   b.onclick = e => { const n = e.target.closest('[data-new]'); if (n) openDrawer(n.dataset.new, null, true); const a = e.target.closest('[data-card]'); if (a) cardAction(a.dataset.card); };
-  $('#sbObj').onclick = () => { objOn = !objOn; $('#sbObj').textContent = '⌖ Объекты: ' + (objOn ? 'ВКЛ (правка текста отключена)' : 'выкл'); $('#sbObj').classList.toggle('main', objOn); $('#siteEdit').contentWindow.CW_API.setObjMode(objOn); if (!objOn) $('#edp').classList.remove('show'); };
+  $('#sbDev').onclick = e => { const b = e.target.closest('button'); if (!b) return; $('#sbDev').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); const f = $('#siteEdit'); f.style.width = b.dataset.w ? b.dataset.w + 'px' : '100%'; f.style.margin = b.dataset.w ? '0 auto' : '0'; f.style.border = b.dataset.w ? '1px solid var(--gold2)' : '0'; setTimeout(() => { try { f.contentWindow.CW_API.refresh(); } catch (e) {} $('#edp').classList.remove('show'); }, 250); };
+  $('#sbPaste').onclick = () => pasteClip(null);
+  $('#sbPaste').disabled = !CLIP;
+  $('#sbGl').onclick = () => globalPanel();
+  $('#sbHist').onclick = async () => {
+    if (ONLINE) { alert('История версий хранится на домашнем компьютере.'); return; }
+    const P = $('#edp'); P.classList.add('show'); P.innerHTML = '<button class="btn x" id="edx">✕</button><h4>История версий правок</h4><div class="where">Версия создаётся перед каждым «Сохранить». Выберите, к какой вернуться: текущие правки при этом тоже сохраняются в историю.</div><div id="hl">Загружаю…</div>';
+    $('#edx').onclick = () => P.classList.remove('show');
+    let L = []; try { L = await (await fetch('/api/history')).json(); } catch (err) {}
+    const fmt = n => { const m = n.match(/ovr_(\d{4})(\d\d)(\d\d)_(\d\d)(\d\d)(\d\d)/); return m ? `${m[3]}.${m[2]}.${m[1]} ${m[4]}:${m[5]}:${m[6]}` : n; };
+    $('#hl').innerHTML = L.length ? '' : 'Пока ни одной версии: появится после первого «Сохранить».';
+    for (const v of L) { const r = document.createElement('div'); r.style.cssText = 'display:flex;gap:8px;align-items:center;padding:3px 0'; r.innerHTML = `<span style="flex:1">${fmt(v.name)} · ${Math.round(v.size / 1024)} КБ</span><button class="btn">Вернуть</button>`; r.querySelector('button').onclick = async () => { if (!confirm('Вернуть правки к версии от ' + fmt(v.name) + '? Текущее состояние сохранится в истории.')) return; dirty = false; const rr = await fetch('/api/history-restore?name=' + encodeURIComponent(v.name), {method: 'POST'}); if (rr.ok) location.reload(); else alert('Не удалось вернуть версию'); }; $('#hl').append(r); }
+  };
+  $('#sbLay').onclick = () => { const o = $('#edLayers'); if (o) { o.remove(); $('#sbLay').classList.remove('main'); return; } $('#sbLay').classList.add('main'); layersPanel(); };
+  $('#sbBlk').onchange = async e => { const k = e.target.value; e.target.value = ''; if (k) await addPageBlock(k); };
+  $('#sbNewSec').onclick = () => { openSecDrawer('custom', null, true); const W = $('#siteEdit').contentWindow; setTimeout(() => { try { const t = W.document.querySelector('#tabs .tab[data-k="c' + selId + '"]'); if (t) t.click(); } catch (err) {} }, 900); status('Новый раздел создан: заполните его справа или загрузите записи кнопкой «⬆ Записи из JSON…»', true); };
   $('#sbSec').onchange = e => { const p = e.target.value; e.target.value = ''; if (p) openSecDrawer(p, null, true); };
 }
 function siteCtx() {
   try { const m = $('#siteEdit').contentWindow.location.hash.match(/(role|trait|item|aug|buff)=(\d+)/); return m && CK[m[1]] ? {k:CK[m[1]], id:+m[2]} : null; } catch (e) { return null; }
 }
 function barTick() {
+  try { if ($('#edLayers') && kind === 'site') { const W = $('#siteEdit').contentWindow, k = (W.location.hash || '') + W.CW_API.layerTree().length; if (k !== layKey) layersPanel(); } } catch (e) {}
   const el = $('#sbCard'); if (!el || kind !== 'site') return;
   const c = siteCtx(), x = c && cur(c.k, c.id);
+  let ct = ''; try { ct = ($('#siteEdit').contentWindow.location.hash.match(/^#c(\d+)$/) || [])[1] || ''; } catch (err) {}
+  if (!x && ct !== '') { if (el.dataset.ct !== ct) { el.dataset.ct = ct; el.innerHTML = `Свой раздел <button class="btn main" data-csec="${ct}">✎ Править записи и поля</button>`; el.querySelector('[data-csec]').onclick = () => openSecDrawer('custom', +ct); } return; }
+  el.dataset.ct = '';
   el.innerHTML = x ? `Открыта карточка: <b>${esc(x.name)}</b> (${KLABEL[c.k]}) <button class="btn" data-card="open">Все поля</button>${edited(c.k, c.id) ? ' <button class="btn" data-card="reset">Вернуть как в игре</button>' : ''} <button class="btn danger" data-card="del">${isDel(c.k, c.id) ? 'Восстановить' : 'Удалить'}</button>` : 'Откройте карточку на сайте — здесь появятся действия над ней';
 }
 function openDrawerUi(prev) {
@@ -494,7 +513,9 @@ function blankLike(v, key) {
   if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, blankLike(x, k)]));
   return v;
 }
-function blockAction(src, ctx, a) {
+function blockAction(src, ctx, a, n) {
+  n = n || 1;
+  if (Array.isArray(src) && src[0] === '@blocks') { for (let k = 0; k < n; k++) blocksOp(src[1] + (a === 'up' ? -k : a === 'down' ? k : 0), a); return; }
   const h = Array.isArray(src) ? resolvePath(src) : locate(src, ctx);
   if (!h) { status('Этот блок собирается автоматически — используйте «Все поля» карточки', true); return; }
   const x = clone(h.sec ? (OVR.sections[h.sec] || SECB[h.sec]) : cur(h.k, h.id));
@@ -507,8 +528,8 @@ function blockAction(src, ctx, a) {
   if (a === 'del') { if (!confirm('Удалить этот блок?')) return; cont.splice(idx, 1); }
   else if (a === 'dup') cont.splice(idx + 1, 0, clone(cont[idx]));
   else if (a === 'add') cont.splice(idx + 1, 0, blankLike(cont[idx]));
-  else if (a === 'up' && idx > 0) [cont[idx - 1], cont[idx]] = [cont[idx], cont[idx - 1]];
-  else if (a === 'down' && idx < cont.length - 1) [cont[idx + 1], cont[idx]] = [cont[idx], cont[idx + 1]];
+  else if (a === 'up') { for (let k = 0; k < n && idx > 0; k++, idx--) [cont[idx - 1], cont[idx]] = [cont[idx], cont[idx - 1]]; }
+  else if (a === 'down') { for (let k = 0; k < n && idx < cont.length - 1; k++, idx++) [cont[idx + 1], cont[idx]] = [cont[idx], cont[idx + 1]]; }
   else return;
   const W = $('#siteEdit').contentWindow;
   if (h.sec) { snap(); snapT = 0; OVR.sections[h.sec] = x; setDirty(); W.CW_API.setAt(h.sec.split('.'), clone(x)); }
@@ -616,6 +637,41 @@ function resyncSite() {
     if ($('#edp').classList.contains('show')) $('#edp').classList.remove('show');
   } catch (e) {}
 }
+// оформление выбранного объекта: цвет текста, фон, рамка, скругление, прозрачность, отступ, жирность
+function lookForm(n, W, box) {
+  let f = $('#edLook'); if (f) f.remove();
+  f = document.createElement('div'); f.id = 'edLook'; f.style.cssText = 'margin-top:10px;padding:10px;border:1px solid var(--gold2);border-radius:10px;background:var(--panel)';
+  const o0 = () => ({...W.CW_API.styleOf(n.key)});
+  const col = (v, d) => /^#[0-9a-f]{6}$/i.test(v || '') ? v : d;
+  f.innerHTML = `<h4>Оформление: ${esc(n.label)}</h4><div style="display:grid;grid-template-columns:150px 1fr 40px;gap:6px 8px;align-items:center">
+    <span>Цвет текста</span><input type="color" data-k="c" value="${col(o0().c, '#ffffff')}"><button class="btn" data-x="c">✕</button>
+    <span>Фон</span><input type="color" data-k="bg" value="${col(o0().bg, '#222222')}"><button class="btn" data-x="bg">✕</button>
+    <span>Рамка: цвет</span><input type="color" data-k="bd" value="${col(o0().bd, '#e3c27c')}"><button class="btn" data-x="bd">✕</button>
+    <span>Рамка: толщина, px</span><input type="number" min="0" max="20" data-k="bw" value="${o0().bw || ''}" placeholder="1" style="grid-column:2/4">
+    <span>Скругление, px</span><input type="number" min="0" max="200" data-k="r" value="${o0().r || ''}" style="grid-column:2/4">
+    <span>Прозрачность, %</span><input type="number" min="1" max="100" data-k="op" value="${o0().op || ''}" placeholder="100" style="grid-column:2/4">
+    <span>Внутренний отступ, px</span><input type="number" min="0" max="100" data-k="pd" value="${o0().pd || ''}" style="grid-column:2/4">
+    <span>Шрифт</span><select data-k="ff" style="grid-column:2/4"><option value="">как было</option>${[['Onest, sans-serif', 'Onest'], ['Manrope, sans-serif', 'Manrope'], ['"PT Serif", Georgia, serif', 'PT Serif (с засечками)'], ['Georgia, serif', 'Georgia'], ['Arial, sans-serif', 'Arial'], ['"Courier New", monospace', 'Моноширинный'], ['Impact, sans-serif', 'Impact']].map(([v, n]) => `<option value='${v}'${o0().ff === v ? ' selected' : ''}>${n}</option>`).join('')}</select>
+    <span>Межбуквенный, px</span><input type="number" step="0.5" min="-5" max="20" data-k="ls" value="${o0().ls || ''}" style="grid-column:2/4">
+    <span>Градиент: цвет 1</span><input type="color" data-k="g1" value="${col(o0().g1, '#6a4cff')}"><button class="btn" data-x="g1">✕</button>
+    <span>Градиент: цвет 2</span><input type="color" data-k="g2" value="${col(o0().g2, '#ff8fdc')}"><button class="btn" data-x="g2">✕</button>
+    <span>Градиент: угол, °</span><input type="number" min="0" max="360" data-k="ga" value="${o0().ga == null ? '' : o0().ga}" placeholder="135" style="grid-column:2/4">
+    <span>Скрыть на телефоне</span><input type="checkbox" data-k="hm"${o0().hm ? ' checked' : ''} style="grid-column:2/4;justify-self:start">
+    <span>Скрыть на компьютере</span><input type="checkbox" data-k="hd"${o0().hd ? ' checked' : ''} style="grid-column:2/4;justify-self:start">
+    <span>Появление при прокрутке</span><select data-k="an" style="grid-column:2/4"><option value="">нет</option>${[['fade', 'Проявление'], ['up', 'Снизу вверх'], ['down', 'Сверху вниз'], ['left', 'Справа налево'], ['right', 'Слева направо'], ['zoom', 'Увеличение']].map(([v, n]) => `<option value="${v}"${o0().an === v ? ' selected' : ''}>${n}</option>`).join('')}</select>
+    <span>Длительность, мс</span><input type="number" min="100" max="5000" step="100" data-k="ad" value="${o0().ad || ''}" placeholder="600" style="grid-column:2/4">
+    <span>Задержка, мс</span><input type="number" min="0" max="5000" step="100" data-k="al" value="${o0().al || ''}" placeholder="0" style="grid-column:2/4">
+    <span>Жирность шрифта</span><select data-k="fw" style="grid-column:2/4"><option value="">как было</option>${[300, 400, 500, 600, 700, 800].map(w => `<option value="${w}"${o0().fw == w ? ' selected' : ''}>${w}</option>`).join('')}</select></div>`;
+  const apply = () => {
+    const q = o0();
+    f.querySelectorAll('[data-k]').forEach(i => { const k = i.dataset.k, v = i.value; if (i.type === 'checkbox') { if (i.checked) q[k] = 1; else delete q[k]; } else if (i.type === 'color') { if (i.dataset.set) q[k] = v; } else if (v !== '' && v != null) q[k] = isNaN(+v) || k === 'ff' ? v : +v; else delete q[k]; });
+    objStore(n.key, q); W.CW_API.setObjStyle(n.key, cleanObj(q));
+  };
+  f.querySelectorAll('input[type=color]').forEach(i => i.oninput = () => { i.dataset.set = '1'; apply(); });
+  f.querySelectorAll('input:not([type=color]),select').forEach(i => i.oninput = i.onchange = apply);
+  f.querySelectorAll('[data-x]').forEach(b => b.onclick = () => { const q = o0(); delete q[b.dataset.x]; objStore(n.key, q); W.CW_API.setObjStyle(n.key, cleanObj(q)); });
+  box.append(f);
+}
 // ---------- дерево объектов блока в правой панели: блок и каждый предмет внутри по отдельности ----------
 let treeUp = 0;
 function appendTree(reset) {
@@ -644,39 +700,120 @@ function appendTree(reset) {
     r.innerHTML = `<span style="padding-left:${Math.min(n.depth, 5) * 10}px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px" title="${esc(n.label)}">${n.depth ? '└ ' : '■ '}${esc(n.label)}</span>` + FS.map(f => `<input type="number" data-f="${f}" style="padding:3px 4px;font-size:12px;width:54px" value="${f === 's' ? Math.round((o.s || 1) * 100) : (o[f] || '')}">`).join('');
     r.onmouseenter = () => { try { W.CW_API.flashObj(n.key); } catch (e) {} };
     r.oninput = () => {
-      const q = {}; for (const f of FS) { const v = +r.querySelector(`[data-f=${f}]`).value; if (f === 's') q.s = v ? v / 100 : 1; else if (v) q[f] = v; }
+      const q = {...W.CW_API.styleOf(n.key)}; for (const f of FS) { const v = +r.querySelector(`[data-f=${f}]`).value; if (f === 's') q.s = v ? v / 100 : 1; else if (v) q[f] = v; else delete q[f]; }
       objStore(n.key, q); W.CW_API.setObjStyle(n.key, cleanObj(q));
     };
+    r.querySelector('span').style.cursor = 'pointer';
+    r.querySelector('span').onclick = () => lookForm(n, W, box);
     rows.append(r);
   }
 }
 // ---------- режим объектов: положение и размер любого элемента ----------
 let objKeyCur = null;
-function objSelect(key, o, label) {
+function globalPanel() {
+  const P = $('#edp'), W = $('#siteEdit').contentWindow; P.classList.add('show'); OVR.styles = OVR.styles || {};
+  const g0 = () => ({...W.CW_API.getGlobal()});
+  const col = (v, d) => /^#[0-9a-f]{6}$/i.test(v || '') ? v : d;
+  const C = [['accent', 'Основной акцент (золото)', '#e3c27c'], ['hl', 'Цвет выделений и чисел', '#f6aa4c'], ['bg', 'Фон страницы', '#0b091a'], ['panel', 'Фон карточек', '#14112b'], ['panel2', 'Фон блоков', '#1b1738'], ['text', 'Цвет текста', '#efebff'], ['muted', 'Цвет второстепенного текста', '#a8a1c9']];
+  P.innerHTML = `<button class="btn x" id="edx">Готово</button><h4>Стиль всего сайта</h4><div class="where">Меняет сразу везде: шапку, вкладки, карточки, подписи. Крестик возвращает исходный цвет.</div>
+    <div style="display:grid;grid-template-columns:200px 1fr 36px;gap:6px 8px;align-items:center">${C.map(([k, n, d]) => `<span>${n}</span><input type="color" data-g="${k}" value="${col(g0()[k], d)}"><button class="btn" data-gx="${k}">✕</button>`).join('')}
+    <span>Шрифт сайта</span><select data-g="ff" style="grid-column:2/4"><option value="">как было</option>${[['Onest, sans-serif', 'Onest'], ['Manrope, sans-serif', 'Manrope'], ['"PT Serif", Georgia, serif', 'PT Serif'], ['Georgia, serif', 'Georgia'], ['Arial, sans-serif', 'Arial'], ['"Courier New", monospace', 'Моноширинный']].map(([v, n]) => `<option value='${v}'${g0().ff === v ? ' selected' : ''}>${n}</option>`).join('')}</select>
+    <span>Размер текста, px</span><input type="number" min="10" max="26" data-g="fs" value="${g0().fs || ''}" placeholder="15" style="grid-column:2/4">
+    <span>Скругление карточек, px</span><input type="number" min="0" max="40" data-g="rad" value="${g0().rad ?? ''}" placeholder="14" style="grid-column:2/4">
+    <span>Ширина содержимого, px</span><input type="number" min="600" max="2400" step="20" data-g="mw" value="${g0().mw || ''}" placeholder="авто" style="grid-column:2/4"></div>
+    <div style="margin-top:8px"><button class="btn" id="glR">Сбросить весь стиль сайта</button></div>`;
+  const send = () => { snap(); const q = g0(); P.querySelectorAll('[data-g]').forEach(i => { const k = i.dataset.g; if (i.type === 'color') { if (i.dataset.set) q[k] = i.value; } else if (i.value !== '') q[k] = isNaN(+i.value) || k === 'ff' ? i.value : +i.value; else delete q[k]; }); if (Object.keys(q).length) OVR.styles['g:site'] = q; else delete OVR.styles['g:site']; setDirty(); W.CW_API.setGlobal(q); };
+  P.querySelectorAll('input[type=color]').forEach(i => i.oninput = () => { i.dataset.set = '1'; send(); });
+  P.querySelectorAll('input:not([type=color]),select').forEach(i => i.oninput = i.onchange = send);
+  P.querySelectorAll('[data-gx]').forEach(b => b.onclick = () => { const q = g0(); delete q[b.dataset.gx]; snap(); if (Object.keys(q).length) OVR.styles['g:site'] = q; else delete OVR.styles['g:site']; setDirty(); W.CW_API.setGlobal(q); globalPanel(); });
+  $('#glR').onclick = () => { snap(); delete OVR.styles['g:site']; setDirty(); W.CW_API.setGlobal({}); globalPanel(); };
+  $('#edx').onclick = () => P.classList.remove('show');
+}
+let CLIP = '';
+function setClip(h) { CLIP = h || ''; status(CLIP ? 'Блок скопирован. Откройте другую страницу и нажмите Ctrl+V или кнопку «⎗» (вставить после выбранного), либо «📋 Вставить блок» над сайтом' : 'Нечего копировать: сначала выберите блок', true); const b = $('#sbPaste'); if (b) b.disabled = !CLIP; }
+function pasteClip(anchor, pos) { if (!CLIP) { status('Буфер пуст: сначала скопируйте блок (Ctrl+C)', true); return; } return addPageBlock('raw', anchor ? {anchor, pos: pos || 'after', html: CLIP} : {html: CLIP}); }
+function groupSet(id, v) { OVR.styles = OVR.styles || {}; snap(); if (v) OVR.styles[id] = v; else delete OVR.styles[id]; setDirty(); }
+let layKey = '';
+function layersPanel() {
+  const W = $('#siteEdit').contentWindow; let T = []; try { T = W.CW_API.layerTree(); } catch (e) {}
+  let box = $('#edLayers'); if (!box) { box = document.createElement('div'); box.id = 'edLayers'; box.style.cssText = 'position:fixed;left:10px;top:150px;width:290px;max-height:62vh;overflow:auto;z-index:65;background:var(--panel2);border:1px solid var(--gold2);border-radius:12px;padding:8px 10px;box-shadow:0 18px 50px rgba(0,0,0,.6)'; document.body.appendChild(box); }
+  box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="color:var(--gold)">Слои страницы</b><button class="btn" id="layX">✕</button></div><div class="where" style="margin:0 0 6px">Нажмите, чтобы выбрать. 👁 — спрятать на текущем экране.</div>';
+  $('#layX', box).onclick = () => { box.remove(); $('#sbLay').classList.remove('main'); };
+  for (const n of T) {
+    const r = document.createElement('div'); r.style.cssText = `display:flex;gap:4px;align-items:center;padding:2px 0 2px ${Math.min(n.depth, 6) * 12}px;font-size:12px;${n.hidden ? 'opacity:.45' : ''}`;
+    r.innerHTML = `<button class="btn" data-sel style="flex:1;text-align:left;padding:2px 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(n.label)}</button><button class="btn" data-eye title="Спрятать / показать на этом экране" style="padding:2px 6px">${n.hidden ? '🚫' : '👁'}</button>`;
+    r.querySelector('[data-sel]').onclick = () => { try { W.CW_API.selectKey(n.key); W.CW_API.flashObj(n.key); } catch (e) {} };
+    r.querySelector('[data-sel]').onmouseenter = () => { try { W.CW_API.flashObj(n.key); } catch (e) {} };
+    r.querySelector('[data-eye]').onclick = () => { snap(); W.CW_API.toggleHide(n.key); setTimeout(layersPanel, 200); };
+    box.append(r);
+  }
+  layKey = (W.location.hash || '') + (T.length);
+}
+function objMulti(n, grouped) {
+  const P = $('#edp'); P.classList.add('show'); const W = $('#siteEdit').contentWindow;
+  P.innerHTML = `<button class="btn x" id="edx">✕</button><h4>Выбрано объектов: ${n}</h4><div class="where">${grouped ? 'Это группа: все её объекты двигаются вместе. ' : ''}Ctrl+клик добавляет или убирает объект. Тяните один из них, двигаются все.</div>
+    <div style="display:flex;gap:6px;margin-bottom:8px"><button class="btn main" data-grp="1">⛓ Сгруппировать (Ctrl+G)</button><button class="btn" data-grp="0">Разгруппировать</button></div><div class="where" style="margin:0 0 4px">Выровнять:</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">${[['l', '⟸ по левому краю'], ['cx', '⇔ по центру'], ['r', '⟹ по правому краю'], ['t', '⤒ по верху'], ['cy', '⇕ по середине'], ['b', '⤓ по низу'], ['dh', '↔ раскидать по горизонтали'], ['dv', '↕ раскидать по вертикали']].map(([k, t]) => `<button class="btn" data-al="${k}">${t}</button>`).join('')}</div>`;
+  P.onclick = e => { const g = (e.target.closest('[data-grp]') || {}).dataset?.grp; if (g !== undefined) { const ok = W.CW_API.groupSel(g === '1'); status(g === '1' ? (ok ? 'Сгруппировано' : 'Выберите два и больше объектов') : 'Группа разобрана', true); return; } const k = (e.target.closest('[data-al]') || {}).dataset?.al; if (k) { snap(); W.CW_API.alignSel(k); } };
+  $('#edx').onclick = () => P.classList.remove('show');
+}
+function objSelect(key, o, label, info) {
+  $('#edp').onclick = null;
   objKeyCur = key;
-  const P = $('#edp'); P.classList.add('show');
-  OVR.styles = OVR.styles || {};
-  P.innerHTML = `<button class="btn x" id="edx">Готово</button><h4>Объект: ${esc(label || '')}</h4>
-    <div class="where">Перетаскивайте мышью на странице, тяните за зелёный угол (масштаб), стрелки на клавиатуре двигают на 1 px (с Shift — на 10). «↑ родитель» над рамкой выбирает весь блок вокруг. Здесь числа точно.</div>
-    <div style="display:grid;grid-template-columns:150px 1fr;gap:6px 8px;align-items:center">
-      <span>Сдвиг вправо X, px</span><input id="obX" type="number"><span>Сдвиг вниз Y, px</span><input id="obY" type="number">
-      <span>Масштаб, %</span><input id="obS" type="number" min="5" max="800"><span>Ширина, px</span><input id="obW" type="number" min="0" placeholder="как было">
-      <span>Высота, px</span><input id="obH" type="number" min="0" placeholder="как было"><span>Размер шрифта, px</span><input id="obF" type="number" min="0" placeholder="как было"></div>
-    <div style="margin-top:8px"><button class="btn" id="obR">Сбросить объект</button></div>`;
+  const P = $('#edp'); P.classList.add('show'); OVR.styles = OVR.styles || {};
+  const W = $('#siteEdit').contentWindow;
+  const nice = l => l.replace(/^div\.layer/, 'строка уровня').replace(/^span\.pill/, 'овал значка').replace(/^span\.pst/, 'звёзды').replace(/^картинка starrank.*/, 'звёзды (картинка)').replace(/^div\.rec/, 'рекомендуемая экипировка').replace(/^div\.note/, 'пояснение').replace(/^div\.shop-row/, 'строка магазина').replace(/^div\.skill/, 'навык');
+  P.innerHTML = `<button class="btn x" id="edx">✕</button><h4>Выбрано: ${esc(nice(label || 'элемент'))}</h4><div class="where" style="margin:-2px 0 6px;color:var(--gold)">Размер и положение сейчас для: <b>${BPN[bpSuffix()]}</b>. Переключатель экрана — над сайтом.</div>
+    <div class="where">Тяните мышью — двигаете. Зелёный угол — размер. Двойной щелчок — править содержимое. Стрелки — на 1 px.</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4px 6px;font-size:11px;color:var(--dim)">
+      <span>Влево/вправо</span><span>Вверх/вниз</span><span>Размер, %</span><span>Ширина</span><span>Высота</span><span>Шрифт</span>
+      <input id="obX" type="number" style="width:100%"><input id="obY" type="number" style="width:100%"><input id="obS" type="number" min="5" max="800" style="width:100%"><input id="obW" type="number" min="0" placeholder="авто" style="width:100%"><input id="obH" type="number" min="0" placeholder="авто" style="width:100%"><input id="obF" type="number" min="0" placeholder="авто" style="width:100%"></div>
+    ${info && (info.img || info.bgimg) ? `<div style="margin:8px 0;padding:8px;border:1px solid var(--gold2);border-radius:10px;background:var(--panel)"><div class="where" style="margin:0 0 6px;color:var(--gold)">Картинка этого объекта</div><div style="display:flex;gap:10px;align-items:center"><img src="${esc(info.src || info.bgimg)}" alt="" style="width:84px;height:84px;object-fit:contain;background:#0006;border-radius:8px"><div style="display:grid;gap:6px"><button class="btn main" id="obImgUp">⬆ Загрузить свою (PNG, WebP, JPG)</button><button class="btn" id="obImgRs"${(o || {}).im ? '' : ' disabled'}>Вернуть исходную</button></div></div></div>` : ''}
+    ${info && info.cols ? `<div class="where" style="margin:8px 0 2px;color:var(--gold)">Колонки этого блока:</div>
+    <div style="display:flex;gap:4px;flex-wrap:wrap" id="obCols">${[['1fr', '1 колонка'], ['1fr 1fr', '50 / 50'], ['1fr 2fr', '33 / 67'], ['2fr 1fr', '67 / 33'], ['1fr 3fr', '25 / 75'], ['3fr 1fr', '75 / 25'], ['1fr 1fr 1fr', '3 равные'], ['1fr 1fr 1fr 1fr', '4 равные']].map(([v, n]) => `<button class="btn" data-gc="${v}">${n}</button>`).join('')}<button class="btn" data-gc="">авто</button></div>
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:6px 8px;align-items:center;margin-top:6px"><span>Расстояние, px</span><input type="number" min="0" max="120" id="obGg" value="${(o || {}).gg ?? ''}" placeholder="14"><span>По вертикали</span><select id="obGv"><option value="">сверху</option><option value="center"${(o || {}).gv === 'center' ? ' selected' : ''}>по центру</option><option value="end"${(o || {}).gv === 'end' ? ' selected' : ''}>снизу</option><option value="stretch"${(o || {}).gv === 'stretch' ? ' selected' : ''}>на всю высоту</option></select></div>` : ''}
+    <div class="where" style="margin:8px 0 2px">Ширина блока и положение по горизонтали (высота подстраивается сама):</div>
+    <div style="display:flex;gap:4px;flex-wrap:wrap" id="obWp">${[[25, '25%'], [33, '33%'], [50, '50%'], [66, '66%'], [75, '75%'], [100, '100%']].map(([v, n]) => `<button class="btn" data-wp="${v}">${n}</button>`).join('')}<button class="btn" data-wp="0">авто</button><span style="width:10px"></span>${[['l', '⇤ слева'], ['c', '≡ по центру'], ['r', '⇥ справа']].map(([v, n]) => `<button class="btn" data-ja="${v}">${n}</button>`).join('')}</div>
+    <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="obLook">🎨 Цвет, фон, рамка…</button><button class="btn" id="obR">⟲ Сбросить</button><button class="btn" id="obUp">↑ Выбрать блок вокруг</button><button class="btn" id="obFc" title="Скопировать оформление (Ctrl+Alt+C)">🖌 Копировать вид</button><button class="btn" id="obFp" title="Вставить оформление (Ctrl+Alt+V)">🖌 Вставить вид</button></div>
+    <div id="obIn" style="margin-top:10px"></div>`;
   const fill = o => { $('#obX').value = o.x || 0; $('#obY').value = o.y || 0; $('#obS').value = Math.round((o.s || 1) * 100); $('#obW').value = o.w || ''; $('#obH').value = o.h || ''; $('#obF').value = o.fs || ''; };
   fill(o || {});
   const send = () => {
-    const o2 = {x: +$('#obX').value || 0, y: +$('#obY').value || 0, s: (+$('#obS').value || 100) / 100, w: +$('#obW').value || 0, h: +$('#obH').value || 0, fs: +$('#obF').value || 0};
+    const o2 = {...((W.DB.styles || {})[objKeyCur] || {}), x: +$('#obX').value || 0, y: +$('#obY').value || 0, s: (+$('#obS').value || 100) / 100, w: +$('#obW').value || 0, h: +$('#obH').value || 0, fs: +$('#obF').value || 0};
     objStore(objKeyCur, o2);
-    $('#siteEdit').contentWindow.CW_API.setObjStyle(objKeyCur, cleanObj(o2));
+    W.CW_API.setObjStyle(objKeyCur, cleanObj(o2));
   };
   ['obX', 'obY', 'obS', 'obW', 'obH', 'obF'].forEach(i => $('#' + i).oninput = send);
-  $('#obR').onclick = () => { fill({}); send(); };
+  $('#obWp').onclick = ev => { const b = ev.target.closest('button'); if (!b) return; const o3 = {...W.CW_API.styleOf(objKeyCur)}; if (b.dataset.wp !== undefined) { if (+b.dataset.wp) o3.wp = +b.dataset.wp; else delete o3.wp; } if (b.dataset.ja) o3.ja = b.dataset.ja; objStore(objKeyCur, o3); W.CW_API.setObjStyle(objKeyCur, cleanObj(o3)); };
+  const colSet = patch => { const o3 = {...W.CW_API.styleOf(objKeyCur), ...patch}; Object.keys(o3).forEach(k => (o3[k] === '' || o3[k] == null) && delete o3[k]); objStore(objKeyCur, o3); W.CW_API.setObjStyle(objKeyCur, cleanObj(o3)); };
+  if ($('#obCols')) { $('#obCols').onclick = ev => { const b = ev.target.closest('button'); if (b) colSet({gc: b.dataset.gc}); }; $('#obGg').oninput = ev => colSet({gg: ev.target.value === '' ? '' : +ev.target.value}); $('#obGv').onchange = ev => colSet({gv: ev.target.value}); }
+  if ($('#obImgUp')) {
+    $('#obImgUp').onclick = async () => { const f = await pickOne('image/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; colSet({im: nm}); $('#obImgRs').disabled = false; const pv = $('#obImgUp').closest('div[style*="gold2"]').querySelector('img'); if (pv) pv.src = nm; status('Картинка заменена. Сохраните, чтобы она осталась', true); setTimeout(() => { try { W.CW_API.refresh(); } catch (e) {} }, 300); };
+    $('#obImgRs').onclick = () => { colSet({im: ''}); $('#obImgRs').disabled = true; status('Вернулась исходная картинка', true); };
+  }
+  $('#obR').onclick = () => { fill({}); const o2 = {}; objStore(objKeyCur, o2); W.CW_API.setObjStyle(objKeyCur, o2); };
+  $('#obFc').onclick = () => status('Вид скопирован (' + W.CW_API.fmtCopy() + ' свойств). Выберите другой объект и нажмите «Вставить вид»', true);
+  $('#obFp').onclick = () => { snap(); status(W.CW_API.fmtPaste() ? 'Вид вставлен' : 'Сначала скопируйте вид', true); };
+  $('#obUp').onclick = () => { try { W.document.getElementById('edSelBar').querySelector('[data-a=up]').click(); } catch (e) {} };
+  $('#obLook').onclick = () => { const f = $('#edLook'); if (f) { f.remove(); return; } lookForm({key: objKeyCur, label: nice(label || '')}, W, P); };
   $('#edx').onclick = () => P.classList.remove('show');
+  // что внутри выбранного: нажатие выбирает этот элемент
+  let T = null; try { T = W.CW_API.objTree(0); } catch (e) {}
+  if (T && T.length > 1) {
+    const box = $('#obIn'); box.innerHTML = '<div class="where" style="margin:0 0 4px">Внутри — нажмите, чтобы выбрать отдельно:</div>';
+    const wrap = document.createElement('div'); wrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px'; box.append(wrap);
+    for (const n of T.slice(0, 40)) {
+      const b = document.createElement('button'); b.className = 'btn'; b.style.cssText = 'padding:2px 8px;font-size:12px'; b.textContent = nice(n.label).slice(0, 28);
+      b.onmouseenter = () => { try { W.CW_API.flashObj(n.key); } catch (e) {} }; b.onclick = () => { try { W.CW_API.selectKey(n.key); } catch (e) {} };
+      wrap.append(b);
+    }
+  }
 }
-function cleanObj(o) { const c = {}; ['x', 'y', 's', 'w', 'h', 'fs'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) c[f] = o[f]; }); return c; }
+const bpSuffix = () => { try { return $('#siteEdit').contentWindow.CW_API.bp(); } catch (e) { return ''; } };
+const BPN = {'': 'компьютера', '@t': 'планшета', '@m': 'телефона'};
+function cleanObj(o) { const c = {}; ['x', 'y', 's', 'w', 'h', 'fs', 'c', 'bg', 'r', 'op', 'bd', 'bw', 'pd', 'fw', 'ff', 'g1', 'g2', 'ga', 'ls', 'hm', 'hd', 'an', 'ad', 'al', 'wp', 'ja', 'gc', 'gg', 'gv', 'im'].forEach(f => { if (o[f] && !(f === 's' && o[f] === 1)) c[f] = o[f]; }); return c; }
 function objStore(key, o) {
-  OVR.styles = OVR.styles || {}; const c = cleanObj(o);
+  OVR.styles = OVR.styles || {}; const c = cleanObj(o); key = key + bpSuffix();
   snap(); if (Object.keys(c).length) OVR.styles[key] = c; else delete OVR.styles[key]; setDirty();
 }
 function objChange(key, o) {
@@ -717,6 +854,56 @@ function sizePanel(key, w0, h0) {
   $('#edx').onclick = () => P.classList.remove('show');
 }
 let edTimer = 0;
+// ---------- палитра блоков: текст, заголовок, картинка, кнопка, видео, разделитель, колонки ----------
+const ytId = u => { const m = String(u).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : null; };
+async function addPageBlock(kind0, opts) {
+  opts = opts || {};
+  const W = $('#siteEdit').contentWindow, wh = W.CW_API.where();
+  const where = (wh.modal ? 'modal:' + wh.modal : 'tab:' + wh.tab) + (opts.anchor ? ':at' : ':bottom');
+  let html = '';
+  if (kind0 === 'raw') html = opts.html || '';
+  if (kind0 === 'text') html = '<p>Новый текст. Нажмите дважды, чтобы изменить.</p>';
+  if (kind0 === 'h') html = '<h3>Новый заголовок</h3>';
+  if (kind0 === 'hr') html = '<hr>';
+  const LIB = {'lib_vt': '<div class="ucols"><div class="uvid" data-yt="dQw4w9WgXcQ"></div><div><h3>Заголовок</h3><p>Опишите видео: что в нём, почему стоит посмотреть. Нажмите дважды, чтобы изменить.</p></div></div>', 'lib_3': '<div class="ucols"><div class="ucard"><h4>Первое</h4><p>Короткое описание.</p></div><div class="ucard"><h4>Второе</h4><p>Короткое описание.</p></div><div class="ucard"><h4>Третье</h4><p>Короткое описание.</p></div></div>', 'lib_ban': '<div class="ubanner"><h2>Большой заголовок</h2><p>Короткий призыв или описание.</p><a class="ubtn" href="https://" target="_blank" rel="noopener">Кнопка</a></div>', 'lib_q': '<div class="uquote">Текст цитаты или важная заметка.<small>— автор</small></div>', 'lib_acc': '<details><summary>Вопрос или заголовок</summary><p>Скрытый текст, который виден после нажатия.</p></details>', 'lib_tab': '<table><tr><th>Колонка 1</th><th>Колонка 2</th><th>Колонка 3</th></tr><tr><td>…</td><td>…</td><td>…</td></tr><tr><td>…</td><td>…</td><td>…</td></tr></table>'};
+  if (LIB[kind0]) html = LIB[kind0];
+  if (kind0 === 'cols') html = '<div class="ucols"><div>Колонка 1</div><div>Колонка 2</div></div>';
+  if (kind0 === 'btn') { const u = prompt('Куда ведёт кнопка? Вставьте адрес (https://…)', 'https://'); if (!u) return; const tx = prompt('Надпись на кнопке', 'Подробнее') || 'Подробнее'; html = `<a class="ubtn" href="${esc(u)}" target="_blank" rel="noopener">${esc(tx)}</a>`; }
+  if (kind0 === 'videos') { const u = prompt('Адреса видео YouTube, по одному или через пробел/Enter'); if (!u) return; const ids = [...new Set((u.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)[\w-]{11}/g) || []).map(x => x.slice(-11)))]; if (!ids.length) return alert('Не нашёл ни одной ссылки YouTube'); html = '<div class="uvids">' + ids.map(id => `<div class="uvid" data-yt="${id}"></div>`).join('') + '</div>'; }
+  if (kind0 === 'video') { const u = prompt('Адрес видео (YouTube или файл .mp4) или оставьте пустым, чтобы выбрать файл'); if (u === null) return; if (u) html = ytId(u) ? `<div class="uvid" data-yt="${ytId(u)}"></div>` : `<video src="${esc(u)}" controls playsinline></video>`; else { const f = await pickOne('video/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; html = `<video src="${nm}" controls playsinline></video>`; } }
+  if (kind0 === 'img') { const f = await pickOne('image/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; html = `<img src="${nm}" alt="">`; }
+  if (!html) return;
+  snap(); OVR.blocks = OVR.blocks || [];
+  const nb = {id: 'b' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), where, title:'', html, off:false}; if (opts.anchor) { nb.anchor = opts.anchor; nb.pos = opts.pos || 'after'; }
+  OVR.blocks.push(nb); setDirty();
+  W.CW_API.setAt(['blocks'], clone(OVR.blocks)); W.CW_API.refresh();
+  status((opts.anchor ? 'Блок вставлен на выбранное место' : 'Блок добавлен внизу ' + (wh.modal ? 'этой карточки' : 'этой страницы')) + ': нажмите на него, чтобы выбрать, двигать или править', true);
+}
+const pickOne = accept => new Promise(res => { const i = document.createElement('input'); i.type = 'file'; i.accept = accept; i.onchange = () => res(i.files[0]); i.click(); });
+async function upMedia(f) {
+  const nm = 'blk_' + Date.now().toString(36) + '_' + f.name.normalize('NFKD').replace(/[^\w\-.]+/g, '_');
+  if (ONLINE) {  // онлайн: файл кладётся в репозиторий сайта (до ~5 МБ)
+    if (f.size > 5e6) { alert('Файл больше 5 МБ: уменьшите картинку.'); return null; }
+    const b64 = await new Promise(res => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.readAsDataURL(f); });
+    const rr = await gh('/contents/media/' + nm, {method: 'PUT', body: JSON.stringify({message: 'Картинка из онлайн-редактора', content: b64, branch: 'main'})});
+    if (!rr.ok) { alert('Не удалось загрузить файл на GitHub (' + rr.status + '). Проверьте права токена: Contents — Read and write.'); return null; }
+    return 'media/' + nm;
+  }
+  const r = await fetch(`/api/file?dir=media&name=${encodeURIComponent(nm)}`, {method:'POST', body:f});
+  if (!r.ok) { alert('Не удалось загрузить файл'); return null; }
+  return 'media/' + nm;
+}
+function blocksOp(i, a) {
+  const L = OVR.blocks || []; if (!L[i]) return;
+  snap();
+  if (a === 'del') { if (!confirm('Удалить этот блок?')) return; L.splice(i, 1); }
+  else if (a === 'dup') L.splice(i + 1, 0, clone(L[i]));
+  else if (a === 'add') L.splice(i + 1, 0, {...clone(L[i]), html: '<p>Новый текст</p>', title: ''});
+  else if (a === 'up' && i > 0) [L[i - 1], L[i]] = [L[i], L[i - 1]];
+  else if (a === 'down' && i < L.length - 1) [L[i + 1], L[i]] = [L[i], L[i + 1]];
+  else return;
+  setDirty(); const W = $('#siteEdit').contentWindow; W.CW_API.setAt(['blocks'], clone(L)); W.CW_API.refresh();
+}
 // ---------- правка по явному пути (имена, числа, списки, «Где взять», экипировка) ----------
 function resolvePath(path) {
   if (RKINDS.includes(path[0])) return {k:path[0], id:path[1], name:(cur(path[0], path[1]) || {}).name, path:path.slice(2)};
@@ -739,6 +926,16 @@ function writeAt(h, x, delay) {
   if (delay) { clearTimeout(edTimer); edTimer = setTimeout(apply, delay); } else apply();
 }
 function editPath(path, kindOf) {
+  if (path[0] === '@blocks') {
+    const P = $('#edp'), i = path[1], fld = path[2], b = (OVR.blocks || [])[i]; P.classList.add('show');
+    if (!b) return;
+    P.innerHTML = `<button class="btn x" id="edx">Готово</button><h4>Блок на странице</h4><div class="where">Содержимое блока. Картинки, кнопки, колонки: через кнопку «HTML» в панели.</div>`;
+    $('#edx').onclick = () => P.classList.remove('show');
+    const W = $('#siteEdit').contentWindow;
+    const set = v => { snap(); b[fld] = v; setDirty(); clearTimeout(edTimer); edTimer = setTimeout(() => { W.CW_API.setAt(['blocks'], clone(OVR.blocks)); W.CW_API.refresh(); }, 500); };
+    if (fld === 'html') P.append(rte(b.html || '', set, 6)); else { const inp0 = document.createElement('input'); inp0.value = b[fld] || ''; inp0.style.width = '100%'; inp0.oninput = () => set(inp0.value); P.append(inp0); }
+    return;
+  }
   const P = $('#edp'), h = resolvePath(path);
   P.classList.add('show');
   if (!h) { P.innerHTML = '<button class="btn x" id="edx">✕</button><h4>Не нашёл, где это хранится</h4>'; $('#edx').onclick = () => P.classList.remove('show'); return; }
@@ -793,7 +990,7 @@ function editText(src, ctx) {
     edTimer = setTimeout(() => { const sc = W.document.querySelector('.modal.show'), top = sc ? sc.scrollTop : 0, wy = W.scrollY; W.CW_API.setAt(spath, v); W.CW_API.refresh(); const m2 = W.document.querySelector('.modal.show'); if (m2) m2.scrollTop = top; W.scrollTo(0, wy); }, 500);
   }, 6));
 }
-window.CW_EDITOR = {editText: (...a) => { editText(...a); appendTree(); }, blockAction, editPath: (...a) => { editPath(...a); appendTree(); }, editStatic: async (...a) => { await editStatic(...a); appendTree(); }, sizePanel, objSelect, objChange, undo: () => undoAll(), redo: () => redoAll()};
+window.CW_EDITOR = {setClip, pasteClip, groupSet, note: t => status(t, true), objMulti, addAt: (k, anchor, pos) => addPageBlock(k, {anchor, pos}), editText, blockAction, blockNoSrc: () => status('Этот блок складывается из данных автоматически: его можно двигать и менять вид, а добавить, удалить или скопировать — через «Все поля» карточки', true), editPath, editStatic, sizePanel, objSelect, objChange, undo: () => undoAll(), redo: () => redoAll()};
 
 // анимации — отдельный редактор (spine/editor.html) во всю ширину
 function showSpine(on) {
@@ -871,11 +1068,14 @@ ${COLORS.map(([c]) => `.ed .c[data-c="${c}"]{color:#${c}}`).join('')}
 .ed a.ref{color:#9ad8ff;border-bottom:1px solid rgba(154,216,255,.35);text-decoration:none}
 .ed .prop{color:#d9ccff;font-weight:700}
 .tb select{padding:3px 6px;border-radius:7px;border:1px solid var(--line);background:var(--panel2);font-size:12px;font-weight:700;color:var(--text)}
-.tb .sep{width:1px;background:var(--line);margin:0 2px}`;
+.tb .sep{width:1px;background:var(--line);margin:0 2px}
+.tb button{min-width:28px}`;
   document.head.appendChild(st);
 }
 function cleanHtml(h) {
-  return h.replace(/<div><br><\/div>/g, '<br>').replace(/<div>/g, '<br>').replace(/<\/div>/g, '').replace(/ style="[^"]*"/g, '')
+  // стиль оставляем только у наших span.fx (размер, шрифт, цвет…), остальной мусор браузера убираем
+  return h.replace(/<div><br><\/div>/g, '<br>').replace(/<div>/g, '<br>').replace(/<\/div>/g, '')
+    .replace(/<([a-z0-9]+)\b([^>]*)>/gi, (m, tg, at) => /class="fx"/.test(at) ? m : m.replace(/ style="[^"]*"/g, ''))
     .replace(/&nbsp;/g, ' ').replace(/^<br>/, '').replace(/<span>([^<]*)<\/span>/g, '$1');
 }
 function rte(html, onchange, rows = 4) {
@@ -883,6 +1083,13 @@ function rte(html, onchange, rows = 4) {
   const w = document.createElement('div'); w.className = 'rte';
   const props = propList();
   w.innerHTML = `<div class="tb">
+      <select data-a="fxsize" title="Размер шрифта выделенного (если ничего не выделено — всего текста)"><option value="">Размер…</option>${[12, 14, 16, 18, 20, 24, 28, 32, 40, 48, 64].map(n => `<option value="${n}">${n}</option>`).join('')}</select>
+      <select data-a="fxfont" title="Шрифт"><option value="">Шрифт…</option>${[['Onest, sans-serif', 'Onest'], ['Manrope, sans-serif', 'Manrope'], ['"PT Serif", Georgia, serif', 'PT Serif'], ['Georgia, serif', 'Georgia'], ['Arial, sans-serif', 'Arial'], ['"Courier New", monospace', 'Моноширинный'], ['Impact, sans-serif', 'Impact']].map(([v, n]) => `<option value='${v}'>${n}</option>`).join('')}</select>
+      <select data-a="fxhead" title="Сделать заголовком"><option value="">Заголовок…</option><option value="2.2">Заголовок 1</option><option value="1.6">Заголовок 2</option><option value="1.25">Заголовок 3</option><option value="1">Обычный текст</option></select>
+      <button data-a="fxb" title="Жирный"><b>Ж</b></button><button data-a="fxi" title="Курсив"><i>К</i></button>
+      <button data-a="fxl" title="По левому краю">⇤</button><button data-a="fxc" title="По центру">≡</button><button data-a="fxr" title="По правому краю">⇥</button>
+      <label title="Любой цвет текста" style="display:inline-flex;align-items:center;gap:3px;font-size:11px">Цвет <input type="color" data-a="fxcolor" value="#ffffff" style="width:26px;height:22px;padding:0;border:0;background:none"></label>
+      <span class="sep"></span>
       <button data-a="v" title="Выделенное — число (оранжевое, жирное)">123 Число</button>
       <select data-a="color" title="Цвет выделенного"><option value="">Цвет…</option>${COLORS.map(([c, n]) => `<option value="${c}" style="color:#${c}">${n}</option>`).join('')}</select>
       <button data-a="u" title="Термин с подчёркиванием, как ключевые слова игры">Термин</button>
@@ -927,8 +1134,28 @@ function rte(html, onchange, rows = 4) {
     fire();
   };
   w.querySelector('.tb').addEventListener('mousedown', e => { if (e.target.tagName === 'BUTTON') e.preventDefault(); });
+  // форматирование: оборачиваем выделенное (или весь текст) в span.fx со стилем
+  const fx = (prop, val, block) => {
+    ed.focus(); let r = range();
+    if (!r || r.collapsed || !ed.contains(r.commonAncestorContainer)) { const rr = document.createRange(); rr.selectNodeContents(ed); const s0 = getSelection(); s0.removeAllRanges(); s0.addRange(rr); r = rr; }
+    const el = document.createElement('span'); el.className = 'fx';
+    el.appendChild(r.extractContents());
+    // если выделен ровно один готовый span.fx — меняем его, а не вкладываем ещё один
+    el.querySelectorAll('.fx').forEach(n => { n.style[prop] = ''; if (block) n.style.display = ''; if (!n.getAttribute('style')) n.replaceWith(...n.childNodes); });
+    const tgt = el.firstChild && el.childNodes.length === 1 && el.firstChild.nodeType === 1 && el.firstChild.classList.contains('fx') ? el.firstChild : el;
+    tgt.style[prop] = val; if (block) tgt.style.display = 'block';
+    r.insertNode(tgt);
+    const s1 = getSelection(); s1.removeAllRanges(); const nr = document.createRange(); nr.selectNode(tgt); s1.addRange(nr); saved = nr.cloneRange();
+    fire();
+  };
+  w.querySelector('.tb').addEventListener('input', e => { if (e.target.dataset.a === 'fxcolor') fx('color', e.target.value); });
   w.querySelector('.tb').onclick = e => {
     const a = (e.target.closest('button') || {}).dataset?.a; if (!a) return;
+    if (a === 'fxb') return fx('fontWeight', '800');
+    if (a === 'fxi') return fx('fontStyle', 'italic');
+    if (a === 'fxl') return fx('textAlign', 'left', true);
+    if (a === 'fxc') return fx('textAlign', 'center', true);
+    if (a === 'fxr') return fx('textAlign', 'right', true);
     if (a === 'html') { const on = ta.hidden; if (on) ta.value = cleanHtml(ed.innerHTML); ta.hidden = !on; ed.hidden = on; e.target.classList.toggle('on', on); return; }
     if (a === 'v') wrapEl(Object.assign(document.createElement('b'), {className:'v'}));
     if (a === 'u') wrapEl(document.createElement('u'));
@@ -954,6 +1181,10 @@ function rte(html, onchange, rows = 4) {
   };
   w.querySelector('.tb').onchange = e => {
     const a = e.target.dataset.a, v = e.target.value; if (!v) return;
+    if (a === 'fxsize') { fx('fontSize', v + 'px'); e.target.value = ''; return; }
+    if (a === 'fxfont') { fx('fontFamily', v); e.target.value = ''; return; }
+    if (a === 'fxhead') { fx('fontSize', v === '1' ? '' : v + 'em', true); const el = ed.querySelector('.fx:last-of-type'); e.target.value = ''; if (v !== '1') { const s2 = getSelection(); if (s2.anchorNode) { const fxEl = (s2.anchorNode.nodeType === 1 ? s2.anchorNode : s2.anchorNode.parentElement).closest('.fx'); if (fxEl) { fxEl.style.fontWeight = '800'; fire(); } } } return; }
+    if (a === 'fxcolor') return;
     if (a === 'color') { const el = document.createElement('span'); el.className = 'c'; el.dataset.c = v; wrapEl(el); }
     if (a === 'pi') { const el = document.createElement('span'); el.className = 'pi'; el.dataset.p = v; const r = range(); if (r) { r.collapse(false); r.insertNode(el); r.setStartAfter(el); if (!ed.querySelector('.ai0')) ed.insertBefore(Object.assign(document.createElement('span'), {className: 'ai0'}), ed.firstChild); fire(); } }
     if (a === 'prop') { const el = document.createElement('span'); el.className = 'prop'; el.dataset.p = v; el.textContent = props[v]; const r = range(); if (r) { r.collapse(false); r.insertNode(el); r.setStartAfter(el); fire(); } }
