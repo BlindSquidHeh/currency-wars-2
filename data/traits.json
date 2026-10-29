@@ -400,7 +400,7 @@
     "q": "Silver",
     "parts": [
      {
-      "html": "<b class=\"v\">20%</b> к шансу счастливого удара и <b class=\"v\">12%</b> к усилению скорости.<br>Аха 2★, 2 ячейки экипировки, появляются Предметы Ахи."
+      "html": "<span class=\"ai0\"></span><b class=\"v\">20%</b> к <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шансу счастливого удара и <b class=\"v\">12%</b> к <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усилению скорости.<br>Аха 2★, 2 ячейки экипировки, появляются Предметы Ахи."
      }
     ]
    },
@@ -409,7 +409,7 @@
     "q": "Gold",
     "parts": [
      {
-      "html": "<b class=\"v\">30%</b> к шансу счастливого удара и <b class=\"v\">18%</b> к усилению скорости.<br>Аха 3★, 3 ячейки экипировки и ещё более чудесные Предметы Ахи."
+      "html": "<span class=\"ai0\"></span><b class=\"v\">30%</b> к <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шансу счастливого удара и <b class=\"v\">18%</b> к <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усилению скорости.<br>Аха 3★, 3 ячейки экипировки и ещё более чудесные Предметы Ахи."
      }
     ]
    },
@@ -418,7 +418,7 @@
     "q": "Multicolor",
     "parts": [
      {
-      "html": "<b class=\"v\">40%</b> к шансу счастливого удара и <b class=\"v\">24%</b> к усилению скорости.<br>Аха 4★ и правда может носить 4 предмета экипировки?! Высокий шанс выпадения призматической кристальной руды."
+      "html": "<span class=\"ai0\"></span><b class=\"v\">40%</b> к <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шансу счастливого удара и <b class=\"v\">24%</b> к <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усилению скорости.<br>Аха 4★ и правда может носить 4 предмета экипировки?! Высокий шанс выпадения призматической кристальной руды."
      }
     ]
    }
@@ -549,7 +549,7 @@
     "q": "Silver",
     "parts": [
      {
-      "html": "Усиление исцеления повышается на <b class=\"v\">40%</b>."
+      "html": "<span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span><span class=\"ai0\"></span>Усиление исцеления повышается на <b class=\"v\">40%</b>."
      }
     ]
    },
@@ -558,7 +558,7 @@
     "q": "Gold",
     "parts": [
      {
-      "html": "<b class=\"v\">60%</b> к усилению исцеления, команда союзников получает <b class=\"v\">60%</b> <span class=\"prop\" data-p=\"ExtraAllDamageTypeAddedRatio1\">Усиление урона</span>."
+      "html": "<span class=\"ai0\"></span><b class=\"v\">60%</b> к <span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span>усилению исцеления, команда союзников получает <b class=\"v\">60%</b> <span class=\"prop\" data-p=\"ExtraAllDamageTypeAddedRatio1\">Усиление урона</span>."
      }
     ]
    }
@@ -593,7 +593,7 @@
     "q": "Silver",
     "parts": [
      {
-      "html": "<b class=\"v\">40%</b> к усилению щита."
+      "html": "<span class=\"ai0\"></span><b class=\"v\">40%</b> к <span class=\"pi\" data-p=\"ExtraShieldAddedRatio\"></span>усилению щита."
      },
      {
       "html": "<span class=\"c\" data-c=\"f29e38\"><b class=\"v\">90%</b></span> от макс. НР + <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">160%</b></span> от защиты."
@@ -936,7 +936,7 @@
     "cp": [
      110502
     ],
-    "html": "Наташа: понижение получаемого урона повышается на <b class=\"v\">10%</b>."
+    "html": "<span class=\"ai0\"></span>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">10%</b>."
    },
    {
     "k": "4",

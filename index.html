@@ -318,7 +318,7 @@ table.stats td.n{font-weight:800;font-variant-numeric:tabular-nums}
 .layer{--lq:#b07a4a;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;margin-bottom:10px;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,color-mix(in srgb,var(--lq) 14%,transparent),rgba(255,255,255,.02));border:1px solid color-mix(in srgb,var(--lq) 30%,transparent)}
 .layer.lq-Silver{--lq:#b9c6dc}.layer.lq-Gold{--lq:#e7b45a}.layer.lq-Multicolor{--lq:#b69bff}
 .layer .dia{--s:46px}
-.fx h1,.fx h2,.fx h3,.fx h4{font-size:inherit;color:inherit;font-family:inherit;text-align:inherit;font-weight:inherit}.anim{opacity:0;transition:opacity var(--ad,.6s) ease var(--al,0s),translate var(--ad,.6s) ease var(--al,0s),scale var(--ad,.6s) ease var(--al,0s)}.an-up{translate:0 28px}.an-down{translate:0 -28px}.an-left{translate:28px 0}.an-right{translate:-28px 0}.an-zoom{scale:.88}.anim.an-in{opacity:1;translate:none;scale:none}
+.fx h1,.fx h2,.fx h3,.fx h4{font-size:inherit;color:inherit;font-family:inherit;text-align:inherit;font-weight:inherit}.blk-an{opacity:0;transition:opacity var(--ad,.6s) ease var(--al,0s),translate var(--ad,.6s) ease var(--al,0s),scale var(--ad,.6s) ease var(--al,0s)}.an-up{translate:0 28px}.an-down{translate:0 -28px}.an-left{translate:28px 0}.an-right{translate:-28px 0}.an-zoom{scale:.88}.blk-an.an-in{opacity:1;translate:none;scale:none}
 .ubanner{padding:34px 26px;border-radius:16px;text-align:center;background:linear-gradient(135deg,#3b2a86,#a64fd2);color:#fff}.ubanner h2{margin:0 0 8px;font-size:30px}.ubanner p{margin:0 0 14px;opacity:.92}
 .uquote{padding:16px 20px;border-left:4px solid var(--gold);background:var(--panel);border-radius:0 12px 12px 0;font-size:17px;font-style:italic}.uquote small{display:block;margin-top:8px;font-style:normal;color:var(--muted)}
 .ublock details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:6px 0}.ublock summary{cursor:pointer;font-weight:700}.ublock table{width:100%;border-collapse:collapse}.ublock td,.ublock th{border:1px solid var(--line);padding:8px 10px;text-align:left}.ublock th{background:var(--panel2)}
@@ -1068,8 +1068,8 @@ function objApply(el, o) {
 const animIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('an-in'); animIO.unobserve(e.target); } }), {threshold: .12}) : null;
 function objAnim(el, o) {
   el.classList.remove('an-fade', 'an-up', 'an-down', 'an-left', 'an-right', 'an-zoom');
-  if (!o || !o.an || EDIT || !animIO) { el.classList.remove('anim'); return; }
-  el.classList.add('anim', 'an-' + o.an); el.style.setProperty('--ad', (o.ad || 600) + 'ms'); el.style.setProperty('--al', (o.al || 0) + 'ms');
+  if (!o || !o.an || EDIT || !animIO) { el.classList.remove('blk-an'); return; }
+  el.classList.add('blk-an', 'an-' + o.an); el.style.setProperty('--ad', (o.ad || 600) + 'ms'); el.style.setProperty('--al', (o.al || 0) + 'ms');
   if (!el.classList.contains('an-in') && !el.dataset.anObs) { el.dataset.anObs = '1'; animIO.observe(el); }
 }
 window.addEventListener('resize', () => { clearTimeout(window.__rz); window.__rz = setTimeout(() => { try { applyObjStyles(); } catch (e) {} }, 150); });
@@ -2590,7 +2590,7 @@ window.CW_API = {
     el = el.closest(BLKSEL + ',.ublock') || el;
     const c = el.cloneNode(true);
     c.querySelectorAll('.ed-t').forEach(n => { n.replaceWith(...n.childNodes); });
-    [c, ...c.querySelectorAll('*')].forEach(n => { [...n.attributes].forEach(a => { if (/^(data-(?!yt)|id$|on)/.test(a.name) || a.name === 'tabindex') n.removeAttribute(a.name); }); n.classList.remove('ed-hov', 'anim', 'an-in'); if (!n.getAttribute('class')) n.removeAttribute('class'); });
+    [c, ...c.querySelectorAll('*')].forEach(n => { [...n.attributes].forEach(a => { if (/^(data-(?!yt)|id$|on)/.test(a.name) || a.name === 'tabindex') n.removeAttribute(a.name); }); n.classList.remove('ed-hov', 'blk-an', 'an-in'); if (!n.getAttribute('class')) n.removeAttribute('class'); });
     c.querySelectorAll('script,style').forEach(n => n.remove());
     return c.outerHTML;
   },
