@@ -1037,9 +1037,11 @@ function objApply(el, o) {
   if (o && (t || o.w || o.h) && getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
   if (o && (o.w || o.h)) el.style.maxWidth = 'none';
   // оформление: цвет текста, фон, рамка, скругление, прозрачность, отступ, жирность
-  el.style.color = o && o.c ? o.c : ''; el.style.background = o && o.bg ? o.bg : '';
-  el.style.borderRadius = o && o.r ? o.r + 'px' : ''; el.style.opacity = o && o.op ? o.op / 100 : '';
-  el.style.border = o && o.bd ? `${o.bw || 1}px solid ${o.bd}` : ''; el.style.padding = o && o.pd ? o.pd + 'px' : ''; el.style.fontWeight = o && o.fw ? o.fw : '';
+  // «без правки» = то, что элементу задал сам сайт (например, свой овал связи стоит фоном в style), а не пустое значение
+  const b0 = el._o0 || (el._o0 = {color: el.style.color, background: el.style.background, borderRadius: el.style.borderRadius, opacity: el.style.opacity, border: el.style.border, padding: el.style.padding, fontWeight: el.style.fontWeight});
+  el.style.color = o && o.c ? o.c : b0.color; el.style.background = o && o.bg ? o.bg : b0.background;
+  el.style.borderRadius = o && o.r ? o.r + 'px' : b0.borderRadius; el.style.opacity = o && o.op ? o.op / 100 : b0.opacity;
+  el.style.border = o && o.bd ? `${o.bw || 1}px solid ${o.bd}` : b0.border; el.style.padding = o && o.pd ? o.pd + 'px' : b0.padding; el.style.fontWeight = o && o.fw ? o.fw : b0.fontWeight;
   if (o && (o.bg || o.bd || o.pd) && getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
   // шрифт, градиент, межбуквенный интервал; скрытие на телефоне / на компьютере
   // своя картинка: у <img> подменяется src, у остальных элементов ставится фоном
@@ -1135,7 +1137,7 @@ if (EDIT) {
   window.__objApi = {
     pick: el => pick(el),
     styleSave: (key, o) => commit(o, key),
-    sel: () => selEl, selKey: () => selKey, extras: () => selEls, commitKey: (o, k) => commit(o, k),
+    place: () => placeSel(), sel: () => selEl, selKey: () => selKey, extras: () => selEls, commitKey: (o, k) => commit(o, k),
     set: on => { OBJ = on; document.body.classList.toggle('obj-mode', on); if (!on) { selEl = null; placeSel(); } },
     style: (key, o) => { DB.styles = DB.styles || {}; const wk = key + bpNow(); if (o && Object.keys(o).length) DB.styles[wk] = o; else delete DB.styles[wk]; objFind(key).forEach(e => objApply(e, styleOf(STYLES(), key))); placeSel(); },
   };
@@ -1908,7 +1910,9 @@ function wishBlock() {
 // овальный значок уровня связи: номер и звёзды из файлов игры (Торговая гильдия Астрополиса считает 3★ персонажей)
 function pillBadge(l, t) {
   const n = l.stars == null ? 3 : l.stars, whole = (t && t.starImg && img(t.starImg)) || (n >= 1 && n <= 4 && img('ux/starrank' + n)), st = img('ux/star');
-  const own = l.pillImg && img(l.pillImg) ? ` style="background:url(${img(l.pillImg)}) center/100% 100% no-repeat;border:0;box-shadow:none"` : '';
+  // свой овал: у этого уровня, иначе общий у связи, иначе овал любого другого уровня (одна загруженная картинка работает для всей связи)
+  const pk = l.pillImg || (t && (t.pillImg || ((t.layers || []).find(x => x.pillImg) || {}).pillImg)) || '';
+  const own = pk && img(pk) ? ` style="background:url(${img(pk)}) center/100% 100% no-repeat;border:0;box-shadow:none"` : '';
   return `<span class="pill pq-${l.q || 'None'}"${own}><b>${esc(l.n)}</b><span class="pst">${whole ? `<img class="whole" src="${whole}" alt="">` : Array.from({length: n}, () => st ? `<img src="${st}" alt="">` : '✦').join('')}</span></span>`;
 }
 function traitDetail(t) {
@@ -2595,6 +2599,34 @@ window.CW_API = {
   toggleHide: key => { const s = {...styleOf(STYLES(), key)}, f = bpNow() === '@m' ? 'hm' : 'hd'; if (s[f]) delete s[f]; else s[f] = 1; window.__objApi.styleSave(key, s); },
   fmtCopy: () => { const s = styleOf(STYLES(), window.__objApi.selKey() || ''); const keep = {}; ['c', 'bg', 'r', 'op', 'bd', 'bw', 'pd', 'fw', 'ff', 'g1', 'g2', 'ga', 'ls', 'fs', 'an', 'ad', 'al'].forEach(f => { if (s[f] != null) keep[f] = s[f]; }); window.__fmt = keep; return Object.keys(keep).length; },
   fmtPaste: () => { if (!window.__fmt) return 0; const items = [{key: window.__objApi.selKey()}, ...window.__objApi.extras()].filter(i => i.key); items.forEach(i => window.__objApi.styleSave(i.key, {...styleOf(STYLES(), i.key), ...window.__fmt})); return items.length; },
+  // перенести вид выбранного объекта (и всего, что внутри него) на все такие же объекты рядом: например, овал и текст каждой строки уровней связи
+  applySimilar: () => {
+    const el = window.__objApi.sel(), k = window.__objApi.selKey(); if (!el || !k) return -1;
+    const cut = key => { const i = key.lastIndexOf(OSEP); return [key.slice(0, i + 1), key.slice(i + 1)]; };
+    const [pre, P] = cut(k);
+    const cls = [...el.classList].filter(c => !/^(ed-|blk-an$|an-|anim$)/.test(c));
+    const sel = el.tagName.toLowerCase() + (cls[0] ? '.' + CSS.escape(cls[0]) : '');  // по главному классу: pill, а не pill + pq-Silver
+    const S = STYLES(), under = (x, pr, base) => x.startsWith(pr) && (base === '' || (p => p === base || p.startsWith(base + '.'))(x.slice(pr.length).replace(/@[mt]$/, '')));
+    const src = Object.keys(S).filter(x => under(x, pre, P));
+    if (!src.length) return 0;
+    // такие же объекты ищем на всей открытой странице или карточке (у каждого уровня связи свой корень адреса)
+    const box = document.querySelector('.modal.show #mcontent') || document.querySelector('#view');
+    const put = {}; let n = 0;
+    DB.styles = DB.styles || {};
+    // у «корня» (editable-строки) такие же — строки с тем же устройством адреса: числа в нём заменяем, остальное должно совпасть
+    const pat = key => key.replace(/\d+/g, '#');
+    const cand = P === '' ? [...box.querySelectorAll('[data-ky]')].filter(e => pat(e.dataset.ky) === pat(el.dataset.ky || '')) : [...box.querySelectorAll(sel)];
+    cand.filter(e => e !== el).forEach(e => {
+      const q = objKey(e); if (!q) return;
+      const [pre2, Q] = cut(q.key); if (pre2 === pre && Q === P) return;
+      Object.keys(S).filter(x => under(x, pre2, Q)).forEach(x => { put[x] = null; delete DB.styles[x]; });
+      src.forEach(x => { const t = pre2 + Q + x.slice(pre.length + P.length); put[t] = JSON.parse(JSON.stringify(S[x])); DB.styles[t] = put[t]; });
+      n++;
+    });
+    try { parent.CW_EDITOR.styleBulk(put); } catch (err) {}
+    applyObjStyles(); window.__objApi.place();
+    return n;
+  },
   groupSel: on => {
     const items = [{key: window.__objApi.selKey()}, ...window.__objApi.extras()].filter(i => i.key);
     if (on && items.length < 2) return false;

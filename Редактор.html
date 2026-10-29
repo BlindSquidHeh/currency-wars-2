@@ -773,7 +773,7 @@ function objSelect(key, o, label, info) {
     <div style="display:grid;grid-template-columns:150px 1fr;gap:6px 8px;align-items:center;margin-top:6px"><span>Расстояние, px</span><input type="number" min="0" max="120" id="obGg" value="${(o || {}).gg ?? ''}" placeholder="14"><span>По вертикали</span><select id="obGv"><option value="">сверху</option><option value="center"${(o || {}).gv === 'center' ? ' selected' : ''}>по центру</option><option value="end"${(o || {}).gv === 'end' ? ' selected' : ''}>снизу</option><option value="stretch"${(o || {}).gv === 'stretch' ? ' selected' : ''}>на всю высоту</option></select></div>` : ''}
     <div class="where" style="margin:8px 0 2px">Ширина блока и положение по горизонтали (высота подстраивается сама):</div>
     <div style="display:flex;gap:4px;flex-wrap:wrap" id="obWp">${[[25, '25%'], [33, '33%'], [50, '50%'], [66, '66%'], [75, '75%'], [100, '100%']].map(([v, n]) => `<button class="btn" data-wp="${v}">${n}</button>`).join('')}<button class="btn" data-wp="0">авто</button><span style="width:10px"></span>${[['l', '⇤ слева'], ['c', '≡ по центру'], ['r', '⇥ справа']].map(([v, n]) => `<button class="btn" data-ja="${v}">${n}</button>`).join('')}</div>
-    <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="obLook">🎨 Цвет, фон, рамка…</button><button class="btn" id="obR">⟲ Сбросить</button><button class="btn" id="obUp">↑ Выбрать блок вокруг</button><button class="btn" id="obFc" title="Скопировать оформление (Ctrl+Alt+C)">🖌 Копировать вид</button><button class="btn" id="obFp" title="Вставить оформление (Ctrl+Alt+V)">🖌 Вставить вид</button></div>
+    <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="obLook">🎨 Цвет, фон, рамка…</button><button class="btn" id="obR">⟲ Сбросить</button><button class="btn" id="obUp">↑ Выбрать блок вокруг</button><button class="btn main" id="obAll" title="Перенести размер, положение и оформление этого объекта (и всего внутри него) на все такие же объекты рядом, например на все уровни связи">⇉ Применить ко всем таким же</button><button class="btn" id="obFc" title="Скопировать оформление (Ctrl+Alt+C)">🖌 Копировать вид</button><button class="btn" id="obFp" title="Вставить оформление (Ctrl+Alt+V)">🖌 Вставить вид</button></div>
     <div id="obIn" style="margin-top:10px"></div>`;
   const fill = o => { $('#obX').value = o.x || 0; $('#obY').value = o.y || 0; $('#obS').value = Math.round((o.s || 1) * 100); $('#obW').value = o.w || ''; $('#obH').value = o.h || ''; $('#obF').value = o.fs || ''; };
   fill(o || {});
@@ -792,6 +792,7 @@ function objSelect(key, o, label, info) {
   }
   $('#obR').onclick = () => { fill({}); const o2 = {}; objStore(objKeyCur, o2); W.CW_API.setObjStyle(objKeyCur, o2); };
   $('#obFc').onclick = () => status('Вид скопирован (' + W.CW_API.fmtCopy() + ' свойств). Выберите другой объект и нажмите «Вставить вид»', true);
+  $('#obAll').onclick = () => { const n = W.CW_API.applySimilar(); status(n > 0 ? 'Вид перенесён на ' + n + ' таких же (вместе с вложенным). Не забудьте «Сохранить»' : n === 0 ? 'У выбранного объекта нет правок, нечего переносить: сначала настройте его' : n === -2 ? 'Для этого объекта перенос не работает: выберите внутренний элемент, а не всю страницу' : 'Объект не выбран', true); };
   $('#obFp').onclick = () => { snap(); status(W.CW_API.fmtPaste() ? 'Вид вставлен' : 'Сначала скопируйте вид', true); };
   $('#obUp').onclick = () => { try { W.document.getElementById('edSelBar').querySelector('[data-a=up]').click(); } catch (e) {} };
   $('#obLook').onclick = () => { const f = $('#edLook'); if (f) { f.remove(); return; } lookForm({key: objKeyCur, label: nice(label || '')}, W, P); };
@@ -815,6 +816,7 @@ function objStore(key, o) {
   OVR.styles = OVR.styles || {}; const c = cleanObj(o); key = key + bpSuffix();
   snap(); if (Object.keys(c).length) OVR.styles[key] = c; else delete OVR.styles[key]; setDirty();
 }
+function styleBulk(map) { OVR.styles = OVR.styles || {}; snap(); for (const [k, v] of Object.entries(map)) { if (v) OVR.styles[k] = v; else delete OVR.styles[k]; } setDirty(); }
 function objChange(key, o) {
   objStore(key, o);
   if ($('#obX') && key === objKeyCur) { $('#obX').value = o.x || 0; $('#obY').value = o.y || 0; $('#obS').value = Math.round((o.s || 1) * 100); }
@@ -991,7 +993,7 @@ function editText(src, ctx) {
     edTimer = setTimeout(() => { const sc = W.document.querySelector('.modal.show'), top = sc ? sc.scrollTop : 0, wy = W.scrollY; W.CW_API.setAt(spath, v); W.CW_API.refresh(); const m2 = W.document.querySelector('.modal.show'); if (m2) m2.scrollTop = top; W.scrollTo(0, wy); }, 500);
   }, 6));
 }
-window.CW_EDITOR = {setClip, pasteClip, groupSet, note: t => status(t, true), objMulti, addAt: (k, anchor, pos) => addPageBlock(k, {anchor, pos}), editText, blockAction, blockNoSrc: () => status('Этот блок складывается из данных автоматически: его можно двигать и менять вид, а добавить, удалить или скопировать — через «Все поля» карточки', true), editPath, editStatic, sizePanel, objSelect, objChange, undo: () => undoAll(), redo: () => redoAll()};
+window.CW_EDITOR = {styleBulk, setClip, pasteClip, groupSet, note: t => status(t, true), objMulti, addAt: (k, anchor, pos) => addPageBlock(k, {anchor, pos}), editText, blockAction, blockNoSrc: () => status('Этот блок складывается из данных автоматически: его можно двигать и менять вид, а добавить, удалить или скопировать — через «Все поля» карточки', true), editPath, editStatic, sizePanel, objSelect, objChange, undo: () => undoAll(), redo: () => redoAll()};
 
 // анимации — отдельный редактор (spine/editor.html) во всю ширину
 function showSpine(on) {
