@@ -1202,8 +1202,8 @@ function rte(html, onchange, rows = 4) {
     if (a === 'isz') { const im = (getSelection().anchorNode || {}).nodeType === 1 ? getSelection().getRangeAt(0).cloneContents().querySelector && [...ed.querySelectorAll('img.ii')].filter(x => getSelection().containsNode(x, true)) : []; (im || []).forEach(x => x.setAttribute('style', 'height:' + v)); if (im && im.length) fire(); else status('Выделите иконку в тексте (протяните выделение через неё) и снова выберите размер', true); }
     if (a === 'clear') unwrap();
     if (a === 'role' || a === 'item') {
-      range();
-      pickEntity(a === 'role' ? 'roles' : 'items', e.target).then(x => { if (!x) return; ed.focus(); const el = document.createElement('a'); el.className = 'ref'; el.dataset.t = a; el.dataset.id = x.id; if (x._ic) { const im = document.createElement('img'); im.className = 'ii'; im.alt = ''; im.src = x._ic; im.setAttribute('style', 'height:1.6em'); el.append(im, ' ', x.name); const r0 = range(); if (r0) { r0.deleteContents(); r0.insertNode(el); r0.setStartAfter(el); fire(); } else { ed.append(el); fire(); } return; } el.textContent = x.name; wrapEl(el); });
+      const at = range(), at0 = at && at.cloneRange();  // место вставки запоминаем до открытия списка
+      pickEntity(a === 'role' ? 'roles' : 'items', e.target).then(x => { if (!x) return; ed.focus(); if (at0) { const s9 = getSelection(); s9.removeAllRanges(); s9.addRange(at0); saved = at0.cloneRange(); } const el = document.createElement('a'); el.className = 'ref'; el.dataset.t = a; el.dataset.id = x.id; if (x._ic) { const im = document.createElement('img'); im.className = 'ii'; im.alt = ''; im.src = x._ic; im.setAttribute('style', 'height:1.6em'); el.append(im, ' ', x.name); const r0 = range(); if (r0) { r0.deleteContents(); r0.insertNode(el); r0.setStartAfter(el); fire(); } else { ed.append(el); fire(); } return; } el.textContent = x.name; wrapEl(el); });
     }
   };
   w.querySelector('.tb').onchange = e => {
