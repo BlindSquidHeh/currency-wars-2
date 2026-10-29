@@ -199,7 +199,8 @@
   "rw": [
    {
     "t": "hp",
-    "n": 10
+    "n": 10,
+    "html": "<img src=\"media/blk_mvtoixwv_GridFight_HP.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">10 НР команды"
    }
   ]
  },
@@ -212,7 +213,8 @@
   "rw": [
    {
     "t": "exp",
-    "n": 8
+    "n": 8,
+    "html": "<img src=\"media/blk_mvtoj6bu_281034.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">8 оч. опыта"
    }
   ]
  },
@@ -225,7 +227,8 @@
   "rw": [
    {
     "t": "refresh",
-    "n": 4
+    "n": 4,
+    "html": "<img src=\"media/blk_mvtojdqz_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">4 беспл. обновл. магазина"
    }
   ]
  },
@@ -238,7 +241,8 @@
   "rw": [
    {
     "t": "refresh",
-    "n": 20
+    "n": 20,
+    "html": "<img src=\"media/blk_mvtojj8a_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">20 беспл. обновл. магазина"
    }
   ]
  },
@@ -252,7 +256,8 @@
    {
     "t": "equip",
     "cat": "продвинутая",
-    "n": 1
+    "n": 1,
+    "html": "<img src=\"media/blk_mvtojzv7_GridFight_WeaponBox2.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">случайная продвинутая экипировка"
    }
   ]
  },

@@ -323,7 +323,7 @@ table.stats td.n{font-weight:800;font-variant-numeric:tabular-nums}
 .uquote{padding:16px 20px;border-left:4px solid var(--gold);background:var(--panel);border-radius:0 12px 12px 0;font-size:17px;font-style:italic}.uquote small{display:block;margin-top:8px;font-style:normal;color:var(--muted)}
 .ublock details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:6px 0}.ublock summary{cursor:pointer;font-weight:700}.ublock table{width:100%;border-collapse:collapse}.ublock td,.ublock th{border:1px solid var(--line);padding:8px 10px;text-align:left}.ublock th{background:var(--panel2)}
 .ucard{padding:16px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}.ucard h4{margin:0 0 6px;font-size:17px}.ucard p{margin:0;color:var(--muted)}
-.ublock{margin:14px 0;grid-column:1/-1}.urow{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;grid-column:1/-1}.urow>*{flex:1 1 240px;min-width:0;margin-top:0!important;margin-bottom:0!important}.urow>.ublock{grid-column:auto}.uvid{cursor:pointer;position:relative;aspect-ratio:16/9;width:100%;border-radius:12px;overflow:hidden;background:#000}.uvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.uvid img.yt-th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.uvid .yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;border-radius:14px;background:rgba(20,17,43,.82);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;transition:.15s}.uvid .yt-play::after{content:'';border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}.uvid:hover .yt-play{background:#e5322d;border-color:#fff}.uvids{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.ublock img{max-width:100%;border-radius:10px;display:block}.ublock video,.ublock iframe{max-width:100%;border-radius:10px}.ubtn{display:inline-block;padding:9px 18px;border-radius:10px;background:linear-gradient(180deg,#f2cf7a,#b98a2c);color:#2a1a0e!important;font-weight:700;text-decoration:none}.ublock hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}.ucols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.ucols>div:not(.uvid){padding:12px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
+.ublock{margin:14px 0;grid-column:1/-1}.urow{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;grid-column:1/-1}.urow>*{flex:1 1 240px;min-width:0;margin-top:0!important;margin-bottom:0!important}.urow>.ublock{grid-column:auto}.uvid{cursor:pointer;position:relative;aspect-ratio:16/9;width:100%;border-radius:12px;overflow:hidden;background:#000}.uvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.uvid img.yt-th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.uvid .yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;border-radius:14px;background:rgba(20,17,43,.82);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;transition:.15s}.uvid .yt-play::after{content:'';border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}.uvid:hover .yt-play{background:#e5322d;border-color:#fff}.uvids{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.ublock img{max-width:100%;border-radius:10px;display:block}.ublock[style*=width]>img,.ublock[style*=width]>.ed-t>img{width:100%;height:auto}img.ii{height:1.3em;width:auto;vertical-align:-.28em;display:inline;border-radius:0;max-width:none}.ublock video,.ublock iframe{max-width:100%;border-radius:10px}.ubtn{display:inline-block;padding:9px 18px;border-radius:10px;background:linear-gradient(180deg,#f2cf7a,#b98a2c);color:#2a1a0e!important;font-weight:700;text-decoration:none}.ublock hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}.ucols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.ucols>div:not(.uvid){padding:12px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
 .layer.pillrow{grid-template-columns:max-content 1fr;gap:12px}
 .pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 13px;border-radius:999px;border:1px solid rgba(0,0,0,.35);background:linear-gradient(180deg,var(--pa),var(--pb));box-shadow:0 2px 6px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.35);--pa:#f0b27a;--pb:#a8643a}
 .pill b{font:600 24px/1 var(--font);color:#111;min-width:13px;text-align:center}
@@ -998,7 +998,7 @@ const hasSt = k => {
   const pre = 'o:k:' + k + '§'; for (const x in S) if (x.startsWith(pre)) return true;
   return false;
 };
-const ep = (path, inner, kind = 'text') => EDIT || hasSt(JSON.stringify(path)) ? (k => { const tg = path[0] === '@blocks' && path[2] === 'html' ? 'div' : 'span'; return `<${tg} class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}" data-ky="${esc(k)}" style="${stStyle(STYLES()[k], tg === 'div')}">${inner}</${tg}>`; })(JSON.stringify(path)) : inner;
+const ep = (path, inner, kind = 'text', dv) => EDIT || hasSt(JSON.stringify(path)) ? (k => { const tg = path[0] === '@blocks' && path[2] === 'html' ? 'div' : 'span'; return `<${tg} class="ed-t" data-ep='${k.replace(/'/g, '&#39;')}' data-ek="${kind}"${dv != null ? ` data-dv="${esc(dv)}"` : ''} data-ky="${esc(k)}" style="${stStyle(STYLES()[k], tg === 'div')}">${inner}</${tg}>`; })(JSON.stringify(path)) : inner;
 const rt = h => {
   const t = String(h), k = 'h:' + hash32(t);
   if (!EDIT && !hasSt(k)) return rt0(t);
@@ -1018,6 +1018,7 @@ new MutationObserver(() => { clearTimeout(window.__abs); window.__abs = setTimeo
 // ---------- объекты: размер и положение любого элемента (цифра, картинка, фон, блок) по структурному адресу ----------
 const OSEP = '§';
 function objRoot(el) {
+  const hz = el.closest && el.closest('header.hero,nav.nav,footer'); if (hz) return {key: 'h:' + hz.tagName.toLowerCase(), root: hz};
   if (el.matches && el.matches('.ublock[data-bid]')) return {key: 'u:' + el.dataset.bid, root: el};  // свой блок целиком: адрес по его id
   const k = el.closest('[data-ky]'); if (k) return {key: 'k:' + k.dataset.ky, root: k};
   const m = el.closest('#mcontent'); if (m) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); return {key: 'm:' + (h ? h[1] + h[2] : ''), root: m}; }
@@ -1079,13 +1080,14 @@ function objFind(key) {
   if (rk.startsWith('k:')) roots = [...document.querySelectorAll('[data-ky]')].filter(e => e.dataset.ky === rk.slice(2));
   else if (rk.startsWith('m:')) { const h = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/); if ((h ? h[1] + h[2] : '') === rk.slice(2) && $('#modal').classList.contains('show')) roots = [$('#mcontent')]; }
   else if (rk.startsWith('t:') && rk.slice(2) === S.tab) roots = [$('#view')];
+  else if (rk.startsWith('h:')) roots = [...document.querySelectorAll(rk.slice(2))].slice(0, 1);
   else if (rk.startsWith('u:')) roots = [...document.querySelectorAll('.ublock[data-bid]')].filter(e => e.dataset.bid === rk.slice(2));
   return roots.map(r => path === '' ? r : path.split('.').reduce((e, n) => e && kidsOf(e)[+n], r)).filter(Boolean);
 }
 function applyObjStyles() { const St = STYLES(), bases = new Set(Object.keys(St).filter(k => k.startsWith('o:')).map(k => k.replace(/@[mt]$/, ''))); bases.forEach(k => objFind(k).forEach(el => objApply(el, styleOf(St, k)))); }
 
 let OBJ = true, selEl = null, selKey = null, selEls = [];
-const INTER = '#edIns,#edPal,a,button,.tab,.chip,.subtab,.mbtn,input,textarea,select,#tabs,.search,#gs,#edSel,#edSelBar,#edTb,#totop,#tip,.modal:not(.show),.forms';
+const INTER = '#edIns,#edPal,a,.tab,#tabs,.modal.show button,.modal.show input,.modal.show select,.modal.show .chip,.modal.show .subtab,.modal.show .mbtn,.modal.show textarea,#edSel,#edSelBar,#edTb,#totop,#tip,.modal:not(.show),.forms';
 if (EDIT) {
   document.head.insertAdjacentHTML('beforeend', '<style>#edSel{position:fixed;z-index:99998;border:2px dashed #5fd0a0;pointer-events:none;display:none;box-shadow:0 0 0 1px rgba(0,0,0,.6)}#edSel .hd{position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;background:#5fd0a0;border:2px solid #0b091a;border-radius:3px;pointer-events:auto;cursor:nwse-resize}#edSelBar{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #5fd0a0;border-radius:8px;padding:3px}#edSelBar button{all:unset;box-sizing:border-box;height:24px;padding:0 8px;border-radius:6px;border:1px solid rgba(196,176,255,.3);background:#221d46;color:#efebff;cursor:pointer;font:600 12px sans-serif;line-height:22px}.ed-hov{outline:1px solid #5fd0a0!important;outline-offset:1px}body.obj-mode *{cursor:default!important}body.obj-mode .ed-t{cursor:default!important}</style>');
   const selBox = document.createElement('div'); selBox.id = 'edSel'; selBox.innerHTML = '<div class="hd"></div>'; document.body.appendChild(selBox);
@@ -1139,6 +1141,7 @@ if (EDIT) {
   };
   let drag = null;
   const inside = t => !t.closest(INTER) && !t.closest('script,style') && t !== document.body && t !== document.documentElement;
+  document.addEventListener('click', e => { if (OBJ && e.target.closest && e.target.closest('button,.chip,.subtab,.mbtn,input,textarea,select,.search,#gs') && inside(e.target)) { e.preventDefault(); e.stopPropagation(); } }, true);
   document.addEventListener('mouseover', e => { if (!OBJ) return; document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov')); if (inside(e.target)) unit(e.target).classList.add('ed-hov'); }, true);
   document.addEventListener('mousedown', e => {
     if (!OBJ) return;
@@ -1147,7 +1150,7 @@ if (EDIT) {
     e.preventDefault(); e.stopPropagation();
     if (e.target.classList.contains('hd') && selEl) {
       const r = selEl.getBoundingClientRect(), o = {...curStyle()}, disp = getComputedStyle(selEl).display;
-      const isBlock = /^(block|flex|grid|list-item|table|flow-root)$/.test(disp) && r.width > 140 && selEl.parentElement;
+      const isBlock = /^(block|flex|grid|list-item|table|flow-root)$/.test(disp) && (r.width > 140 || selEl.matches('.ublock')) && selEl.parentElement;
       drag = isBlock ? {mode: 'size', mx: e.clientX, w0: r.width, o, pw: selEl.parentElement.getBoundingClientRect().width} : {mode: 'scale', mx: e.clientX, w0: r.width, s0: o.s || 1, o}; return;
     }
     document.querySelectorAll('.ed-hov').forEach(x => x.classList.remove('ed-hov'));
@@ -1295,7 +1298,9 @@ if (EDIT) {
     const t = e.target.closest('.ed-t');
     if (!t) {
       // текст, которого нет в данных (зашит в код сайта): редактор предложит заменить его своим
-      if (e.target.closest('#edTb,a,button,.tab,.chip,.forms,.subtab,.mbtn,input,textarea,select,#tabs,.search,#gs')) return;
+      const inp = e.target.closest('input[placeholder]');
+      if (inp) { e.preventDefault(); e.stopPropagation(); const ph = inp.getAttribute('placeholder'); try { parent.CW_EDITOR.editStatic(ph, {set textContent(v) { inp.setAttribute('placeholder', v); }, get textContent() { return ph; }}, ''); } catch (err) {} return; }
+      if (e.target.closest('#edTb,#edSelBar,.forms,textarea,select,a.ref')) return;
       if (e.target.closest('.modal:not(.show)') || e.target.closest('#totop,#tip')) return;  // править можно любой текст страницы: шапку, подвал, вкладки, подсказки…
       const sl = getSelection(), selText = sl && !sl.isCollapsed ? sl.toString().trim() : '';
       const rg = document.caretRangeFromPoint ? document.caretRangeFromPoint(e.clientX, e.clientY) : null;
@@ -1308,7 +1313,7 @@ if (EDIT) {
     }
     e.preventDefault(); e.stopPropagation();
     const m = location.hash.match(/(role|trait|item|aug|buff|pet)=(\d+)/);
-    try { if (t.dataset.ep) parent.CW_EDITOR.editPath(JSON.parse(t.dataset.ep), t.dataset.ek); else parent.CW_EDITOR.editText(ED_REG[+t.dataset.es], m ? {kind: m[1], id: +m[2]} : null); } catch (err) {}
+    try { if (t.dataset.ep) parent.CW_EDITOR.editPath(JSON.parse(t.dataset.ep), t.dataset.ek, t.dataset.dv); else parent.CW_EDITOR.editText(ED_REG[+t.dataset.es], m ? {kind: m[1], id: +m[2]} : null); } catch (err) {}
   }, true);
   // панель действий над блоком (уровень, пояснение, навык, строка магазина…): ✕ ↑ ↓ ⧉ ＋
   document.head.insertAdjacentHTML('beforeend', '<style>#edTb{position:fixed;z-index:99999;display:none;gap:3px;background:#14112b;border:1px solid #e3c27c;border-radius:9px;padding:3px;box-shadow:0 6px 20px rgba(0,0,0,.6)}#edTb button{all:unset;box-sizing:border-box;text-align:center;width:28px;height:26px;border-radius:6px;border:1px solid rgba(196,176,255,.25);background:#221d46;color:#efebff;cursor:pointer;font-size:14px;line-height:1;padding:0}#edTb button:hover{background:#2f2659}#edTb .ed-del{color:#ff7b7b;border-color:#ff7b7b}#edTb .ed-add{color:#5fd0a0;border-color:#5fd0a0}.ed-blk{outline:1px dashed rgba(227,194,124,.55);outline-offset:2px}</style>');
@@ -1851,18 +1856,21 @@ function ahaShop() {
 // магазин Освоения (данные 4.7): энергия по уровням связи и что в нём продаётся
 // награда из таблиц игры (bank452.reward): золото, предмет, персонаж, руда и т. д.
 const ORBK = {'белая':'w', 'синяя':'b', 'золотая':'g', 'радужная':'c'};
-function rwItem(r) {
+// path — адрес строки награды в данных: тогда её текст можно править как обычный (со ссылками на предметы и иконками)
+function rwItem(r, path) {
   const n = r.n > 1 ? ` ×${r.n}` : '';
-  if (r.t === 'gold') return `<span><span class="coin"></span>${r.n} зол.</span>`;
+  const ed = (inner, dv) => path ? ep([...path, 'html'], inner, 'html', dv) : inner;
+  if (path && r.html != null) return `<span>${ed(rt(r.html), r.html)}</span>`;
+  if (r.t === 'gold') return `<span>${ed(`<span class="coin"></span>${r.n} зол.`, `<span class="coin"></span>${r.n} зол.`)}</span>`;
   if (r.t === 'item') return `<span data-item="${I[r.id] ? r.id : ''}">${I[r.id] ? eqIcon(I[r.id], '28px') : ''}${esc(I[r.id] ? I[r.id].name : r.name)}${n}</span>`;
   if (r.t === 'role') { const x = findRole(r.id); return `<span>${x ? ava(x, 26) : ''}${esc(x ? x.name : r.name || 'персонаж ' + r.id)} ${r.star}★${n}</span>`; }
-  if (r.t === 'cost') return `<span>случайный персонаж стоимостью ${r.cost} (${r.star}★)${n}</span>`;
-  if (r.t === 'equip') return `<span>случайная ${esc(r.cat)} экипировка${n}</span>`;
-  if (r.t === 'exp') return `<span>${r.n} оч. опыта</span>`;
-  if (r.t === 'refresh') return `<span>${r.n} беспл. обновл. магазина</span>`;
-  if (r.t === 'hp') return `<span>${r.n} НР команды</span>`;
+  if (r.t === 'cost') { const x = `случайный персонаж стоимостью ${r.cost} (${r.star}★)${n}`; return `<span>${ed(x, x)}</span>`; }
+  if (r.t === 'equip') { const x = `случайная ${esc(r.cat)} экипировка${n}`; return `<span>${ed(x, x)}</span>`; }
+  if (r.t === 'exp') return `<span>${ed(`${r.n} оч. опыта`, `${r.n} оч. опыта`)}</span>`;
+  if (r.t === 'refresh') return `<span>${ed(`${r.n} беспл. обновл. магазина`, `${r.n} беспл. обновл. магазина`)}</span>`;
+  if (r.t === 'hp') return `<span>${ed(`${r.n} НР команды`, `${r.n} НР команды`)}</span>`;
   if (r.t === 'orb') return `<span>${img('gi/orb_' + (ORBK[r.kind] || 'c')) ? `<img class="rw-orb" src="${img('gi/orb_' + (ORBK[r.kind] || 'c'))}" alt="">` : ''}${esc(r.kind)} руда${n}: ${(r.in || []).map(rwItem).join(' + ')}</span>`;
-  return `<span>${esc(r.text || '')}</span>`;
+  return `<span>${ed(esc(r.text || ''), esc(r.text || ''))}</span>`;
 }
 function trailShop() {
   const G = BANK.trail || [];
@@ -1883,7 +1891,7 @@ function trailShop() {
 function jadeShop() {
   const G = BANK.jade || []; if (!G.length) return '';
   const tiers = [[1, 'Яшма 1★'], [2, 'Яшма 2★ и выше'], [3, 'Яшма 3★: особые товары']];
-  const row = g => `<div class="shop-row"><span class="shop-cost">${ep(['bank', 'jade', G.indexOf(g), 'cost'], g.cost, 'num')} ${g.hp ? 'НР' : 'зол.'}</span><div>${g.name && !['gold', 'exp', 'refresh', 'hp'].includes((g.rw[0] || {}).t) ? `<b>${ep(['bank', 'jade', G.indexOf(g), 'name'], esc(g.name))}</b>` : ''}<div class="rw-in">${g.rw.map(rwItem).join('')}</div></div></div>`;
+  const row = g => `<div class="shop-row"><span class="shop-cost">${ep(['bank', 'jade', G.indexOf(g), 'cost'], g.cost, 'num')} ${g.hp ? 'НР' : 'зол.'}</span><div>${g.name && !['gold', 'exp', 'refresh', 'hp'].includes((g.rw[0] || {}).t) ? `<b>${ep(['bank', 'jade', G.indexOf(g), 'name'], esc(g.name))}</b>` : ''}<div class="rw-in">${g.rw.map((r, i) => rwItem(r, ['bank', 'jade', G.indexOf(g), 'rw', i])).join('')}</div></div></div>`;
   return `<div class="side-h">Магазин чёрного рынка</div>
     <div class="note rt">${rt(noteHtml('jade'))}</div>
     ${tiers.map(([t, h]) => { const L = G.filter(g => g.tier === t); return L.length ? `<div class="side-h">${h}</div><div class="shop-list" style="max-height:none">${L.map(row).join('')}</div>` : ''; }).join('')}`;

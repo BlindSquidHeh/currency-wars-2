@@ -555,9 +555,8 @@ async function editStatic(text, node, selText) {
     if (hits.length > 1) { where.innerHTML = `Такой же текст есть в ${hits.length} местах, выберите, какое правим: `; const sel0 = document.createElement('select'); sel0.innerHTML = hits.map((h, i) => `<option value="${i}">${esc(h.name || '')} › ${esc(h.path.join(' › '))}</option>`).join(''); sel0.onchange = () => { cur = hits[+sel0.value]; lab(); }; where.append(sel0); }
     const lab = () => { const l = P.querySelector('.hw'); if (l) l.textContent = (cur.sec || cur.k) + ' › ' + cur.path.join(' › '); };
     P.append(where); P.insertAdjacentHTML('beforeend', '<div class="where hw"></div>'); lab();
-    const ta0 = document.createElement('textarea'); ta0.value = text; ta0.style.cssText = 'width:100%;min-height:80px'; P.append(ta0); ta0.focus();
     const fullBtn = document.createElement('button'); fullBtn.className = 'btn'; fullBtn.textContent = 'Вся запись…'; fullBtn.onclick = () => { P.classList.remove('show'); cur.sec ? openSecDrawer(cur.sec, cur.path[0], false) : openDrawer(cur.k, cur.id, false); }; P.append(fullBtn);
-    ta0.oninput = () => { const x = rootOf(cur); setIn(x, cur.path, ta0.value); writeAt(cur, x, 400); try { node.textContent = ta0.value; } catch (e) {} };
+    P.append(rte(text, v => { const x = rootOf(cur); setIn(x, cur.path, v); writeAt(cur, x, 400); }, 3));
     return;
   }
   // выделенный фрагмент: правим именно его
@@ -857,6 +856,7 @@ let edTimer = 0;
 // ---------- палитра блоков: текст, заголовок, картинка, кнопка, видео, разделитель, колонки ----------
 const ytId = u => { const m = String(u).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : null; };
 async function addPageBlock(kind0, opts) {
+  let imgW = 0;
   opts = opts || {};
   const W = $('#siteEdit').contentWindow, wh = W.CW_API.where();
   const where = (wh.modal ? 'modal:' + wh.modal : 'tab:' + wh.tab) + (opts.anchor ? ':at' : ':bottom');
@@ -871,11 +871,12 @@ async function addPageBlock(kind0, opts) {
   if (kind0 === 'btn') { const u = prompt('Куда ведёт кнопка? Вставьте адрес (https://…)', 'https://'); if (!u) return; const tx = prompt('Надпись на кнопке', 'Подробнее') || 'Подробнее'; html = `<a class="ubtn" href="${esc(u)}" target="_blank" rel="noopener">${esc(tx)}</a>`; }
   if (kind0 === 'videos') { const u = prompt('Адреса видео YouTube, по одному или через пробел/Enter'); if (!u) return; const ids = [...new Set((u.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)[\w-]{11}/g) || []).map(x => x.slice(-11)))]; if (!ids.length) return alert('Не нашёл ни одной ссылки YouTube'); html = '<div class="uvids">' + ids.map(id => `<div class="uvid" data-yt="${id}"></div>`).join('') + '</div>'; }
   if (kind0 === 'video') { const u = prompt('Адрес видео (YouTube или файл .mp4) или оставьте пустым, чтобы выбрать файл'); if (u === null) return; if (u) html = ytId(u) ? `<div class="uvid" data-yt="${ytId(u)}"></div>` : `<video src="${esc(u)}" controls playsinline></video>`; else { const f = await pickOne('video/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; html = `<video src="${nm}" controls playsinline></video>`; } }
-  if (kind0 === 'img') { const f = await pickOne('image/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; html = `<img src="${nm}" alt="">`; }
+  if (kind0 === 'img') { const f = await pickOne('image/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; html = `<img src="${nm}" alt="">`; imgW = await new Promise(r => { const t = new Image(); t.onload = () => r(t.naturalWidth); t.onerror = () => r(0); t.src = nm; }); }
   if (!html) return;
   snap(); OVR.blocks = OVR.blocks || [];
   const nb = {id: 'b' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), where, title:'', html, off:false}; if (opts.anchor) { nb.anchor = opts.anchor; nb.pos = opts.pos || 'after'; }
   OVR.blocks.push(nb); setDirty();
+  if (imgW) { const st = {wp: Math.max(4, Math.min(30, Math.round(imgW / 9)))}; OVR.styles = OVR.styles || {}; OVR.styles['o:u:' + nb.id + '§'] = st; try { W.CW_API.setStyle('o:u:' + nb.id + '§', st); } catch (err) {} }
   W.CW_API.setAt(['blocks'], clone(OVR.blocks)); W.CW_API.refresh();
   status((opts.anchor ? 'Блок вставлен на выбранное место' : 'Блок добавлен внизу ' + (wh.modal ? 'этой карточки' : 'этой страницы')) + ': нажмите на него, чтобы выбрать, двигать или править', true);
 }
@@ -925,7 +926,7 @@ function writeAt(h, x, delay) {
   };
   if (delay) { clearTimeout(edTimer); edTimer = setTimeout(apply, delay); } else apply();
 }
-function editPath(path, kindOf) {
+function editPath(path, kindOf, dv) {
   if (path[0] === '@blocks') {
     const P = $('#edp'), i = path[1], fld = path[2], b = (OVR.blocks || [])[i]; P.classList.add('show');
     if (!b) return;
@@ -945,7 +946,7 @@ function editPath(path, kindOf) {
   $('#edall').onclick = () => { P.classList.remove('show'); h.sec ? openSecDrawer(h.sec, h.path[0], false) : openDrawer(h.k, h.id, false); };
   const commitAll = () => writeAt(h, x, 500);
   const set = v => { const par = getIn(x, h.path.slice(0, -1)); par[h.path[h.path.length - 1]] = v; commitAll(); };
-  const val = getIn(x, h.path);
+  const val = getIn(x, h.path) ?? dv;
   if (kindOf === 'html') P.append(rte(val || '', set, 6));
   else if (kindOf === 'num') { const i = document.createElement('input'); i.type = 'number'; i.step = 'any'; i.value = val ?? ''; i.oninput = () => i.value !== '' && set(+i.value); P.append(i); i.focus(); }
   else if (kindOf === 'layerhead') {
@@ -1075,7 +1076,7 @@ ${COLORS.map(([c]) => `.ed .c[data-c="${c}"]{color:#${c}}`).join('')}
 function cleanHtml(h) {
   // стиль оставляем только у наших span.fx (размер, шрифт, цвет…), остальной мусор браузера убираем
   return h.replace(/<div><br><\/div>/g, '<br>').replace(/<div>/g, '<br>').replace(/<\/div>/g, '')
-    .replace(/<([a-z0-9]+)\b([^>]*)>/gi, (m, tg, at) => /class="fx"/.test(at) ? m : m.replace(/ style="[^"]*"/g, ''))
+    .replace(/<([a-z0-9]+)\b([^>]*)>/gi, (m, tg, at) => /class="(fx|ii)"/.test(at) ? m : m.replace(/ style="[^"]*"/g, ''))
     .replace(/&nbsp;/g, ' ').replace(/^<br>/, '').replace(/<span>([^<]*)<\/span>/g, '$1');
 }
 function rte(html, onchange, rows = 4) {
@@ -1097,7 +1098,9 @@ function rte(html, onchange, rows = 4) {
       <select data-a="pi" title="Вставить значок БЕЗ текста, отдельно (потом его можно двигать, менять размер, удалять)"><option value="">Только значок…</option>${Object.entries(props).sort((a, b) => a[1].localeCompare(b[1], 'ru')).map(([k, n]) => `<option value="${k}">${n}</option>`).join('')}</select>
       <button data-a="autoi" title="Значки, которые сайт сам ставит рядом со словами (Рост, Усиление урона…), сделать обычными: тогда каждый можно удалить, добавить, передвинуть"></button>
       <span class="sep"></span>
-      <button data-a="role">Персонаж</button><button data-a="item">Предмет</button>
+      <span class="sep"></span><span style="font-size:11px;color:var(--dim)">Вставить:</span>
+      <button data-a="item" title="Ссылка на предмет: значок и название, при наведении всплывает карточка (как «Эфирное сверло»)">🔗 Предмет</button><button data-a="role" title="Ссылка на персонажа: аватар, название, всплывающая карточка">🔗 Персонаж</button><button data-a="img" title="Вставить свою картинку прямо в строку текста, как иконку рядом со словами (потом выделите её и поменяйте размер)">🖼 Своя картинка</button><select data-a="isz" title="Размер вставленной иконки: выделите её в тексте и выберите"><option value="">Размер иконки…</option>${[['1em', 'как текст'], ['1.3em', 'чуть больше'], ['1.8em', 'крупная'], ['2.5em', 'большая'], ['4em', 'огромная']].map(([v, n]) => `<option value="${v}">${n}</option>`).join('')}</select>
+      
       <button data-a="br" title="Новая строка (или Shift+Enter)">↵</button>
       <button data-a="clear" title="Убрать оформление с выделенного">Очистить</button>
       <span class="sep"></span>
@@ -1170,6 +1173,8 @@ function rte(html, onchange, rows = 4) {
       }
       fire();
     }
+    if (a === 'img') { range(); (async () => { const f = await pickOne('image/*'); if (!f) return; const nm = await upMedia(f); if (!nm) return; const im = Object.assign(document.createElement('img'), {src: nm, alt: ''}); im.className = 'ii'; im.setAttribute('style', 'height:1.3em'); const r = range(); ed.focus(); if (r) { r.collapse(false); r.insertNode(im); r.setStartAfter(im); } else ed.append(im); fire(); })(); }
+    if (a === 'isz') { const im = (getSelection().anchorNode || {}).nodeType === 1 ? getSelection().getRangeAt(0).cloneContents().querySelector && [...ed.querySelectorAll('img.ii')].filter(x => getSelection().containsNode(x, true)) : []; (im || []).forEach(x => x.setAttribute('style', 'height:' + v)); if (im && im.length) fire(); else status('Выделите иконку в тексте (протяните выделение через неё) и снова выберите размер', true); }
     if (a === 'clear') unwrap();
     if (a === 'role' || a === 'item') {
       const L = allOf(a === 'role' ? 'roles' : 'items');

@@ -17248,6 +17248,157 @@
     ],
     "where": "Выставляйте персонажей этой связи - каждый идет в счёт!"
    },
+   "100402": {
+    "id": 100402,
+    "name": "Межзвёздные путешественники",
+    "en": "Galactic Voyager",
+    "kind": "origin",
+    "icon": "trait/100402",
+    "desc": {
+     "html": "Персонажи со связью Межзвёздные путешественники усиливают определённые характеристики вашей команды. Этот эффект усиливается с ростом количества персонажей со связью Межзвёздные путешественники на поле.<br>Персонажи этой связи получают двойное усиление характеристик."
+    },
+    "layers": [
+     {
+      "n": 1,
+      "q": "None",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">100%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 2,
+      "q": "None",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">120%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 3,
+      "q": "Silver",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">140%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 4,
+      "q": "Silver",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">170%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 5,
+      "q": "Gold",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">200%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 6,
+      "q": "Gold",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">240%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 7,
+      "q": "Gold",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">290%</b></span>."
+       }
+      ]
+     },
+     {
+      "n": 8,
+      "q": "Gold",
+      "parts": [
+       {
+        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">350%</b></span>."
+       }
+      ]
+     }
+    ],
+    "remarks": [
+     {
+      "k": "1",
+      "cond": "RoleActivate",
+      "cp": [
+       122502
+      ],
+      "html": "Фуга: Сила вне поля повышается на <b class=\"v\">20%</b>."
+     },
+     {
+      "k": "2",
+      "cond": "RoleActivate",
+      "cp": [
+       131502
+      ],
+      "html": "Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">20%</b>."
+     },
+     {
+      "k": "3",
+      "cond": "RoleActivate",
+      "cp": [
+       110502
+      ],
+      "html": "<span class=\"ai0\"></span>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">10%</b>."
+     },
+     {
+      "k": "4",
+      "cond": "RoleActivate",
+      "cp": [
+       140102
+      ],
+      "html": "Великая Герта: Сила на поле повышается на <b class=\"v\">20%</b>."
+     },
+     {
+      "k": "5",
+      "cond": "RoleActivate",
+      "cp": [
+       120302
+      ],
+      "html": "Лоча: усиление скорости повышается на <b class=\"v\">10%</b>."
+     },
+     {
+      "k": "6",
+      "cond": "RoleActivate",
+      "cp": [
+       130402
+      ],
+      "html": "Авантюрин: шанс счастливого удара повышается на <b class=\"v\">10%</b>."
+     },
+     {
+      "k": "7",
+      "cond": "RoleActivate",
+      "cp": [
+       110702
+      ],
+      "html": "Клара: усиление урона повышается на <b class=\"v\">10%</b>."
+     },
+     {
+      "k": "8",
+      "cond": "EquipActivate",
+      "cp": [
+       355100402
+      ],
+      "html": "Эмблема: урон счастливого удара повышается на <b class=\"v\">18%</b>."
+     }
+    ],
+    "subs": []
+   },
    "100602": {
     "id": 100602,
     "name": "Торговая гильдия Астрополиса",
@@ -17941,6 +18092,47 @@
     ],
     "subs": []
    },
+   "201002": {
+    "id": 201002,
+    "name": "Исцеление",
+    "en": "Heal",
+    "kind": "class",
+    "icon": "trait/201002",
+    "desc": {
+     "html": "<span class=\"prop\" data-p=\"ExtraAllDamageReduce\">Понижение урона</span> <span class=\"c\" data-c=\"f29e38\">команды союзников</span> повышается на <b class=\"v\">12%</b>. <span class=\"prop\" data-p=\"ExtraHealAddedRatio\">Усиление исцеления</span> персонажей со связью Исцеление повышается."
+    },
+    "layers": [
+     {
+      "n": 2,
+      "q": "None",
+      "parts": [
+       {
+        "html": "<span class=\"prop\" data-p=\"ExtraHealAddedRatio\">Усиление исцеления</span> повышается на <b class=\"v\">20%</b>."
+       }
+      ]
+     },
+     {
+      "n": 4,
+      "q": "Silver",
+      "parts": [
+       {
+        "html": "<span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span><span class=\"ai0\"></span>Усиление исцеления повышается на <b class=\"v\">40%</b>."
+       }
+      ]
+     },
+     {
+      "n": 6,
+      "q": "Gold",
+      "parts": [
+       {
+        "html": "<span class=\"ai0\"></span><b class=\"v\">60%</b> к <span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span>усилению исцеления, команда союзников получает <b class=\"v\">60%</b> <span class=\"prop\" data-p=\"ExtraAllDamageTypeAddedRatio1\">Усиление урона</span>."
+       }
+      ]
+     }
+    ],
+    "remarks": [],
+    "subs": []
+   },
    "201102": {
     "id": 201102,
     "name": "Защитник",
@@ -18180,198 +18372,6 @@
      "unique": "dia/400502_unique"
     },
     "where": "Особая связь 2 сезона: её нет в списке связей ни у одного персонажа. Её выдаёт Сюжетная броня — особое усиление, которое выбирают для персонажа в узлах Игр фантаны."
-   },
-   "100402": {
-    "id": 100402,
-    "name": "Межзвёздные путешественники",
-    "en": "Galactic Voyager",
-    "kind": "origin",
-    "icon": "trait/100402",
-    "desc": {
-     "html": "Персонажи со связью Межзвёздные путешественники усиливают определённые характеристики вашей команды. Этот эффект усиливается с ростом количества персонажей со связью Межзвёздные путешественники на поле.<br>Персонажи этой связи получают двойное усиление характеристик."
-    },
-    "layers": [
-     {
-      "n": 1,
-      "q": "None",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">100%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 2,
-      "q": "None",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">120%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 3,
-      "q": "Silver",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">140%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 4,
-      "q": "Silver",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">170%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 5,
-      "q": "Gold",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">200%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 6,
-      "q": "Gold",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">240%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 7,
-      "q": "Gold",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">290%</b></span>."
-       }
-      ]
-     },
-     {
-      "n": 8,
-      "q": "Gold",
-      "parts": [
-       {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">350%</b></span>."
-       }
-      ]
-     }
-    ],
-    "remarks": [
-     {
-      "k": "1",
-      "cond": "RoleActivate",
-      "cp": [
-       122502
-      ],
-      "html": "Фуга: Сила вне поля повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "2",
-      "cond": "RoleActivate",
-      "cp": [
-       131502
-      ],
-      "html": "Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "3",
-      "cond": "RoleActivate",
-      "cp": [
-       110502
-      ],
-      "html": "<span class=\"ai0\"></span>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "4",
-      "cond": "RoleActivate",
-      "cp": [
-       140102
-      ],
-      "html": "Великая Герта: Сила на поле повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "5",
-      "cond": "RoleActivate",
-      "cp": [
-       120302
-      ],
-      "html": "Лоча: усиление скорости повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "6",
-      "cond": "RoleActivate",
-      "cp": [
-       130402
-      ],
-      "html": "Авантюрин: шанс счастливого удара повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "7",
-      "cond": "RoleActivate",
-      "cp": [
-       110702
-      ],
-      "html": "Клара: усиление урона повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "8",
-      "cond": "EquipActivate",
-      "cp": [
-       355100402
-      ],
-      "html": "Эмблема: урон счастливого удара повышается на <b class=\"v\">18%</b>."
-     }
-    ],
-    "subs": []
-   },
-   "201002": {
-    "id": 201002,
-    "name": "Исцеление",
-    "en": "Heal",
-    "kind": "class",
-    "icon": "trait/201002",
-    "desc": {
-     "html": "<span class=\"prop\" data-p=\"ExtraAllDamageReduce\">Понижение урона</span> <span class=\"c\" data-c=\"f29e38\">команды союзников</span> повышается на <b class=\"v\">12%</b>. <span class=\"prop\" data-p=\"ExtraHealAddedRatio\">Усиление исцеления</span> персонажей со связью Исцеление повышается."
-    },
-    "layers": [
-     {
-      "n": 2,
-      "q": "None",
-      "parts": [
-       {
-        "html": "<span class=\"prop\" data-p=\"ExtraHealAddedRatio\">Усиление исцеления</span> повышается на <b class=\"v\">20%</b>."
-       }
-      ]
-     },
-     {
-      "n": 4,
-      "q": "Silver",
-      "parts": [
-       {
-        "html": "<span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span><span class=\"ai0\"></span>Усиление исцеления повышается на <b class=\"v\">40%</b>."
-       }
-      ]
-     },
-     {
-      "n": 6,
-      "q": "Gold",
-      "parts": [
-       {
-        "html": "<span class=\"ai0\"></span><b class=\"v\">60%</b> к <span class=\"pi\" data-p=\"ExtraHealAddedRatio\"></span>усилению исцеления, команда союзников получает <b class=\"v\">60%</b> <span class=\"prop\" data-p=\"ExtraAllDamageTypeAddedRatio1\">Усиление урона</span>."
-       }
-      ]
-     }
-    ],
-    "remarks": [],
-    "subs": []
    }
   }
  },
@@ -21612,6 +21612,570 @@
     "html": "Большие роботы всегда правы. Чем больше, тем лучше.",
     "why": "",
     "icon": "npc/GridFightNpc_Partner5"
+   }
+  ],
+  "bank.jade": [
+   {
+    "id": 10003,
+    "tier": 1,
+    "cost": 1,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350103,
+      "n": 1,
+      "name": "Плавильная печь"
+     }
+    ]
+   },
+   {
+    "id": 10004,
+    "tier": 1,
+    "cost": 40,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350701,
+      "n": 1,
+      "name": "Самоцвет богатства"
+     }
+    ]
+   },
+   {
+    "id": 10005,
+    "tier": 1,
+    "cost": 15,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 99991,
+      "n": 1,
+      "name": "Кодекс эмблем"
+     }
+    ]
+   },
+   {
+    "id": 10006,
+    "tier": 1,
+    "cost": 10,
+    "hp": true,
+    "name": "6 золотых монет",
+    "rw": [
+     {
+      "t": "gold",
+      "n": 6
+     }
+    ]
+   },
+   {
+    "id": 10007,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350201,
+      "n": 1,
+      "name": "Роликовые коньки"
+     }
+    ]
+   },
+   {
+    "id": 10008,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350202,
+      "n": 1,
+      "name": "Перочинный нож"
+     }
+    ]
+   },
+   {
+    "id": 10009,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350203,
+      "n": 1,
+      "name": "Пистолет мира"
+     }
+    ]
+   },
+   {
+    "id": 10010,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350204,
+      "n": 1,
+      "name": "Счастливая звезда"
+     }
+    ]
+   },
+   {
+    "id": 10011,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350205,
+      "n": 1,
+      "name": "Цветок жизни"
+     }
+    ]
+   },
+   {
+    "id": 10012,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350206,
+      "n": 1,
+      "name": "Броня массового производства"
+     }
+    ]
+   },
+   {
+    "id": 10013,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350207,
+      "n": 1,
+      "name": "Эфирное сверло"
+     }
+    ]
+   },
+   {
+    "id": 10014,
+    "tier": 1,
+    "cost": 8,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350208,
+      "n": 1,
+      "name": "Фотонная ячейка"
+     }
+    ]
+   },
+   {
+    "id": 20001,
+    "tier": 2,
+    "cost": 10,
+    "hp": true,
+    "name": "10 золотых монет",
+    "rw": [
+     {
+      "t": "gold",
+      "n": 10
+     }
+    ]
+   },
+   {
+    "id": 20002,
+    "tier": 2,
+    "cost": 5,
+    "hp": false,
+    "name": "10 НР команды",
+    "rw": [
+     {
+      "t": "hp",
+      "n": 10,
+      "html": "<img src=\"media/blk_mvtoixwv_GridFight_HP.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">10 НР команды"
+     }
+    ]
+   },
+   {
+    "id": 20003,
+    "tier": 2,
+    "cost": 4,
+    "hp": false,
+    "name": "8 опыта",
+    "rw": [
+     {
+      "t": "exp",
+      "n": 8,
+      "html": "<img src=\"media/blk_mvtoj6bu_281034.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">8 оч. опыта"
+     }
+    ]
+   },
+   {
+    "id": 20004,
+    "tier": 2,
+    "cost": 4,
+    "hp": false,
+    "name": "4 бесплатн. обновл.",
+    "rw": [
+     {
+      "t": "refresh",
+      "n": 4,
+      "html": "<img src=\"media/blk_mvtojdqz_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">4 беспл. обновл. магазина"
+     }
+    ]
+   },
+   {
+    "id": 20005,
+    "tier": 2,
+    "cost": 20,
+    "hp": false,
+    "name": "20 бесплатн. обновл.",
+    "rw": [
+     {
+      "t": "refresh",
+      "n": 20,
+      "html": "<img src=\"media/blk_mvtojj8a_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">20 беспл. обновл. магазина"
+     }
+    ]
+   },
+   {
+    "id": 20101,
+    "tier": 2,
+    "cost": 12,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "equip",
+      "cat": "продвинутая",
+      "n": 1,
+      "html": "<img src=\"media/blk_mvtojzv7_GridFight_WeaponBox2.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">случайная продвинутая экипировка"
+     }
+    ]
+   },
+   {
+    "id": 20102,
+    "tier": 2,
+    "cost": 15,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 99991,
+      "n": 1,
+      "name": "Кодекс эмблем"
+     }
+    ]
+   },
+   {
+    "id": 20103,
+    "tier": 2,
+    "cost": 30,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350701,
+      "n": 1,
+      "name": "Самоцвет богатства"
+     }
+    ]
+   },
+   {
+    "id": 20104,
+    "tier": 2,
+    "cost": 15,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350107,
+      "n": 1,
+      "name": "Талисман удачи"
+     }
+    ]
+   },
+   {
+    "id": 20105,
+    "tier": 2,
+    "cost": 9,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350105,
+      "n": 1,
+      "name": "Проектор сотрудника"
+     }
+    ]
+   },
+   {
+    "id": 20106,
+    "tier": 2,
+    "cost": 9,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350106,
+      "n": 1,
+      "name": "Идеальный проектор"
+     }
+    ]
+   },
+   {
+    "id": 20107,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350201,
+      "n": 1,
+      "name": "Роликовые коньки"
+     }
+    ]
+   },
+   {
+    "id": 20108,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350202,
+      "n": 1,
+      "name": "Перочинный нож"
+     }
+    ]
+   },
+   {
+    "id": 20109,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350203,
+      "n": 1,
+      "name": "Пистолет мира"
+     }
+    ]
+   },
+   {
+    "id": 20110,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350204,
+      "n": 1,
+      "name": "Счастливая звезда"
+     }
+    ]
+   },
+   {
+    "id": 20111,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350205,
+      "n": 1,
+      "name": "Цветок жизни"
+     }
+    ]
+   },
+   {
+    "id": 20112,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350206,
+      "n": 1,
+      "name": "Броня массового производства"
+     }
+    ]
+   },
+   {
+    "id": 20113,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350207,
+      "n": 1,
+      "name": "Эфирное сверло"
+     }
+    ]
+   },
+   {
+    "id": 20114,
+    "tier": 2,
+    "cost": 6,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350208,
+      "n": 1,
+      "name": "Фотонная ячейка"
+     }
+    ]
+   },
+   {
+    "id": 20201,
+    "tier": 2,
+    "cost": 5,
+    "hp": false,
+    "name": "1 Большая плавильная печь",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350103,
+      "n": 1,
+      "name": "Плавильная печь"
+     }
+    ]
+   },
+   {
+    "id": 20202,
+    "tier": 2,
+    "cost": 4,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 99993,
+      "n": 1,
+      "name": "Контракт стоимостью 4"
+     }
+    ]
+   },
+   {
+    "id": 20203,
+    "tier": 2,
+    "cost": 5,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 99992,
+      "n": 1,
+      "name": "Контракт стоимостью 5"
+     }
+    ]
+   },
+   {
+    "id": 20204,
+    "tier": 2,
+    "cost": 15,
+    "hp": false,
+    "name": "",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350104,
+      "n": 1,
+      "name": "Карта привилегии"
+     }
+    ]
+   },
+   {
+    "id": 30001,
+    "tier": 3,
+    "cost": 30,
+    "hp": false,
+    "name": "Сказочный опыт",
+    "rw": [
+     {
+      "t": "item",
+      "id": 355101002,
+      "n": 1,
+      "name": "Эмблема Переплетение грёз"
+     }
+    ]
+   },
+   {
+    "id": 30002,
+    "tier": 3,
+    "cost": 30,
+    "hp": false,
+    "name": "Мастер оружия",
+    "rw": [
+     {
+      "t": "item",
+      "id": 35040203,
+      "n": 1,
+      "name": "Мастер по оружию: Привилегия"
+     }
+    ]
+   },
+   {
+    "id": 30003,
+    "tier": 3,
+    "cost": 5,
+    "hp": false,
+    "name": "5-стоимостной на 3★!?",
+    "rw": [
+     {
+      "t": "item",
+      "id": 350204,
+      "n": 1,
+      "name": "Счастливая звезда"
+     }
+    ]
    }
   ]
  },
