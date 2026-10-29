@@ -1847,7 +1847,7 @@ function viewTraits(v) {
 // магазин Ахи (данные 4.7, GridFightSpecialGoods): две версии ассортимента, цены в монетах
 function ahaShop() {
   const S = DB.shops; if (!S || !S.aha1) return '';
-  const row = (g, sk, i) => `<div class="shop-row"><span class="shop-cost">${ep(['shops', sk, i, 'cost'], g.cost ? `<span class="coin"></span>${g.cost}` : 'бесплатно', 'num')}</span><div><b>${ep(['shops', sk, i, 'name'], esc(g.name))}</b><div class="rt">${rt(g.ru)}</div></div></div>`;
+  const row = (g, sk, i) => `<div class="shop-row"><span class="shop-cost">${ep(['shops', sk, i, 'cost'], g.cost ? `<span class="coin"></span>${g.cost}` : 'бесплатно', 'num')}</span><div><b>${ep(['shops', sk, i, 'name'], esc(g.name))}</b><div class="rt">${ep(['shops', sk, i, 'ru'], rt(g.ru), 'html')}</div></div></div>`;
   return `<div class="side-h">Магазин Ахи</div>
     <div class="note rt">${rt(noteHtml('aha'))}</div>
     <div class="shop-tabs"><button class="chip on" data-shop="aha1">Обычный (${S.aha1.length})</button><button class="chip" data-shop="aha2">Улучшенный (${S.aha2.length})</button></div>
@@ -1858,6 +1858,7 @@ function ahaShop() {
 const ORBK = {'белая':'w', 'синяя':'b', 'золотая':'g', 'радужная':'c'};
 // path — адрес строки награды в данных: тогда её текст можно править как обычный (со ссылками на предметы и иконками)
 function rwItem(r, path) {
+  if (!Array.isArray(path)) path = null;  // map() подставляет сюда индекс
   const n = r.n > 1 ? ` ×${r.n}` : '';
   const ed = (inner, dv) => path ? ep([...path, 'html'], inner, 'html', dv) : inner;
   if (path && r.html != null) return `<span>${ed(rt(r.html), r.html)}</span>`;
@@ -2478,9 +2479,19 @@ async function startSpine(v) {
     if (!w || !h) return;
     v.el.width = Math.round(w * k); v.el.height = Math.round(h * k);
     CWS.applyHide(ch, SPINE_CFG[v.id].hide);
-    v.ch = ch; v.view = CWS.viewOf(ch, SPINE_CFG[v.id].crop, h / w, SPINE_CFG[v.id].rot);
+    v.ch = ch; v.w = w; v.h = h; v.view = CWS.viewOf(ch, SPINE_CFG[v.id].crop, h / w, SPINE_CFG[v.id].rot);
     CWS.update(ch, 0); CWS.draw(ch, v.el, v.view);
     v.frame.classList.add('anim');
+    // при первой загрузке рамка ещё меняет размер (шрифты, картинки): подгоняем холст и кадр, иначе персонаж дёргается и растягивается
+    if (!v.ro && window.ResizeObserver) {
+      v.ro = new ResizeObserver(() => {
+        if (!v.ch) return; const w2 = v.el.clientWidth, h2 = v.el.clientHeight;
+        if (!w2 || !h2 || (Math.abs(w2 - v.w) < 2 && Math.abs(h2 - v.h) < 2)) return;
+        v.w = w2; v.h = h2; v.el.width = Math.round(w2 * k); v.el.height = Math.round(h2 * k);
+        v.view = CWS.viewOf(v.ch, SPINE_CFG[v.id].crop, h2 / w2, SPINE_CFG[v.id].rot); CWS.draw(v.ch, v.el, v.view);
+      });
+      v.ro.observe(v.el);
+    }
   } catch (e) { CWS.stop(v); console.warn('spine', v.id, e); }
 }
 function stopSpine(v) { v.on = false; CWS.stop(v); if (!v.auto) v.frame.classList.remove('anim'); }

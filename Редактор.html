@@ -1079,6 +1079,31 @@ function cleanHtml(h) {
     .replace(/<([a-z0-9]+)\b([^>]*)>/gi, (m, tg, at) => /class="(fx|ii)"/.test(at) ? m : m.replace(/ style="[^"]*"/g, ''))
     .replace(/&nbsp;/g, ' ').replace(/^<br>/, '').replace(/<span>([^<]*)<\/span>/g, '$1');
 }
+
+// выпадающий список с иконками и поиском: персонаж или предмет (можно просто печатать название, список сужается)
+function pickEntity(kind, anchor) {
+  return new Promise(res => {
+    document.querySelectorAll('.pe-pop').forEach(x => x.remove());
+    const L = allOf(kind).filter(x => !x.old).sort((p, q) => String(p.name).localeCompare(String(q.name), 'ru'));
+    const ico0 = x => { const k = kind === 'roles' ? 'avs/' + x.avatar : x.icon; return k ? img(k) : ''; };
+    const ico = x => { const k = kind === 'roles' ? 'avs/' + x.avatar : x.icon; return k && img(k) ? `<img src="${img(k)}" alt="">` : '<i></i>'; };
+    const d = document.createElement('div'); d.className = 'pe-pop';
+    d.innerHTML = `<style>.pe-pop{position:fixed;z-index:100000;width:340px;max-height:420px;display:flex;flex-direction:column;background:#14112b;border:1px solid var(--gold2);border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.7);padding:8px}.pe-pop input{padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#0b091a;color:#fff;margin-bottom:6px}.pe-pop .pl{overflow:auto;display:grid;gap:2px}.pe-pop .pi2{display:flex;align-items:center;gap:10px;padding:5px 8px;border-radius:8px;cursor:pointer}.pe-pop .pi2:hover,.pe-pop .pi2.on{background:#2a2456}.pe-pop img,.pe-pop i{width:34px;height:34px;object-fit:contain;border-radius:6px;flex:none}.pe-pop small{color:var(--dim);margin-left:auto}</style><input placeholder="${kind === 'roles' ? 'Персонаж' : 'Предмет'}: печатайте название или выберите из списка"><label style="display:flex;gap:6px;align-items:center;margin:0 0 6px;font-size:12px;color:var(--dim)"><input type="checkbox" class="pe-ic" style="margin:0"${localStorage.getItem('cw-pe-ic') === '0' ? '' : ' checked'}>со значком (картинка + ссылка)</label><div class="pl"></div>`;
+    document.body.append(d);
+    const r = (anchor || document.body).getBoundingClientRect();
+    d.style.left = Math.max(8, Math.min(innerWidth - 360, r.left)) + 'px'; d.style.top = Math.min(innerHeight - 440, r.bottom + 6) + 'px';
+    const inp = d.querySelector('input'), pl = d.querySelector('.pl'), chk = d.querySelector('.pe-ic'); let cur = [], on = 0;
+    const draw = () => { const q = inp.value.trim().toLowerCase(); cur = L.filter(x => !q || (x.name + ' ' + (x.en || '')).toLowerCase().includes(q)).slice(0, 80); if (on >= cur.length) on = 0;
+      pl.innerHTML = cur.map((x, i) => `<div class="pi2${i === on ? ' on' : ''}" data-i="${i}">${ico(x)}<span>${esc(x.name)}</span><small>${esc(kind === 'roles' ? '★' + (x.cost || '') : (CAT[x.cat] || ''))}</small></div>`).join('') || '<div style="padding:10px;color:var(--dim)">Ничего не найдено</div>'; };
+    const done = x => { try { localStorage.setItem('cw-pe-ic', chk.checked ? '1' : '0'); } catch (err) {} d.remove(); document.removeEventListener('mousedown', out, true); res(x ? Object.assign({}, x, {_ic: chk.checked ? ico0(x) : ''}) : null); };
+    const out = ev => { if (!d.contains(ev.target)) done(null); };
+    setTimeout(() => document.addEventListener('mousedown', out, true), 0);
+    inp.oninput = () => { on = 0; draw(); };
+    inp.onkeydown = ev => { if (ev.key === 'Escape') done(null); else if (ev.key === 'Enter') done(cur[on]); else if (ev.key === 'ArrowDown') { on = Math.min(cur.length - 1, on + 1); draw(); pl.querySelector('.on')?.scrollIntoView({block: 'nearest'}); ev.preventDefault(); } else if (ev.key === 'ArrowUp') { on = Math.max(0, on - 1); draw(); pl.querySelector('.on')?.scrollIntoView({block: 'nearest'}); ev.preventDefault(); } };
+    pl.onclick = ev => { const i = ev.target.closest('.pi2'); if (i) done(cur[+i.dataset.i]); };
+    draw(); inp.focus();
+  });
+}
 function rte(html, onchange, rows = 4) {
   rteStyles();
   const w = document.createElement('div'); w.className = 'rte';
@@ -1177,11 +1202,8 @@ function rte(html, onchange, rows = 4) {
     if (a === 'isz') { const im = (getSelection().anchorNode || {}).nodeType === 1 ? getSelection().getRangeAt(0).cloneContents().querySelector && [...ed.querySelectorAll('img.ii')].filter(x => getSelection().containsNode(x, true)) : []; (im || []).forEach(x => x.setAttribute('style', 'height:' + v)); if (im && im.length) fire(); else status('Выделите иконку в тексте (протяните выделение через неё) и снова выберите размер', true); }
     if (a === 'clear') unwrap();
     if (a === 'role' || a === 'item') {
-      const L = allOf(a === 'role' ? 'roles' : 'items');
-      const nm = prompt('Название (' + (a === 'role' ? 'персонаж' : 'предмет') + '):'); if (!nm) return;
-      const x = L.find(y => y.name.toLowerCase() === nm.trim().toLowerCase()) || L.find(y => y.name.toLowerCase().includes(nm.trim().toLowerCase()));
-      if (!x) return alert('Не нашёл «' + nm + '»');
-      const el = document.createElement('a'); el.className = 'ref'; el.dataset.t = a; el.dataset.id = x.id; el.textContent = x.name; wrapEl(el);
+      range();
+      pickEntity(a === 'role' ? 'roles' : 'items', e.target).then(x => { if (!x) return; ed.focus(); const el = document.createElement('a'); el.className = 'ref'; el.dataset.t = a; el.dataset.id = x.id; if (x._ic) { const im = document.createElement('img'); im.className = 'ii'; im.alt = ''; im.src = x._ic; im.setAttribute('style', 'height:1.6em'); el.append(im, ' ', x.name); const r0 = range(); if (r0) { r0.deleteContents(); r0.insertNode(el); r0.setStartAfter(el); fire(); } else { ed.append(el); fire(); } return; } el.textContent = x.name; wrapEl(el); });
     }
   };
   w.querySelector('.tb').onchange = e => {
