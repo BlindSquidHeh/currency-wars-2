@@ -57,7 +57,7 @@
   "icon": "trail/TrailblazeGoods_204",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_204.png",
   "name": "Улучшение Экспресса: топливо",
-  "html": "Столкновения Экспресса дают <b class=\"v\">5</b> ед. Энергии Освоения для покупок в магазине Серебряной дороги."
+  "html": "Столкновения Экспресса дают <b class=\"v\">5</b> ед. Энергии Освоения для покупок в магазине Серебряных рельсов."
  },
  {
   "id": 205,

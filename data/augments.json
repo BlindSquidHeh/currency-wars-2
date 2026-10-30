@@ -6300,11 +6300,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Сад чудесных зверей",
+  "name": "Эмблема Сад существ",
   "en": "Beast Garden Emblem",
   "icon": "aug/211601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад чудесных зверей</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>.",
   "seasons": [
    2
   ]
@@ -6342,11 +6342,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Серебряная дорога Освоения",
+  "name": "Эмблема Серебряные рельсы Освоения",
   "en": "Trailblaze Silver Rail Emblem",
   "icon": "aug/211901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряная дорога Освоения</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>.",
   "seasons": [
    2
   ]
@@ -6356,11 +6356,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Торговая гильдия Астрополиса",
+  "name": "Эмблема Гильдия Звездограда",
   "en": "Astropolis Merchant Guild Emblem",
   "icon": "aug/212001",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100602\">Эмблема Торговая гильдия Астрополиса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100602\">Эмблема Гильдия Звездограда</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a>.",
   "old": "нет во 2 сезоне",
   "oldKind": "season"
  },
@@ -6593,11 +6593,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Сада чудесных зверей",
+  "name": "Набор эмблемы Сада существ",
   "en": "Beast Garden Emblem Set",
   "icon": "aug/311601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад чудесных зверей</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
   "seasons": [
    2
   ]
@@ -6635,11 +6635,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Серебряной дороги Освоения",
+  "name": "Набор эмблемы Серебряных рельсов Освоения",
   "en": "Trailblaze Silver Rail Emblem Set",
   "icon": "aug/311901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряная дорога Освоения</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
   "seasons": [
    2
   ]
@@ -6649,11 +6649,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Торговой гильдии Астрополиса",
+  "name": "Набор эмблемы Гильдии Звездограда",
   "en": "Astropolis Merchant Guild Emblem Set",
   "icon": "aug/312001",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100602\">Эмблема Торговая гильдия Астрополиса</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100602\">Эмблема Гильдия Звездограда</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>.",
   "old": "нет во 2 сезоне",
   "oldKind": "season"
  },
