@@ -10,7 +10,7 @@ function loadData(id) {
   return DATA[id] || (DATA[id] = (async () => {
     const m = await (await fetch(dir + 'spine.json')).json();
     const parts = await Promise.all(m.parts.map(async p => ({
-      skel: new Uint8Array(await (await fetch(dir + p.skel)).arrayBuffer()),
+      skel: /\.json$/i.test(p.skel) ? await (await fetch(dir + p.skel)).text() : new Uint8Array(await (await fetch(dir + p.skel)).arrayBuffer()),
       atlas: await (await fetch(dir + p.atlas)).text(),
     })));
     return {parts, tex: Object.fromEntries(m.tex.map(t => [t, dir + t]))};
@@ -18,9 +18,12 @@ function loadData(id) {
 }
 
 // ---------- общий GL ----------
-let GL = null;
-function gl() {
-  if (GL) return GL;
+// библиотека 4.1 — для .skel, библиотека 4.2 (window.spine42) — для spine в формате 4.2 (.json); у каждой свой холст и рендерер
+const libOf = is42 => is42 && window.spine42 ? window.spine42 : window.spine;
+const GLS = {};
+function gl(is42) {
+  const spine = libOf(is42), key = spine === window.spine ? 'a' : 'b';
+  if (GLS[key]) return GLS[key];
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 512;
   const ctx = new spine.ManagedWebGLRenderingContext(canvas, {alpha: true, premultipliedAlpha: true, antialias: false, preserveDrawingBuffer: true});
@@ -30,8 +33,7 @@ function gl() {
   const bfs = g.blendFuncSeparate.bind(g);
   g.blendFuncSeparate = (sr, dr) => (dr === g.ONE_MINUS_SRC_ALPHA && sr !== g.DST_COLOR ? bfs(sr, dr, g.ONE, g.ONE_MINUS_SRC_ALPHA) : bfs(sr, dr, g.ZERO, g.ONE));
   const renderer = new spine.SceneRenderer(canvas, ctx, true);
-  GL = {canvas, ctx, g, renderer};
-  return GL;
+  return GLS[key] = {canvas, ctx, g, renderer};
 }
 
 const loadImg = src => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
@@ -54,7 +56,8 @@ async function loadChar(id) {
   if (LOADED[id]) return LOADED[id];
   return (LOADED[id] = (async () => {
     const d = await loadData(id);
-    const {ctx} = gl();
+    const v42 = d.parts.some(p => typeof p.skel === 'string'), spine = libOf(v42), phys = v42 && spine.Physics ? spine.Physics.update : undefined;
+    const {ctx} = gl(v42);
     const tex = {};
     // мип-карты: большие атласы сильно уменьшаются в карточке, без них картинка «рябит»
     for (const [n, src] of Object.entries(d.tex)) tex[n] = new spine.GLTexture(ctx, await loadImg(src), true);
@@ -62,17 +65,18 @@ async function loadChar(id) {
     const parts = d.parts.map(p => {
       const atlas = new spine.TextureAtlas(p.atlas);
       for (const pg of atlas.pages) { pg.setTexture(tex[pg.name]); tex[pg.name].setFilters(g.LINEAR_MIPMAP_LINEAR, g.LINEAR); }
-      const sd = new spine.SkeletonBinary(new spine.AtlasAttachmentLoader(atlas)).readSkeletonData(p.skel);
-      const sk = new spine.Skeleton(sd); sk.setToSetupPose(); sk.updateWorldTransform();
+      const ld = new spine.AtlasAttachmentLoader(atlas);
+      const sd = typeof p.skel === 'string' ? new spine.SkeletonJson(ld).readSkeletonData(p.skel) : new spine.SkeletonBinary(ld).readSkeletonData(p.skel);  // .json — спайн в текстовом формате
+      const sk = new spine.Skeleton(sd); sk.setToSetupPose(); sk.updateWorldTransform(phys);
       const st = new spine.AnimationState(new spine.AnimationStateData(sd));
       const an = sd.animations.find(a => /^(idle|all|animation|loop|await|male)$/i.test(a.name)) || sd.animations.find(a => /idle/i.test(a.name)) || sd.animations[0];
       if (an) st.setAnimation(0, an.name, true);
-      return {sk, st, sd};
+      return {sk, st, sd, phys};
     });
     const o = new spine.Vector2(), sz = new spine.Vector2();
     let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
     for (const p of parts) { p.sk.getBounds(o, sz, []); x0 = Math.min(x0, o.x); y0 = Math.min(y0, o.y); x1 = Math.max(x1, o.x + sz.x); y1 = Math.max(y1, o.y + sz.y); }
-    return {id, parts, bounds: [x0, y0, x1 - x0, y1 - y0], tex, hidden: null};
+    return {id, parts, bounds: [x0, y0, x1 - x0, y1 - y0], tex, hidden: null, v42};
   })());
 }
 
@@ -94,13 +98,13 @@ function update(ch, dt) {
   for (const p of ch.parts) {
     p.st.update(dt); p.st.apply(p.sk);
     if (p.hideIdx) for (const i of p.hideIdx) p.sk.slots[i].attachment = null;
-    p.sk.updateWorldTransform();
+    p.sk.updateWorldTransform(p.phys);
   }
 }
 
 // нарисовать персонажа в 2D-холст; view = [cx, cy, w] в мировых координатах (h берётся из пропорций холста)
 function draw(ch, out, view) {
-  const {canvas, g, renderer} = gl();
+  const {canvas, g, renderer} = gl(ch.v42);
   const W = out.width, H = out.height;
   if (canvas.width < W || canvas.height < H) { canvas.width = Math.max(canvas.width, W); canvas.height = Math.max(canvas.height, H); }
   const cam = renderer.camera;

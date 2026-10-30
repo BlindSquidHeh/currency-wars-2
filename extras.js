@@ -189,10 +189,10 @@ function roleAnim(x, commit) {
     if (a === 'vdel') { delete x.anim; commit(); api.redraw(); }
     if (a === 'spine') {
       const fs = await pickFile('.skel,.atlas,.png,.webp,.json', true); if (!fs || !fs.length) return;
-      if (!fs.some(f => /\.skel$/i.test(f.name)) || !fs.some(f => /\.atlas$/i.test(f.name))) return alert('Нужны вместе: файл .skel, файл .atlas и текстуры (.png/.webp), на которые ссылается .atlas.');
+      if (!fs.some(f => /\.(skel|json)$/i.test(f.name)) || !fs.some(f => /\.atlas$/i.test(f.name))) return alert('Нужны вместе: файл .skel (или .json), файл .atlas с тем же именем и текстуры (.png/.webp), на которые ссылается .atlas.');
       const aid = String(x.avatar || x.id);
       api.status('Загружаю spine…', true);
-      for (const f of fs) await uploadFile('spine/' + aid, f.name.replace(/[^\w\-. ]+/g, '_'), f);
+      for (const f of fs) await uploadFile('spine/' + aid, f.name.replace(/[^\w\-. ]+/g, '_').replace(/^spine\.json$/i, 'skeleton.json'), f);
       const r = await fetch(`/api/spine-pack?id=${aid}&name=${encodeURIComponent(x.name)}`, {method:'POST'});
       if (!r.ok) return alert(await r.text());
       if (x.anim && confirm('Spine загружен. Убрать видео-анимацию, чтобы на сайте играл spine?')) { delete x.anim; commit(); }
