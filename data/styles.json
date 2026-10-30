@@ -118,5 +118,16 @@
  "o:k:[\"traits\",100602,\"layers\",5,\"n\"]§": {
   "x": -12,
   "s": 0.8
+ },
+ "o:m:pet101§0.1": {
+  "hd": 1
+ },
+ "o:t:items§2.145.0.0": {
+  "wp": 100,
+  "ja": "c",
+  "im": "media/blk_mvujnc70_coin.webp"
+ },
+ "o:m:item355201103§0.0.0": {
+  "im": "media/blk_mvujtpd5_coin.webp"
  }
 }
