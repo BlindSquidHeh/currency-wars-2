@@ -1407,7 +1407,7 @@ const nEq = items.filter(i => i.type === 'Equipment').length;
 const TABS = [
   {k:'guide', t:'Как играть', icon:'ui/tab_misc'}, {k:'roles', t:'Персонажи'}, {k:'traits', t:'Связи'}, {k:'items', t:'Экипировка'},
   {k:'augments', t:'Стратегии'}, {k:'buffs', t:'Среды'}, {k:'pets', t:'Компаньоны'}, {k:'misc', t:'Предметы'},
-  {k:'nodes', t:'Узлы'}, ...(DB.ranks ? [{k:'ranks', t:'Ранги'}] : []), {k:'armor', t:'Броня'}, {k:'affix', t:'Аффиксы'}, {k:'opp', t:'Противники'}, {k:'npc', t:'НПС'},
+  {k:'nodes', t:'Узлы'}, ...(DB.ranks ? [{k:'ranks', t:'Ранги'}] : []), {k:'armor', t:'Сюжетная броня'}, {k:'affix', t:'Аффиксы'}, {k:'opp', t:'Противники'}, {k:'npc', t:'НПС'},
 ];
 const TABS0 = TABS.slice();
 $('#heroStats').innerHTML = [[listRoles.length, 'персонажей'], [traits.length, 'связей'], [nEq, 'экипировки'], [augs.filter(a => !a.old).length, 'стратегий'], [buffs.filter(b => !b.old).length, 'сред'], [(DB.pets || []).length, 'компаньонов']]
