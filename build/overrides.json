@@ -17283,7 +17283,7 @@
      {
       "id": "1003022",
       "name": "Игры фантаны: Опыт",
-      "html": "<span class=\"ai0\"></span>В начале каждой партии Игры фантаны объявляют новые правила игры.<br>Правило этой партии: <span class=\"c\" data-c=\"f29e38\">Опыт</span>.<br>При входе в новый узел даёт <span class=\"c\" data-c=\"f29e38\">опыт</span>. <span class=\"pi\" data-p=\"FrontBack\" title=\"Сила на поле/вне поля\"></span>Сила на поле/вне поля персонажей со связью Игры фантаны повышается, а каждый уровень магазина дополнительно повышает её.<br><br>Уровни:<br><b>3</b> — <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила на поле/вне поля 10%. Каждый уровень магазина дополнительно повышает <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Силу на поле/вне поля на <b class=\"v\">2%</b>. Даёт<b>  </b><b class=\"v\">1</b> опыта.<br><b>5</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>20%</b>. Каждый уровень магазина дополнительно даёт <b class=\"v\">4%</b><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>. Даёт <b class=\"v\">2</b> опыта.<br><b>7</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>60%</b>. Каждый уровень магазина дополнительно даёт <b class=\"v\">8%<span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span></b>. Даёт <b class=\"v\">4</b> опыта.<br><b>10</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>200%</b>. «Опыт» превзошёл законы магазина! Магазин повышается до ур. <b class=\"v\">11</b> и даёт огромное количество золотых монет (<b class=\"v\">99</b>)! За каждый уровень — <b class=\"v\">16%</b><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>."
+      "html": "<span class=\"ai0\"></span>В начале каждой партии Игры фантаны объявляют новые правила игры.<br>Правило этой партии: <span class=\"c\" data-c=\"f29e38\">Опыт</span>.<br>При входе в новый узел даёт <span class=\"c\" data-c=\"f29e38\">опыт</span>. <span class=\"pi\" data-p=\"FrontBack\" title=\"Сила на поле/вне поля\"></span>Сила на поле/вне поля персонажей со связью Игры фантаны повышается, а каждый уровень магазина дополнительно повышает её.<br><br>Уровни:<br><b>3</b> — <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила на поле/вне поля <b class=\"v\">10%</b>. Каждый уровень магазина дополнительно повышает <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Силу на поле/вне поля на <b class=\"v\">2%</b>. Даёт<b>  </b><b class=\"v\">1</b> опыта.<br><b>5</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>20%</b>. Каждый уровень магазина дополнительно даёт <b class=\"v\">4%</b><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>. Даёт <b class=\"v\">2</b> опыта.<br><b>7</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>60%</b>. Каждый уровень магазина дополнительно даёт <b class=\"v\">8%<span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span></b>. Даёт <b class=\"v\">4</b> опыта.<br><b>10</b> — <b class=\"v\"><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>200%</b>. «Опыт» превзошёл законы магазина! Магазин повышается до ур. <b class=\"v\">11</b> и даёт огромное количество золотых монет (<b class=\"v\">99</b>)! За каждый уровень — <b class=\"v\">16%</b><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>."
      },
      {
       "id": "1003023",
@@ -17450,7 +17450,7 @@
       "stars": 3,
       "parts": [
        {
-        "html": "Персонажи в магазине случайно повышаются до <b class=\"v\">2</b>★/<b class=\"v\">3</b>★/<b class=\"v\">4</b>★, но продаются по цене <b class=\"v\">1</b>★!"
+        "html": "Персонажи в магазине случайно повышаются до <b class=\"v\">2</b>★/<b class=\"v\">3</b>★/<b class=\"v\">4</b>★, но покупаются по цене <b class=\"v\">1</b>★!"
        }
       ],
       "pillImg": "pill/100602_layers_5"
@@ -25497,6 +25497,9 @@
   },
   "o:m:trait100502§0.2.0.18.9.1": {
    "x": 1
+  },
+  "o:k:h:1z0azxm§": {
+   "x": -50
   }
  }
 }

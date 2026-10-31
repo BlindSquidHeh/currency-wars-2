@@ -1906,7 +1906,7 @@ function wishBlock() {
   const W = BANK.wish; if (!W || !W.levels) return '';
   const gain = (W.gain || []).map(([l, p]) => `${l} перс.: +${p[0]}`).join(' · ');
   return `<div class="side-h">Сила желаний: награды</div>
-    <div class="note">После каждого боя связь копит Силу желаний (${esc(gain)}), за идеальную победу — ×${(W.mult || [1, 2])[1]}. Награды приходят рудой на порогах ниже. Данные — таблицы 4.6.54.</div>
+    <div class="note">После каждого боя связь копит Силу желаний (${esc(gain)}), за идеальную победу — ×${(W.mult || [1, 2])[1]}. Награды приходят рудой на порогах ниже.</div>
     <div class="shop-list" style="max-height:none">${W.levels.map(l => `<div class="shop-row"><span class="shop-cost">${l.at}</span><div class="rw-in">${l.rw.map(rwItem).join('')}</div></div>`).join('')}</div>`;
 }
 // овальный значок уровня связи: номер и звёзды из файлов игры (Гильдия Звездограда считает 3★ персонажей)
