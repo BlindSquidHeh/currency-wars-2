@@ -462,7 +462,7 @@
     "html": "Искра: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\" title=\"Усиление урона\"></span>Усиление урона повышается на <b class=\"v\">10%</b>. Изменяется в каждом узле!"
    },
    {
-    "k": "12",
+    "k": "1",
     "cond": "RandomPropertyByRole",
     "cp": [
      1203

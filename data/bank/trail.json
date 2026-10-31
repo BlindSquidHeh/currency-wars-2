@@ -72,7 +72,7 @@
  {
   "id": 301,
   "kind": "Экспресс",
-  "cost": 10,
+  "cost": 20,
   "pre": 201,
   "icon": "trail/TrailblazeGoods_301",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_301.png",
@@ -158,7 +158,7 @@
  {
   "id": 400,
   "kind": "Экспресс",
-  "cost": 0,
+  "cost": 30,
   "pre": 301,
   "icon": "trail/TrailblazeGoods_401",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_401.png",
