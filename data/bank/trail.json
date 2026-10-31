@@ -184,17 +184,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле I",
-  "html": "Сила на поле повышается на <b class=\"v\">5%</b>."
- },
- {
-  "id": 403,
-  "kind": "Характеристика",
-  "cost": 15,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление скорости I",
-  "html": "Усиление скорости повышается на <b class=\"v\">2%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">5%</b>."
  },
  {
   "id": 404,
@@ -204,17 +194,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле II",
-  "html": "Сила на поле повышается на <b class=\"v\">10%</b>."
- },
- {
-  "id": 405,
-  "kind": "Характеристика",
-  "cost": 30,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление скорости II",
-  "html": "Усиление скорости повышается на <b class=\"v\">4%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">10%</b>."
  },
  {
   "id": 406,
@@ -224,17 +204,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле III",
-  "html": "Сила на поле повышается на <b class=\"v\">15%</b>."
- },
- {
-  "id": 407,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление скорости III",
-  "html": "Усиление скорости повышается на <b class=\"v\">6%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">15%</b>."
  },
  {
   "id": 408,
@@ -244,7 +214,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле IV",
-  "html": "Сила на поле повышается на <b class=\"v\">75%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">75%</b>."
  },
  {
   "id": 414,
@@ -254,7 +224,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля I",
-  "html": "Сила вне поля повышается на <b class=\"v\">5%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">5%</b>."
  },
  {
   "id": 415,
@@ -264,7 +234,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля II",
-  "html": "Сила вне поля повышается на <b class=\"v\">10%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">10%</b>."
  },
  {
   "id": 416,
@@ -274,7 +244,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля III",
-  "html": "Сила вне поля повышается на <b class=\"v\">15%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">15%</b>."
  },
  {
   "id": 417,
@@ -284,7 +254,37 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля IV",
-  "html": "Сила вне поля повышается на <b class=\"v\">75%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">75%</b>."
+ },
+ {
+  "id": 403,
+  "kind": "Характеристика",
+  "cost": 15,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление скорости I",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">2%</b>."
+ },
+ {
+  "id": 405,
+  "kind": "Характеристика",
+  "cost": 30,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление скорости II",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">4%</b>."
+ },
+ {
+  "id": 407,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление скорости III",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">6%</b>."
  },
  {
   "id": 409,
@@ -294,57 +294,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление скорости IV",
-  "html": "Усиление скорости повышается на <b class=\"v\">30%</b>."
- },
- {
-  "id": 410,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Шанс счастливого удара IV",
-  "html": "Шанс счастливого удара повышается на <b class=\"v\">30%</b>."
- },
- {
-  "id": 418,
-  "kind": "Характеристика",
-  "cost": 15,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Урон счастливого удара I",
-  "html": "Урон счастливого удара повышается на <b class=\"v\">2%</b>."
- },
- {
-  "id": 419,
-  "kind": "Характеристика",
-  "cost": 30,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Урон счастливого удара II",
-  "html": "Урон счастливого удара повышается на <b class=\"v\">4%</b>."
- },
- {
-  "id": 420,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Урон счастливого удара III",
-  "html": "Урон счастливого удара повышается на <b class=\"v\">6%</b>."
- },
- {
-  "id": 421,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Урон счастливого удара IV",
-  "html": "Урон счастливого удара повышается на <b class=\"v\">30%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 422,
@@ -354,7 +304,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара I",
-  "html": "Шанс счастливого удара повышается на <b class=\"v\">2%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">2%</b>."
  },
  {
   "id": 423,
@@ -364,7 +314,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара II",
-  "html": "Шанс счастливого удара повышается на <b class=\"v\">4%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">4%</b>."
  },
  {
   "id": 424,
@@ -374,7 +324,90 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара III",
-  "html": "Шанс счастливого удара повышается на <b class=\"v\">6%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">6%</b>."
+ },
+ {
+  "id": 410,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Шанс счастливого удара IV",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">30%</b>."
+ },
+ {
+  "id": 418,
+  "kind": "Характеристика",
+  "cost": 15,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Урон счастливого удара I",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">2%</b>."
+ },
+ {
+  "id": 419,
+  "kind": "Характеристика",
+  "cost": 30,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Урон счастливого удара II",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">4%</b>."
+ },
+ {
+  "id": 420,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Урон счастливого удара III",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">6%</b>."
+ },
+ {
+  "id": 421,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Урон счастливого удара IV",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">30%</b>."
+ },
+ {
+  "id": 416944,
+  "kind": "Характеристика",
+  "cost": 15,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление урона I",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">2%</b>.",
+  "role": 0
+ },
+ {
+  "id": 416945,
+  "kind": "Характеристика",
+  "cost": 30,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление урона II",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">4%</b>.",
+  "role": 0
+ },
+ {
+  "id": 416943,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Усиление урона III",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на<b class=\"v\"> 6%</b>.",
+  "role": 0
  },
  {
   "id": 411,
@@ -384,7 +417,40 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление урона IV",
-  "html": "Усиление урона повышается на <b class=\"v\">30%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">30%</b>."
+ },
+ {
+  "id": 850053,
+  "kind": "Характеристика",
+  "cost": 15,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Понижение получаемого урона I",
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>Понижение получаемого урона повышается на <b class=\"v\">2%</b>.",
+  "role": 0
+ },
+ {
+  "id": 901075,
+  "kind": "Характеристика",
+  "cost": 30,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Понижение получаемого урона II",
+  "html": "<span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span><span class=\"ai0\"></span>Понижение получаемого урона повышается на <b class=\"v\">4%</b>.",
+  "role": 0
+ },
+ {
+  "id": 933545,
+  "kind": "Характеристика",
+  "cost": 50,
+  "pre": 0,
+  "icon": "",
+  "iconPath": "",
+  "name": "Понижение получаемого урона III",
+  "html": "<span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span><span class=\"ai0\"></span>Понижение получаемого урона повышается на <b class=\"v\">6%</b>.",
+  "role": 0
  },
  {
   "id": 412,
@@ -394,7 +460,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Понижение получаемого урона IV",
-  "html": "Понижение получаемого урона повышается на <b class=\"v\">30%</b>."
+  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>Понижение получаемого урона повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 413,
