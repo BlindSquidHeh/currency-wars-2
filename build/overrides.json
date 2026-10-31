@@ -22410,7 +22410,7 @@
    {
     "id": 301,
     "kind": "Экспресс",
-    "cost": 20,
+    "cost": 10,
     "pre": 201,
     "icon": "trail/TrailblazeGoods_301",
     "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_301.png",
