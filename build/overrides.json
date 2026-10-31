@@ -17376,72 +17376,7 @@
       ]
      }
     ],
-    "remarks": [
-     {
-      "k": "1",
-      "cond": "RoleActivate",
-      "cp": [
-       122502
-      ],
-      "html": "<span class=\"ai0\"></span>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "2",
-      "cond": "RoleActivate",
-      "cp": [
-       131502
-      ],
-      "html": "Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "3",
-      "cond": "RoleActivate",
-      "cp": [
-       110502
-      ],
-      "html": "<span class=\"ai0\"></span>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "4",
-      "cond": "RoleActivate",
-      "cp": [
-       140102
-      ],
-      "html": "Великая Герта: Сила на поле повышается на <b class=\"v\">20%</b>."
-     },
-     {
-      "k": "5",
-      "cond": "RoleActivate",
-      "cp": [
-       120302
-      ],
-      "html": "Лоча: усиление скорости повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "6",
-      "cond": "RoleActivate",
-      "cp": [
-       130402
-      ],
-      "html": "Авантюрин: шанс счастливого удара повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "7",
-      "cond": "RoleActivate",
-      "cp": [
-       110702
-      ],
-      "html": "Клара: усиление урона повышается на <b class=\"v\">10%</b>."
-     },
-     {
-      "k": "8",
-      "cond": "EquipActivate",
-      "cp": [
-       355100402
-      ],
-      "html": "Эмблема: урон счастливого удара повышается на <b class=\"v\">18%</b>."
-     }
-    ],
+    "remarks": [],
     "subs": []
    },
    "100602": {
