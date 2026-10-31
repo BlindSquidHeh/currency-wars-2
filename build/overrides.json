@@ -17308,7 +17308,7 @@
       "q": "None",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">100%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">100%</b></span>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">20%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">20%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">20%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">10%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">10%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">10%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">10%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">18%</b>."
        }
       ]
      },
@@ -17317,7 +17317,7 @@
       "q": "None",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">120%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">120%</b></span>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">24%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">24%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">24%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">12%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">12%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">12%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">12%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">21,6%</b>."
        }
       ]
      },
@@ -17326,7 +17326,7 @@
       "q": "Silver",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">140%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <b class=\"v\">140%</b>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">28%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">28%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">28%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">14%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">14%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">14%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">14%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">25,2%</b>."
        }
       ]
      },
@@ -17335,7 +17335,7 @@
       "q": "Silver",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">170%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">170%</b></span>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">34%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">34%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">34%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">17%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">17%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">17%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">17%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">30,6%</b>."
        }
       ]
      },
@@ -17344,7 +17344,7 @@
       "q": "Gold",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">200%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <b class=\"v\">200%</b>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">40%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">40%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">40%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">20%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">20%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">20%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">20%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">36%</b>."
        }
       ]
      },
@@ -17353,7 +17353,7 @@
       "q": "Gold",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">240%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <b class=\"v\">240%</b>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">48%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">48%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">48%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">24%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">24%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">24%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">24%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">43,2%</b>."
        }
       ]
      },
@@ -17362,7 +17362,7 @@
       "q": "Gold",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">290%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <b class=\"v\">290%</b>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">58%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">58%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">58%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на <b class=\"v\">29%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">29%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">29%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">29%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">52,2%</b>."
        }
       ]
      },
@@ -17371,7 +17371,7 @@
       "q": "Gold",
       "parts": [
        {
-        "html": "Бонус <span class=\"c\" data-c=\"f29e38\"><b class=\"v\">350%</b></span>."
+        "html": "<span class=\"ai0\"></span>Бонус <b class=\"v\">350%</b>.<br>Великая Герта: <span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">70%</b>.<br>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">70%</b>.<br>Бутхилл: эффективность пробития уязвимости повышается на <b class=\"v\">70%</b>.<br>Наташа: <span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>понижение получаемого урона повышается на<b class=\"v\"> 35%</b>.<br>Лоча: <span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>усиление скорости повышается на <b class=\"v\">35%</b>.<br>Авантюрин: <span class=\"pi\" data-p=\"ExtraLuckChance\"></span>шанс счастливого удара повышается на <b class=\"v\">35%</b>.<br>Клара: <span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>усиление урона повышается на <b class=\"v\">35%</b>.<br>Эмблема: <span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>урон счастливого удара повышается на <b class=\"v\">63%</b>."
        }
       ]
      }
@@ -17383,7 +17383,7 @@
       "cp": [
        122502
       ],
-      "html": "Фуга: Сила вне поля повышается на <b class=\"v\">20%</b>."
+      "html": "<span class=\"ai0\"></span>Фуга: <span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">20%</b>."
      },
      {
       "k": "2",
