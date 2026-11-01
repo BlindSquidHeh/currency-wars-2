@@ -6411,11 +6411,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Гранд-ресторан",
+  "name": "Эмблема Золотой ресторан",
   "en": "The Grand Restaurant Emblem",
   "icon": "aug/212401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Гранд-ресторан</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>.",
   "seasons": [
    2
   ]
@@ -6704,11 +6704,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Гранд-ресторан",
+  "name": "Набор эмблемы Золотой ресторан",
   "en": "The Grand Restaurant Emblem Set",
   "icon": "aug/312401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Гранд-ресторан</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030101\">Антигравитационные ботинки</a>.",
+  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030101\">Антигравитационные ботинки</a>.",
   "seasons": [
    2
   ],
