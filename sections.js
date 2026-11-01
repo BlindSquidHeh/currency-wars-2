@@ -8,7 +8,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 const clone = o => JSON.parse(JSON.stringify(o));
 
 const LIST = {
-  'bank.armor': 'Сюжетная броня', 'bank.affix': 'Аффиксы', 'bank.opp': 'Противники', 'bank.chim': 'Химеры',
+  'bank.armor': 'Броня протагониста', 'bank.affix': 'Аффиксы', 'bank.opp': 'Противники', 'bank.chim': 'Химеры',
   'bank.npc': 'НПС', 'pets': 'Компаньоны', 'bank.astro': 'Гильдия Звездограда (уровни)', 'bank.svarog': 'Сварог (модификации)',
   'bank.nodes.types': 'Узлы: типы', 'bank.nodes.special': 'Узлы: особые', 'bank.nodes.states': 'Узлы: состояния',
   'bank.nodes.rules': 'Узлы: правила забега', 'bank.res': 'Ресурсы забега', 'shops.aha1': 'Магазин Ахи (1)', 'shops.aha2': 'Магазин Ахи (2)',

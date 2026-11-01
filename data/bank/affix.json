@@ -395,7 +395,7 @@
   "id": 4037,
   "name": "Тянуть одеяло на себя",
   "en": "Hog the Stage",
-  "html": "Владелец сюжетной брони наносит <b class=\"v\">105%</b> исходного урона, остальные — <b class=\"v\">80%</b>.",
+  "html": "Владелец брони протагониста наносит <b class=\"v\">105%</b> исходного урона, остальные — <b class=\"v\">80%</b>.",
   "icon": "affix/Icon_GridFight_Affix_4037",
   "path": "SpriteOutput/GridFight/BattleIcon/BuffIcon/Icon_GridFight_Affix_4037.png"
  },
