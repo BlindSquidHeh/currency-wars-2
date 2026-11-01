@@ -20128,7 +20128,7 @@
     "cost": 0,
     "q": 1,
     "name": "Мелочь в кармане",
-    "ru": "<img src=\"media/blk_mvx3ahup_352608.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">Даёт золотых монет: <b class=\"v\">1</b>.",
+    "ru": "Даёт <img src=\"media/blk_mvx4h03n_352608.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">золотых монет: <b class=\"v\">1</b>.",
     "en": "Pocket Change"
    },
    {
@@ -20136,7 +20136,7 @@
     "cost": 2,
     "q": 1,
     "name": "Подготовительные субсидии",
-    "ru": "<img src=\"media/blk_mvx3ayfo_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">Даёт бесплатных обновлений магазина: <b class=\"v\">2</b>.",
+    "ru": "Даёт <img src=\"media/blk_mvx4h65b_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">бесплатных обновлений магазина: <b class=\"v\">2</b>.",
     "en": "Preparation Subsidies"
    },
    {
@@ -20160,7 +20160,7 @@
     "cost": 2,
     "q": 1,
     "name": "Встреча старых друзей",
-    "ru": "В следующих <b class=\"v\">2</b> обновлениях магазина появятся 2 случайных персонажа из прошлого боя.",
+    "ru": "В следующих 2 обновлениях магазина появятся 2 случайных персонажа из прошлого боя.",
     "en": "Old Friends Reunited"
    },
    {
