@@ -4,6 +4,7 @@
   "tier": 1,
   "cost": 1,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -19,6 +20,7 @@
   "tier": 1,
   "cost": 40,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -34,6 +36,7 @@
   "tier": 1,
   "cost": 15,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -49,6 +52,7 @@
   "tier": 1,
   "cost": 10,
   "hp": true,
+  "sig": true,
   "name": "6 золотых монет",
   "rw": [
    {
@@ -62,6 +66,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -77,6 +82,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -92,6 +98,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -107,6 +114,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -122,6 +130,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -137,6 +146,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -152,6 +162,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -167,6 +178,7 @@
   "tier": 1,
   "cost": 8,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -182,6 +194,7 @@
   "tier": 2,
   "cost": 10,
   "hp": true,
+  "sig": true,
   "name": "10 золотых монет",
   "rw": [
    {
@@ -195,6 +208,7 @@
   "tier": 2,
   "cost": 5,
   "hp": false,
+  "sig": true,
   "name": "10 НР команды",
   "rw": [
    {
@@ -209,6 +223,7 @@
   "tier": 2,
   "cost": 4,
   "hp": false,
+  "sig": true,
   "name": "8 опыта",
   "rw": [
    {
@@ -223,6 +238,7 @@
   "tier": 2,
   "cost": 4,
   "hp": false,
+  "sig": true,
   "name": "4 бесплатн. обновл.",
   "rw": [
    {
@@ -237,6 +253,7 @@
   "tier": 2,
   "cost": 20,
   "hp": false,
+  "sig": true,
   "name": "20 бесплатн. обновл.",
   "rw": [
    {
@@ -251,6 +268,7 @@
   "tier": 2,
   "cost": 12,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -266,6 +284,7 @@
   "tier": 2,
   "cost": 15,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -281,6 +300,7 @@
   "tier": 2,
   "cost": 30,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -296,6 +316,7 @@
   "tier": 2,
   "cost": 15,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -311,6 +332,7 @@
   "tier": 2,
   "cost": 9,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -326,6 +348,7 @@
   "tier": 2,
   "cost": 9,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -341,6 +364,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -356,6 +380,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -371,6 +396,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -386,6 +412,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -401,6 +428,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -416,6 +444,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -431,6 +460,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -446,6 +476,7 @@
   "tier": 2,
   "cost": 6,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -461,6 +492,7 @@
   "tier": 2,
   "cost": 5,
   "hp": false,
+  "sig": false,
   "name": "1 Большая плавильная печь",
   "rw": [
    {
@@ -476,6 +508,7 @@
   "tier": 2,
   "cost": 4,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -491,6 +524,7 @@
   "tier": 2,
   "cost": 5,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -506,6 +540,7 @@
   "tier": 2,
   "cost": 15,
   "hp": false,
+  "sig": false,
   "name": "",
   "rw": [
    {
@@ -521,6 +556,7 @@
   "tier": 3,
   "cost": 30,
   "hp": false,
+  "sig": false,
   "name": "Сказочный опыт",
   "rw": [
    {
@@ -536,6 +572,7 @@
   "tier": 3,
   "cost": 30,
   "hp": false,
+  "sig": false,
   "name": "Мастер оружия",
   "rw": [
    {
@@ -551,6 +588,7 @@
   "tier": 3,
   "cost": 5,
   "hp": false,
+  "sig": false,
   "name": "5-стоимостной на 3★!?",
   "rw": [
    {
@@ -558,6 +596,36 @@
     "id": 350204,
     "n": 1,
     "name": "Счастливая звезда"
+   }
+  ]
+ },
+ {
+  "id": 10001,
+  "tier": 1,
+  "cost": 3,
+  "hp": false,
+  "sig": true,
+  "name": "",
+  "rw": [
+   {
+    "t": "refresh",
+    "n": 2,
+    "html": "<img src=\"media/blk_mvzhed2w_281035.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">2 беспл. обновл. магазина"
+   }
+  ]
+ },
+ {
+  "id": 10002,
+  "tier": 1,
+  "cost": 3,
+  "hp": false,
+  "sig": true,
+  "name": "",
+  "rw": [
+   {
+    "t": "exp",
+    "n": 1,
+    "html": "<img src=\"media/blk_mvzhejr4_281034.png\" alt=\"\" class=\"ii\" style=\"height:1.3em\">1 оч. опыта"
    }
   ]
  }
