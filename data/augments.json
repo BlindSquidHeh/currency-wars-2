@@ -1044,7 +1044,7 @@
   "en": "Gold Panning",
   "icon": "aug/201501",
   "new": false,
-  "html": "При синтезе персонажа <span class=\"c\" data-c=\"6cce9f\">стоимостью 2</span> уровня <b class=\"v\">2</b>★ даёт <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>.",
+  "html": "При синтезе <span class=\"c\" data-c=\"6cce9f\">персонажа <b class=\"v\">2</b>★ стоимостью 2</span> даёт персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1878,7 +1878,7 @@
   "en": "Xianzhou Emblem Set",
   "icon": "aug/210701",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051007\">Эмблема Сяньчжоу</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1217\">Хохо</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051007\">Эмблема Сяньчжоу</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1217\">Хохо</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1894,7 +1894,7 @@
   "en": "Wolf Hunt Emblem Set",
   "icon": "aug/210801",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051008\">Эмблема Охота на волков</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1218\">Цзяоцю</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051008\">Эмблема Охота на волков</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1218\">Цзяоцю</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1910,7 +1910,7 @@
   "en": "Planet of Festivities Emblem Set",
   "icon": "aug/211001",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1926,7 +1926,7 @@
   "en": "Day Demigod Emblem Set",
   "icon": "aug/211101",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051011\">Эмблема Полубоги дня</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1942,7 +1942,7 @@
   "en": "Night Demigod Emblem Set",
   "icon": "aug/211201",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35051012\">Эмблема Полубоги ночи</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030205\">Кровожадность</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35051012\">Эмблема Полубоги ночи</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030205\">Кровожадность</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1958,7 +1958,7 @@
   "en": "Follow-Up ATK Emblem Set",
   "icon": "aug/220101",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052001\">Эмблема Бонус-атака</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1220\">Фэйсяо</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052001\">Эмблема Бонус-атака</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1220\">Фэйсяо</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -1990,7 +1990,7 @@
   "en": "AoE Emblem Set",
   "icon": "aug/220301",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052003\">Эмблема Групповая атака</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1314\">Яшма</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052003\">Эмблема Групповая атака</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1314\">Яшма</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2006,7 +2006,7 @@
   "en": "Energy Emblem Set",
   "icon": "aug/220401",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030407\">Знамя победы</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052004\">Эмблема Энергия</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030407\">Знамя победы</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2022,7 +2022,7 @@
   "en": "Healing Emblem Set",
   "icon": "aug/220501",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052005\">Эмблема Исцеление</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1409\">Гиацина</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2038,7 +2038,7 @@
   "en": "Bloodflame Emblem Set",
   "icon": "aug/220601",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052006\">Эмблема Сжигание НР</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030205\">Кровожадность</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052006\">Эмблема Сжигание НР</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030205\">Кровожадность</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2054,7 +2054,7 @@
   "en": "Debuff Emblem Set",
   "icon": "aug/220701",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052007\">Эмблема Ослабление</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2070,7 +2070,7 @@
   "en": "DoT Emblem Set",
   "icon": "aug/220801",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052008\">Эмблема Периодический урон</a>: <b class=\"v\">1</b>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030101\">Антигравитационные ботинки</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2102,7 +2102,7 @@
   "en": "Shield Emblem Set",
   "icon": "aug/221001",
   "new": false,
-  "html": "Даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>, <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030306\">Адаптивный экзоскелет</a>.",
+  "html": "Даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"35052010\">Эмблема Щит</a>, персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1304\">Авантюрин</a></span>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030306\">Адаптивный экзоскелет</a>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -2169,7 +2169,7 @@
    2,
    3
   ],
-  "name": "Копирование",
+  "name": "Копия",
   "en": "Copy",
   "icon": "aug/330301",
   "new": false,
@@ -3350,7 +3350,7 @@
   "en": "Middle Class",
   "icon": "aug/250501",
   "new": false,
-  "html": "За каждого персонажа 2★ в команде союзников команда получает <b class=\"v\">5%</b> к понижению получаемого урона и <b class=\"v\">15%</b> к силе на поле/вне поля. Также даёт золотых монет: <b class=\"v\">3</b>.",
+  "html": "За каждого персонажа 2★ в команде даёт <b class=\"v\">5%</b> к понижению получаемого урона и <b class=\"v\">15%</b> к силе на поле/вне поля. Дополнительно даёт золотых монет: <b class=\"v\">3</b>.",
   "seasons": [
    1,
    2
@@ -4172,7 +4172,7 @@
   "en": "Integrated Combat",
   "icon": "aug/351601",
   "new": false,
-  "html": "Даёт команде <b class=\"v\">33%</b> к понижению получаемого урона. В бою команда получает усиление урона, равное этому понижению получаемого урона.",
+  "html": "Даёт команде <b class=\"v\">33%</b> к понижению получаемого урона. Во время битвы усиление урона повышается на значение, равное понижению получаемого урона.",
   "seasons": [
    1,
    2
@@ -4811,7 +4811,7 @@
   "en": "Fortune's Favor",
   "icon": "aug/231601",
   "new": false,
-  "html": "При синтезе продвинутой экипировки вместо неё даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"350107\">Талисман удачи</a>. Даёт случайных предметов простой экипировки: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">3</b>.",
+  "html": "При синтезе и получении продвинутой экипировки вместо этого даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"350107\">Талисман удачи</a>. Даёт случайных простых экипировок: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">3</b>.",
   "seasons": [
    1,
    2
@@ -4867,7 +4867,7 @@
   "en": "Idol Economy",
   "icon": "aug/303401",
   "new": false,
-  "html": "Даёт <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> и «Подарочную коробку: <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>». Коробка откроется через <b class=\"v\">10</b> узл. и принесёт огромные награды! Если бой завершается идеальной победой, отсчёт дополнительно уменьшается на 1.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> и Подарок от персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>. Подарок откроется после входа в <b class=\"v\">10</b> шт. узлов и даст кучу наград! При идеальной победе в бою дополнительно уменьшает счётчик на 1.",
   "seasons": [
    1
   ],
@@ -4979,7 +4979,7 @@
   "en": "Endless Cycles",
   "icon": "aug/332201",
   "new": false,
-  "html": "Даёт «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> и экипировку «Реинкарнатор». При входе в Измерение II/III даёт ещё по одной.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>В конце этого забега «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> станет новым «Реинкарнатором» и унесёт экипировку с собой.<br>Если к концу партии «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> нет в команде, экипировка «Реинкарнатор» вернётся в исходное состояние.</i></span>",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> и экипировку Реинкарнатора. При входе в Измерение II и Измерение III даёт ещё раз.<br>Текущая экипировка Реинкарнатор: <br><br><span class=\"c\" data-c=\"b4b4b4\"><i>После окончания партии персонаж <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> с экипировкой становится новым Реинкарнатором.<br>Если в конце партии персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> нет в команде, экипировка Реинкарнатора возвращается в изначальное состояние.</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5251,7 +5251,7 @@
   "en": "Complimentary Upgrade",
   "icon": "aug/103901",
   "new": false,
-  "html": "В этой партии награды за встречи повышаются на <b class=\"v\">1</b> ур. (встреча 4 также даёт дополнительные награды).",
+  "html": "В этой партии награды за встречи повышаются на <b class=\"v\">1</b> ур. (можно получить дополнительные награды даже за встречу 4).",
   "seasons": [
    1,
    2
@@ -5356,7 +5356,7 @@
   "en": "Elation Emblem",
   "icon": "aug/203701",
   "new": false,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35052012\">Эмблема Радость</a> и <b class=\"v\">1</b> шт. <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"35052012\">Эмблема Радость</a>: <b class=\"v\">1</b> и персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span>: <b class=\"v\">1</b>.",
   "seasons": [
    1
   ],
@@ -5424,7 +5424,7 @@
   "en": "A Fool's Prank",
   "icon": "aug/260701",
   "new": false,
-  "html": "С шансом <b class=\"v\">20%</b> карты стоимостью <b class=\"v\">2</b>/<b class=\"v\">4</b> в магазине превращаются в <a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>/<a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span>. При входе в новый узел <a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>/<a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> 1★ в зоне подготовки оставляет золотых монет: <b class=\"v\">2</b>/<b class=\"v\">4</b> — и уходит искать новых острых ощущений.",
+  "html": "Карты стоимостью <b class=\"v\">2</b>/<b class=\"v\">4</b> в магазине с шансом <b class=\"v\">20%</b> превращаются в персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>/<span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span>. При входе в новый узел персонажи 1★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>/<span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> в зоне подготовки оставят <b class=\"v\">2</b>/<b class=\"v\">4</b> золотых монет и отправятся веселиться в другое место.",
   "seasons": [
    1
   ],
@@ -5460,7 +5460,7 @@
   "en": "Companion in White",
   "icon": "aug/352201",
   "new": false,
-  "html": "Ваши «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> и «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> взаимозаменяемы при повышении звёздности друг друга. Когда вы впервые получаете «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> или «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> <b class=\"v\">3</b>★, вы сразу получаете второго персонажа <b class=\"v\">3</b>★. Даёт «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span>, а через <b class=\"v\">3</b> узл. — «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения определяется персонажем, которого больше. Например: «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 2★ + «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 2★ + «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> 2★ = «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 3★.</i></span>",
+  "html": "Ваши персонажи <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>/<span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> могут использоваться для взаимного повышения звёздности. При первом получении персонажей <b class=\"v\">3</b>★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>/<span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> вы немедленно получаете версию другого персонажа <b class=\"v\">3</b>★. При получении персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> через <b class=\"v\">3</b> шт. узлов получаете персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения звёздности зависит от стороны с большим количеством. Например, персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> + персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> + персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>= персонаж 3★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>.</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5474,7 +5474,7 @@
   "en": "Twin Dragons",
   "icon": "aug/352301",
   "new": false,
-  "html": "Ваши <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> взаимозаменяемы при повышении звёздности друг друга. Когда вы впервые получаете <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span> или <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> <b class=\"v\">3</b>★, вы сразу получаете второго персонажа <b class=\"v\">3</b>★. Даёт <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения определяется персонажем, которого больше. Например: <a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span> 2★ + <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> 2★ + <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> 2★ = <a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> 3★.</i></span>",
+  "html": "Ваши персонажи <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>/<span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> могут использоваться для взаимного повышения звёздности. При первом получении персонажей с <b class=\"v\">3</b>★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>/<span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> вы немедленно получаете версию другого персонажа с <b class=\"v\">3</b>★. Даёт персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span>, <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения звёздности зависит от стороны с большим количеством. Например, персонаж 2★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1213\">Дань Хэн: Пожиратель Луны</a></span> + персонаж 2★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span> + персонаж 2★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span>= персонаж 3★ <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1414\">Дань Хэн: Освободитель Пустошей</a></span>.</i></span>",
   "seasons": [
    1
   ],
@@ -5492,7 +5492,7 @@
   "en": "Identity Theft",
   "icon": "aug/352401",
   "new": false,
-  "html": "При входе в узел босса Измерения II даёт 1 персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> с <b class=\"v\">2</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030207\">Кинетический меч</a> и <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>, а также <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"8009\">Первопроходец</a></span>.",
+  "html": "При входе в узел босса Измерения II даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a></span> с <b class=\"v\">2</b> шт. экипированными предметами <a class=\"ref\" data-t=\"item\" data-id=\"35030207\">Кинетический меч</a> и <a class=\"ref\" data-t=\"item\" data-id=\"35051001\">Эмблема Экипаж экспресса</a>, а также <b class=\"v\">1</b> персонажей <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"8009\">Первопроходец.</a></span>.",
   "seasons": [
    1
   ],
@@ -5550,7 +5550,7 @@
   "en": "Lost Traveler",
   "icon": "aug/253601",
   "new": false,
-  "html": "Когда активировано <b class=\"v\">4</b> Галактических рейнджера, <b class=\"v\">3</b> из них проводят совещание. После этого даёт <a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span> <b class=\"v\">2</b>★ с предметом <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>. При входе в следующий узел наград даёт <a class=\"ref\" data-t=\"role\" data-id=\"1315\">Бутхилл</a></span>.",
+  "html": "При активации связи Галактические рейнджеры-<b class=\"v\">4</b> <b class=\"v\">3</b> из них проведут обсуждение. После этого даёт персонажа <b class=\"v\">2</b>★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1308\">Ахерон</a></span> с предметом <a class=\"ref\" data-t=\"item\" data-id=\"35051006\">Эмблема Межзвёздные путешественники</a>. При входе в следующий узел наград даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1315\">Бутхилл</a></span>.",
   "seasons": [
    1
   ],
@@ -5692,7 +5692,7 @@
   "en": "I am Luocha!",
   "icon": "aug/352501",
   "new": false,
-  "html": "Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a>»</span> 2★. При входе в новый узел даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a>»</span>. Перед боем эта девушка превращается в «<a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>»</span>. В бою она «лечит» врагов, нанося базовый урон в размере (<b class=\"v\">200</b> + <b class=\"v\">2.0</b> × Сила вне поля)%. За каждые <b class=\"v\">100</b> ед. Силы вне поля во время «Первой помощи» она также наносит истинный урон в размере <b class=\"v\">2%</b> от макс. НР.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>А теперь эта девушка — <a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>!</i></span>",
+  "html": "Даёт персонажа 2★ <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a></span>. При входе в новый узел даёт персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a></span>. В начале боя эта девушка превращается в персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a></span>. В бою она будет «исцелять» противников, нанося базовый урон, равный (<b class=\"v\">200</b> + <b class=\"v\">2.0</b> × сила вне поля)%. За каждые <b class=\"v\">100</b> ед. силы вне поля также может наносить истинный урон, равный <b class=\"v\">2%</b> от макс. НР при использовании Первой помощи.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Теперь девушка - это <a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>!</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5721,7 +5721,7 @@
   "en": "Pas de Deux",
   "icon": "aug/251801",
   "new": false,
-  "html": "Когда выставлено 2 персонажа со связью Охотники за Стелларонами, количество атак, необходимое для активации Охотника за звёздами, понижается на <b class=\"v\">1</b>, а активированные атаки наносят <b class=\"v\">200%</b> от исходного урона. Даёт персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span>.",
+  "html": "Когда в команде 2 персонажа со связью Охотники за Стелларонами, количество атак, необходимых для активации эффекта Охотник за звёздами, уменьшается на <b class=\"v\">1</b>, а активированные атаки наносят <b class=\"v\">200%</b> от изначального урона. Даёт персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1005\">Кафка</a></span>.",
   "seasons": [
    1
   ],
@@ -5765,11 +5765,11 @@
   "q": "Gold",
   "cat": 16,
   "ch": [],
-  "name": "В дороге",
+  "name": "В пути",
   "en": "On the Road",
   "icon": "aug/252101",
   "new": false,
-  "html": "Когда на поле <b class=\"v\">3</b> или меньше персонажей со связью Межзвёздные путешественники, персонажи на поле дают дополнительно <b class=\"v\">200%</b> к бонусу характеристик связи Межзвёздные путешественники. Даёт персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>.",
+  "html": "Если в команде <b class=\"v\">3</b> или меньше персонажей со связью Межзвёздные путешественники, персонажи в команде дополнительно дают <b class=\"v\">200%</b> к характеристикам связи Межзвёздные путешественники. Даёт персонажей <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1302\">Аргенти</a></span>.",
   "seasons": [
    1
   ],
@@ -5801,7 +5801,7 @@
   "en": "The Grand Dreamstage",
   "icon": "aug/252301",
   "new": false,
-  "html": "Когда активна связь Планета празднеств, после того как в бою впервые будут активированы <b class=\"v\">3</b>/<b class=\"v\">7</b>/<b class=\"v\">10</b> разных неличных связей, даёт эмблему <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>. Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>.",
+  "html": "При активации связи Планета празднеств после первой активации <b class=\"v\">3</b>/<b class=\"v\">7</b>/<b class=\"v\">10</b> различных неуникальных связей в бою даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"35051010\">Эмблема Планета празднеств</a>. Даёт персонажа <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1306\">Искорка</a></span>.",
   "seasons": [
    1
   ],
@@ -5817,7 +5817,7 @@
   "en": "Praise the Sun",
   "icon": "aug/252401",
   "new": false,
-  "html": "За каждый имеющийся предмет дневной экипировки и его прототип при входе в новый узел даёт <b class=\"v\">1</b> оч. опыта. За каждый предмет дневной экипировки на персонажах шанс счастливого удара повышается на <b class=\"v\">10%</b>. Даёт персонажа <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a></span>.",
+  "html": "За каждый предмет дневной экипировки и её прототип экипировки даёт <b class=\"v\">1</b> оч. опыта при входе в новый узел. За каждую используемую дневную экипировку персонаж получает <b class=\"v\">10%</b> к шансу счастливого удара. Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a></span>.",
   "seasons": [
    1
   ],
@@ -5835,7 +5835,7 @@
   "en": "Moonlight Chest",
   "icon": "aug/252501",
   "new": true,
-  "html": "При идеальной победе «Сущность лунного света» Полубогов ночи повышается на <b class=\"v\">100%</b>. При получении наград Полубогов ночи вы также получаете персонажа Полубогов ночи. Чем больше уровней «Лунного света», тем выше шанс получить дорогих персонажей. Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1406\">Цифер</a>»</span> и <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>»</span>.",
+  "html": "При идеальном прохождении Лунная эссенция персонажей со связью Полубоги ночи повышается на <b class=\"v\">100%</b>. При получении наград Полубоги ночи также даёт персонажа со связью Полубоги ночи. Чем больше уровней Лунного света, тем выше шанс получить персонажа большей стоимости. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1406\">Шифр</a></span> и <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span>.",
   "old": "отмечено вручную"
  },
  {
@@ -5847,7 +5847,7 @@
   "en": "Borrowed Power",
   "icon": "aug/252601",
   "new": false,
-  "html": "После победы над противником доля распределения урона Рикошетного шара навсегда повышается на <b class=\"v\">0.15%</b>. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> и <a class=\"ref\" data-t=\"role\" data-id=\"1403\">Трибби</a></span>.",
+  "html": "После победы над противником процент распределения урона от Рикошетного шара навсегда повышается на <b class=\"v\">0.15%</b>. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1403\">Трибби</a></span>.",
   "seasons": [
    1
   ],
@@ -5863,7 +5863,7 @@
   "en": "Supercharge Station",
   "icon": "aug/252701",
   "new": false,
-  "html": "Цели на клетках энергии получают Супербатарею. После использования сверхспособности Супербатарея расходуется и полностью восполняет энергию. При активации 3/5/7/10 связей даёт <b class=\"v\">1</b>/<b class=\"v\">1</b>/<b class=\"v\">2</b>/<b class=\"v\">3</b> ур. Супербатареи. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1402\">Аглая</a></span> и <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1217\">Хохо</a></span>.",
+  "html": "Цели на клетках энергии получают Супербатарею. После использования сверхспособности Супербатарея расходуется и восполняет энергию. При активации 3/5/7/10 связей даёт <b class=\"v\">1</b>/<b class=\"v\">1</b>/<b class=\"v\">2</b>/<b class=\"v\">3</b> ур. Супербатареи соответственно. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1402\">Аглая</a></span> и <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1217\">Хохо</a></span>.",
   "seasons": [
    1
   ],
@@ -5879,7 +5879,7 @@
   "en": "All Fired Up",
   "icon": "aug/252801",
   "new": false,
-  "html": "Арена сжигания НР начинает бой с <b class=\"v\">80%</b> макс. НР, а сохраняемый заряд повышается на <b class=\"v\">20%</b>. Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>»</span> и «<a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a>»</span>.",
+  "html": "Арена сжигания НР начинает бой с <b class=\"v\">80%</b> от макс. НР, и сохранённый заряд повышается на <b class=\"v\">20%</b>. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a></span>.",
   "old": "отмечено вручную"
  },
  {
@@ -5903,7 +5903,7 @@
   "q": "Gold",
   "cat": 2,
   "ch": [],
-  "name": "Равноценный обмен",
+  "name": "Ответная услуга",
   "en": "Quid Pro Quo",
   "icon": "aug/203401",
   "new": false,
@@ -5994,9 +5994,10 @@
   "new": false,
   "html": "Даёт <b class=\"v\">3</b> экипированных <b class=\"v\">1</b> простой экипировки шерстяк. Каждые <b class=\"v\">2</b> узла <b class=\"v\">1</b> случайный шерстяка исчезает, оставляя экипировку.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Увольнение шерстяк заставляет увольняться даже тех, кто увольняться не собирался.</i></span>",
   "seasons": [
-   1,
-   2
-  ]
+   1
+  ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season"
  },
  {
   "id": 204101,
@@ -6011,9 +6012,10 @@
   "new": false,
   "html": "Даёт Гемишерста, который поможет совершать покупки в магазине и действовать в бою! При входе в новый узел Гемишерст бесплатно обновляет магазин <b class=\"v\">2</b> раза и автоматически покупает персонажей, которые уже есть на поле. За каждого <b class=\"v\">1</b> купленного персонажа Гемишерст даёт всем союзникам +<b class=\"v\">1%</b> к шансу счастливого удара.",
   "seasons": [
-   1,
-   2
+   1
   ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season",
   "chg": [
    {
     "t": "ch",
@@ -6119,11 +6121,12 @@
   "en": "Fur-nancial Manager",
   "icon": "aug/304001",
   "new": false,
-  "html": "Даёт шерстяку, который приносит начальный капитал: <b class=\"v\">20</b> золотых монет, чтобы помочь вам управлять финансами. На каждом узле даёт проценты: +<b class=\"v\">2</b> золотые монеты. Когда у вас меньше <b class=\"v\">20</b> золотых монет, снимает <b class=\"v\">10</b> золотых монет с депозита у шерстяки. При входе в узел босса Измерения III снимает все депозиты.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Потратьте миллиард за месяц - и шерстяное богатство ваше!</i></span>",
+  "html": "Даёт шерстяку, который приносит начальный капитал: <b class=\"v\">20</b> золотых монет, чтобы помочь вам управлять финансами. Каждый ход даёт проценты: +<b class=\"v\">2</b> золотые монеты. Когда у вас меньше <b class=\"v\">20</b> золотых монет, снимает <b class=\"v\">10</b> золотых монет с депозита у шерстяки. При входе в узел босса Измерения III снимает все депозиты.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Потратьте миллиард за месяц - и шерстяное богатство ваше!</i></span>",
   "seasons": [
-   1,
-   2
+   1
   ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season",
   "chg": [
    {
     "t": "num",
@@ -6156,9 +6159,10 @@
   "new": false,
   "html": "Даёт Шерстидрака, Шерстигра и предметов <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>: <b class=\"v\">2</b>. Все они имеют экипировку <a class=\"ref\" data-t=\"item\" data-id=\"35030404\">Кость произвольности</a>. При входе в новый узел за каждый совпадающий предмет экипировки у них и у союзников даёт золотые монеты: <b class=\"v\">4</b>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Одноимённая экипировка считается только 1 раз. Ваш предмет <a class=\"ref\" data-t=\"item\" data-id=\"35030404\">Кость произвольности</a> всегда совпадёт с предметом <a class=\"ref\" data-t=\"item\" data-id=\"35030404\">Кость произвольности</a> шерстяк!</i></span>",
   "seasons": [
-   1,
-   2
-  ]
+   1
+  ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season"
  },
  {
   "id": 304201,
@@ -6173,9 +6177,10 @@
   "new": false,
   "html": "Даёт шерстяк: <b class=\"v\">7</b>. При входе в новый узел случайным образом даёт этим шерстякам случайных эмблем: <b class=\"v\">2</b>.",
   "seasons": [
-   1,
-   2
-  ]
+   1
+  ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season"
  },
  {
   "id": 304301,
@@ -6191,9 +6196,10 @@
   "new": false,
   "html": "Перемешивает эмблемы у <b class=\"v\">3</b> крайних правых шерстяк и даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99991\">Кодекс эмблем</a>: <b class=\"v\">2</b>.",
   "seasons": [
-   1,
-   2
-  ]
+   1
+  ],
+  "old": "нет во 2 сезоне",
+  "oldKind": "season"
  },
  {
   "id": 352601,
@@ -6206,7 +6212,7 @@
   "en": "Herta Era",
   "icon": "aug/352601",
   "new": false,
-  "html": "Даёт <a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span> и добавляет в магазин <b class=\"v\">216</b> шт. <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>. Когда вы получаете <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> 3★, вы получаете <a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span>, а магазин продолжает предлагать <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>. На поле каждая 1 золотых монета стоимости ваших <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> заставляет <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> при бонус-атаке совершить 1 дополнительный оборот. Каждая 1 золотых монета суммарной стоимости ваших <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> даёт <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>/<a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span> <b class=\"v\">10%</b> к Силе на поле/вне поля.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span> и добавляет <b class=\"v\">216</b> шт. персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> в магазин. При получении персонажа 3★ <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>, даёт персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span>, а магазин продолжает обновлять персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>. В бою за каждую 1 единицу общей стоимости в золотых монетах персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>, которыми вы владеете, персонажи <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span> вращаются 1 дополнительный раз при бонус-атаке. За каждую 1 единицу общей стоимости в золотых монетах персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>, которыми вы владеете, персонажи <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1013\">Герта</a></span>/<span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1401\">Великая Герта</a></span> получают <b class=\"v\">10%</b> к силе на поле/вне поля.",
   "seasons": [
    1
   ],
@@ -6224,7 +6230,7 @@
   "en": "A Flash: Moonlit Reflection",
   "icon": "aug/352701",
   "new": false,
-  "html": "Даёт <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> и особого <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 1. Они получают связь Наставник и ученик. Когда <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 2★, <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится персонажем стоимостью 3. Когда <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> становится 3★, <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится привычным <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 5.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> и особого персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 1, они получают связь Наставник и ученик. Когда персонаж <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> имеет 2★, персонаж <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится стоимостью 3. Когда персонаж <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1212\">Цзинлю</a></span> имеет 3★, персонаж <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> становится привычным персонажем <span class=\"c\" data-c=\"ffd471\"><a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a></span> стоимостью 5.",
   "seasons": [
    1
   ],
@@ -6274,7 +6280,7 @@
   "en": "Forging Expert: Blade",
   "icon": "aug/360601",
   "new": false,
-  "html": "Даёт персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. При синтезе продвинутой экипировки в ячейке <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> она превращается в особую экипировку. Эффект срабатывает <b class=\"v\">1</b> раз. Пока <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> на поле или в зоне подготовки, за каждые <b class=\"v\">10</b> полученных предметов любой экипировки эффект может сработать на 1 раз больше.",
+  "html": "Даёт персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> в качестве эксперта-консультанта и добавляет этого персонажа в магазин в этой партии. При синтезе продвинутой экипировки в слоте экипировки персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> она становится особой экипировкой. Этот эффект срабатывает <b class=\"v\">1</b> раз. Пока персонаж <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1205\">Блэйд</a></span> находится на поле боя или в зоне подготовки, каждые <b class=\"v\">10</b> любых полученных экипировок дают дополнительное срабатывание эффекта.",
   "seasons": [
    1
   ],
@@ -6290,7 +6296,7 @@
   "en": "Xianzhou Fleet Emblem",
   "icon": "aug/211501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6304,7 +6310,7 @@
   "en": "Beast Garden Emblem",
   "icon": "aug/211601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6318,7 +6324,7 @@
   "en": "Phantasmoon Games Emblem",
   "icon": "aug/211701",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100302\">Эмблема Игры фантаны</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100302\">Эмблема Игры фантаны</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6332,7 +6338,7 @@
   "en": "Galactic Voyager Emblem",
   "icon": "aug/211801",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100402\">Эмблема Межзвёздные путешественники</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100402\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6346,7 +6352,7 @@
   "en": "Trailblaze Silver Rail Emblem",
   "icon": "aug/211901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6373,7 +6379,7 @@
   "en": "Stellaron Hunters Emblem",
   "icon": "aug/212101",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100802\">Эмблема Охотники за Стелларонами</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1310\">Светлячок</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100802\">Эмблема Охотники за Стелларонами</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1310\">Светлячок</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6383,11 +6389,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Маленький гигант",
+  "name": "Эмблема Маленькие гиганты",
   "en": "Little Giant Emblem",
   "icon": "aug/212201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100902\">Эмблема Маленький гигант</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1412\">Керидра</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100902\">Эмблема Маленькие гиганты</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1412\">Керидра</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6401,7 +6407,7 @@
   "en": "Intertwined Dreamscapes Emblem",
   "icon": "aug/212301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101002\">Эмблема Переплетение грёз</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1307\">Чёрный Лебедь</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355101002\">Эмблема Переплетение грёз</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1307\">Чёрный Лебедь</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6415,7 +6421,7 @@
   "en": "The Grand Restaurant Emblem",
   "icon": "aug/212401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6429,7 +6435,7 @@
   "en": "Follow-Up ATK Emblem",
   "icon": "aug/221201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200102\">Эмблема Бонус-атака</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200102\">Эмблема Бонус-атака</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6443,7 +6449,7 @@
   "en": "DoT Emblem",
   "icon": "aug/221301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6457,7 +6463,7 @@
   "en": "AoE Emblem",
   "icon": "aug/221401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200302\">Эмблема Групповая атака</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200302\">Эмблема Групповая атака</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6471,7 +6477,7 @@
   "en": "Combo Emblem",
   "icon": "aug/221501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200402\">Эмблема Комбо</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200402\">Эмблема Комбо</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6485,7 +6491,7 @@
   "en": "Break Emblem",
   "icon": "aug/221601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200502\">Эмблема Пробитие</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200502\">Эмблема Пробитие</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6499,7 +6505,7 @@
   "en": "Summon Emblem",
   "icon": "aug/221701",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200602\">Эмблема Призыв</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200602\">Эмблема Призыв</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6513,7 +6519,7 @@
   "en": "Elation Emblem",
   "icon": "aug/221801",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200702\">Эмблема Радость</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200702\">Эмблема Радость</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6527,7 +6533,7 @@
   "en": "Counter Emblem",
   "icon": "aug/221901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200802\">Эмблема Контратака</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1221\">Юньли</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200802\">Эмблема Контратака</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1221\">Юньли</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6541,7 +6547,7 @@
   "en": "Energy Emblem",
   "icon": "aug/222001",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200902\">Эмблема Энергия</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200902\">Эмблема Энергия</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6555,7 +6561,7 @@
   "en": "Healing Emblem",
   "icon": "aug/222101",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201002\">Эмблема Исцеление</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1222\">Линша</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355201002\">Эмблема Исцеление</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1222\">Линша</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6565,11 +6571,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Эмблема Защитник",
+  "name": "Эмблема Защита",
   "en": "Defender Emblem",
   "icon": "aug/222201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защитник</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защита</a>: <b class=\"v\">1</b> и персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6579,11 +6585,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Флота Сяньчжоу",
+  "name": "Набор эмблем Флот Сяньчжоу",
   "en": "Xianzhou Fleet Emblem Set",
   "icon": "aug/311501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Сапоги межзвездных странствий</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100102\">Эмблема Флот Сяньчжоу</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Ботинки звездоплавателя</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6593,11 +6599,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Сада существ",
+  "name": "Набор эмблем Сад существ",
   "en": "Beast Garden Emblem Set",
   "icon": "aug/311601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100202\">Эмблема Сад существ</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6607,11 +6613,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Игры фантаны",
+  "name": "Набор эмблем Игры фантаны",
   "en": "Phantasmoon Games Emblem Set",
   "icon": "aug/311701",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100302\">Эмблема Игры фантаны</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100302\">Эмблема Игры фантаны</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6625,7 +6631,7 @@
   "en": "Galactic Voyager Emblem Set",
   "icon": "aug/311801",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100402\">Эмблема Межзвёздные путешественники</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100402\">Эмблема Межзвёздные путешественники</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6635,11 +6641,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Серебряных рельсов Освоения",
+  "name": "Набор эмблем Серебряные рельсы Освоения",
   "en": "Trailblaze Silver Rail Emblem Set",
   "icon": "aug/311901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100502\">Эмблема Серебряные рельсы Освоения</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6662,11 +6668,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Охотников за Стелларонами",
+  "name": "Набор эмблем Охотники за Стелларонами",
   "en": "Stellaron Hunters Emblem Set",
   "icon": "aug/312101",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100802\">Эмблема Охотники за Стелларонами</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1310\">Светлячок</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100802\">Эмблема Охотники за Стелларонами</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1310\">Светлячок</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6676,11 +6682,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Маленького гиганта",
+  "name": "Набор эмблем Маленькие гиганты",
   "en": "Little Giant Emblem Set",
   "icon": "aug/312201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355100902\">Эмблема Маленький гигант</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1412\">Керидра</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355100902\">Эмблема Маленькие гиганты</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1412\">Керидра</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030206\">Инъектор уверенности</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6690,11 +6696,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Переплетения грёз",
+  "name": "Набор эмблем Переплетение грёз",
   "en": "Intertwined Dreamscapes Emblem Set",
   "icon": "aug/312301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101002\">Эмблема Переплетение грёз</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1307\">Чёрный Лебедь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030107\">Сверхскоростной пропеллер</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355101002\">Эмблема Переплетение грёз</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1307\">Чёрный Лебедь</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030107\">Сверхскоростной пропеллер</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6704,11 +6710,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Золотой ресторан",
+  "name": "Набор эмблем Золотой ресторан",
   "en": "The Grand Restaurant Emblem Set",
   "icon": "aug/312401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030101\">Антигравитационные ботинки</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355101202\">Эмблема Золотой ресторан</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"47030101\">Антигравитационные ботинки</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ],
@@ -6744,7 +6750,7 @@
   "en": "Follow-Up ATK Emblem Set",
   "icon": "aug/321201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200102\">Эмблема Бонус-атака</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200102\">Эмблема Бонус-атака</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1112\">Топаз и Счетовод</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030304\">Противоспутниковая винтовка</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6758,7 +6764,7 @@
   "en": "DoT Emblem Set",
   "icon": "aug/321301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Сапоги межзвездных странствий</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200202\">Эмблема Периодический урон</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1210\">Гуйнайфэнь</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"47030108\">Ботинки звездоплавателя</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6772,7 +6778,7 @@
   "en": "AoE Emblem Set",
   "icon": "aug/321401",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200302\">Эмблема Групповая атака</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200302\">Эмблема Групповая атака</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1004\">Вельт</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6782,11 +6788,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Комбо",
+  "name": "Набор эмблем Комбо",
   "en": "Combo Emblem Set",
   "icon": "aug/321501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200402\">Эмблема Комбо</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200402\">Эмблема Комбо</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6800,7 +6806,7 @@
   "en": "Break Emblem Set",
   "icon": "aug/321601",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200502\">Эмблема Пробитие</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200502\">Эмблема Пробитие</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1225\">Фуга</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030707\">Бур червоточины</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6810,11 +6816,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Призыва",
+  "name": "Набор эмблем Призыв",
   "en": "Summon Emblem Set",
   "icon": "aug/321701",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200602\">Эмблема Призыв</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200602\">Эмблема Призыв</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1204\">Цзин Юань</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6824,11 +6830,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Радости",
+  "name": "Набор эмблем Радость",
   "en": "Elation Emblem Set",
   "icon": "aug/321801",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200702\">Эмблема Радость</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200702\">Эмблема Радость</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1501\">Искра</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6838,11 +6844,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Контратаки",
+  "name": "Набор эмблем Контратака",
   "en": "Counter Emblem Set",
   "icon": "aug/321901",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200802\">Эмблема Контратака</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1221\">Юньли</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200802\">Эмблема Контратака</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1221\">Юньли</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030204\">Высокочастотная бензопила</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6856,7 +6862,7 @@
   "en": "Energy Emblem Set",
   "icon": "aug/322001",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355200902\">Эмблема Энергия</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355200902\">Эмблема Энергия</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1505\">Эванесса</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030808\">Вечный двигатель</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6870,7 +6876,7 @@
   "en": "Healing Emblem Set",
   "icon": "aug/322101",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201002\">Эмблема Исцеление</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1222\">Линша</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355201002\">Эмблема Исцеление</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1222\">Линша</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6880,11 +6886,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Набор эмблемы Защиты",
+  "name": "Набор эмблем Защита",
   "en": "Defender Emblem Set",
   "icon": "aug/322201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защитник</a>, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a> и <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"355201102\">Эмблема Защита</a>: <b class=\"v\">1</b>, персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1503\">Жемчуг</a>: <b class=\"v\">1</b> и предметов <a class=\"ref\" data-t=\"item\" data-id=\"35030505\">Кольцо жизни</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -6894,7 +6900,7 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Дар двух звёзд",
+  "name": "Дар двойных звёзд",
   "en": "Gift of Twin Stars",
   "icon": "aug/204701",
   "new": true,
@@ -6974,11 +6980,11 @@
   "ch": [
    1
   ],
-  "name": "Большой набор талантов",
+  "name": "Набор талантов",
   "en": "Talent Bundle",
   "icon": "aug/204801",
   "new": true,
-  "html": "Даёт персонажей на 12 зол. монет, среди которых гарантированно будет один персонаж стоимостью 3!",
+  "html": "Среди персонажей, выдающих 12 золотых монет, обязательно найдётся 1 <span class=\"c\" data-c=\"7196ff\">персонаж стоимостью 3</span>!",
   "card": {
    "stages": [
     [
@@ -7008,11 +7014,11 @@
   "ch": [
    2
   ],
-  "name": "Большой набор талантов+",
+  "name": "Набор талантов+",
   "en": "Talent Bundle+",
   "icon": "aug/204801",
   "new": true,
-  "html": "Даёт персонажей на 18 золотых монет, среди которых гарантированно будет один персонаж стоимостью 4</span>!",
+  "html": "Среди персонажей, выдающих 18 золотых монет, обязательно будет 1 <span class=\"c\" data-c=\"927fe7\">персонаж стоимостью 4</span>!",
   "seasons": [
    2
   ]
@@ -7024,11 +7030,11 @@
   "ch": [
    3
   ],
-  "name": "Большой набор талантов++",
+  "name": "Набор талантов++",
   "en": "Talent Bundle++",
   "icon": "aug/204801",
   "new": true,
-  "html": "Даёт персонажей на 26 золотых монет, среди которых гарантированно будет один <span class=\"c\" data-c=\"ffd471\">персонаж стоимостью 5</span>!",
+  "html": "Среди персонажей, выдающих 26 золотых монет, обязательно будет 1 <span class=\"c\" data-c=\"ffd471\">персонаж стоимостью 5</span>!",
   "seasons": [
    2
   ]
@@ -7040,7 +7046,7 @@
   "ch": [
    1
   ],
-  "name": "Новый сотрудник",
+  "name": "Регистрация новичка",
   "en": "Newbie Reporting In",
   "icon": "aug/204901",
   "new": true,
@@ -7056,11 +7062,11 @@
   "ch": [
    2
   ],
-  "name": "Замена персонажа — шоу начинается",
+  "name": "Смена актёра",
   "en": "New Cast Performance",
   "icon": "aug/205001",
   "new": true,
-  "html": "Даёт возможностей сменить протагониста: <b class=\"v\">1</b> и бесплатных обновлений брони протагониста: <b class=\"v\">10</b>.",
+  "html": "Даёт попытки смены протагониста: <b class=\"v\">1</b> и бесплатных обновлений Брони протагониста: <b class=\"v\">10</b>.",
   "seasons": [
    2
   ]
@@ -7072,11 +7078,11 @@
   "ch": [
    1
   ],
-  "name": "Цепочка обновлений",
+  "name": "Обновление цепочки",
   "en": "Refresh Chain",
   "icon": "aug/205101",
   "new": true,
-  "html": "При обновлении эффекта брони протагониста даёт бесплатных обновлений магазина: <b class=\"v\">1</b>. Даёт бесплатных обновлений брони протагониста: <b class=\"v\">3</b>.",
+  "html": "При обновлении эффекта Брони протагониста даёт бесплатных обновлений магазина: <b class=\"v\">1</b>. Даёт бесплатных обновлений Брони протагониста: <b class=\"v\">3</b>.",
   "seasons": [
    2
   ]
@@ -7088,11 +7094,11 @@
   "ch": [
    2
   ],
-  "name": "Цепочка обновлений+",
+  "name": "Обновление цепочки+",
   "en": "Refresh Chain+",
   "icon": "aug/205101",
   "new": true,
-  "html": "При обновлении эффекта брони протагониста даёт бесплатных обновлений магазина: <b class=\"v\">1</b>. Даёт бесплатных обновлений брони протагониста: <b class=\"v\">6</b>.",
+  "html": "При обновлении эффекта Брони протагониста даёт бесплатных обновлений магазина: <b class=\"v\">1</b>. Даёт бесплатных обновлений Брони протагониста: <b class=\"v\">6</b>.",
   "seasons": [
    2
   ]
@@ -7108,7 +7114,7 @@
   "en": "Equipment Liquidation",
   "icon": "aug/304701",
   "new": true,
-  "html": "Экипировку можно продавать. Немедленно даёт <b class=\"v\">2</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>. В начале каждого измерения даёт <b class=\"v\">1</b> шт. случайной простой экипировки.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Продавать можно простую, продвинутую и особую экипировку, эмблемы и самоцветы богатства.</i></span>",
+  "html": "Можно продавать экипировку. Немедленно даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>: <b class=\"v\">2</b>, а в начале каждого Измерения даёт случайной простой экипировки: <b class=\"v\">1</b>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Можно продавать простую экипировку, продвинутую экипировку, особую экипировку, эмблемы и самоцветы богатства.</i></span>",
   "seasons": [
    2
   ]
@@ -7124,7 +7130,7 @@
   "en": "Equipment Liquidation+",
   "icon": "aug/304701",
   "new": true,
-  "html": "Экипировку можно продавать. Немедленно даёт <b class=\"v\">3</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>. В начале каждого измерения даёт <b class=\"v\">1</b> шт. случайной простой экипировки.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Продавать можно простую, продвинутую и особую экипировку, эмблемы и самоцветы богатства.</i></span>",
+  "html": "Можно продавать экипировку. Немедленно даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>: <b class=\"v\">3</b>, а в начале каждого Измерения даёт случайной простой экипировки: <b class=\"v\">1</b>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Можно продавать простую экипировку, продвинутую экипировку, особую экипировку, эмблемы и самоцветы богатства.</i></span>",
   "seasons": [
    2
   ]
@@ -7136,11 +7142,11 @@
   "ch": [
    2
   ],
-  "name": "Эстафета опоры",
+  "name": "Достойная эстафета",
   "en": "Sturdy Relay",
   "icon": "aug/304901",
   "new": true,
-  "html": "Немедленно даёт случайных персонажей стоимостью 3</span>: <b class=\"v\">1</b>. При входе в новый узел даёт ещё персонажей стоимостью 3</span>: <b class=\"v\">1</b>.",
+  "html": "Немедленно даёт случайных <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью 3</span>: <b class=\"v\">1</b>. При переходе в новый узел ещё даёт случайных <span class=\"c\" data-c=\"7196ff\">персонажей стоимостью 3</span>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -7156,7 +7162,7 @@
   "en": "Chimera Growth Log",
   "icon": "aug/240101",
   "new": true,
-  "html": "При повышении уровня магазина даёт <b class=\"v\">2</b> ед. энергии химер и золотых монет: <b class=\"v\">6</b>. Даёт персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b> и предметов Проектор химер: <b class=\"v\">1</b>.",
+  "html": "При улучшении магазина даёт <b class=\"v\">2</b> ед. энергии химер и золотых монет: <b class=\"v\">6</b>. Даёт персонажей <a class=\"ref\" data-t=\"role\" data-id=\"1405\">Анакса</a>: <b class=\"v\">1</b>и проекторов химеры: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -7166,11 +7172,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Обновление экипировки корабля",
+  "name": "Обновление снаряжения",
   "en": "Ship Equipment Upgrade",
   "icon": "aug/240201",
   "new": true,
-  "html": "Флот Сяньчжоу с шансом <b class=\"v\">50%</b> временно улучшает простую экипировку до особой. Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>.",
+  "html": "Флот Сяньчжоу имеет шанс <b class=\"v\">50%</b> временно улучшить простую экипировку до особой экипировки. Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -7183,11 +7189,11 @@
    2,
    3
   ],
-  "name": "Собрание Игры фантаны",
+  "name": "Сбор фантаны",
   "en": "Phantasmoon Assemble",
   "icon": "aug/240301",
   "new": true,
-  "html": "Даёт половину персонажей со связью Игры фантаны. После прохождения <b class=\"v\">3</b> шт. узлов даёт вторую половину персонажей и <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>.",
+  "html": "Даёт половину участников Игр фантаны. После входа в <b class=\"v\">3</b> шт. новых узлов даёт остальных участников и предмет <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>.",
   "seasons": [
    2
   ]
@@ -7199,11 +7205,11 @@
   "ch": [
    1
   ],
-  "name": "Освоение на полной скорости",
+  "name": "Полное Освоение",
   "en": "Full Speed Trailblaze",
   "icon": "aug/240401",
   "new": true,
-  "html": "Сразу и в начале каждого измерения даёт <b class=\"v\">60</b> ед. Энергии Освоения, а экспресс наносит <b class=\"v\">200%</b> от исходного урона.",
+  "html": "Сейчас и в начале каждого Измерения даёт <b class=\"v\">60</b> ед. энергии Освоения, экспресс наносит <b class=\"v\">200%</b> от изначального урона.",
   "seasons": [
    2
   ]
@@ -7215,11 +7221,11 @@
   "ch": [
    2
   ],
-  "name": "Освоение на полной скорости+",
+  "name": "Полное Освоение+",
   "en": "Full Speed Trailblaze+",
   "icon": "aug/240401",
   "new": true,
-  "html": "Сразу и в начале каждого измерения даёт <b class=\"v\">80</b> ед. Энергии Освоения, а экспресс наносит <b class=\"v\">240%</b> от исходного урона.",
+  "html": "Сейчас и в начале каждого Измерения даёт <b class=\"v\">80</b> ед. энергии Освоения, экспресс наносит <b class=\"v\">240%</b> от изначального урона.",
   "seasons": [
    2
   ]
@@ -7229,11 +7235,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Дополнительный выход сверхспособности",
+  "name": "Финальный бис",
   "en": "Final Encore",
   "icon": "aug/240601",
   "new": true,
-  "html": "Активированный эффект сверхспособности связи Энергия может сработать на 1 раз больше. Даёт <a class=\"ref\" data-t=\"item\" data-id=\"350208\">Фотонная ячейка</a> и <b class=\"v\">5</b> золотых монет.",
+  "html": "Эффект активации сверхспособности связи Энергия может дополнительно сработать 1 раз. Даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"350208\">Фотонная ячейка</a> и золотых монет: <b class=\"v\">5</b>.",
   "seasons": [
    2
   ]
@@ -7243,11 +7249,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Все спутники на сбор",
+  "name": "Сбор напарников",
   "en": "Companions Mobilization",
   "icon": "aug/240701",
   "new": true,
-  "html": "Даёт 1 милого Пеппи. За каждого союзника в команде, который не является персонажем, сила призыва связи Призыв повышается на <b class=\"v\">1</b>. Даёт <b class=\"v\">12</b> оч. опыта.",
+  "html": "Даёт 1 милого Пеппи: за каждого союзника, не являющегося персонажем, сила призыва связи Призыв повышается на <b class=\"v\">1</b>. Даёт <b class=\"v\">12</b> ед. опыта.",
   "seasons": [
    2
   ]
@@ -7257,11 +7263,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Чем сильнее удар, тем сильнее ответ",
+  "name": "Ярость сквозь неудачи",
   "en": "Strength Through Setbacks",
   "icon": "aug/240801",
   "new": true,
-  "html": "За каждую атаку, полученную Королём контратаки, множитель урона контратаки повышается на <b class=\"v\">5%</b> до конца боя. Суммируется до <b class=\"v\">99</b> раз.",
+  "html": "При каждом полученном Королём контратак ударе множитель урона контратаки повышается на <b class=\"v\">5%</b>, действует до конца боя, складывается до <b class=\"v\">99</b> ур.",
   "seasons": [
    2
   ]
@@ -7274,11 +7280,11 @@
    2,
    3
   ],
-  "name": "Смена сцены окончена",
+  "name": "Конец съёмок",
   "en": "It's A Wrap",
   "icon": "aug/104101",
   "new": true,
-  "html": "Броня протагониста у всех протагонистов отключается. Даёт столько же возможностей сменить их.",
+  "html": "Броня протагониста всех протагонистов полностью снимается. Даёт такое же количество попыток смены протагониста.",
   "seasons": [
    2
   ]
@@ -7290,11 +7296,11 @@
   "ch": [
    1
   ],
-  "name": "Сеть связей",
+  "name": "Сеть контактов",
   "en": "Social Network",
   "icon": "aug/340101",
   "new": true,
-  "html": "Даёт <b class=\"v\">3</b> шт. случайных эмблем и <b class=\"v\">4</b> золотых монет.",
+  "html": "Даёт случайных эмблем: <b class=\"v\">3</b> и золотых монет: <b class=\"v\">4</b>.",
   "seasons": [
    2
   ]
@@ -7306,11 +7312,11 @@
   "ch": [
    2
   ],
-  "name": "Сеть связей+",
+  "name": "Сеть контактов+",
   "en": "Social Network+",
   "icon": "aug/340101",
   "new": true,
-  "html": "Даёт <b class=\"v\">3</b> шт. случайных эмблем, <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"350103\">Плавильная печь</a> и <b class=\"v\">4</b> золотых монет.",
+  "html": "Даёт случайных эмблем: <b class=\"v\">3</b>, предметов <a class=\"ref\" data-t=\"item\" data-id=\"350103\">Плавильная печь</a>: <b class=\"v\">1</b> и золотых монет: <b class=\"v\">4</b>.",
   "seasons": [
    2
   ]
@@ -7320,11 +7326,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Кроссоверный набор",
+  "name": "Межсерверный набор",
   "en": "Crossover Bundle",
   "icon": "aug/332501",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"350601\">Красный алмаз</a>, <b class=\"v\">3</b> шт. случайной простой экипировки и <b class=\"v\">5</b> золотых монет.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"350601\">Красный алмаз</a>: <b class=\"v\">1</b>, случайных простых экипировок: <b class=\"v\">3</b> и золотых монет: <b class=\"v\">5</b>.",
   "seasons": [
    2
   ]
@@ -7336,11 +7342,11 @@
   "ch": [
    1
   ],
-  "name": "Цена расширения",
+  "name": "Цена экспансии",
   "en": "Cost of Expansion",
   "icon": "aug/352901",
   "new": true,
-  "html": "Макс. размер команды повышается на <b class=\"v\">2</b>, а команда получает <b class=\"v\">4%</b> понижения получаемого урона. При поражении в бою урон по НР команды умножается на <b class=\"v\">2</b>.",
+  "html": "Максимальный размер команды повышается на <b class=\"v\">2</b>, союзники получают <b class=\"v\">4%</b> к понижению получаемого урона. При поражении в бою получаемый урон по НР команды повышается в <b class=\"v\">2</b> раза.",
   "seasons": [
    2
   ]
@@ -7350,11 +7356,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Подготовка к расширению состава",
+  "name": "Подготовка к расширению",
   "en": "Expansion Preparations",
   "icon": "aug/340201",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. случайных эмблем. После прохождения <b class=\"v\">3</b> шт. узлов даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"350701\">Самоцвет богатства</a>.",
+  "html": "Даёт случайных эмблем: <b class=\"v\">1</b>. После входа в <b class=\"v\">3</b> шт. новых узлов даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"350701\">Самоцвет богатства</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]
@@ -7366,11 +7372,11 @@
   "ch": [
    1
   ],
-  "name": "Развитие связей",
+  "name": "Расширение связей",
   "en": "Network Ascension",
   "icon": "aug/340301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. случайных эмблем. После активации 2 неличных связей в одном бою вы получаете награду. Далее при каждом выполнении цели количество связей, необходимое для следующей награды, растёт, а награды становятся щедрее.",
+  "html": "Даёт случайных эмблем: <b class=\"v\">1</b>. После активации 2 неуникальных связей в одном бою даёт награду. В дальнейшем при каждом достижении цели количество связей, необходимых для получения следующей награды, увеличивается, а сама награда становится более ценной.",
   "seasons": [
    2
   ]
@@ -7383,11 +7389,11 @@
    1,
    2
   ],
-  "name": "Повышение инвестиции",
+  "name": "Инвестиции в улучшение",
   "en": "Investment Level Up",
   "icon": "aug/104201",
   "new": true,
-  "html": "Качество вашей следующей инвестиционной стратегии повышается на 1.",
+  "html": "Качество следующей инвестиционной стратегии повышается на 1 ур.",
   "card": {
    "stages": [
     [
@@ -7532,7 +7538,7 @@
   "en": "Lifetime Employment",
   "icon": "aug/253901",
   "new": true,
-  "html": "После участия в бою персонажей на поле и вне поля больше нельзя вернуть в зону подготовки или продать. В начале каждого узла усиление НР и Сила на поле/вне поля команды повышаются на <b class=\"v\">5%</b>. Эффект суммируется.",
+  "html": "После того как персонаж на поле или вне поля вступает в бой, его нельзя вернуть в зону подготовки или продать. В начале каждого узла усиление НР команды и сила на поле/вне поля повышаются на <b class=\"v\">5%</b>. Эффект может складываться.",
   "seasons": [
    2
   ]
@@ -7544,11 +7550,11 @@
   "ch": [
    2
   ],
-  "name": "Ещё одно обсуждение · Золотое",
+  "name": "Повторные переговоры: Золото",
   "en": "Renegotiation: Gold",
   "icon": "aug/205301",
   "new": true,
-  "html": "Даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>. После прохождения <b class=\"v\">5</b> шт. узлов выберите золотую инвестиционную стратегию без возможности обновления.",
+  "html": "Даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>. После входа в <b class=\"v\">5</b> шт. новых узлов выбирает золотую инвестиционную стратегию без возможности обновления.",
   "seasons": [
    2
   ]
@@ -7560,11 +7566,11 @@
   "ch": [
    2
   ],
-  "name": "Ещё одно обсуждение · Призматическое",
+  "name": "Повторные переговоры: Призма",
   "en": "Renegotiation: Prismatic",
   "icon": "aug/305001",
   "new": true,
-  "html": "Даёт 1 шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a> и 3 золотых монеты. После входа в 4 новых узла выберите 1 призматическую инвестиционную стратегию без возможности обновления.",
+  "html": "Даёт предмет <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a> и 3 золотые монеты. После входа в 4 новых узла выбирает призматическую инвестиционную стратегию без возможности обновления.",
   "seasons": [
    2
   ]
@@ -7576,11 +7582,11 @@
   "ch": [
    3
   ],
-  "name": "Массовый набор по партиям",
+  "name": "Поэтапный набор",
   "en": "Batch Recruitment",
   "icon": "aug/305101",
   "new": true,
-  "html": "Даёт случайных персонажей стоимостью 4</span>: <b class=\"v\">3</b>. После прохождения <b class=\"v\">2</b> шт. узлов даёт ещё персонажей стоимостью 4</span>: <b class=\"v\">3</b>. При входе в узел босса даёт ещё персонажей стоимостью 4</span>: <b class=\"v\">3</b>.",
+  "html": "Даёт случайных <span class=\"c\" data-c=\"927fe7\">персонажей стоимостью 4</span>: <b class=\"v\">3</b>. После входа в <b class=\"v\">2</b> шт. новых узлов даёт ещё <span class=\"c\" data-c=\"927fe7\">персонажей стоимостью 4</span>: <b class=\"v\">3</b>. При входе в узел босса даёт ещё <span class=\"c\" data-c=\"927fe7\">персонажей стоимостью 4</span>: <b class=\"v\">3</b>.",
   "seasons": [
    2
   ]
@@ -7597,7 +7603,7 @@
   "en": "Intern Development Plan",
   "icon": "aug/104301",
   "new": true,
-  "html": "Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"350108\">Проектор стажёра</a>. После прохождения <b class=\"v\">4</b> шт. узлов даёт ещё <b class=\"v\">2</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"350108\">Проектор стажёра</a>. Сила на поле/вне поля союзных <span class=\"c\" data-c=\"b4b4b4\">персонажей стоимостью 1</span> повышается на <b class=\"v\">8%</b>.",
+  "html": "Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"350108\">Проектор стажёра</a>: <b class=\"v\">1</b>. После входа в <b class=\"v\">4</b> шт. новых узлов даёт ещё предметов <a class=\"ref\" data-t=\"item\" data-id=\"350108\">Проектор стажёра</a>: <b class=\"v\">2</b>. Сила на поле/вне поля союзных <span class=\"c\" data-c=\"b4b4b4\">персонажей стоимостью 1</span> повышается на <b class=\"v\">8%</b>.",
   "seasons": [
    2
   ]
@@ -7609,11 +7615,11 @@
   "ch": [
    1
   ],
-  "name": "Инвестиции в высококлассные кадры",
+  "name": "Инвестиции в таланты",
   "en": "Elite Talent Investment",
   "icon": "aug/254001",
   "new": true,
-  "html": "При входе в каждый новый узел даёт <b class=\"v\">2</b> ед. опыта. Сила на поле/вне поля и усиление урона союзных <span class=\"c\" data-c=\"ffd471\">персонажей стоимостью 5</span> повышаются на <b class=\"v\">15%</b>.",
+  "html": "При каждом входе в новый узел даёт <b class=\"v\">2</b> ед. опыта. Сила на поле/вне поля и усиление урона союзных <span class=\"c\" data-c=\"ffd471\">персонажей стоимостью 5</span> повышаются на <b class=\"v\">15%</b>.",
   "seasons": [
    2
   ]
@@ -7623,11 +7629,11 @@
   "q": "Prismatic",
   "cat": 6,
   "ch": [],
-  "name": "Вместе веселее",
+  "name": "Радостью делятся, а не прячут",
   "en": "Spread Joy, Not Hoard It",
   "icon": "aug/340401",
   "new": true,
-  "html": "Экипировку Ахи могут носить персонажи, а её цена продажи повышается на <b class=\"v\">2</b> золотых монет. Даёт 3 случайных персонажей со связью Радость.",
+  "html": "Экипировку Ахи могут носить персонажи, а цена продажи этой экипировки повышается на <b class=\"v\">2</b> золотых монет. Даёт 3 случайных персонажа Пути Радости.",
   "seasons": [
    2
   ]
@@ -7637,11 +7643,11 @@
   "q": "Gold",
   "cat": 6,
   "ch": [],
-  "name": "Сверхудача",
+  "name": "Сверхвезение",
   "en": "Overflowing Luck",
   "icon": "aug/254101",
   "new": true,
-  "html": "Шанс счастливого удара команды повышается на <b class=\"v\">12%</b>. В бою каждый 1% шанса счастливого удара сверх <b class=\"v\">100%</b> превращается в <b class=\"v\">3%</b> урона счастливого удара.",
+  "html": "Шанс счастливого удара команды повышается на <b class=\"v\">12%</b>. В бою каждый 1% шанса счастливого удара сверх <b class=\"v\">100%</b> преобразуется в <b class=\"v\">3%</b> урона счастливого удара.",
   "seasons": [
    2
   ]
@@ -7659,7 +7665,7 @@
   "en": "Aha is Amused",
   "icon": "aug/211301",
   "new": true,
-  "html": "Когда активна связь Радость, Аха получает <b class=\"v\">40%</b> к усилению урона. Шаблон экипировки Ахи заменяется шаблоном с выбором 1 из нескольких вариантов. Даёт <b class=\"v\">1</b> шт. <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>.",
+  "html": "При активации связи Радость Аха получает усиление урона на <b class=\"v\">40%</b>. Шаблон экипировки Ахи заменяется на шаблон выбора 1 из множества. Даёт предметов <a class=\"ref\" data-t=\"item\" data-id=\"99999\">Ящик с простым вооружением</a>: <b class=\"v\">1</b>.",
   "seasons": [
    2
   ]

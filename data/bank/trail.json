@@ -7,7 +7,7 @@
   "icon": "trail/281035",
   "iconPath": "SpriteOutput/GridFight/GridItem/281035.png",
   "name": "Обновить всё",
-  "html": "Обновить все предметы."
+  "html": "Обновить все товары."
  },
  {
   "id": 101,
@@ -16,8 +16,8 @@
   "pre": 0,
   "icon": "trail/TrailblazeGoods_101",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_101.png",
-  "name": "Звёздный экспресс, прыжок!",
-  "html": "В начале боя призывает Звёздный экспресс, который врезается во всех противников и наносит <b class=\"v\">250%</b> базового Мнимого урона."
+  "name": "Звёздный экспресс, гиперпрыжок!",
+  "html": "В начале боя призывает Звёздный экспресс, который врезается во всех противников, нанося <b class=\"v\">250%</b> мнимого базового урона."
  },
  {
   "id": 201,
@@ -27,17 +27,17 @@
   "icon": "trail/TrailblazeGoods_201",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_201.png",
   "name": "Звёздный экспресс, вперёд II",
-  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">300</b>. Во время своего действия он бьёт всех противников базовым мнимым уроном. Множитель: <b class=\"v\">250%</b> + (<b class=\"v\">2.5%</b> × вся потраченная Энергия Освоения)."
+  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">300</b>, который во время действия атакует всех противников, нанося мнимый базовый урон. Множитель урона: <b class=\"v\">250%</b> + (<b class=\"v\">2.5%</b> × суммарная потраченная энергия Освоения)."
  },
  {
   "id": 202,
   "kind": "Энергия Освоения",
-  "cost": 1,
+  "cost": 15,
   "pre": 0,
   "icon": "trail/TrailFuel_Small",
   "iconPath": "SpriteOutput/GridFight/GridItem/TrailFuel_Small.png",
   "name": "Энергия Освоения: 30",
-  "html": "Сразу даёт <b class=\"v\">30</b> ед. энергии Освоения."
+  "html": "Немедленно даёт <b class=\"v\">30</b> ед. энергию Освоения."
  },
  {
   "id": 203,
@@ -46,8 +46,8 @@
   "pre": 0,
   "icon": "trail/TrailblazeGoods_203",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_203.png",
-  "name": "Улучшение Экспресса: световой рельс",
-  "html": "Световой рельс: Сила на поле/вне поля команды +<b class=\"v\">30%</b>.<br>Активирует механику Светового рельса: после столкновения Экспресса даёт <b class=\"v\">1</b> зар. Светового рельса. Максимум зарядов +<b class=\"v\">2</b>, суммируется с похожими эффектами."
+  "name": "Усиление экспресса: Световой рельс",
+  "html": "Световой рельс: повышает силу на поле/вне поля союзников на <b class=\"v\">30%</b>.<br>Активация механики Световой рельс: после столкновения экспресса предоставляет <b class=\"v\">1</b> ур. статуса Световой рельс. До макс. <b class=\"v\">2</b> ур. статуса Световой рельс. Лимит складывается с эффектами подобного типа."
  },
  {
   "id": 204,
@@ -56,8 +56,8 @@
   "pre": 0,
   "icon": "trail/TrailblazeGoods_204",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_204.png",
-  "name": "Улучшение Экспресса: топливо",
-  "html": "Столкновения Экспресса дают <b class=\"v\">5</b> ед. Энергии Освоения для покупок в магазине Серебряных рельсов."
+  "name": "Усиление поезда: топливо",
+  "html": "После столкновения экспресса даёт <b class=\"v\">5</b> ед. энергии Освоения, которую можно потратить в магазине Серебряных рельсов."
  },
  {
   "id": 205,
@@ -66,8 +66,8 @@
   "pre": 0,
   "icon": "trail/TrailblazeGoods_205",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_205.png",
-  "name": "Улучшение Экспресса: ускорение",
-  "html": "Скорость Экспресса повышается на <b class=\"v\">200</b>."
+  "name": "Усиление экспресса: Ускорение",
+  "html": "Скорость экспресса повышается на <b class=\"v\">200</b>."
  },
  {
   "id": 301,
@@ -77,22 +77,22 @@
   "icon": "trail/TrailblazeGoods_301",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_301.png",
   "name": "Звёздный экспресс, вперёд III",
-  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">300</b>. Во время своего действия он бьёт всех противников базовым мнимым уроном. Множитель: <b class=\"v\">400%</b> + (<b class=\"v\">2.5%</b> × вся потраченная Энергия Освоения)."
+  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">300</b>, который во время действия атакует всех противников, нанося мнимый базовый урон. Множитель урона: <b class=\"v\">400%</b> + (<b class=\"v\">2.5%</b> × суммарная потраченная энергия Освоения)."
  },
  {
   "id": 302,
   "kind": "Энергия Освоения",
-  "cost": 1,
+  "cost": 30,
   "pre": 0,
   "icon": "trail/TrailFuel_Big",
   "iconPath": "SpriteOutput/GridFight/GridItem/TrailFuel_Big.png",
   "name": "Энергия Освоения: 60",
-  "html": "Сразу даёт <b class=\"v\">60</b> ед. энергии Освоения."
+  "html": "Немедленно даёт <b class=\"v\">60</b> ед. энергию Освоения."
  },
  {
   "id": 303,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
@@ -103,40 +103,40 @@
  {
   "id": 304,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
-  "name": "Модуль эволюционной модификации",
+  "name": "Модуль изменения эволюции",
   "html": "",
   "item": 353202
  },
  {
   "id": 305,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
-  "name": "Знамя навигатора",
+  "name": "Навигационный флаг",
   "html": "",
   "item": 353203
  },
  {
   "id": 306,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
-  "name": "Пронзающая облака молния",
+  "name": "Пронзающий облака и разящий молнией",
   "html": "",
   "item": 353204
  },
  {
   "id": 307,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
@@ -147,7 +147,7 @@
  {
   "id": 308,
   "kind": "Предмет",
-  "cost": 100,
+  "cost": 160,
   "pre": 0,
   "icon": "",
   "iconPath": "",
@@ -163,7 +163,7 @@
   "icon": "trail/TrailblazeGoods_401",
   "iconPath": "SpriteOutput/GridFight/TraitTargetEffects/TrainBuff/TrailblazeGoods_401.png",
   "name": "Звёздный экспресс, вперёд IV!",
-  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">999</b>. Во время своего действия он бьёт всех противников базовым мнимым уроном. Множитель: <b class=\"v\">5000%</b> + (<b class=\"v\">5.0%</b> × вся потраченная Энергия Освоения)."
+  "html": "Призывает Звёздный экспресс со скоростью <b class=\"v\">999</b>, который во время действия атакует всех противников, нанося мнимый базовый урон. Множитель урона: <b class=\"v\">5000%</b> + (<b class=\"v\">5.0%</b> × суммарная потраченная энергия Освоения)."
  },
  {
   "id": 401,
@@ -172,7 +172,7 @@
   "pre": 0,
   "icon": "",
   "iconPath": "",
-  "name": "Освоение: Проектор сотрудника",
+  "name": "Проектор сотрудника: Освоение",
   "html": "",
   "item": 350113
  },
@@ -184,7 +184,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">5%</b>."
+  "html": "Сила на поле повышается на <b class=\"v\">5%</b>."
  },
  {
   "id": 404,
@@ -194,7 +194,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">10%</b>."
+  "html": "Сила на поле повышается на <b class=\"v\">10%</b>."
  },
  {
   "id": 406,
@@ -204,7 +204,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">15%</b>."
+  "html": "Сила на поле повышается на <b class=\"v\">15%</b>."
  },
  {
   "id": 408,
@@ -214,7 +214,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила на поле IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraFrontPowerAddedRatio1\"></span>Сила на поле повышается на <b class=\"v\">75%</b>."
+  "html": "Сила на поле повышается на <b class=\"v\">75%</b>."
  },
  {
   "id": 414,
@@ -224,7 +224,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">5%</b>."
+  "html": "Сила вне поля повышается на <b class=\"v\">5%</b>."
  },
  {
   "id": 415,
@@ -234,7 +234,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">10%</b>."
+  "html": "Сила вне поля повышается на <b class=\"v\">10%</b>."
  },
  {
   "id": 416,
@@ -244,7 +244,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">15%</b>."
+  "html": "Сила вне поля повышается на <b class=\"v\">15%</b>."
  },
  {
   "id": 417,
@@ -254,7 +254,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Сила вне поля IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraBackPowerAddedRatio1\"></span>Сила вне поля повышается на <b class=\"v\">75%</b>."
+  "html": "Сила вне поля повышается на <b class=\"v\">75%</b>."
  },
  {
   "id": 403,
@@ -264,7 +264,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление скорости I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">2%</b>."
+  "html": "Усиление скорости повышается на <b class=\"v\">2%</b>."
  },
  {
   "id": 405,
@@ -274,7 +274,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление скорости II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">4%</b>."
+  "html": "Усиление скорости повышается на <b class=\"v\">4%</b>."
  },
  {
   "id": 407,
@@ -284,7 +284,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление скорости III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">6%</b>."
+  "html": "Усиление скорости повышается на <b class=\"v\">6%</b>."
  },
  {
   "id": 409,
@@ -294,7 +294,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление скорости IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraSpeedAddedRatio1\"></span>Усиление скорости повышается на <b class=\"v\">30%</b>."
+  "html": "Усиление скорости повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 422,
@@ -304,7 +304,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">2%</b>."
+  "html": "Шанс счастливого удара повышается на <b class=\"v\">2%</b>."
  },
  {
   "id": 423,
@@ -314,7 +314,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">4%</b>."
+  "html": "Шанс счастливого удара повышается на <b class=\"v\">4%</b>."
  },
  {
   "id": 424,
@@ -324,7 +324,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">6%</b>."
+  "html": "Шанс счастливого удара повышается на <b class=\"v\">6%</b>."
  },
  {
   "id": 410,
@@ -334,7 +334,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Шанс счастливого удара IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckChance\"></span>Шанс счастливого удара повышается на <b class=\"v\">30%</b>."
+  "html": "Шанс счастливого удара повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 418,
@@ -344,7 +344,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Урон счастливого удара I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">2%</b>."
+  "html": "Урон счастливого удара повышается на <b class=\"v\">2%</b>."
  },
  {
   "id": 419,
@@ -354,7 +354,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Урон счастливого удара II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">4%</b>."
+  "html": "Урон счастливого удара повышается на <b class=\"v\">4%</b>."
  },
  {
   "id": 420,
@@ -364,7 +364,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Урон счастливого удара III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">6%</b>."
+  "html": "Урон счастливого удара повышается на <b class=\"v\">6%</b>."
  },
  {
   "id": 421,
@@ -374,40 +374,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Урон счастливого удара IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraLuckDamage\"></span>Урон счастливого удара повышается на <b class=\"v\">30%</b>."
- },
- {
-  "id": 416944,
-  "kind": "Характеристика",
-  "cost": 15,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление урона I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">2%</b>.",
-  "role": 0
- },
- {
-  "id": 416945,
-  "kind": "Характеристика",
-  "cost": 30,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление урона II",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">4%</b>.",
-  "role": 0
- },
- {
-  "id": 416943,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Усиление урона III",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на<b class=\"v\"> 6%</b>.",
-  "role": 0
+  "html": "Урон счастливого удара повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 411,
@@ -417,40 +384,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Усиление урона IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageTypeAddedRatio1\"></span>Усиление урона повышается на <b class=\"v\">30%</b>."
- },
- {
-  "id": 850053,
-  "kind": "Характеристика",
-  "cost": 15,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Понижение получаемого урона I",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>Понижение получаемого урона повышается на <b class=\"v\">2%</b>.",
-  "role": 0
- },
- {
-  "id": 901075,
-  "kind": "Характеристика",
-  "cost": 30,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Понижение получаемого урона II",
-  "html": "<span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span><span class=\"ai0\"></span>Понижение получаемого урона повышается на <b class=\"v\">4%</b>.",
-  "role": 0
- },
- {
-  "id": 933545,
-  "kind": "Характеристика",
-  "cost": 50,
-  "pre": 0,
-  "icon": "",
-  "iconPath": "",
-  "name": "Понижение получаемого урона III",
-  "html": "<span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span><span class=\"ai0\"></span>Понижение получаемого урона повышается на <b class=\"v\">6%</b>.",
-  "role": 0
+  "html": "Усиление урона повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 412,
@@ -460,7 +394,7 @@
   "icon": "",
   "iconPath": "",
   "name": "Понижение получаемого урона IV",
-  "html": "<span class=\"ai0\"></span><span class=\"pi\" data-p=\"ExtraAllDamageReduce\"></span>Понижение получаемого урона повышается на <b class=\"v\">30%</b>."
+  "html": "Понижение получаемого урона повышается на <b class=\"v\">30%</b>."
  },
  {
   "id": 413,
@@ -469,7 +403,7 @@
   "pre": 0,
   "icon": "",
   "iconPath": "",
-  "name": "Освоение: Идеальный проектор",
+  "name": "Идеальный проектор: Освоение",
   "html": "",
   "item": 350114
  },

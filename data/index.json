@@ -38,5 +38,6 @@
  "custom": "custom.json",
  "theme": "theme.json",
  "blocks": "blocks.json",
- "clips": "clips.json"
+ "clips": "clips.json",
+ "equipcmp": "equipcmp.json"
 }
