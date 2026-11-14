@@ -25438,6 +25438,24 @@
    "off": false,
    "anchor": "o:t:roles§0.0.0.1",
    "pos": "after"
+  },
+  {
+   "id": "bmwgvxqmvw91",
+   "where": "tab:traits:at",
+   "title": "",
+   "html": "<div class=\"uvid\" data-yt=\"xF8I1gxVEqo\"></div>",
+   "off": false,
+   "anchor": "o:t:traits§0.0.0.1",
+   "pos": "after"
+  },
+  {
+   "id": "bmwgvyc3s55s",
+   "where": "tab:items:at",
+   "title": "",
+   "html": "<div class=\"uvid\" data-yt=\"vE_cyT_DxkQ\"></div>",
+   "off": false,
+   "anchor": "o:t:items§0.0.0.1",
+   "pos": "after"
   }
  ],
  "texts": [
@@ -25514,7 +25532,7 @@
    "wp": 100
   },
   "o:u:bmvsv8mjd0wv§": {
-   "wp": 83
+   "wp": 100
   },
   "o:u:bmvsv8mjd0wv§@m": {
    "wp": 100
@@ -25610,6 +25628,12 @@
   },
   "o:k:h:1z0azxm§": {
    "x": -50
+  },
+  "o:u:bmwgvxqmvw91§": {
+   "wp": 100
+  },
+  "o:u:bmwgvxqmvw91§@m": {
+   "wp": 100
   }
  }
 }
