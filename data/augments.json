@@ -4979,7 +4979,7 @@
   "en": "Endless Cycles",
   "icon": "aug/332201",
   "new": false,
-  "html": "Даёт персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> и экипировку Реинкарнатора. При входе в Измерение II и Измерение III даёт ещё раз.<br>Текущая экипировка Реинкарнатор: <br><br><span class=\"c\" data-c=\"b4b4b4\"><i>После окончания партии персонаж <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> с экипировкой становится новым Реинкарнатором.<br>Если в конце партии персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> нет в команде, экипировка Реинкарнатора возвращается в изначальное состояние.</i></span>",
+  "html": "Даёт «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> и экипировку «Реинкарнатор». При входе в Измерение II/III даёт ещё по одной.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>В конце этого забега «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> станет новым «Реинкарнатором» и унесёт экипировку с собой.<br>Если к концу партии «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> нет в команде, экипировка «Реинкарнатор» вернётся в исходное состояние.</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5460,7 +5460,7 @@
   "en": "Companion in White",
   "icon": "aug/352201",
   "new": false,
-  "html": "Ваши персонажи <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>/<span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> могут использоваться для взаимного повышения звёздности. При первом получении персонажей <b class=\"v\">3</b>★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>/<span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span> вы немедленно получаете версию другого персонажа <b class=\"v\">3</b>★. При получении персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> через <b class=\"v\">3</b> шт. узлов получаете персонажа <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения звёздности зависит от стороны с большим количеством. Например, персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> + персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span> + персонаж 2★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a></span>= персонаж 3★ <span class=\"c\" data-c=\"7196ff\"><a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a></span>.</i></span>",
+  "html": "Ваши «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> и «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> взаимозаменяемы при повышении звёздности друг друга. Когда вы впервые получаете «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> или «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> <b class=\"v\">3</b>★, вы сразу получаете второго персонажа <b class=\"v\">3</b>★. Даёт «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span>, а через <b class=\"v\">3</b> узл. — «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span>.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Результат повышения определяется персонажем, которого больше. Например: «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 2★ + «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 2★ + «<a class=\"ref\" data-t=\"role\" data-id=\"1313\">Воскресенье</a>»</span> 2★ = «<a class=\"ref\" data-t=\"role\" data-id=\"1408\">Фаенон</a>»</span> 3★.</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5692,7 +5692,7 @@
   "en": "I am Luocha!",
   "icon": "aug/352501",
   "new": false,
-  "html": "Даёт персонажа 2★ <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a></span>. При входе в новый узел даёт персонажа <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a></span>. В начале боя эта девушка превращается в персонажа <span class=\"c\" data-c=\"927fe7\"><a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a></span>. В бою она будет «исцелять» противников, нанося базовый урон, равный (<b class=\"v\">200</b> + <b class=\"v\">2.0</b> × сила вне поля)%. За каждые <b class=\"v\">100</b> ед. силы вне поля также может наносить истинный урон, равный <b class=\"v\">2%</b> от макс. НР при использовании Первой помощи.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>Теперь девушка - это <a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>!</i></span>",
+  "html": "Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a>»</span> 2★. При входе в новый узел даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1224\">Март 7</a>»</span>. Перед боем эта девушка превращается в «<a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>»</span>. В бою она «лечит» врагов, нанося базовый урон в размере (<b class=\"v\">200</b> + <b class=\"v\">2.0</b> × Сила вне поля)%. За каждые <b class=\"v\">100</b> ед. Силы вне поля во время «Первой помощи» она также наносит истинный урон в размере <b class=\"v\">2%</b> от макс. НР.<br><br><span class=\"c\" data-c=\"b4b4b4\"><i>А теперь эта девушка — <a class=\"ref\" data-t=\"role\" data-id=\"1203\">Лоча</a>!</i></span>",
   "old": "отмечено вручную"
  },
  {
@@ -5835,7 +5835,7 @@
   "en": "Moonlight Chest",
   "icon": "aug/252501",
   "new": true,
-  "html": "При идеальном прохождении Лунная эссенция персонажей со связью Полубоги ночи повышается на <b class=\"v\">100%</b>. При получении наград Полубоги ночи также даёт персонажа со связью Полубоги ночи. Чем больше уровней Лунного света, тем выше шанс получить персонажа большей стоимости. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1406\">Шифр</a></span> и <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span>.",
+  "html": "При идеальной победе «Сущность лунного света» Полубогов ночи повышается на <b class=\"v\">100%</b>. При получении наград Полубогов ночи вы также получаете персонажа Полубогов ночи. Чем больше уровней «Лунного света», тем выше шанс получить дорогих персонажей. Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1406\">Цифер</a>»</span> и <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>»</span>.",
   "old": "отмечено вручную"
  },
  {
@@ -5879,7 +5879,7 @@
   "en": "All Fired Up",
   "icon": "aug/252801",
   "new": false,
-  "html": "Арена сжигания НР начинает бой с <b class=\"v\">80%</b> от макс. НР, и сохранённый заряд повышается на <b class=\"v\">20%</b>. Даёт персонажей <span class=\"c\" data-c=\"b4b4b4\"><a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a></span> и <span class=\"c\" data-c=\"6cce9f\"><a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a></span>.",
+  "html": "Арена сжигания НР начинает бой с <b class=\"v\">80%</b> макс. НР, а сохраняемый заряд повышается на <b class=\"v\">20%</b>. Даёт <span class=\"c\" data-c=\"b4b4b4\">«<a class=\"ref\" data-t=\"role\" data-id=\"1404\">Мидей</a>»</span> и «<a class=\"ref\" data-t=\"role\" data-id=\"1507\">Мортенакс Блэйд</a>»</span>.",
   "old": "отмечено вручную"
  },
  {
@@ -6984,7 +6984,7 @@
   "en": "Talent Bundle",
   "icon": "aug/204801",
   "new": true,
-  "html": "Среди персонажей, выдающих 12 золотых монет, обязательно найдётся 1 <span class=\"c\" data-c=\"7196ff\">персонаж стоимостью 3</span>!",
+  "html": "Даёт персонажей на 12 зол. монет, среди которых гарантированно будет один персонаж стоимостью 3!",
   "card": {
    "stages": [
     [
